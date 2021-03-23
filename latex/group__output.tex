@@ -1,0 +1,98 @@
+\hypertarget{group__output}{}\doxysection{Methods for output}
+\label{group__output}\index{Methods for output@{Methods for output}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual nlohmann\+::json \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node\+::to\+Json}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node\+::to\+String}} (bool print\+Children) const
+\item 
+std\+::string \mbox{\hyperlink{group__output_gac36ebbc674fc0241f43bbbace87537bc}{Abstract\+Node\+::to\+String\+Helper}} (bool print\+Children, std\+::vector$<$ std\+::string $>$ attributes) const
+\item 
+virtual std\+::string \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node\+::get\+Node\+Type}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__output_gac17194268db99b9b8ba9b3a85563fb94}{Abstract\+Node\+::operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__output_ga8cc40127801e7777c8094f17a3b1efcb}\label{group__output_ga8cc40127801e7777c8094f17a3b1efcb}} 
+\index{Methods for output@{Methods for output}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Methods for output@{Methods for output}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily virtual std\+::string Abstract\+Node\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_variable_declaration_a08657e39695a7ac77dabe330c969fddc}{Variable\+Declaration}}, \mbox{\hyperlink{class_variable_a0ca604c78fc4cb70ea4dd94a07c9a6a0}{Variable}}, \mbox{\hyperlink{class_unary_expression_abe93bbebae7dd0b5dfd8bf6d34e27d36}{Unary\+Expression}}, \mbox{\hyperlink{class_ternary_operator_aee901c97ca8d50ceb42a172af18f6f57}{Ternary\+Operator}}, \mbox{\hyperlink{class_return_a7b756560b61c5d7d53f4e18f3b3e7ce4}{Return}}, \mbox{\hyperlink{class_operator_expression_aa8af35c028dcebf994d3fbca51119d02}{Operator\+Expression}}, \mbox{\hyperlink{class_literal_ae6c33d78b314eabb05e38fb35f22df56}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_index_access_a8675581d91f7eab460fa2b55e11e1117}{Index\+Access}}, \mbox{\hyperlink{class_if_ab89f37630b8e717e97cd7405a4e3ab55}{If}}, \mbox{\hyperlink{class_function_parameter_ab4d4e1a21f566ebac16556ce1cb661ff}{Function\+Parameter}}, \mbox{\hyperlink{class_function_a20b5ce420405c44241fc130ce2aaaf5a}{Function}}, \mbox{\hyperlink{class_for_a30fa9a5a99952989e54e16cd702f1283}{For}}, \mbox{\hyperlink{class_expression_list_a166ea4d3ed14c425215d5ccd1cf6b722}{Expression\+List}}, \mbox{\hyperlink{class_call_a952035228f533511f97fccfcfac86bde}{Call}}, \mbox{\hyperlink{class_block_a0c4c888e1fda4a10ed73c1549ad8d6ed}{Block}}, \mbox{\hyperlink{class_binary_expression_a372163c682802a8d32c6f30797a65fe8}{Binary\+Expression}}, \mbox{\hyperlink{class_assignment_a4264b9c5ef3c4e9276db67b23fa65e26}{Assignment}}, \mbox{\hyperlink{class_literal_ab3a5bd381d59f58944499593f3c0b978}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_literal_a1eb928dad13c9024614556d759073161}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_literal_a9354ee79f597b252b097f9f620173385}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_literal_ae0075401cff6e805b449fe8ad1f47283}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_literal_a91dab4ba33b71dd6b1b81a1f11c61d79}{Literal$<$ T $>$}}, and \mbox{\hyperlink{class_literal_af3bdddea89485d2cc651dc8b317e9c9c}{Literal$<$ T $>$}}.
+
+\mbox{\Hypertarget{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}\label{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}} 
+\index{Methods for output@{Methods for output}!toJson@{toJson}}
+\index{toJson@{toJson}!Methods for output@{Methods for output}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily virtual nlohmann\+::json Abstract\+Node\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_variable_declaration_a57f209542c2c032841212f368b94c33a}{Variable\+Declaration}}, \mbox{\hyperlink{class_variable_a4faa7cde90ee4746ab753f5837571cf6}{Variable}}, \mbox{\hyperlink{class_unary_expression_ac0df59bbd8827d4fa51490f362e245aa}{Unary\+Expression}}, \mbox{\hyperlink{class_ternary_operator_a4c1bdfea771d75502f7b8b72a640699a}{Ternary\+Operator}}, \mbox{\hyperlink{class_return_af1142d542617536becdf8724aa1b1d37}{Return}}, \mbox{\hyperlink{class_operator_expression_a3f93ab3bcee5d72d40d232e862b1b613}{Operator\+Expression}}, \mbox{\hyperlink{class_literal_a0925bc054fc0a26c6bfe43f0625fccf4}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_index_access_a35b530635d395588a0c9ae2446a3455c}{Index\+Access}}, \mbox{\hyperlink{class_if_a17a1e4e6504181869ef2fc2361cfa00a}{If}}, \mbox{\hyperlink{class_function_parameter_ae28458b3c38e179bd0422154aee2a7e2}{Function\+Parameter}}, \mbox{\hyperlink{class_function_a27332c657375b95e7e64ade183fe2dfa}{Function}}, \mbox{\hyperlink{class_for_a35244f9ed0d6689a0cff93aff54ba76b}{For}}, \mbox{\hyperlink{class_expression_list_a7f2eecd1d2bbb23949bd067a2cdd3f7a}{Expression\+List}}, \mbox{\hyperlink{class_call_a9f03852c96b4dd581f2f4806a14b27c8}{Call}}, \mbox{\hyperlink{class_block_a829ce46ce2d938492892304c4bf66523}{Block}}, \mbox{\hyperlink{class_binary_expression_a400149f0c1303bf9c447dbad644414a8}{Binary\+Expression}}, and \mbox{\hyperlink{class_assignment_a907223b4a4ec0c75b2cc3af6cce9a1e4}{Assignment}}.
+
+\mbox{\Hypertarget{group__output_gaee58b60a470f2e494e0db1808c87b13d}\label{group__output_gaee58b60a470f2e494e0db1808c87b13d}} 
+\index{Methods for output@{Methods for output}!toString@{toString}}
+\index{toString@{toString}!Methods for output@{Methods for output}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Abstract\+Node\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_variable_declaration_a2345a9d30b32d1c7824c003399fa62a1}{Variable\+Declaration}}, \mbox{\hyperlink{class_variable_ab214930aad392d3d3c73e4ba325ee85e}{Variable}}, \mbox{\hyperlink{class_unary_expression_a59d90f1460dd461d0b07afe69d4d579c}{Unary\+Expression}}, \mbox{\hyperlink{class_ternary_operator_adc53bf6b50b91214694a9d224512c79a}{Ternary\+Operator}}, \mbox{\hyperlink{class_return_a992860dd4e2e7ff4b4aa7f250ce663e7}{Return}}, \mbox{\hyperlink{class_operator_expression_acec3b329e93e71621444d76ffad8e435}{Operator\+Expression}}, \mbox{\hyperlink{class_literal_a2e0a0aaf9721d53c42b7f501916909e5}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_index_access_adf2c56c69a58da511cf768c22c431d20}{Index\+Access}}, \mbox{\hyperlink{class_if_a4a74847a522cb1857fb4e0d2961332d6}{If}}, \mbox{\hyperlink{class_function_parameter_a3f9b0368be2fb20f4c7fa22cc3405608}{Function\+Parameter}}, \mbox{\hyperlink{class_function_a3859937a4088b24c1d74cf978c322258}{Function}}, \mbox{\hyperlink{class_for_a32cfa5cded4c0ba91e24b8607a85705b}{For}}, \mbox{\hyperlink{class_expression_list_afbb9e4dd1d5d6935cfd9f121350c8a99}{Expression\+List}}, \mbox{\hyperlink{class_call_ac234e3e59f9ba35d5e5b006fd5e9b0a7}{Call}}, \mbox{\hyperlink{class_block_ad4ff57dba6103f81e120470c81025ddf}{Block}}, \mbox{\hyperlink{class_binary_expression_a9fd75b2ed18a262b746bf0b91a794faa}{Binary\+Expression}}, and \mbox{\hyperlink{class_assignment_a1902e8595bfa9c787decf6a2fff2801a}{Assignment}}.
+
+\mbox{\Hypertarget{group__output_gac36ebbc674fc0241f43bbbace87537bc}\label{group__output_gac36ebbc674fc0241f43bbbace87537bc}} 
+\index{Methods for output@{Methods for output}!toStringHelper@{toStringHelper}}
+\index{toStringHelper@{toStringHelper}!Methods for output@{Methods for output}}
+\doxysubsubsection{\texorpdfstring{toStringHelper()}{toStringHelper()}}
+{\footnotesize\ttfamily std\+::string Abstract\+Node\+::to\+String\+Helper (\begin{DoxyParamCaption}\item[{bool}]{print\+Children,  }\item[{std\+::vector$<$ std\+::string $>$}]{attributes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+Generates an output string to be used by the \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{to\+String()}} method. 
+\begin{DoxyParams}{Parameters}
+{\em print\+Children} & Specifies whether to print details of this node only (False) or also its children (True). \\
+\hline
+{\em attributes} & The node\textquotesingle{}s attributes to be printed (fields in the node\textquotesingle{}s class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representation of the node. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends}
+\mbox{\Hypertarget{group__output_gac17194268db99b9b8ba9b3a85563fb94}\label{group__output_gac17194268db99b9b8ba9b3a85563fb94}} 
+\index{Methods for output@{Methods for output}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Methods for output@{Methods for output}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Prints the output of node.\+to\+String(true) to the stream os 
+\begin{DoxyParams}{Parameters}
+{\em os} & Stream to print to \\
+\hline
+{\em node} & Any node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The written to stream 
+\end{DoxyReturn}

@@ -1,0 +1,236 @@
+\hypertarget{class_call}{}\doxysection{Call Class Reference}
+\label{class_call}\index{Call@{Call}}
+Inheritance diagram for Call\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_call}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_call_a3fadc2cc30c97479b48e730c263a4012}\label{class_call_a3fadc2cc30c97479b48e730c263a4012}} 
+\mbox{\hyperlink{class_call_a3fadc2cc30c97479b48e730c263a4012}{$\sim$\+Call}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_call_a4fe798aba4a584100dede7092103fb15}{Call}} (std\+::string identifier, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$$>$ \&\&arguments)
+\item 
+\mbox{\hyperlink{class_call_a1346426f89b87d91523bf1d2c2b78ba6}{Call}} (const \mbox{\hyperlink{class_call}{Call}} \&other)
+\item 
+\mbox{\hyperlink{class_call_a1e375095b92c7d08a9611d9be0d5231c}{Call}} (\mbox{\hyperlink{class_call}{Call}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_call}{Call}} \& \mbox{\hyperlink{class_call_a68f03cde33971d8ce038ba79c12cc295}{operator=}} (const \mbox{\hyperlink{class_call}{Call}} \&other)
+\item 
+\mbox{\hyperlink{class_call}{Call}} \& \mbox{\hyperlink{class_call_a3db279b7a77cbcbad3d23a82e5307179}{operator=}} (\mbox{\hyperlink{class_call}{Call}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_call}{Call}} $>$ \mbox{\hyperlink{class_call_a0183056f0732c47cbb0f4af089d12598}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+std\+::string \mbox{\hyperlink{class_call_aa8dd2cb9d1761c5e6e961b2e5a3d7661}{get\+Identifier}} () const
+\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ \mbox{\hyperlink{class_call_a0e4f9c9cf17d25489cf5ac7b137bf8da}{get\+Arguments}} () const
+\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ \mbox{\hyperlink{class_call_a1d408320a0fbcdfa30151e59f9ca2796}{get\+Arguments}} ()
+\item 
+void \mbox{\hyperlink{class_call_a91d80828b01c8c0883113fb5479c737b}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_call_ad6261a1e48fae353b829a865a86f0a48}\label{class_call_ad6261a1e48fae353b829a865a86f0a48}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_call_ad6261a1e48fae353b829a865a86f0a48}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_call_a8b477ec0b06b2dcef10b3881f3909373}\label{class_call_a8b477ec0b06b2dcef10b3881f3909373}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_call_a8b477ec0b06b2dcef10b3881f3909373}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_call_aae462217dc0d026235d1fac53b0ddb4e}\label{class_call_aae462217dc0d026235d1fac53b0ddb4e}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_call_aae462217dc0d026235d1fac53b0ddb4e}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_call_ae0c3ab30b1b124daac1dc6d5c5b145dc}\label{class_call_ae0c3ab30b1b124daac1dc6d5c5b145dc}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_call_ae0c3ab30b1b124daac1dc6d5c5b145dc}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_call_affe4deee86cd9b8f15cc7f67cb57d946}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_call_a9f03852c96b4dd581f2f4806a14b27c8}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_call_ac234e3e59f9ba35d5e5b006fd5e9b0a7}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_call_a952035228f533511f97fccfcfac86bde}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_call_a4fe798aba4a584100dede7092103fb15}\label{class_call_a4fe798aba4a584100dede7092103fb15}} 
+\index{Call@{Call}!Call@{Call}}
+\index{Call@{Call}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Call\+::\+Call (\begin{DoxyParamCaption}\item[{std\+::string}]{identifier,  }\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$$>$ \&\&}]{arguments }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{class_call}{Call}} 
+\begin{DoxyParams}{Parameters}
+{\em identifier} & Name of the function being called \\
+\hline
+{\em arguments} & List of arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_call_a1346426f89b87d91523bf1d2c2b78ba6}\label{class_call_a1346426f89b87d91523bf1d2c2b78ba6}} 
+\index{Call@{Call}!Call@{Call}}
+\index{Call@{Call}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Call\+::\+Call (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_call}{Call}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_call}{Call}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_call_a1e375095b92c7d08a9611d9be0d5231c}\label{class_call_a1e375095b92c7d08a9611d9be0d5231c}} 
+\index{Call@{Call}!Call@{Call}}
+\index{Call@{Call}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{Call()}{Call()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Call\+::\+Call (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_call}{Call}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_call}{Call}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_call_a91d80828b01c8c0883113fb5479c737b}\label{class_call_a91d80828b01c8c0883113fb5479c737b}} 
+\index{Call@{Call}!accept@{accept}}
+\index{accept@{accept}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Call\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_call_a0183056f0732c47cbb0f4af089d12598}\label{class_call_a0183056f0732c47cbb0f4af089d12598}} 
+\index{Call@{Call}!clone@{clone}}
+\index{clone@{clone}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_call}{Call}} $>$ Call\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_affe4deee86cd9b8f15cc7f67cb57d946}\label{class_call_affe4deee86cd9b8f15cc7f67cb57d946}} 
+\index{Call@{Call}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t Call\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_call_a1d408320a0fbcdfa30151e59f9ca2796}\label{class_call_a1d408320a0fbcdfa30151e59f9ca2796}} 
+\index{Call@{Call}!getArguments@{getArguments}}
+\index{getArguments@{getArguments}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{getArguments()}{getArguments()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ Call\+::get\+Arguments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get (a vector of references to) all (non-\/null) parameters Since std\+::vector cannot directly handle references, a wrapper is used, but this can be used exactly like std\+::vector$<$\+Abstract\+Expression\&$>$ could, if it were possible \begin{DoxyReturn}{Returns}
+Vector of (references to) all non-\/null arguments 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_a0e4f9c9cf17d25489cf5ac7b137bf8da}\label{class_call_a0e4f9c9cf17d25489cf5ac7b137bf8da}} 
+\index{Call@{Call}!getArguments@{getArguments}}
+\index{getArguments@{getArguments}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{getArguments()}{getArguments()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ Call\+::get\+Arguments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get (a vector of references to) all (non-\/null) arguments Since std\+::vector cannot directly handle references, a wrapper is used, but this can be used exactly like std\+::vector$<$\+Abstract\+Expression\&$>$ could, if it were possible \begin{DoxyReturn}{Returns}
+Vector of (references to) all non-\/null arguments 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_aa8dd2cb9d1761c5e6e961b2e5a3d7661}\label{class_call_aa8dd2cb9d1761c5e6e961b2e5a3d7661}} 
+\index{Call@{Call}!getIdentifier@{getIdentifier}}
+\index{getIdentifier@{getIdentifier}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{getIdentifier()}{getIdentifier()}}
+{\footnotesize\ttfamily std\+::string Call\+::get\+Identifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns (a copy of) the name of the \mbox{\hyperlink{class_call}{Call}} being called \begin{DoxyReturn}{Returns}
+the name of the \mbox{\hyperlink{class_call}{Call}} being called 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_a952035228f533511f97fccfcfac86bde}\label{class_call_a952035228f533511f97fccfcfac86bde}} 
+\index{Call@{Call}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string Call\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_call_a3db279b7a77cbcbad3d23a82e5307179}\label{class_call_a3db279b7a77cbcbad3d23a82e5307179}} 
+\index{Call@{Call}!operator=@{operator=}}
+\index{operator=@{operator=}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_call}{Call}} \& Call\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_call}{Call}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_call}{Call}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_a68f03cde33971d8ce038ba79c12cc295}\label{class_call_a68f03cde33971d8ce038ba79c12cc295}} 
+\index{Call@{Call}!operator=@{operator=}}
+\index{operator=@{operator=}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_call}{Call}} \& Call\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_call}{Call}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_call}{Call}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_call_a9f03852c96b4dd581f2f4806a14b27c8}\label{class_call_a9f03852c96b4dd581f2f4806a14b27c8}} 
+\index{Call@{Call}!toJson@{toJson}}
+\index{toJson@{toJson}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json Call\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_call_ac234e3e59f9ba35d5e5b006fd5e9b0a7}\label{class_call_ac234e3e59f9ba35d5e5b006fd5e9b0a7}} 
+\index{Call@{Call}!toString@{toString}}
+\index{toString@{toString}!Call@{Call}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Call\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Call.\+h\item 
+src/ast/Call.\+cpp\end{DoxyCompactItemize}

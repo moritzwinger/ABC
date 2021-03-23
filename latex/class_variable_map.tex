@@ -1,0 +1,61 @@
+\hypertarget{class_variable_map}{}\doxysection{Variable\+Map$<$ T $>$ Class Template Reference}
+\label{class_variable_map}\index{VariableMap$<$ T $>$@{VariableMap$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_variable_map_adee476d2ba59b5e425c1bd187b45dd04}\label{class_variable_map_adee476d2ba59b5e425c1bd187b45dd04}} 
+{\bfseries Variable\+Map} (const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}}, T $>$ \&\&map)
+\item 
+\mbox{\Hypertarget{class_variable_map_aa86e444d80ff398f008d2ddcceb03bf9}\label{class_variable_map_aa86e444d80ff398f008d2ddcceb03bf9}} 
+{\bfseries Variable\+Map} (const \mbox{\hyperlink{class_variable_map}{Variable\+Map}} \&other)=default
+\item 
+\mbox{\Hypertarget{class_variable_map_a42a841b7dcca319d89a5136da3a3715a}\label{class_variable_map_a42a841b7dcca319d89a5136da3a3715a}} 
+{\bfseries Variable\+Map} (\mbox{\hyperlink{class_variable_map}{Variable\+Map}} \&\&other) noexcept=default
+\item 
+\mbox{\Hypertarget{class_variable_map_ac273dad2ce4ca90da74bb3ff25861432}\label{class_variable_map_ac273dad2ce4ca90da74bb3ff25861432}} 
+\mbox{\hyperlink{class_variable_map}{Variable\+Map}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_variable_map}{Variable\+Map}} \&other)=default
+\item 
+\mbox{\Hypertarget{class_variable_map_a43ce96a4f6ff41495820c6199eb03736}\label{class_variable_map_a43ce96a4f6ff41495820c6199eb03736}} 
+\mbox{\hyperlink{class_variable_map}{Variable\+Map}} \& {\bfseries operator=} (\mbox{\hyperlink{class_variable_map}{Variable\+Map}} \&\&other) noexcept=default
+\item 
+\mbox{\Hypertarget{class_variable_map_a180637dda1a555c43975b24f404390a8}\label{class_variable_map_a180637dda1a555c43975b24f404390a8}} 
+const T \& {\bfseries get} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s) const
+\item 
+\mbox{\Hypertarget{class_variable_map_a9884c5f99d1a4b15ed823b46989eff4d}\label{class_variable_map_a9884c5f99d1a4b15ed823b46989eff4d}} 
+const T \& {\bfseries at} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s) const
+\item 
+\mbox{\Hypertarget{class_variable_map_a7dc597dff52e94407cf01eff64ab5e22}\label{class_variable_map_a7dc597dff52e94407cf01eff64ab5e22}} 
+T {\bfseries erase} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s)
+\item 
+\mbox{\Hypertarget{class_variable_map_af170a5983fd9eea75354c1a049ad40c5}\label{class_variable_map_af170a5983fd9eea75354c1a049ad40c5}} 
+void {\bfseries add} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s, T v)
+\item 
+\mbox{\Hypertarget{class_variable_map_a8e54bd58bb3d26efc9d9fb9053536cd0}\label{class_variable_map_a8e54bd58bb3d26efc9d9fb9053536cd0}} 
+void {\bfseries insert\+\_\+or\+\_\+assign} (\mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} s, T \&\&v)
+\item 
+\mbox{\Hypertarget{class_variable_map_a04e9e5c93ad7c499897a9c5a34cce78f}\label{class_variable_map_a04e9e5c93ad7c499897a9c5a34cce78f}} 
+void {\bfseries update} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s, T v)
+\item 
+\mbox{\Hypertarget{class_variable_map_abe44c073874a8647dd7500fcc71c2e84}\label{class_variable_map_abe44c073874a8647dd7500fcc71c2e84}} 
+bool {\bfseries has} (const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \&s)
+\item 
+\mbox{\Hypertarget{class_variable_map_ae2497df4b6a057c4fd58b5a2edf62f22}\label{class_variable_map_ae2497df4b6a057c4fd58b5a2edf62f22}} 
+void {\bfseries reset\+Change\+Flags} ()
+\item 
+\mbox{\Hypertarget{class_variable_map_ae43a70a455553a5bf2f4cd5cb1ea8058}\label{class_variable_map_ae43a70a455553a5bf2f4cd5cb1ea8058}} 
+auto {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{class_variable_map_a06c4ae90bc73dc91632d4dfa3a7b6aa7}\label{class_variable_map_a06c4ae90bc73dc91632d4dfa3a7b6aa7}} 
+auto {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{class_variable_map_aae27a88ef553b80eaff1b2e433ae6cb3}\label{class_variable_map_aae27a88ef553b80eaff1b2e433ae6cb3}} 
+size\+\_\+t {\bfseries count} (\mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} s) const
+\item 
+\mbox{\Hypertarget{class_variable_map_a68ca37c1d5e09dad8fc60fc261f71a2c}\label{class_variable_map_a68ca37c1d5e09dad8fc60fc261f71a2c}} 
+const std\+::unordered\+\_\+set$<$ \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} $>$ \& {\bfseries changed\+Entries} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/utilities/Variable\+Map.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+\hypertarget{struct_return_statement_reached}{}\doxysection{Return\+Statement\+Reached Struct Reference}
+\label{struct_return_statement_reached}\index{ReturnStatementReached@{ReturnStatementReached}}
+
+
+{\ttfamily \#include $<$Runtime\+Visitor.\+h$>$}
+
+Inheritance diagram for Return\+Statement\+Reached\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_return_statement_reached}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_return_statement_reached_a983087747a6198771a4ae484a1d7c3ff}\label{struct_return_statement_reached_a983087747a6198771a4ae484a1d7c3ff}} 
+const char $\ast$ {\bfseries what} () const noexcept override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A custom exception class to be used to break out of the Runtime\+Visitor in case that we visited a \mbox{\hyperlink{class_return}{Return}} statement. This is important for programs that use \mbox{\hyperlink{class_return}{Return}} statements to prematurely exit a program, e.\+g., in the body of a \mbox{\hyperlink{class_for}{For}} loop. The exception must be caught (and ignored) by the caller. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/visitor/runtime/Runtime\+Visitor.\+h\end{DoxyCompactItemize}

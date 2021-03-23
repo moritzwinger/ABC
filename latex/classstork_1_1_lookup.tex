@@ -1,0 +1,43 @@
+\hypertarget{classstork_1_1_lookup}{}\doxysection{stork\+::Lookup$<$ Key, Value $>$ Class Template Reference}
+\label{classstork_1_1_lookup}\index{stork::Lookup$<$ Key, Value $>$@{stork::Lookup$<$ Key, Value $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a643cf58bb73366823a1c6819c5b0286d}\label{classstork_1_1_lookup_a643cf58bb73366823a1c6819c5b0286d}} 
+using {\bfseries value\+\_\+type} = std\+::pair$<$ Key, Value $>$
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_ad5d5f2ad55abe030341a0c23beec4eb4}\label{classstork_1_1_lookup_ad5d5f2ad55abe030341a0c23beec4eb4}} 
+using {\bfseries container\+\_\+type} = std\+::vector$<$ value\+\_\+type $>$
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a1b4fb1d913c513e86272dcd2edcb111f}\label{classstork_1_1_lookup_a1b4fb1d913c513e86272dcd2edcb111f}} 
+using {\bfseries iterator} = typename container\+\_\+type\+::const\+\_\+iterator
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_aa35d5a480265865ef5e97174f3ff53eb}\label{classstork_1_1_lookup_aa35d5a480265865ef5e97174f3ff53eb}} 
+using {\bfseries const\+\_\+iterator} = iterator
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a1368eb9cdba291f4ea2d8c07dc7698c9}\label{classstork_1_1_lookup_a1368eb9cdba291f4ea2d8c07dc7698c9}} 
+{\bfseries Lookup} (std\+::initializer\+\_\+list$<$ value\+\_\+type $>$ init)
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_afcaac208ae084c357b82248af4f0f039}\label{classstork_1_1_lookup_afcaac208ae084c357b82248af4f0f039}} 
+{\bfseries Lookup} (container\+\_\+type container)
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a5bdb2e009af1e7d9a4254680dada29ef}\label{classstork_1_1_lookup_a5bdb2e009af1e7d9a4254680dada29ef}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a1b2559edb367cd49f01d72d430991201}\label{classstork_1_1_lookup_a1b2559edb367cd49f01d72d430991201}} 
+const\+\_\+iterator {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a67b2acbc91d62ba65abcc753e0ec4736}\label{classstork_1_1_lookup_a67b2acbc91d62ba65abcc753e0ec4736}} 
+{\footnotesize template$<$typename K $>$ }\\const\+\_\+iterator {\bfseries find} (const K \&key) const
+\item 
+\mbox{\Hypertarget{classstork_1_1_lookup_a64be2f5f33652b0500e2ac6142d885cb}\label{classstork_1_1_lookup_a64be2f5f33652b0500e2ac6142d885cb}} 
+size\+\_\+t {\bfseries size} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/parser/Lookup.\+h\end{DoxyCompactItemize}

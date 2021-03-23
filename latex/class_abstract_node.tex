@@ -1,0 +1,141 @@
+\hypertarget{class_abstract_node}{}\doxysection{Abstract\+Node Class Reference}
+\label{class_abstract_node}\index{AbstractNode@{AbstractNode}}
+
+
+{\ttfamily \#include $<$Abstract\+Node.\+h$>$}
+
+Inheritance diagram for Abstract\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_abstract_node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}}
+\begin{DoxyCompactList}\small\item\em Forward Iterator through Nodes. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em Const Forward Iterator through Nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_node_a3e4c9b9841c8b860e450b8eb089f9b85}\label{class_abstract_node_a3e4c9b9841c8b860e450b8eb089f9b85}} 
+virtual \mbox{\hyperlink{class_abstract_node_a3e4c9b9841c8b860e450b8eb089f9b85}{$\sim$\+Abstract\+Node}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual Destructor, force class to be abstract. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ \mbox{\hyperlink{class_abstract_node_ac447b0cc9a1df5ec09c7893e64e3af2f}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_abstract_node_a756012d0c319f4ac9271f095efaba276}{operator==}} (const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&other) const noexcept
+\item 
+bool \mbox{\hyperlink{class_abstract_node_aa407fbdc74d3d019d75da5e8ae02b701}{operator!=}} (const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&other) const noexcept
+\item 
+virtual void \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v)=0
+\item 
+virtual \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{group___d_a_g_ga78701a0642b6bf9b58c615e83bd0d10a}{begin}} ()=0
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{group___d_a_g_ga87ef2c5c65cac9bf868298df39dc8613}{begin}} () const =0
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{group___d_a_g_gafd6ae8c0ed5552ec37fd83703a117118}{end}} ()=0
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{group___d_a_g_ga9c815a4f2452e4294d6fdcdd2542535b}{end}} () const =0
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{count\+Children}} () const =0
+\item 
+bool \mbox{\hyperlink{group___d_a_g_gaccb709a7ddc8e75788b44fbd0801d8de}{has\+Parent}} () const
+\item 
+\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& \mbox{\hyperlink{group___d_a_g_gaac40fc6193eae6c432d79ab09d5896a3}{get\+Parent}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& \mbox{\hyperlink{group___d_a_g_gaf7c1b9376d52444e772b9764e5baaf2d}{get\+Parent}} () const
+\item 
+void \mbox{\hyperlink{group___d_a_g_ga7d07d5bf1e0a7f1e87a42be354e12026}{set\+Parent}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&new\+Parent)
+\item 
+virtual nlohmann\+::json \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{to\+Json}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{to\+String}} (bool print\+Children) const
+\item 
+std\+::string \mbox{\hyperlink{group__node_i_d_ga27e3de10b856ef7ebc64e6382aec92eb}{get\+Unique\+Node\+Id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{group__output_gac36ebbc674fc0241f43bbbace87537bc}{to\+String\+Helper}} (bool print\+Children, std\+::vector$<$ std\+::string $>$ attributes) const
+\item 
+virtual std\+::string \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{get\+Node\+Type}} () const =0
+\item 
+\mbox{\hyperlink{group__node_i_d_ga7b59e2377b8841ec1762bbca9ba88d2d}{Abstract\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor, defines some default behavior for subclasses related to IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{group__output_gac17194268db99b9b8ba9b3a85563fb94}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} defines the common interface for all nodes.
+
+DIRECTED GRAPH\+: Nodes form a directed graph, with one end of each edge being the parent and the other being the child. Nodes have exactly one pointer to their parent. \mbox{\hyperlink{class_if}{If}} null, we say the node does not have a parent. Nodes might have an arbitrary number of children, including none. Some derived classes have a fixed number of children, while this changes dynamically for others. Interaction with children should primarily happen via derived classes\textquotesingle{} specific getter/setter methods. However, it is also possible to iterate over the children of any node with a \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} The order of the children is up to the derived class. Note that some derived classes might internally use nullptr to represent \char`\"{}empty slots\char`\"{} (e.\+g. deleted stmts in a \mbox{\hyperlink{class_block}{Block}}, or an empty else-\/stmt in an \mbox{\hyperlink{class_if}{If}} stmt) \mbox{\hyperlink{class_if}{If}} a child is null, we say it does not exist and it is not exposed externally.
+
+LIFECYCLE MANAGEMENT\+: A node owns its children and its children are deleted when the node itself is deleted. Derived classes MUST implement this behavior, for example by using std\+::unique\+\_\+ptr$<$$>$ Note that the parent is a raw pointer, however the above semantics should exclude dangling parent pointers. Deleting a node will invalidate all iterators over this node and its children.
+
+Changing Ownership of a Node (e.\+g. when moving a node around in a tree) should proceed by first taking ownership to the local scope via take\+Node() Then, adding the node to its new parent via a derived class\textquotesingle{}s setter method Internally, the setter should first add the child and then use \mbox{\hyperlink{group___d_a_g_ga7d07d5bf1e0a7f1e87a42be354e12026}{set\+Parent()}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}\label{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}} 
+\index{AbstractNode@{AbstractNode}!accept@{accept}}
+\index{accept@{accept}!AbstractNode@{AbstractNode}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily virtual void Abstract\+Node\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_variable_declaration_a1c7fd5d0a483f75f9ec9d1f14140f950}{Variable\+Declaration}}, \mbox{\hyperlink{class_variable_a9f87ac8c35b8da7e0ed8663ab2a89684}{Variable}}, \mbox{\hyperlink{class_unary_expression_a1fa23fc407b7101e4cb47dd1c4e8639e}{Unary\+Expression}}, \mbox{\hyperlink{class_ternary_operator_af4911afeb2821515c36be675bacccc62}{Ternary\+Operator}}, \mbox{\hyperlink{class_return_ac6d2a94a5f491ccf86c2ee148b5b8649}{Return}}, \mbox{\hyperlink{class_operator_expression_a7dd8da8b13ea9e55ecd5ef802ed7a2d7}{Operator\+Expression}}, \mbox{\hyperlink{class_literal_a8e1f949923ba48323b905377bc185b7a}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_index_access_a25f35a01962e3d3c48695f66728bdfc7}{Index\+Access}}, \mbox{\hyperlink{class_if_aa250d445929a527d0912a5e5f59b336d}{If}}, \mbox{\hyperlink{class_function_parameter_acb04fdfb99118d21820a7e4f352c366c}{Function\+Parameter}}, \mbox{\hyperlink{class_function_ab2ea88a6aa2b9e5827aa47887efe4b72}{Function}}, \mbox{\hyperlink{class_for_ac1985da18cb5cea09844dcaf5967d7e8}{For}}, \mbox{\hyperlink{class_expression_list_aa41fad516e9cf66e2bb221ab0c77648c}{Expression\+List}}, \mbox{\hyperlink{class_call_a91d80828b01c8c0883113fb5479c737b}{Call}}, \mbox{\hyperlink{class_block_a421d575d96dcdec331b6528ba5d6e858}{Block}}, \mbox{\hyperlink{class_binary_expression_ac1d4e81c9b2ac528de2d522afc18f6d7}{Binary\+Expression}}, and \mbox{\hyperlink{class_assignment_a10678aa73cef0d5729c269805b6bce28}{Assignment}}.
+
+\mbox{\Hypertarget{class_abstract_node_ac447b0cc9a1df5ec09c7893e64e3af2f}\label{class_abstract_node_ac447b0cc9a1df5ec09c7893e64e3af2f}} 
+\index{AbstractNode@{AbstractNode}!clone@{clone}}
+\index{clone@{clone}!AbstractNode@{AbstractNode}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ Abstract\+Node\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Clones a node recursively, i.\+e., by including all of its children. Because return-\/type covariance does not work with smart pointers, derived classes are expected to introduce a std\+::unique\+\_\+ptr$<$\+Derived\+Node$>$ \mbox{\hyperlink{class_abstract_node_ac447b0cc9a1df5ec09c7893e64e3af2f}{clone()}} method that hides this (for use with derived class ptrs/refs) \begin{DoxyReturn}{Returns}
+A clone of the node including clones of all of its children. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_node_aa407fbdc74d3d019d75da5e8ae02b701}\label{class_abstract_node_aa407fbdc74d3d019d75da5e8ae02b701}} 
+\index{AbstractNode@{AbstractNode}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!AbstractNode@{AbstractNode}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Abstract\+Node\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Compares two nodes for equality \mbox{\hyperlink{class_for}{For}} efficiency, this currently considers only two exact same objects (i.\+e. same address) to be equal 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false iff this and other are the exact same object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_abstract_node_a756012d0c319f4ac9271f095efaba276}\label{class_abstract_node_a756012d0c319f4ac9271f095efaba276}} 
+\index{AbstractNode@{AbstractNode}!operator==@{operator==}}
+\index{operator==@{operator==}!AbstractNode@{AbstractNode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Abstract\+Node\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Compares two nodes for equality \mbox{\hyperlink{class_for}{For}} efficiency, this currently considers only two exact same objects (i.\+e. same address) to be equal 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff this and other are the exact same object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Abstract\+Node.\+h\item 
+src/ast/Abstract\+Node.\+cpp\end{DoxyCompactItemize}

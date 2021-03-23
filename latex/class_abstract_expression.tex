@@ -1,0 +1,43 @@
+\hypertarget{class_abstract_expression}{}\doxysection{Abstract\+Expression Class Reference}
+\label{class_abstract_expression}\index{AbstractExpression@{AbstractExpression}}
+
+
+This class merely structures the inheritance hierarchy.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Expression.\+h$>$}
+
+Inheritance diagram for Abstract\+Expression\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_abstract_expression}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \mbox{\hyperlink{class_abstract_expression_a842ece70b5cbecc9b35f25138471180f}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent\+\_\+) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class merely structures the inheritance hierarchy. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_abstract_expression_a842ece70b5cbecc9b35f25138471180f}\label{class_abstract_expression_a842ece70b5cbecc9b35f25138471180f}} 
+\index{AbstractExpression@{AbstractExpression}!clone@{clone}}
+\index{clone@{clone}!AbstractExpression@{AbstractExpression}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}}$>$ Abstract\+Expression\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent\+\_\+ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clones a node recursively, i.\+e., by including all of its children. Because return-\/type covariance does not work with smart pointers, derived classes are expected to introduce a std\+::unique\+\_\+ptr$<$\+Derived\+Node$>$ \mbox{\hyperlink{class_abstract_expression_a842ece70b5cbecc9b35f25138471180f}{clone()}} method that hides this (for use with derived class ptrs/refs) \begin{DoxyReturn}{Returns}
+A clone of the node including clones of all of its children. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Abstract\+Expression.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\hypertarget{class_node_iterator}{}\doxysection{Node\+Iterator$<$ T $>$ Class Template Reference}
+\label{class_node_iterator}\index{NodeIterator$<$ T $>$@{NodeIterator$<$ T $>$}}
+
+
+Forward Iterator that redirects all calls to a (polymorphic) \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}} iterator.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Node.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_node_iterator_a0df2b7603f001e2baf8e00e369f56098}\label{class_node_iterator_a0df2b7603f001e2baf8e00e369f56098}} 
+typedef std\+::ptrdiff\+\_\+t {\bfseries difference\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_node_iterator_a03dcd074d71434ebd1958c8e4313230f}\label{class_node_iterator_a03dcd074d71434ebd1958c8e4313230f}} 
+typedef T {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_node_iterator_ae0b24ef75f9553cc39565bf5fda9e692}\label{class_node_iterator_ae0b24ef75f9553cc39565bf5fda9e692}} 
+typedef T $\ast$ {\bfseries pointer}
+\item 
+\mbox{\Hypertarget{class_node_iterator_a265b9a24bb092f307ab038717ce80690}\label{class_node_iterator_a265b9a24bb092f307ab038717ce80690}} 
+typedef T \& {\bfseries reference}
+\item 
+\mbox{\Hypertarget{class_node_iterator_a326b6f29925cc5163dd9071e5248c48a}\label{class_node_iterator_a326b6f29925cc5163dd9071e5248c48a}} 
+typedef std\+::forward\+\_\+iterator\+\_\+tag {\bfseries iterator\+\_\+category}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_node_iterator_a7badeb26e853a0f2445a0626ba77a792}\label{class_node_iterator_a7badeb26e853a0f2445a0626ba77a792}} 
+\mbox{\hyperlink{class_node_iterator_a7badeb26e853a0f2445a0626ba77a792}{Node\+Iterator}} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructed iterator is uninitialized and should not be used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node_iterator_ae6c4171f307ac532a3409eaf619c9eca}{Node\+Iterator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$$>$ impl)
+\item 
+\mbox{\Hypertarget{class_node_iterator_a440f9335584de5b812e84a6a2a1a8360}\label{class_node_iterator_a440f9335584de5b812e84a6a2a1a8360}} 
+\mbox{\hyperlink{class_node_iterator_a440f9335584de5b812e84a6a2a1a8360}{Node\+Iterator}} (const \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_a4a8cab5f8bd19c4529cdef5665667588}\label{class_node_iterator_a4a8cab5f8bd19c4529cdef5665667588}} 
+\mbox{\hyperlink{class_node_iterator_a4a8cab5f8bd19c4529cdef5665667588}{Node\+Iterator}} (\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_abbe99f32f549320c0a4b77a9c891a997}\label{class_node_iterator_abbe99f32f549320c0a4b77a9c891a997}} 
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \& \mbox{\hyperlink{class_node_iterator_abbe99f32f549320c0a4b77a9c891a997}{operator=}} (const \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_ad432400d9e17d4253b7c0f0121ff26d8}\label{class_node_iterator_ad432400d9e17d4253b7c0f0121ff26d8}} 
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \& \mbox{\hyperlink{class_node_iterator_ad432400d9e17d4253b7c0f0121ff26d8}{operator=}} (\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_a260777e020b6e5b49d55ebdbbfdca49b}\label{class_node_iterator_a260777e020b6e5b49d55ebdbbfdca49b}} 
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \& \mbox{\hyperlink{class_node_iterator_a260777e020b6e5b49d55ebdbbfdca49b}{operator++}} ()
+\begin{DoxyCompactList}\small\item\em Pre-\/increment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ T $>$ \mbox{\hyperlink{class_node_iterator_a30589e93d2b021038bdb3627ae0cbb9a}{operator++}} (int) \&
+\item 
+\mbox{\Hypertarget{class_node_iterator_a2354e7d8dbe8b60c7d59f3911c4f7bbe}\label{class_node_iterator_a2354e7d8dbe8b60c7d59f3911c4f7bbe}} 
+bool \mbox{\hyperlink{class_node_iterator_a2354e7d8dbe8b60c7d59f3911c4f7bbe}{operator==}} (const \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_a40979aeb6daeaf96a25fc8cb6998604f}\label{class_node_iterator_a40979aeb6daeaf96a25fc8cb6998604f}} 
+bool \mbox{\hyperlink{class_node_iterator_a40979aeb6daeaf96a25fc8cb6998604f}{operator!=}} (const \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} \&other) const
+\begin{DoxyCompactList}\small\item\em Inequality. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_a6802b9ae14e734b32f1ed70ac89acf68}\label{class_node_iterator_a6802b9ae14e734b32f1ed70ac89acf68}} 
+T \& \mbox{\hyperlink{class_node_iterator_a6802b9ae14e734b32f1ed70ac89acf68}{operator$\ast$}} ()
+\begin{DoxyCompactList}\small\item\em Dereference. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_node_iterator_a3edd33037b8c23f025a8b906f5aad732}\label{class_node_iterator_a3edd33037b8c23f025a8b906f5aad732}} 
+T $\ast$ \mbox{\hyperlink{class_node_iterator_a3edd33037b8c23f025a8b906f5aad732}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em Arrow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Node\+Iterator$<$ T $>$}
+
+Forward Iterator that redirects all calls to a (polymorphic) \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}} iterator. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_node_iterator_ae6c4171f307ac532a3409eaf619c9eca}\label{class_node_iterator_ae6c4171f307ac532a3409eaf619c9eca}} 
+\index{NodeIterator$<$ T $>$@{NodeIterator$<$ T $>$}!NodeIterator@{NodeIterator}}
+\index{NodeIterator@{NodeIterator}!NodeIterator$<$ T $>$@{NodeIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NodeIterator()}{NodeIterator()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ T $>$\+::\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$$>$}]{impl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Create a \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}} Wrapper from an Iterator\+Impl, taking ownership of the Impl 
+\begin{DoxyParams}{Parameters}
+{\em impl} & Pointer to an Iterator\+Impl \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_iterator_a30589e93d2b021038bdb3627ae0cbb9a}\label{class_node_iterator_a30589e93d2b021038bdb3627ae0cbb9a}} 
+\index{NodeIterator$<$ T $>$@{NodeIterator$<$ T $>$}!operator++@{operator++}}
+\index{operator++@{operator++}!NodeIterator$<$ T $>$@{NodeIterator$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$T$>$ \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ T $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption}) \&\hspace{0.3cm}{\ttfamily [inline]}}
+
+Post-\/increment l-\/value ref-\/qualified because of \href{https://stackoverflow.com/questions/52871026/overloaded-operator-returns-a-non-const-and-clang-tidy-complains}{\texttt{ https\+://stackoverflow.\+com/questions/52871026/overloaded-\/operator-\/returns-\/a-\/non-\/const-\/and-\/clang-\/tidy-\/complains}} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Abstract\+Node.\+h\end{DoxyCompactItemize}

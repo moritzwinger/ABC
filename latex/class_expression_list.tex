@@ -1,0 +1,262 @@
+\hypertarget{class_expression_list}{}\doxysection{Expression\+List Class Reference}
+\label{class_expression_list}\index{ExpressionList@{ExpressionList}}
+
+
+{\ttfamily \#include $<$Expression\+List.\+h$>$}
+
+Inheritance diagram for Expression\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_expression_list}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_expression_list_a801ec2f2702ccba8751cd2abc438f9f3}\label{class_expression_list_a801ec2f2702ccba8751cd2abc438f9f3}} 
+\mbox{\hyperlink{class_expression_list_a801ec2f2702ccba8751cd2abc438f9f3}{$\sim$\+Expression\+List}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_expression_list_a4f15f864452f762ddd7624bbe04c0448}{Expression\+List}} (std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$$>$ \&\&expressions)
+\item 
+\mbox{\hyperlink{class_expression_list_a8adfa61711afca6c3d920d7fd7034c3a}{Expression\+List}} (const \mbox{\hyperlink{class_expression_list}{Expression\+List}} \&other)
+\item 
+\mbox{\hyperlink{class_expression_list_a1306d5c35fe82a883c2619ea725c853d}{Expression\+List}} (\mbox{\hyperlink{class_expression_list}{Expression\+List}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_expression_list}{Expression\+List}} \& \mbox{\hyperlink{class_expression_list_a526ac25949f41c3e910ed93f5c7f584a}{operator=}} (const \mbox{\hyperlink{class_expression_list}{Expression\+List}} \&other)
+\item 
+\mbox{\hyperlink{class_expression_list}{Expression\+List}} \& \mbox{\hyperlink{class_expression_list_a309d18c6bbed42d74dd8f3e5de91df05}{operator=}} (\mbox{\hyperlink{class_expression_list}{Expression\+List}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_expression_list}{Expression\+List}} $>$ \mbox{\hyperlink{class_expression_list_ae94f8b473a9135af1bf178b25e8641f3}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+\mbox{\Hypertarget{class_expression_list_ae9931a5d82df54ab76343901947d39ea}\label{class_expression_list_ae9931a5d82df54ab76343901947d39ea}} 
+bool \mbox{\hyperlink{class_expression_list_ae9931a5d82df54ab76343901947d39ea}{has\+Null\+Expressions}} ()
+\begin{DoxyCompactList}\small\item\em Does the current \mbox{\hyperlink{class_expression_list}{Expression\+List}} contain null expressions? \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ \mbox{\hyperlink{class_expression_list_a2e9b900eda3d71efc997547cceaf8230}{get\+Expressions}} ()
+\item 
+std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ \mbox{\hyperlink{class_expression_list_ae0e410b0e89791cf4ed6436c65652356}{get\+Expressions}} () const
+\item 
+void \mbox{\hyperlink{class_expression_list_a3baaafa8b7b418ed076bb6a7e91e1b6d}{append\+Expression}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ expression)
+\item 
+void \mbox{\hyperlink{class_expression_list_a8f4c8a9b07df7282e2bc0f0b74f23518}{prepend\+Expression}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ expression)
+\item 
+\mbox{\Hypertarget{class_expression_list_ac61f7f1660da540c582b3fac789d260d}\label{class_expression_list_ac61f7f1660da540c582b3fac789d260d}} 
+void \mbox{\hyperlink{class_expression_list_ac61f7f1660da540c582b3fac789d260d}{remove\+Null\+Expressions}} ()
+\begin{DoxyCompactList}\small\item\em Removes any potential nullptrs from the expressions vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_expression_list_aa41fad516e9cf66e2bb221ab0c77648c}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_expression_list_a044d25c094e453450d2682a083e0f335}\label{class_expression_list_a044d25c094e453450d2682a083e0f335}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_expression_list_a044d25c094e453450d2682a083e0f335}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_expression_list_a7550fba2047ab4885eecbffdb230e41c}\label{class_expression_list_a7550fba2047ab4885eecbffdb230e41c}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_expression_list_a7550fba2047ab4885eecbffdb230e41c}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_expression_list_a8cbaa5b5035886086e7f0ec6b6c8924e}\label{class_expression_list_a8cbaa5b5035886086e7f0ec6b6c8924e}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_expression_list_a8cbaa5b5035886086e7f0ec6b6c8924e}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_expression_list_a5e473668b577d7106d97cc503841f2af}\label{class_expression_list_a5e473668b577d7106d97cc503841f2af}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_expression_list_a5e473668b577d7106d97cc503841f2af}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_expression_list_aab9f2655efa8a552ce452689d27cf061}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_expression_list_a7f2eecd1d2bbb23949bd067a2cdd3f7a}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_expression_list_afbb9e4dd1d5d6935cfd9f121350c8a99}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_expression_list_a166ea4d3ed14c425215d5ccd1cf6b722}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{class_expression_list}{Expression\+List}} is an order list of (potentially null) expressions. However, more specifically, it\textquotesingle{}s intended to be a rough equivalent to the \{a,b,c\} notation in C++ Note that this is NOT a target (lvalue) but instead an rvalue So we could assign an \mbox{\hyperlink{class_expression_list}{Expression\+List}} into a \mbox{\hyperlink{class_variable}{Variable}} using a Variable\+Assignment And this would turn the \mbox{\hyperlink{class_variable}{Variable}} into a vector-\/valued \mbox{\hyperlink{class_variable}{Variable}} However, we cannot assign something to an \mbox{\hyperlink{class_expression_list}{Expression\+List}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_expression_list_a4f15f864452f762ddd7624bbe04c0448}\label{class_expression_list_a4f15f864452f762ddd7624bbe04c0448}} 
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{ExpressionList()}{ExpressionList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Expression\+List\+::\+Expression\+List (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$$>$ \&\&}]{expressions }\end{DoxyParamCaption})}
+
+Create a List of Expressions from a vector of expressions 
+\begin{DoxyParams}{Parameters}
+{\em expressions} & Expressions for this expression (the \mbox{\hyperlink{class_expression_list}{Expression\+List}} will take ownership) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_expression_list_a8adfa61711afca6c3d920d7fd7034c3a}\label{class_expression_list_a8adfa61711afca6c3d920d7fd7034c3a}} 
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{ExpressionList()}{ExpressionList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Expression\+List\+::\+Expression\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expression_list}{Expression\+List}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_expression_list}{Expression\+List}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_expression_list_a1306d5c35fe82a883c2619ea725c853d}\label{class_expression_list_a1306d5c35fe82a883c2619ea725c853d}} 
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\index{ExpressionList@{ExpressionList}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{ExpressionList()}{ExpressionList()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Expression\+List\+::\+Expression\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expression_list}{Expression\+List}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_expression_list}{Expression\+List}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_expression_list_aa41fad516e9cf66e2bb221ab0c77648c}\label{class_expression_list_aa41fad516e9cf66e2bb221ab0c77648c}} 
+\index{ExpressionList@{ExpressionList}!accept@{accept}}
+\index{accept@{accept}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Expression\+List\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_expression_list_a3baaafa8b7b418ed076bb6a7e91e1b6d}\label{class_expression_list_a3baaafa8b7b418ed076bb6a7e91e1b6d}} 
+\index{ExpressionList@{ExpressionList}!appendExpression@{appendExpression}}
+\index{appendExpression@{appendExpression}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{appendExpression()}{appendExpression()}}
+{\footnotesize\ttfamily void Expression\+List\+::append\+Expression (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{expression }\end{DoxyParamCaption})}
+
+Add an expression as the last expression 
+\begin{DoxyParams}{Parameters}
+{\em expression} & Expression to be appended, \mbox{\hyperlink{class_expression_list}{Expression\+List}} will take ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_expression_list_ae94f8b473a9135af1bf178b25e8641f3}\label{class_expression_list_ae94f8b473a9135af1bf178b25e8641f3}} 
+\index{ExpressionList@{ExpressionList}!clone@{clone}}
+\index{clone@{clone}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_expression_list}{Expression\+List}} $>$ Expression\+List\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_expression_list_aab9f2655efa8a552ce452689d27cf061}\label{class_expression_list_aab9f2655efa8a552ce452689d27cf061}} 
+\index{ExpressionList@{ExpressionList}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t Expression\+List\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_expression_list_a2e9b900eda3d71efc997547cceaf8230}\label{class_expression_list_a2e9b900eda3d71efc997547cceaf8230}} 
+\index{ExpressionList@{ExpressionList}!getExpressions@{getExpressions}}
+\index{getExpressions@{getExpressions}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{getExpressions()}{getExpressions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ Expression\+List\+::get\+Expressions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get (a vector of references to) all (non-\/null) expressions Since std\+::vector cannot directly handle references, a wrapper is used, but this can be used exactly like std\+::vector$<$\+Abstract\+Statement\&$>$ could, if it were possible \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_expression_list}{Expression\+List}} of (references to) all non-\/null expressions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_expression_list_ae0e410b0e89791cf4ed6436c65652356}\label{class_expression_list_ae0e410b0e89791cf4ed6436c65652356}} 
+\index{ExpressionList@{ExpressionList}!getExpressions@{getExpressions}}
+\index{getExpressions@{getExpressions}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{getExpressions()}{getExpressions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ $>$ Expression\+List\+::get\+Expressions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get (a vector of references to) all (non-\/null) expressions Since std\+::vector cannot directly handle references, a wrapper is used, but this can be used exactly like std\+::vector$<$\+Abstract\+Statement\&$>$ could, if it were possible \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_expression_list}{Expression\+List}} of (const references to) all non-\/null expressions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_expression_list_a166ea4d3ed14c425215d5ccd1cf6b722}\label{class_expression_list_a166ea4d3ed14c425215d5ccd1cf6b722}} 
+\index{ExpressionList@{ExpressionList}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string Expression\+List\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_expression_list_a526ac25949f41c3e910ed93f5c7f584a}\label{class_expression_list_a526ac25949f41c3e910ed93f5c7f584a}} 
+\index{ExpressionList@{ExpressionList}!operator=@{operator=}}
+\index{operator=@{operator=}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_expression_list}{Expression\+List}} \& Expression\+List\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_expression_list}{Expression\+List}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_expression_list}{Expression\+List}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_expression_list_a309d18c6bbed42d74dd8f3e5de91df05}\label{class_expression_list_a309d18c6bbed42d74dd8f3e5de91df05}} 
+\index{ExpressionList@{ExpressionList}!operator=@{operator=}}
+\index{operator=@{operator=}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_expression_list}{Expression\+List}} \& Expression\+List\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_expression_list}{Expression\+List}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_expression_list}{Expression\+List}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_expression_list_a8f4c8a9b07df7282e2bc0f0b74f23518}\label{class_expression_list_a8f4c8a9b07df7282e2bc0f0b74f23518}} 
+\index{ExpressionList@{ExpressionList}!prependExpression@{prependExpression}}
+\index{prependExpression@{prependExpression}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{prependExpression()}{prependExpression()}}
+{\footnotesize\ttfamily void Expression\+List\+::prepend\+Expression (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{expression }\end{DoxyParamCaption})}
+
+Add an expression as the first expression 
+\begin{DoxyParams}{Parameters}
+{\em expression} & Expression to be prepended, \mbox{\hyperlink{class_expression_list}{Expression\+List}} will take ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_expression_list_a7f2eecd1d2bbb23949bd067a2cdd3f7a}\label{class_expression_list_a7f2eecd1d2bbb23949bd067a2cdd3f7a}} 
+\index{ExpressionList@{ExpressionList}!toJson@{toJson}}
+\index{toJson@{toJson}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json Expression\+List\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_expression_list_afbb9e4dd1d5d6935cfd9f121350c8a99}\label{class_expression_list_afbb9e4dd1d5d6935cfd9f121350c8a99}} 
+\index{ExpressionList@{ExpressionList}!toString@{toString}}
+\index{toString@{toString}!ExpressionList@{ExpressionList}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Expression\+List\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Expression\+List.\+h\item 
+src/ast/Expression\+List.\+cpp\end{DoxyCompactItemize}

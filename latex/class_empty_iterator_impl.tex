@@ -1,0 +1,47 @@
+\hypertarget{class_empty_iterator_impl}{}\doxysection{Empty\+Iterator\+Impl$<$ T $>$ Class Template Reference}
+\label{class_empty_iterator_impl}\index{EmptyIteratorImpl$<$ T $>$@{EmptyIteratorImpl$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Abstract\+Node.\+h$>$}
+
+Inheritance diagram for Empty\+Iterator\+Impl$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_empty_iterator_impl}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a59db7947339aa63a1f7d8abcae910361}\label{class_empty_iterator_impl_a59db7947339aa63a1f7d8abcae910361}} 
+{\bfseries Empty\+Iterator\+Impl} (T \&node)
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a827d1d9bbc56fae3fa7c8e15c901f397}\label{class_empty_iterator_impl_a827d1d9bbc56fae3fa7c8e15c901f397}} 
+const T \& {\bfseries get\+Node} () const override
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a003cf479acf16b5b5fdc8540e5e5e688}\label{class_empty_iterator_impl_a003cf479acf16b5b5fdc8540e5e5e688}} 
+T \& {\bfseries get\+Node} () override
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_ab49a0ba77ec0d0947f7fcc6e00348914}\label{class_empty_iterator_impl_ab49a0ba77ec0d0947f7fcc6e00348914}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$ $>$ {\bfseries clone} () override
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a86d27d58dc1d3804cc339cb790d5b53b}\label{class_empty_iterator_impl_a86d27d58dc1d3804cc339cb790d5b53b}} 
+void {\bfseries increment} () override
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a463fc8a5294bb6d63b4844f6a4a8b6fc}\label{class_empty_iterator_impl_a463fc8a5294bb6d63b4844f6a4a8b6fc}} 
+bool {\bfseries equal} (const \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$ \&other) override
+\item 
+\mbox{\Hypertarget{class_empty_iterator_impl_a9b88bca6b91ba87f3e8124fc77361154}\label{class_empty_iterator_impl_a9b88bca6b91ba87f3e8124fc77361154}} 
+T \& {\bfseries operator$\ast$} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Empty\+Iterator\+Impl$<$ T $>$}
+
+\mbox{\hyperlink{class_empty_iterator_impl}{Empty\+Iterator\+Impl}} is a \char`\"{}dummy\char`\"{} iterator that can be used for node classes that do not have children Any two \mbox{\hyperlink{class_empty_iterator_impl}{Empty\+Iterator\+Impl}} for the same node will always be equal, i.\+e begin() == end() if used for begin/end 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Abstract\+Node.\+h\end{DoxyCompactItemize}

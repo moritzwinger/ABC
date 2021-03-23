@@ -1,0 +1,108 @@
+\hypertarget{group___d_a_g}{}\doxysection{Methods for handling parent/child relationship}
+\label{group___d_a_g}\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}\label{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}} 
+typedef \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{Abstract\+Node\+::iterator}}
+\begin{DoxyCompactList}\small\item\em Forward Iterator through Nodes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}\label{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}} 
+typedef \mbox{\hyperlink{class_node_iterator}{Node\+Iterator}}$<$ const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $>$ \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{Abstract\+Node\+::const\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em Const Forward Iterator through Nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___d_a_g_ga78701a0642b6bf9b58c615e83bd0d10a}\label{group___d_a_g_ga78701a0642b6bf9b58c615e83bd0d10a}} 
+virtual \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{group___d_a_g_ga78701a0642b6bf9b58c615e83bd0d10a}{Abstract\+Node\+::begin}} ()=0
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___d_a_g_ga87ef2c5c65cac9bf868298df39dc8613}\label{group___d_a_g_ga87ef2c5c65cac9bf868298df39dc8613}} 
+virtual \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{group___d_a_g_ga87ef2c5c65cac9bf868298df39dc8613}{Abstract\+Node\+::begin}} () const =0
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___d_a_g_gafd6ae8c0ed5552ec37fd83703a117118}\label{group___d_a_g_gafd6ae8c0ed5552ec37fd83703a117118}} 
+virtual \mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{group___d_a_g_gafd6ae8c0ed5552ec37fd83703a117118}{Abstract\+Node\+::end}} ()=0
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___d_a_g_ga9c815a4f2452e4294d6fdcdd2542535b}\label{group___d_a_g_ga9c815a4f2452e4294d6fdcdd2542535b}} 
+virtual \mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{group___d_a_g_ga9c815a4f2452e4294d6fdcdd2542535b}{Abstract\+Node\+::end}} () const =0
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node\+::count\+Children}} () const =0
+\item 
+bool \mbox{\hyperlink{group___d_a_g_gaccb709a7ddc8e75788b44fbd0801d8de}{Abstract\+Node\+::has\+Parent}} () const
+\item 
+\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& \mbox{\hyperlink{group___d_a_g_gaac40fc6193eae6c432d79ab09d5896a3}{Abstract\+Node\+::get\+Parent}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& \mbox{\hyperlink{group___d_a_g_gaf7c1b9376d52444e772b9764e5baaf2d}{Abstract\+Node\+::get\+Parent}} () const
+\item 
+void \mbox{\hyperlink{group___d_a_g_ga7d07d5bf1e0a7f1e87a42be354e12026}{Abstract\+Node\+::set\+Parent}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&new\+Parent)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}\label{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}} 
+\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily virtual size\+\_\+t Abstract\+Node\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_variable_declaration_a57ea91998579f236ecc20b97b5e36d56}{Variable\+Declaration}}, \mbox{\hyperlink{class_variable_a65f69eca1cf938c615ee8151839f1c1f}{Variable}}, \mbox{\hyperlink{class_unary_expression_af357e1c0e0e89fbe96e2598371774546}{Unary\+Expression}}, \mbox{\hyperlink{class_ternary_operator_ae4aceb7c7f08ef1fa67096c21181caea}{Ternary\+Operator}}, \mbox{\hyperlink{class_return_a47fee52595c2b96a0fd8d97a25e4e311}{Return}}, \mbox{\hyperlink{class_operator_expression_a1797a1f63be237305dbf5ad323dd6eb3}{Operator\+Expression}}, \mbox{\hyperlink{class_literal_a96f6dad6dbc5a764aea4fd9a7f036c89}{Literal$<$ T $>$}}, \mbox{\hyperlink{class_index_access_a9aa98ee8753539077bc7eccc448e118f}{Index\+Access}}, \mbox{\hyperlink{class_if_ab482a3385b289ff535e0707721306e2d}{If}}, \mbox{\hyperlink{class_function_parameter_a9c8313aa756a4e08d700fd6480991233}{Function\+Parameter}}, \mbox{\hyperlink{class_function_a7a343da552d6b35246f53bdf4a28aa91}{Function}}, \mbox{\hyperlink{class_for_afb399b76fe82e21ae2ba40caed393159}{For}}, \mbox{\hyperlink{class_expression_list_aab9f2655efa8a552ce452689d27cf061}{Expression\+List}}, \mbox{\hyperlink{class_call_affe4deee86cd9b8f15cc7f67cb57d946}{Call}}, \mbox{\hyperlink{class_block_a6a578114c4905955bfb38b1fd511645e}{Block}}, \mbox{\hyperlink{class_binary_expression_a529d2185bd68bc1720a35633ecc58420}{Binary\+Expression}}, and \mbox{\hyperlink{class_assignment_af49cd37ffd4a3b2ae5e442b07c9aa499}{Assignment}}.
+
+\mbox{\Hypertarget{group___d_a_g_gaac40fc6193eae6c432d79ab09d5896a3}\label{group___d_a_g_gaac40fc6193eae6c432d79ab09d5896a3}} 
+\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}!getParent@{getParent}}
+\index{getParent@{getParent}!Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& Abstract\+Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns a pointer to the only parent node. \begin{DoxyReturn}{Returns}
+A pointer to the node\textquotesingle{}s parent node. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the node has no parent \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{group___d_a_g_gaf7c1b9376d52444e772b9764e5baaf2d}\label{group___d_a_g_gaf7c1b9376d52444e772b9764e5baaf2d}} 
+\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}!getParent@{getParent}}
+\index{getParent@{getParent}!Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \& Abstract\+Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a pointer to the only parent node. \begin{DoxyReturn}{Returns}
+A pointer to the node\textquotesingle{}s parent node. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the node has no parent \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{group___d_a_g_gaccb709a7ddc8e75788b44fbd0801d8de}\label{group___d_a_g_gaccb709a7ddc8e75788b44fbd0801d8de}} 
+\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}!hasParent@{hasParent}}
+\index{hasParent@{hasParent}!Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsubsection{\texorpdfstring{hasParent()}{hasParent()}}
+{\footnotesize\ttfamily bool Abstract\+Node\+::has\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether this node has a parent set \begin{DoxyReturn}{Returns}
+True if this node has a parent, otherwise returns False. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___d_a_g_ga7d07d5bf1e0a7f1e87a42be354e12026}\label{group___d_a_g_ga7d07d5bf1e0a7f1e87a42be354e12026}} 
+\index{Methods for handling parent/child relationship@{Methods for handling parent/child relationship}!setParent@{setParent}}
+\index{setParent@{setParent}!Methods for handling parent/child relationship@{Methods for handling parent/child relationship}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void Abstract\+Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{new\+Parent }\end{DoxyParamCaption})}
+
+Set the parent of this node. Derived classes must ensure that a node\textquotesingle{}s parent has the node as its child! This is also why this function does not take a const \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}}\& parameter Because one should not call this on a node that one isn\textquotesingle{}t also modifying by adding this node as a child 
+\begin{DoxyParams}{Parameters}
+{\em new\+Parent} & The new parent \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::logic\+\_\+error} & if this node already has a parent \\
+\hline
+\end{DoxyExceptions}

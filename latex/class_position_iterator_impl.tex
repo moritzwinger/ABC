@@ -1,0 +1,65 @@
+\hypertarget{class_position_iterator_impl}{}\doxysection{Position\+Iterator\+Impl$<$ T, Node\+Type $>$ Class Template Reference}
+\label{class_position_iterator_impl}\index{PositionIteratorImpl$<$ T, NodeType $>$@{PositionIteratorImpl$<$ T, NodeType $>$}}
+
+
+{\ttfamily \#include $<$Abstract\+Node.\+h$>$}
+
+Inheritance diagram for Position\+Iterator\+Impl$<$ T, Node\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_position_iterator_impl}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_a0398efba9dd4d669399106ff9e22cbd3}\label{class_position_iterator_impl_a0398efba9dd4d669399106ff9e22cbd3}} 
+{\bfseries Position\+Iterator\+Impl} (N \&\mbox{\hyperlink{class_position_iterator_impl_a1d30b1749fbba04d322988d5845adc61}{node}}, size\+\_\+t \mbox{\hyperlink{class_position_iterator_impl_a3868fd37d7a19f31af2adf9219013fe5}{position}})
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_ad228c9e0bfb06fbffbe41e105f2a2a7f}\label{class_position_iterator_impl_ad228c9e0bfb06fbffbe41e105f2a2a7f}} 
+void {\bfseries increment} () override
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_ab0f4597144a9219aaeabc7cac166c53a}\label{class_position_iterator_impl_ab0f4597144a9219aaeabc7cac166c53a}} 
+bool {\bfseries equal} (const \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$ \&other) override
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_aded057ddc3d7ee9ebc78a8185fb37bb4}\label{class_position_iterator_impl_aded057ddc3d7ee9ebc78a8185fb37bb4}} 
+T \& {\bfseries operator$\ast$} () override=0
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_a392b4a9380ba76e2921d4fbe5cd3136c}\label{class_position_iterator_impl_a392b4a9380ba76e2921d4fbe5cd3136c}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_base_iterator_impl}{Base\+Iterator\+Impl}}$<$ T $>$ $>$ {\bfseries clone} () override=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_a2638d03b9bbdac46c530077cda15cbd1}\label{class_position_iterator_impl_a2638d03b9bbdac46c530077cda15cbd1}} 
+typedef std\+::conditional$<$ std\+::is\+\_\+const$<$ T $>$\+::value, const Node\+Type, Node\+Type $>$\+::type {\bfseries N}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_acc8dde312f2f33003a11a94a72ec7e40}\label{class_position_iterator_impl_acc8dde312f2f33003a11a94a72ec7e40}} 
+T \& {\bfseries get\+Node} () override
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_ac8e84bb05de808169d8b045e37418c1a}\label{class_position_iterator_impl_ac8e84bb05de808169d8b045e37418c1a}} 
+const T \& {\bfseries get\+Node} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_position_iterator_impl_a1d30b1749fbba04d322988d5845adc61}\label{class_position_iterator_impl_a1d30b1749fbba04d322988d5845adc61}} 
+N \& \mbox{\hyperlink{class_position_iterator_impl_a1d30b1749fbba04d322988d5845adc61}{node}}
+\begin{DoxyCompactList}\small\item\em The node object that this iterator belongs to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_position_iterator_impl_a3868fd37d7a19f31af2adf9219013fe5}\label{class_position_iterator_impl_a3868fd37d7a19f31af2adf9219013fe5}} 
+size\+\_\+t \mbox{\hyperlink{class_position_iterator_impl_a3868fd37d7a19f31af2adf9219013fe5}{position}} = 0
+\begin{DoxyCompactList}\small\item\em Indicates the current position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Node\+Type$>$\newline
+class Position\+Iterator\+Impl$<$ T, Node\+Type $>$}
+
+\mbox{\hyperlink{class_position_iterator_impl}{Position\+Iterator\+Impl}} is a \char`\"{}default\char`\"{} iterator that can be used as a base class for iterators for node classes that have a fixed number of children held as named member variables. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Abstract\+Node.\+h\end{DoxyCompactItemize}

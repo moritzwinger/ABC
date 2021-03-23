@@ -1,0 +1,56 @@
+\hypertarget{class_operator}{}\doxysection{Operator Class Reference}
+\label{class_operator}\index{Operator@{Operator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_operator_a2a242232d0cf189982f531c217cd7a8c}\label{class_operator_a2a242232d0cf189982f531c217cd7a8c}} 
+{\bfseries Operator} (Operator\+Variant op)
+\item 
+\mbox{\Hypertarget{class_operator_a7235102cbb679101b2de3f6aed2a4187}\label{class_operator_a7235102cbb679101b2de3f6aed2a4187}} 
+bool {\bfseries is\+Right\+Associative} () const
+\item 
+\mbox{\Hypertarget{class_operator_a163ce32c1e58f7b5f229c0a57b4ba324}\label{class_operator_a163ce32c1e58f7b5f229c0a57b4ba324}} 
+bool {\bfseries is\+Unary} () const
+\item 
+\mbox{\Hypertarget{class_operator_a1435d6f3e2a59797bc1cef4c8efb9698}\label{class_operator_a1435d6f3e2a59797bc1cef4c8efb9698}} 
+std\+::string {\bfseries to\+String} () const
+\item 
+\mbox{\Hypertarget{class_operator_a7a0823c8b5bd34008fc2eb486b25df80}\label{class_operator_a7a0823c8b5bd34008fc2eb486b25df80}} 
+bool {\bfseries is\+Commutative} () const
+\item 
+\mbox{\Hypertarget{class_operator_a655030181bce69ccb7fbd5174a936ed6}\label{class_operator_a655030181bce69ccb7fbd5174a936ed6}} 
+bool {\bfseries is\+Relational\+Operator} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_operator_ad449699e90aa5ac1d3e0c2cd426a8ce1}{compare\+Precedence}} (const \mbox{\hyperlink{class_operator}{Operator}} \&op1, const \mbox{\hyperlink{class_operator}{Operator}} \&op2)
+\item 
+\mbox{\Hypertarget{class_operator_ac4baf6eb6c36e415519bcb227bcb0654}\label{class_operator_ac4baf6eb6c36e415519bcb227bcb0654}} 
+bool \mbox{\hyperlink{class_operator_ac4baf6eb6c36e415519bcb227bcb0654}{operator==}} (const \mbox{\hyperlink{class_operator}{Operator}} \&op1, const \mbox{\hyperlink{class_operator}{Operator}} \&op2)
+\begin{DoxyCompactList}\small\item\em Compares two Operators for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_operator_ad449699e90aa5ac1d3e0c2cd426a8ce1}\label{class_operator_ad449699e90aa5ac1d3e0c2cd426a8ce1}} 
+\index{Operator@{Operator}!comparePrecedence@{comparePrecedence}}
+\index{comparePrecedence@{comparePrecedence}!Operator@{Operator}}
+\doxysubsubsection{\texorpdfstring{comparePrecedence}{comparePrecedence}}
+{\footnotesize\ttfamily int compare\+Precedence (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_operator}{Operator}} \&}]{op1,  }\item[{const \mbox{\hyperlink{class_operator}{Operator}} \&}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Compares the precedence of this operator against another operator. 
+\begin{DoxyParams}{Parameters}
+{\em op1} & First operator \\
+\hline
+{\em op2} & Second operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if op1 is of lower precedence, 1 if it\textquotesingle{}s of greater precedence, and 0 if they\textquotesingle{}re of equal precedence. \mbox{\hyperlink{class_if}{If}} two operators are of equal precedence, right associativity and parenthetical groupings must be used to determine precedence instead. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/utilities/Operator.\+h\item 
+src/utilities/Operator.\+cpp\end{DoxyCompactItemize}

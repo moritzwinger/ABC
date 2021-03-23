@@ -1,0 +1,431 @@
+\hypertarget{class_for}{}\doxysection{For Class Reference}
+\label{class_for}\index{For@{For}}
+Inheritance diagram for For\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_for}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_for_a39c7c57cdbe3e5f95176bf993b59c5b8}\label{class_for_a39c7c57cdbe3e5f95176bf993b59c5b8}} 
+\mbox{\hyperlink{class_for_a39c7c57cdbe3e5f95176bf993b59c5b8}{$\sim$\+For}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_for_aa7390156054b55eddeb30b1fade03898}{For}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ initializer, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ condition, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ update, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ body)
+\item 
+\mbox{\hyperlink{class_for_ae0f7d7799b51324e87dd86430ecf5409}{For}} (const \mbox{\hyperlink{class_for}{For}} \&other)
+\item 
+\mbox{\hyperlink{class_for_a9c3b1050c5bd1f4a9e6ed5ad1a87cce9}{For}} (\mbox{\hyperlink{class_for}{For}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_for}{For}} \& \mbox{\hyperlink{class_for_a19b86f7b1d1eb1ed3688b70a13a9f1d3}{operator=}} (const \mbox{\hyperlink{class_for}{For}} \&other)
+\item 
+\mbox{\hyperlink{class_for}{For}} \& \mbox{\hyperlink{class_for_a4dda7a060d523e948c8f7ebe605ba33a}{operator=}} (\mbox{\hyperlink{class_for}{For}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_for}{For}} $>$ \mbox{\hyperlink{class_for_adf1c9789910d342e04c22a7c0d47397e}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_for_a708b3b71683fb96584c6739a8d0a35c7}{has\+Initializer}} () const
+\item 
+bool \mbox{\hyperlink{class_for_a79e1fdc4a1af5658c61c114e7d37fa0f}{has\+Condition}} () const
+\item 
+bool \mbox{\hyperlink{class_for_a24825186b5bb919157efe5fa0acc445f}{has\+Update}} () const
+\item 
+bool \mbox{\hyperlink{class_for_ac304771e87b8e60a610ee894e0823a10}{has\+Body}} () const
+\item 
+\mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_a3a89ac4aca9c481bd0f8f4b8408f7990}{get\+Initializer}} ()
+\item 
+const \mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_a07f055fdb74fc7f2237b839bbb3d9256}{get\+Initializer}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_for_ae4db2c73fa23c3cd3705f4cbf96e356e}{get\+Condition}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_for_aad4d75bcba1edc4aaad3b926a8bba1fd}{get\+Condition}} () const
+\item 
+\mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_a32713390f79b3995eed0274dacffc0a9}{get\+Update}} ()
+\item 
+const \mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_aaa9f183db07f223ddb711c3f71fe4d6e}{get\+Update}} () const
+\item 
+\mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_aa9906ed1d7e3ad74db873f636a0c9ed0}{get\+Body}} ()
+\item 
+const \mbox{\hyperlink{class_block}{Block}} \& \mbox{\hyperlink{class_for_a9647ae31d2341f99ba31886007ca55a5}{get\+Body}} () const
+\item 
+void \mbox{\hyperlink{class_for_a0e27ad114f530ffcaf5bb84064d37241}{set\+Initializer}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ new\+Initializer)
+\item 
+void \mbox{\hyperlink{class_for_a41a16b5b3610ed76059d15e298d30013}{set\+Condition}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ new\+Condition)
+\item 
+void \mbox{\hyperlink{class_for_adb6da49c6c23a742358797637a2f4adf}{set\+Update}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ new\+Update)
+\item 
+void \mbox{\hyperlink{class_for_a80ab813c1956e47bfa9af1d109104cc1}{set\+Body}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$ new\+Body)
+\item 
+void \mbox{\hyperlink{class_for_ac1985da18cb5cea09844dcaf5967d7e8}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_for_aa66de7394951ef8d3e0ef786bd2ce562}\label{class_for_aa66de7394951ef8d3e0ef786bd2ce562}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_for_aa66de7394951ef8d3e0ef786bd2ce562}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_for_a1b2e37ab05cc7e40ca3d2cc1c31f04bf}\label{class_for_a1b2e37ab05cc7e40ca3d2cc1c31f04bf}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_for_a1b2e37ab05cc7e40ca3d2cc1c31f04bf}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_for_a549f753ceb43975891f44502fa4d64b8}\label{class_for_a549f753ceb43975891f44502fa4d64b8}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_for_a549f753ceb43975891f44502fa4d64b8}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_for_ac53ca8c469a5c419b0a83cbac32d269a}\label{class_for_ac53ca8c469a5c419b0a83cbac32d269a}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_for_ac53ca8c469a5c419b0a83cbac32d269a}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_for_afb399b76fe82e21ae2ba40caed393159}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_for_a35244f9ed0d6689a0cff93aff54ba76b}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_for_a32cfa5cded4c0ba91e24b8607a85705b}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_for_a30fa9a5a99952989e54e16cd702f1283}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_for_aa7390156054b55eddeb30b1fade03898}\label{class_for_aa7390156054b55eddeb30b1fade03898}} 
+\index{For@{For}!For@{For}}
+\index{For@{For}!For@{For}}
+\doxysubsubsection{\texorpdfstring{For()}{For()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily For\+::\+For (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{initializer,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{condition,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{update,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{body }\end{DoxyParamCaption})}
+
+Create an \mbox{\hyperlink{class_for}{For}} statement with initializer, condition, update and body 
+\begin{DoxyParams}{Parameters}
+{\em initializer} & Any \mbox{\hyperlink{class_block}{Block}} of statements, usually setting up loop variables (e.\+g. int i = 0;) \\
+\hline
+{\em condition} & Should evaluate to a boolean value. Loop continues until condition is false \\
+\hline
+{\em update} & Any \mbox{\hyperlink{class_block}{Block}} of statements to be run after each loop iteration (e.\+g. ++i) \\
+\hline
+{\em body} & Any \mbox{\hyperlink{class_block}{Block}} of statements, to be executed in each loop iteration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_ae0f7d7799b51324e87dd86430ecf5409}\label{class_for_ae0f7d7799b51324e87dd86430ecf5409}} 
+\index{For@{For}!For@{For}}
+\index{For@{For}!For@{For}}
+\doxysubsubsection{\texorpdfstring{For()}{For()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily For\+::\+For (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_for}{For}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_for}{For}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_a9c3b1050c5bd1f4a9e6ed5ad1a87cce9}\label{class_for_a9c3b1050c5bd1f4a9e6ed5ad1a87cce9}} 
+\index{For@{For}!For@{For}}
+\index{For@{For}!For@{For}}
+\doxysubsubsection{\texorpdfstring{For()}{For()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily For\+::\+For (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_for}{For}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_for}{For}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_for_ac1985da18cb5cea09844dcaf5967d7e8}\label{class_for_ac1985da18cb5cea09844dcaf5967d7e8}} 
+\index{For@{For}!accept@{accept}}
+\index{accept@{accept}!For@{For}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void For\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_for_adf1c9789910d342e04c22a7c0d47397e}\label{class_for_adf1c9789910d342e04c22a7c0d47397e}} 
+\index{For@{For}!clone@{clone}}
+\index{clone@{clone}!For@{For}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_for}{For}} $>$ For\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_afb399b76fe82e21ae2ba40caed393159}\label{class_for_afb399b76fe82e21ae2ba40caed393159}} 
+\index{For@{For}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!For@{For}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t For\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_for_aa9906ed1d7e3ad74db873f636a0c9ed0}\label{class_for_aa9906ed1d7e3ad74db873f636a0c9ed0}} 
+\index{For@{For}!getBody@{getBody}}
+\index{getBody@{getBody}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the body, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the body 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no body exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_a9647ae31d2341f99ba31886007ca55a5}\label{class_for_a9647ae31d2341f99ba31886007ca55a5}} 
+\index{For@{For}!getBody@{getBody}}
+\index{getBody@{getBody}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the body, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the body 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no body exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_ae4db2c73fa23c3cd3705f4cbf96e356e}\label{class_for_ae4db2c73fa23c3cd3705f4cbf96e356e}} 
+\index{For@{For}!getCondition@{getCondition}}
+\index{getCondition@{getCondition}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getCondition()}{getCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& For\+::get\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the condition, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the condition 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no condition exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_aad4d75bcba1edc4aaad3b926a8bba1fd}\label{class_for_aad4d75bcba1edc4aaad3b926a8bba1fd}} 
+\index{For@{For}!getCondition@{getCondition}}
+\index{getCondition@{getCondition}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getCondition()}{getCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& For\+::get\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the condition, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the condition 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no condition exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_a3a89ac4aca9c481bd0f8f4b8408f7990}\label{class_for_a3a89ac4aca9c481bd0f8f4b8408f7990}} 
+\index{For@{For}!getInitializer@{getInitializer}}
+\index{getInitializer@{getInitializer}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getInitializer()}{getInitializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the initializer, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the initializer 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no initializer exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_a07f055fdb74fc7f2237b839bbb3d9256}\label{class_for_a07f055fdb74fc7f2237b839bbb3d9256}} 
+\index{For@{For}!getInitializer@{getInitializer}}
+\index{getInitializer@{getInitializer}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getInitializer()}{getInitializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the initializer, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the initializer 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no initializer exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_a30fa9a5a99952989e54e16cd702f1283}\label{class_for_a30fa9a5a99952989e54e16cd702f1283}} 
+\index{For@{For}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string For\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_for_a32713390f79b3995eed0274dacffc0a9}\label{class_for_a32713390f79b3995eed0274dacffc0a9}} 
+\index{For@{For}!getUpdate@{getUpdate}}
+\index{getUpdate@{getUpdate}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getUpdate()}{getUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the update \mbox{\hyperlink{class_block}{Block}}, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the update \mbox{\hyperlink{class_block}{Block}} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no update \mbox{\hyperlink{class_block}{Block}} exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_aaa9f183db07f223ddb711c3f71fe4d6e}\label{class_for_aaa9f183db07f223ddb711c3f71fe4d6e}} 
+\index{For@{For}!getUpdate@{getUpdate}}
+\index{getUpdate@{getUpdate}!For@{For}}
+\doxysubsubsection{\texorpdfstring{getUpdate()}{getUpdate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_block}{Block}} \& For\+::get\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the update \mbox{\hyperlink{class_block}{Block}}, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the update \mbox{\hyperlink{class_block}{Block}} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no update \mbox{\hyperlink{class_block}{Block}} exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_for_ac304771e87b8e60a610ee894e0823a10}\label{class_for_ac304771e87b8e60a610ee894e0823a10}} 
+\index{For@{For}!hasBody@{hasBody}}
+\index{hasBody@{hasBody}!For@{For}}
+\doxysubsubsection{\texorpdfstring{hasBody()}{hasBody()}}
+{\footnotesize\ttfamily bool For\+::has\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this \mbox{\hyperlink{class_for}{For}} have a non-\/null body? \begin{DoxyReturn}{Returns}
+true iff the body is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a79e1fdc4a1af5658c61c114e7d37fa0f}\label{class_for_a79e1fdc4a1af5658c61c114e7d37fa0f}} 
+\index{For@{For}!hasCondition@{hasCondition}}
+\index{hasCondition@{hasCondition}!For@{For}}
+\doxysubsubsection{\texorpdfstring{hasCondition()}{hasCondition()}}
+{\footnotesize\ttfamily bool For\+::has\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this \mbox{\hyperlink{class_for}{For}} have a non-\/null condition? \begin{DoxyReturn}{Returns}
+true iff the condition is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a708b3b71683fb96584c6739a8d0a35c7}\label{class_for_a708b3b71683fb96584c6739a8d0a35c7}} 
+\index{For@{For}!hasInitializer@{hasInitializer}}
+\index{hasInitializer@{hasInitializer}!For@{For}}
+\doxysubsubsection{\texorpdfstring{hasInitializer()}{hasInitializer()}}
+{\footnotesize\ttfamily bool For\+::has\+Initializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this \mbox{\hyperlink{class_for}{For}} have a non-\/null initializer? \begin{DoxyReturn}{Returns}
+true iff the initializer is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a24825186b5bb919157efe5fa0acc445f}\label{class_for_a24825186b5bb919157efe5fa0acc445f}} 
+\index{For@{For}!hasUpdate@{hasUpdate}}
+\index{hasUpdate@{hasUpdate}!For@{For}}
+\doxysubsubsection{\texorpdfstring{hasUpdate()}{hasUpdate()}}
+{\footnotesize\ttfamily bool For\+::has\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this \mbox{\hyperlink{class_for}{For}} have a non-\/null update block? \begin{DoxyReturn}{Returns}
+true iff the update block is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a19b86f7b1d1eb1ed3688b70a13a9f1d3}\label{class_for_a19b86f7b1d1eb1ed3688b70a13a9f1d3}} 
+\index{For@{For}!operator=@{operator=}}
+\index{operator=@{operator=}!For@{For}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_for}{For}} \& For\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_for}{For}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_for}{For}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a4dda7a060d523e948c8f7ebe605ba33a}\label{class_for_a4dda7a060d523e948c8f7ebe605ba33a}} 
+\index{For@{For}!operator=@{operator=}}
+\index{operator=@{operator=}!For@{For}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_for}{For}} \& For\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_for}{For}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_for}{For}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_for_a80ab813c1956e47bfa9af1d109104cc1}\label{class_for_a80ab813c1956e47bfa9af1d109104cc1}} 
+\index{For@{For}!setBody@{setBody}}
+\index{setBody@{setBody}!For@{For}}
+\doxysubsubsection{\texorpdfstring{setBody()}{setBody()}}
+{\footnotesize\ttfamily void For\+::set\+Body (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{new\+Body }\end{DoxyParamCaption})}
+
+Set a new body 
+\begin{DoxyParams}{Parameters}
+{\em new\+Body} & body to set, \mbox{\hyperlink{class_for}{For}} takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_a41a16b5b3610ed76059d15e298d30013}\label{class_for_a41a16b5b3610ed76059d15e298d30013}} 
+\index{For@{For}!setCondition@{setCondition}}
+\index{setCondition@{setCondition}!For@{For}}
+\doxysubsubsection{\texorpdfstring{setCondition()}{setCondition()}}
+{\footnotesize\ttfamily void For\+::set\+Condition (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{new\+Condition }\end{DoxyParamCaption})}
+
+Set a new condition 
+\begin{DoxyParams}{Parameters}
+{\em new\+Condition} & condition to set, \mbox{\hyperlink{class_for}{For}} takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_a0e27ad114f530ffcaf5bb84064d37241}\label{class_for_a0e27ad114f530ffcaf5bb84064d37241}} 
+\index{For@{For}!setInitializer@{setInitializer}}
+\index{setInitializer@{setInitializer}!For@{For}}
+\doxysubsubsection{\texorpdfstring{setInitializer()}{setInitializer()}}
+{\footnotesize\ttfamily void For\+::set\+Initializer (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{new\+Initializer }\end{DoxyParamCaption})}
+
+Set a new initializer 
+\begin{DoxyParams}{Parameters}
+{\em new\+Initializer} & initializer to set, \mbox{\hyperlink{class_for}{For}} takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_adb6da49c6c23a742358797637a2f4adf}\label{class_for_adb6da49c6c23a742358797637a2f4adf}} 
+\index{For@{For}!setUpdate@{setUpdate}}
+\index{setUpdate@{setUpdate}!For@{For}}
+\doxysubsubsection{\texorpdfstring{setUpdate()}{setUpdate()}}
+{\footnotesize\ttfamily void For\+::set\+Update (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_block}{Block}} $>$}]{new\+Update }\end{DoxyParamCaption})}
+
+Set a new update \mbox{\hyperlink{class_block}{Block}} 
+\begin{DoxyParams}{Parameters}
+{\em new\+Update} & update \mbox{\hyperlink{class_block}{Block}} to set, \mbox{\hyperlink{class_for}{For}} takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_for_a35244f9ed0d6689a0cff93aff54ba76b}\label{class_for_a35244f9ed0d6689a0cff93aff54ba76b}} 
+\index{For@{For}!toJson@{toJson}}
+\index{toJson@{toJson}!For@{For}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json For\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_for_a32cfa5cded4c0ba91e24b8607a85705b}\label{class_for_a32cfa5cded4c0ba91e24b8607a85705b}} 
+\index{For@{For}!toString@{toString}}
+\index{toString@{toString}!For@{For}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string For\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/For.\+h\item 
+src/ast/For.\+cpp\end{DoxyCompactItemize}

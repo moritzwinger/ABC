@@ -1,0 +1,23 @@
+\hypertarget{classis__visit__available}{}\doxysection{is\+\_\+visit\+\_\+available$<$ T, Args $>$ Class Template Reference}
+\label{classis__visit__available}\index{is\_visit\_available$<$ T, Args $>$@{is\_visit\_available$<$ T, Args $>$}}
+
+
+{\ttfamily \#include $<$Scoped\+Visitor.\+h$>$}
+
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classis__visit__available_a4b1ecd1ac002ce125092bf5b9a99d9fd}\label{classis__visit__available_a4b1ecd1ac002ce125092bf5b9a99d9fd}} 
+static constexpr bool {\bfseries value} = decltype(test$<$T$>$(0))\+::value
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename... Args$>$\newline
+class is\+\_\+visit\+\_\+available$<$ T, Args $>$}
+
+SFINAE based detection if T\+::visit(\+Args...) exists Taken from \href{https://stackoverflow.com/a/28309612}{\texttt{ https\+://stackoverflow.\+com/a/28309612}} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/visitor/Scoped\+Visitor.\+h\end{DoxyCompactItemize}

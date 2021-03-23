@@ -1,0 +1,315 @@
+\hypertarget{class_assignment}{}\doxysection{Assignment Class Reference}
+\label{class_assignment}\index{Assignment@{Assignment}}
+Inheritance diagram for Assignment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_assignment}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_assignment_a26a591a42457654cd84ab2a10c455a82}\label{class_assignment_a26a591a42457654cd84ab2a10c455a82}} 
+\mbox{\hyperlink{class_assignment_a26a591a42457654cd84ab2a10c455a82}{$\sim$\+Assignment}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_assignment_a02ee9cea9c5d96fc4e5cffed2783260f}{Assignment}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} $>$ target, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ value)
+\item 
+\mbox{\hyperlink{class_assignment_acb2c0bf90098b8ba1fe37920da84e7ea}{Assignment}} (const \mbox{\hyperlink{class_assignment}{Assignment}} \&other)
+\item 
+\mbox{\hyperlink{class_assignment_a2f8ad0e86fa003d05cd08fa25ff6f84d}{Assignment}} (\mbox{\hyperlink{class_assignment}{Assignment}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_assignment}{Assignment}} \& \mbox{\hyperlink{class_assignment_a755ae10e3d553c44bdd47614886c4386}{operator=}} (const \mbox{\hyperlink{class_assignment}{Assignment}} \&other)
+\item 
+\mbox{\hyperlink{class_assignment}{Assignment}} \& \mbox{\hyperlink{class_assignment_ad01ad5a0bece7c9f500985726aeb1b1b}{operator=}} (\mbox{\hyperlink{class_assignment}{Assignment}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_assignment}{Assignment}} $>$ \mbox{\hyperlink{class_assignment_a94c9b55696d0fde477505213fa5f4e0d}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_assignment_a148509efb5aa9c67acda76c209b84a72}{has\+Target}} () const
+\item 
+bool \mbox{\hyperlink{class_assignment_a9baded1ac6edc0d605f734bf71c62228}{has\+Value}} () const
+\item 
+\mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} \& \mbox{\hyperlink{class_assignment_abe364264d71675dba5fe909b7dd23a2b}{get\+Target}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} \& \mbox{\hyperlink{class_assignment_ad653443e902af8a2a88a93f789dbab39}{get\+Target}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_assignment_afa4a5f94bcd3d80cc29f4fb5964eed1a}{get\+Value}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_assignment_aff9f449cd57059754284b3578ee338ef}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_assignment_a6ed4b11275a3d182be36b22752720481}{set\+Target}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} $>$ new\+Target)
+\item 
+void \mbox{\hyperlink{class_assignment_aa0d4be0c78c33f47d79d0b212c9a5ae9}{set\+Value}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ new\+Value)
+\item 
+void \mbox{\hyperlink{class_assignment_a10678aa73cef0d5729c269805b6bce28}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_assignment_ad04f85855d02960a5387e7d3d45f21a9}\label{class_assignment_ad04f85855d02960a5387e7d3d45f21a9}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_assignment_ad04f85855d02960a5387e7d3d45f21a9}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assignment_aedb2182a022c8b42f8e036efdb7e0bd2}\label{class_assignment_aedb2182a022c8b42f8e036efdb7e0bd2}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_assignment_aedb2182a022c8b42f8e036efdb7e0bd2}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assignment_a58c311c60ac8fc5f07d85368e4ad9392}\label{class_assignment_a58c311c60ac8fc5f07d85368e4ad9392}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_assignment_a58c311c60ac8fc5f07d85368e4ad9392}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_assignment_ad7fb7a819dc97a2016e8ddeb4d508082}\label{class_assignment_ad7fb7a819dc97a2016e8ddeb4d508082}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_assignment_ad7fb7a819dc97a2016e8ddeb4d508082}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_assignment_af49cd37ffd4a3b2ae5e442b07c9aa499}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_assignment_a907223b4a4ec0c75b2cc3af6cce9a1e4}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_assignment_a1902e8595bfa9c787decf6a2fff2801a}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_assignment_a4264b9c5ef3c4e9276db67b23fa65e26}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_assignment_a02ee9cea9c5d96fc4e5cffed2783260f}\label{class_assignment_a02ee9cea9c5d96fc4e5cffed2783260f}} 
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{Assignment()}{Assignment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Assignment\+::\+Assignment (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} $>$}]{target,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{value }\end{DoxyParamCaption})}
+
+Create an assignment with a target (lhs) and value (rhs) 
+\begin{DoxyParams}{Parameters}
+{\em target} & The variable to assign to (the assignment will take ownership) \\
+\hline
+{\em value} & The value to assign (the assignment will take ownership) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assignment_acb2c0bf90098b8ba1fe37920da84e7ea}\label{class_assignment_acb2c0bf90098b8ba1fe37920da84e7ea}} 
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{Assignment()}{Assignment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Assignment\+::\+Assignment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assignment}{Assignment}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_assignment}{Assignment}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assignment_a2f8ad0e86fa003d05cd08fa25ff6f84d}\label{class_assignment_a2f8ad0e86fa003d05cd08fa25ff6f84d}} 
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\index{Assignment@{Assignment}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{Assignment()}{Assignment()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Assignment\+::\+Assignment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assignment}{Assignment}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_assignment}{Assignment}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_assignment_a10678aa73cef0d5729c269805b6bce28}\label{class_assignment_a10678aa73cef0d5729c269805b6bce28}} 
+\index{Assignment@{Assignment}!accept@{accept}}
+\index{accept@{accept}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Assignment\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_assignment_a94c9b55696d0fde477505213fa5f4e0d}\label{class_assignment_a94c9b55696d0fde477505213fa5f4e0d}} 
+\index{Assignment@{Assignment}!clone@{clone}}
+\index{clone@{clone}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_assignment}{Assignment}} $>$ Assignment\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assignment_af49cd37ffd4a3b2ae5e442b07c9aa499}\label{class_assignment_af49cd37ffd4a3b2ae5e442b07c9aa499}} 
+\index{Assignment@{Assignment}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t Assignment\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_assignment_a4264b9c5ef3c4e9276db67b23fa65e26}\label{class_assignment_a4264b9c5ef3c4e9276db67b23fa65e26}} 
+\index{Assignment@{Assignment}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string Assignment\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_assignment_abe364264d71675dba5fe909b7dd23a2b}\label{class_assignment_abe364264d71675dba5fe909b7dd23a2b}} 
+\index{Assignment@{Assignment}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} \& Assignment\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get (a reference to) the target (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the target 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no target exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_assignment_ad653443e902af8a2a88a93f789dbab39}\label{class_assignment_ad653443e902af8a2a88a93f789dbab39}} 
+\index{Assignment@{Assignment}!getTarget@{getTarget}}
+\index{getTarget@{getTarget}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{getTarget()}{getTarget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} \& Assignment\+::get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get (a const reference to) the target (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the target 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no target exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_assignment_afa4a5f94bcd3d80cc29f4fb5964eed1a}\label{class_assignment_afa4a5f94bcd3d80cc29f4fb5964eed1a}} 
+\index{Assignment@{Assignment}!getValue@{getValue}}
+\index{getValue@{getValue}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Assignment\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get (a reference to) the value (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the value variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no value exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_assignment_aff9f449cd57059754284b3578ee338ef}\label{class_assignment_aff9f449cd57059754284b3578ee338ef}} 
+\index{Assignment@{Assignment}!getValue@{getValue}}
+\index{getValue@{getValue}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Assignment\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get (a const reference to) the value (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the value variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no value exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_assignment_a148509efb5aa9c67acda76c209b84a72}\label{class_assignment_a148509efb5aa9c67acda76c209b84a72}} 
+\index{Assignment@{Assignment}!hasTarget@{hasTarget}}
+\index{hasTarget@{hasTarget}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{hasTarget()}{hasTarget()}}
+{\footnotesize\ttfamily bool Assignment\+::has\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this assignment have its target set? \begin{DoxyReturn}{Returns}
+true iff the assignment has the target set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assignment_a9baded1ac6edc0d605f734bf71c62228}\label{class_assignment_a9baded1ac6edc0d605f734bf71c62228}} 
+\index{Assignment@{Assignment}!hasValue@{hasValue}}
+\index{hasValue@{hasValue}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{hasValue()}{hasValue()}}
+{\footnotesize\ttfamily bool Assignment\+::has\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this assignment have its value set? \begin{DoxyReturn}{Returns}
+true iff the assignment has the value set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assignment_ad01ad5a0bece7c9f500985726aeb1b1b}\label{class_assignment_ad01ad5a0bece7c9f500985726aeb1b1b}} 
+\index{Assignment@{Assignment}!operator=@{operator=}}
+\index{operator=@{operator=}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assignment}{Assignment}} \& Assignment\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_assignment}{Assignment}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_assignment}{Assignment}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assignment_a755ae10e3d553c44bdd47614886c4386}\label{class_assignment_a755ae10e3d553c44bdd47614886c4386}} 
+\index{Assignment@{Assignment}!operator=@{operator=}}
+\index{operator=@{operator=}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assignment}{Assignment}} \& Assignment\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assignment}{Assignment}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_assignment}{Assignment}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_assignment_a6ed4b11275a3d182be36b22752720481}\label{class_assignment_a6ed4b11275a3d182be36b22752720481}} 
+\index{Assignment@{Assignment}!setTarget@{setTarget}}
+\index{setTarget@{setTarget}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{setTarget()}{setTarget()}}
+{\footnotesize\ttfamily void Assignment\+::set\+Target (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_target}{Abstract\+Target}} $>$}]{new\+Target }\end{DoxyParamCaption})}
+
+Set the target to new\+Target, taking ownership of new\+Target This will delete the previous target! 
+\begin{DoxyParams}{Parameters}
+{\em new\+Target} & new target to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assignment_aa0d4be0c78c33f47d79d0b212c9a5ae9}\label{class_assignment_aa0d4be0c78c33f47d79d0b212c9a5ae9}} 
+\index{Assignment@{Assignment}!setValue@{setValue}}
+\index{setValue@{setValue}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Assignment\+::set\+Value (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{new\+Value }\end{DoxyParamCaption})}
+
+Set the value to new\+Value, taking ownership of new\+Value This will delete the previous value! 
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & new value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_assignment_a907223b4a4ec0c75b2cc3af6cce9a1e4}\label{class_assignment_a907223b4a4ec0c75b2cc3af6cce9a1e4}} 
+\index{Assignment@{Assignment}!toJson@{toJson}}
+\index{toJson@{toJson}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json Assignment\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_assignment_a1902e8595bfa9c787decf6a2fff2801a}\label{class_assignment_a1902e8595bfa9c787decf6a2fff2801a}} 
+\index{Assignment@{Assignment}!toString@{toString}}
+\index{toString@{toString}!Assignment@{Assignment}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Assignment\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Assignment.\+h\item 
+src/ast/Assignment.\+cpp\end{DoxyCompactItemize}

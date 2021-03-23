@@ -1,0 +1,380 @@
+\hypertarget{class_ternary_operator}{}\doxysection{Ternary\+Operator Class Reference}
+\label{class_ternary_operator}\index{TernaryOperator@{TernaryOperator}}
+
+
+{\ttfamily \#include $<$Ternary\+Operator.\+h$>$}
+
+Inheritance diagram for Ternary\+Operator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_ternary_operator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ternary_operator_aea059813e17e1c810830e487812331b2}\label{class_ternary_operator_aea059813e17e1c810830e487812331b2}} 
+\mbox{\hyperlink{class_ternary_operator_aea059813e17e1c810830e487812331b2}{$\sim$\+Ternary\+Operator}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ternary_operator_aff206e96791c24ecc10d857256fa14a0}{Ternary\+Operator}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&condition, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&then\+Expr, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&else\+Expr)
+\item 
+\mbox{\hyperlink{class_ternary_operator_a2b613db76939a0b4e6e3429d6cd5b2b9}{Ternary\+Operator}} (const \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&other)
+\item 
+\mbox{\hyperlink{class_ternary_operator_a088e4a604bd047ac78f1b59ae142b3ec}{Ternary\+Operator}} (\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \& \mbox{\hyperlink{class_ternary_operator_ad7eca1b913937ec69d968e243aa9fa8e}{operator=}} (const \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&other)
+\item 
+\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \& \mbox{\hyperlink{class_ternary_operator_ab0c5a1cd3e2a2c485c4da0796f6ada29}{operator=}} (\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} $>$ \mbox{\hyperlink{class_ternary_operator_abadc094a3022e9c796cfeea5742135d3}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_ternary_operator_a8647a0b4d40df17e3153496439deb291}{has\+Condition}} () const
+\item 
+bool \mbox{\hyperlink{class_ternary_operator_a350c5ab1883c01ac43aab9c4849bbfea}{has\+Then\+Expr}} () const
+\item 
+bool \mbox{\hyperlink{class_ternary_operator_a90df8dc35e3a6d1cbba6a5ef9d372115}{has\+Else\+Expr}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_a485e09ed6c9458419cb28d6e78265672}{get\+Condition}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_a1e7dee7ab88143f71ca649ba77d2e7b1}{get\+Condition}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_a8a94d3e25c78555d5db0b54ddd1764d2}{get\+Then\+Expr}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_a1bc8a63881065ba510f9e90d8a181b81}{get\+Then\+Expr}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_ab79c58cc1cae366eda1864f376fcd7d8}{get\+Else\+Expr}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_ternary_operator_a40e0791ef5178e8936dabf5703beb466}{get\+Else\+Expr}} () const
+\item 
+void \mbox{\hyperlink{class_ternary_operator_a30b0f29e5187e3b60c11cf756f2976a8}{set\+Condition}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&new\+Condition)
+\item 
+void \mbox{\hyperlink{class_ternary_operator_a184063d554121ec16bb9c7060c4e0547}{set\+Then\+Expr}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&newthen\+Expr)
+\item 
+void \mbox{\hyperlink{class_ternary_operator_a8c7d30ec4315cbf4b2a6631003d2fb41}{set\+Else\+Expr}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&newelse\+Expr)
+\item 
+void \mbox{\hyperlink{class_ternary_operator_af4911afeb2821515c36be675bacccc62}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_ternary_operator_ad1810eca06c522df969ecf52fccc07cd}\label{class_ternary_operator_ad1810eca06c522df969ecf52fccc07cd}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_ternary_operator_ad1810eca06c522df969ecf52fccc07cd}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ternary_operator_aac9d024f5a403b0d8d5e77e43822abad}\label{class_ternary_operator_aac9d024f5a403b0d8d5e77e43822abad}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_ternary_operator_aac9d024f5a403b0d8d5e77e43822abad}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ternary_operator_a9079a6c994fb6f4b595f66d0d658fca3}\label{class_ternary_operator_a9079a6c994fb6f4b595f66d0d658fca3}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_ternary_operator_a9079a6c994fb6f4b595f66d0d658fca3}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ternary_operator_aeef7c3d09d75be7c86b0b4d9daf768e5}\label{class_ternary_operator_aeef7c3d09d75be7c86b0b4d9daf768e5}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_ternary_operator_aeef7c3d09d75be7c86b0b4d9daf768e5}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ternary_operator_ae4aceb7c7f08ef1fa67096c21181caea}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_ternary_operator_a4c1bdfea771d75502f7b8b72a640699a}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_ternary_operator_adc53bf6b50b91214694a9d224512c79a}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_ternary_operator_aee901c97ca8d50ceb42a172af18f6f57}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A Ternary Expression is essentially an \mbox{\hyperlink{class_if}{If}}, but as an expression. It has a condition, and a \char`\"{}then\char`\"{} and \char`\"{}else\char`\"{} expression (rather than a statement/branch) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ternary_operator_aff206e96791c24ecc10d857256fa14a0}\label{class_ternary_operator_aff206e96791c24ecc10d857256fa14a0}} 
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{TernaryOperator()}{TernaryOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Ternary\+Operator\+::\+Ternary\+Operator (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{condition,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{then\+Expr,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{else\+Expr }\end{DoxyParamCaption})}
+
+Create an Ternary\+Expression with condition, then\+Expr and else\+Expr 
+\begin{DoxyParams}{Parameters}
+{\em condition} & Should evaluate to a boolean value \\
+\hline
+{\em then\+Expr} & Value if condition evaluates to true \\
+\hline
+{\em else\+Expr} & Value if condition evaluates to false \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ternary_operator_a2b613db76939a0b4e6e3429d6cd5b2b9}\label{class_ternary_operator_a2b613db76939a0b4e6e3429d6cd5b2b9}} 
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{TernaryOperator()}{TernaryOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Ternary\+Operator\+::\+Ternary\+Operator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & Ternary\+Expression to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ternary_operator_a088e4a604bd047ac78f1b59ae142b3ec}\label{class_ternary_operator_a088e4a604bd047ac78f1b59ae142b3ec}} 
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\index{TernaryOperator@{TernaryOperator}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{TernaryOperator()}{TernaryOperator()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Ternary\+Operator\+::\+Ternary\+Operator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & Ternary\+Expression to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ternary_operator_af4911afeb2821515c36be675bacccc62}\label{class_ternary_operator_af4911afeb2821515c36be675bacccc62}} 
+\index{TernaryOperator@{TernaryOperator}!accept@{accept}}
+\index{accept@{accept}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Ternary\+Operator\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_ternary_operator_abadc094a3022e9c796cfeea5742135d3}\label{class_ternary_operator_abadc094a3022e9c796cfeea5742135d3}} 
+\index{TernaryOperator@{TernaryOperator}!clone@{clone}}
+\index{clone@{clone}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} $>$ Ternary\+Operator\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_ae4aceb7c7f08ef1fa67096c21181caea}\label{class_ternary_operator_ae4aceb7c7f08ef1fa67096c21181caea}} 
+\index{TernaryOperator@{TernaryOperator}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t Ternary\+Operator\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_ternary_operator_a485e09ed6c9458419cb28d6e78265672}\label{class_ternary_operator_a485e09ed6c9458419cb28d6e78265672}} 
+\index{TernaryOperator@{TernaryOperator}!getCondition@{getCondition}}
+\index{getCondition@{getCondition}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getCondition()}{getCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the condition, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the condition 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no condition exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_a1e7dee7ab88143f71ca649ba77d2e7b1}\label{class_ternary_operator_a1e7dee7ab88143f71ca649ba77d2e7b1}} 
+\index{TernaryOperator@{TernaryOperator}!getCondition@{getCondition}}
+\index{getCondition@{getCondition}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getCondition()}{getCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the condition, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the condition 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no condition exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_ab79c58cc1cae366eda1864f376fcd7d8}\label{class_ternary_operator_ab79c58cc1cae366eda1864f376fcd7d8}} 
+\index{TernaryOperator@{TernaryOperator}!getElseExpr@{getElseExpr}}
+\index{getElseExpr@{getElseExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getElseExpr()}{getElseExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Else\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the else\+Expr, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the else\+Expr 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no else\+Expr exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_a40e0791ef5178e8936dabf5703beb466}\label{class_ternary_operator_a40e0791ef5178e8936dabf5703beb466}} 
+\index{TernaryOperator@{TernaryOperator}!getElseExpr@{getElseExpr}}
+\index{getElseExpr@{getElseExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getElseExpr()}{getElseExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Else\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the else\+Expr, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the else\+Expr 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no else\+Expr exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_aee901c97ca8d50ceb42a172af18f6f57}\label{class_ternary_operator_aee901c97ca8d50ceb42a172af18f6f57}} 
+\index{TernaryOperator@{TernaryOperator}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string Ternary\+Operator\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_ternary_operator_a8a94d3e25c78555d5db0b54ddd1764d2}\label{class_ternary_operator_a8a94d3e25c78555d5db0b54ddd1764d2}} 
+\index{TernaryOperator@{TernaryOperator}!getThenExpr@{getThenExpr}}
+\index{getThenExpr@{getThenExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getThenExpr()}{getThenExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Then\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the then\+Expr, if it exists \begin{DoxyReturn}{Returns}
+(a reference to) the then\+Expr 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no then\+Expr exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_a1bc8a63881065ba510f9e90d8a181b81}\label{class_ternary_operator_a1bc8a63881065ba510f9e90d8a181b81}} 
+\index{TernaryOperator@{TernaryOperator}!getThenExpr@{getThenExpr}}
+\index{getThenExpr@{getThenExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{getThenExpr()}{getThenExpr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Ternary\+Operator\+::get\+Then\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the then\+Expr, if it exists \begin{DoxyReturn}{Returns}
+(a const reference to) the then\+Expr 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no then\+Expr exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_ternary_operator_a8647a0b4d40df17e3153496439deb291}\label{class_ternary_operator_a8647a0b4d40df17e3153496439deb291}} 
+\index{TernaryOperator@{TernaryOperator}!hasCondition@{hasCondition}}
+\index{hasCondition@{hasCondition}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{hasCondition()}{hasCondition()}}
+{\footnotesize\ttfamily bool Ternary\+Operator\+::has\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this Ternary\+Expression have a non-\/null condition? \begin{DoxyReturn}{Returns}
+true iff the condition is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_a90df8dc35e3a6d1cbba6a5ef9d372115}\label{class_ternary_operator_a90df8dc35e3a6d1cbba6a5ef9d372115}} 
+\index{TernaryOperator@{TernaryOperator}!hasElseExpr@{hasElseExpr}}
+\index{hasElseExpr@{hasElseExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{hasElseExpr()}{hasElseExpr()}}
+{\footnotesize\ttfamily bool Ternary\+Operator\+::has\+Else\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this Ternary\+Expression have a non-\/null else\+Expr? \begin{DoxyReturn}{Returns}
+true iff the else\+Expr is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_a350c5ab1883c01ac43aab9c4849bbfea}\label{class_ternary_operator_a350c5ab1883c01ac43aab9c4849bbfea}} 
+\index{TernaryOperator@{TernaryOperator}!hasThenExpr@{hasThenExpr}}
+\index{hasThenExpr@{hasThenExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{hasThenExpr()}{hasThenExpr()}}
+{\footnotesize\ttfamily bool Ternary\+Operator\+::has\+Then\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this Ternary\+Expression have a non-\/null then\+Expr? \begin{DoxyReturn}{Returns}
+true iff the then\+Expr is non-\/null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_ad7eca1b913937ec69d968e243aa9fa8e}\label{class_ternary_operator_ad7eca1b913937ec69d968e243aa9fa8e}} 
+\index{TernaryOperator@{TernaryOperator}!operator=@{operator=}}
+\index{operator=@{operator=}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \& Ternary\+Operator\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & Ternary\+Expression to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_ab0c5a1cd3e2a2c485c4da0796f6ada29}\label{class_ternary_operator_ab0c5a1cd3e2a2c485c4da0796f6ada29}} 
+\index{TernaryOperator@{TernaryOperator}!operator=@{operator=}}
+\index{operator=@{operator=}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \& Ternary\+Operator\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_ternary_operator}{Ternary\+Operator}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & Ternary\+Expression to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ternary_operator_a30b0f29e5187e3b60c11cf756f2976a8}\label{class_ternary_operator_a30b0f29e5187e3b60c11cf756f2976a8}} 
+\index{TernaryOperator@{TernaryOperator}!setCondition@{setCondition}}
+\index{setCondition@{setCondition}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{setCondition()}{setCondition()}}
+{\footnotesize\ttfamily void Ternary\+Operator\+::set\+Condition (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{new\+Condition }\end{DoxyParamCaption})}
+
+Set a new condition 
+\begin{DoxyParams}{Parameters}
+{\em new\+Condition} & condition to set, Ternary\+Expression takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ternary_operator_a8c7d30ec4315cbf4b2a6631003d2fb41}\label{class_ternary_operator_a8c7d30ec4315cbf4b2a6631003d2fb41}} 
+\index{TernaryOperator@{TernaryOperator}!setElseExpr@{setElseExpr}}
+\index{setElseExpr@{setElseExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{setElseExpr()}{setElseExpr()}}
+{\footnotesize\ttfamily void Ternary\+Operator\+::set\+Else\+Expr (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{newelse\+Expr }\end{DoxyParamCaption})}
+
+Set a new else\+Expr 
+\begin{DoxyParams}{Parameters}
+{\em newelse\+Expr} & else\+Expr to set, Ternary\+Expression takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ternary_operator_a184063d554121ec16bb9c7060c4e0547}\label{class_ternary_operator_a184063d554121ec16bb9c7060c4e0547}} 
+\index{TernaryOperator@{TernaryOperator}!setThenExpr@{setThenExpr}}
+\index{setThenExpr@{setThenExpr}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{setThenExpr()}{setThenExpr()}}
+{\footnotesize\ttfamily void Ternary\+Operator\+::set\+Then\+Expr (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ \&\&}]{newthen\+Expr }\end{DoxyParamCaption})}
+
+Set a new then\+Expr 
+\begin{DoxyParams}{Parameters}
+{\em newthen\+Expr} & then\+Expr to set, Ternary\+Expression takes ownership \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ternary_operator_a4c1bdfea771d75502f7b8b72a640699a}\label{class_ternary_operator_a4c1bdfea771d75502f7b8b72a640699a}} 
+\index{TernaryOperator@{TernaryOperator}!toJson@{toJson}}
+\index{toJson@{toJson}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json Ternary\+Operator\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_ternary_operator_adc53bf6b50b91214694a9d224512c79a}\label{class_ternary_operator_adc53bf6b50b91214694a9d224512c79a}} 
+\index{TernaryOperator@{TernaryOperator}!toString@{toString}}
+\index{toString@{toString}!TernaryOperator@{TernaryOperator}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Ternary\+Operator\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Ternary\+Operator.\+h\item 
+src/ast/Ternary\+Operator.\+cpp\end{DoxyCompactItemize}

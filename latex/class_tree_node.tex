@@ -1,0 +1,75 @@
+\hypertarget{class_tree_node}{}\doxysection{Tree\+Node Class Reference}
+\label{class_tree_node}\index{TreeNode@{TreeNode}}
+
+
+Invariant (not enforced by class)\+: if computation\+Operator\+::batched == true, then children.\+size() must be 2.  
+
+
+Inheritance diagram for Tree\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tree_node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tree_node_a7d36c41acf1b0425f632d506b972a4bb}\label{class_tree_node_a7d36c41acf1b0425f632d506b972a4bb}} 
+{\bfseries Tree\+Node} (\mbox{\hyperlink{class_tree_node}{Tree\+Node}} $\ast$parent, std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $>$$>$ \&\&children)
+\item 
+\mbox{\Hypertarget{class_tree_node_ab20bef4d9e155be66e01c9623ec98573}\label{class_tree_node_ab20bef4d9e155be66e01c9623ec98573}} 
+{\bfseries Tree\+Node} (const \mbox{\hyperlink{class_tree_node}{Tree\+Node}} \&other)=delete
+\item 
+\mbox{\Hypertarget{class_tree_node_aa33242cec62e498a9e387369e7079aae}\label{class_tree_node_aa33242cec62e498a9e387369e7079aae}} 
+{\bfseries Tree\+Node} (\mbox{\hyperlink{class_tree_node}{Tree\+Node}} \&\&other) noexcept=default
+\item 
+\mbox{\Hypertarget{class_tree_node_ac2ec9d5561a4aefd896b5ad1904cff66}\label{class_tree_node_ac2ec9d5561a4aefd896b5ad1904cff66}} 
+\mbox{\hyperlink{class_tree_node}{Tree\+Node}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_tree_node}{Tree\+Node}} \&other)=delete
+\item 
+\mbox{\Hypertarget{class_tree_node_a6ce825d7ad5df3a3d909cb10bec92faf}\label{class_tree_node_a6ce825d7ad5df3a3d909cb10bec92faf}} 
+\mbox{\hyperlink{class_tree_node}{Tree\+Node}} \& {\bfseries operator=} (\mbox{\hyperlink{class_tree_node}{Tree\+Node}} \&\&other)=default
+\item 
+\mbox{\Hypertarget{class_tree_node_ae2e9916601a6693542a570313811a865}\label{class_tree_node_ae2e9916601a6693542a570313811a865}} 
+void {\bfseries add\+Child} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $>$ \&\&new\+Child)
+\item 
+\mbox{\Hypertarget{class_tree_node_ad5efb1c2ded1ac72c63ff5ef91256cbd}\label{class_tree_node_ad5efb1c2ded1ac72c63ff5ef91256cbd}} 
+\mbox{\hyperlink{class_tree_node}{Tree\+Node}} $\ast$ {\bfseries get\+Parent} ()
+\item 
+\mbox{\Hypertarget{class_tree_node_a1f39cc84673b942e89b9f295267814e3}\label{class_tree_node_a1f39cc84673b942e89b9f295267814e3}} 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $>$ $>$ \& {\bfseries get\+Children} ()
+\item 
+\mbox{\Hypertarget{class_tree_node_a356c4ff3a36386aaed8ca7aee5532c56}\label{class_tree_node_a356c4ff3a36386aaed8ca7aee5532c56}} 
+size\+\_\+t {\bfseries get\+Expected\+Number\+Of\+Children} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tree_node}{Tree\+Node}} $\ast$ \mbox{\hyperlink{class_tree_node_a881ce7e558d59c9637683e2ddf4f9803}{insert\+Node\+Into\+Tree}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $>$ \&\&new\+Node, \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $\ast$cur\+Tree\+Node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Invariant (not enforced by class)\+: if computation\+Operator\+::batched == true, then children.\+size() must be 2. 
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_tree_node_a881ce7e558d59c9637683e2ddf4f9803}\label{class_tree_node_a881ce7e558d59c9637683e2ddf4f9803}} 
+\index{TreeNode@{TreeNode}!insertNodeIntoTree@{insertNodeIntoTree}}
+\index{insertNodeIntoTree@{insertNodeIntoTree}!TreeNode@{TreeNode}}
+\doxysubsubsection{\texorpdfstring{insertNodeIntoTree}{insertNodeIntoTree}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tree_node}{Tree\+Node}}$\ast$ insert\+Node\+Into\+Tree (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_tree_node}{Tree\+Node}} $>$ \&\&}]{new\+Node,  }\item[{\mbox{\hyperlink{class_tree_node}{Tree\+Node}} $\ast$}]{cur\+Tree\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Node} & \\
+\hline
+{\em cur\+Tree\+Node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New cur\+Tree\+Node pointer, if it needed to be changed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/visitor/Expression\+Batcher.\+cpp\end{DoxyCompactItemize}

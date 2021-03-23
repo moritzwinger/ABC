@@ -1,0 +1,361 @@
+\hypertarget{class_literal}{}\doxysection{Literal$<$ T $>$ Class Template Reference}
+\label{class_literal}\index{Literal$<$ T $>$@{Literal$<$ T $>$}}
+
+
+Literals contain a scalar value (of type bool, char, int, float, double, string, etc)  
+
+
+
+
+{\ttfamily \#include $<$Literal.\+h$>$}
+
+Inheritance diagram for Literal$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_literal}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_literal_adadeb64ebc962f016197c2a168ab4f97}\label{class_literal_adadeb64ebc962f016197c2a168ab4f97}} 
+typedef T \mbox{\hyperlink{class_literal_adadeb64ebc962f016197c2a168ab4f97}{value\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em A typedef that allows obtaining the type T from any Literal$<$\+T$>$ class, e.\+g., \mbox{\hyperlink{class_literal_adadeb64ebc962f016197c2a168ab4f97}{Literal\+Bool\+::value\+\_\+type}} returns bool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_literal_aa20a8edeabb69bd19982d4e5b8d04ff6}\label{class_literal_aa20a8edeabb69bd19982d4e5b8d04ff6}} 
+\mbox{\hyperlink{class_literal_aa20a8edeabb69bd19982d4e5b8d04ff6}{$\sim$\+Literal}} () override=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_literal_a2bac2aaaafc6b5b33266de6b99caa457}{Literal}} (T value)
+\item 
+\mbox{\hyperlink{class_literal_ad3fb0b2f2693378aa9c47f6972966a72}{Literal}} (const \mbox{\hyperlink{class_literal}{Literal}} \&other)
+\item 
+\mbox{\hyperlink{class_literal_a0f63c4dbcabc85de83b3dadccead21f0}{Literal}} (\mbox{\hyperlink{class_literal}{Literal}} \&\&other)
+\item 
+\mbox{\hyperlink{class_literal}{Literal}} \& \mbox{\hyperlink{class_literal_a160101b993f6fca82435e61042230388}{operator=}} (const \mbox{\hyperlink{class_literal}{Literal}} \&other)
+\item 
+\mbox{\hyperlink{class_literal}{Literal}} \& \mbox{\hyperlink{class_literal_a1f08f0a3da49a7c85899e6329f9b82e6}{operator=}} (\mbox{\hyperlink{class_literal}{Literal}} \&\&other) noexcept
+\item 
+T \mbox{\hyperlink{class_literal_a857f487f0e3ae39a26c0b98beb39952b}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_literal_a107b44a8023d94569377f88543759856}{set\+Value}} (T new\+Value)
+\item 
+void \mbox{\hyperlink{class_literal_a986408db2ae05ab48c05be7e770845dc}{set\+Matrix}} (T \&\&new\+Value)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_literal}{Literal}} $>$ \mbox{\hyperlink{class_literal_a71a2ddacbf09effa928af18990aa419c}{clone}} () const
+\item 
+void \mbox{\hyperlink{class_literal_a8e1f949923ba48323b905377bc185b7a}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_literal_a349423382f557ac7050495bcc79b2029}\label{class_literal_a349423382f557ac7050495bcc79b2029}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_literal_a349423382f557ac7050495bcc79b2029}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_literal_a839f93a01254d7a6e9f037a4e81e42f6}\label{class_literal_a839f93a01254d7a6e9f037a4e81e42f6}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_literal_a839f93a01254d7a6e9f037a4e81e42f6}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_literal_ad939ef5f62c0c7a5880821634bea01e5}\label{class_literal_ad939ef5f62c0c7a5880821634bea01e5}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_literal_ad939ef5f62c0c7a5880821634bea01e5}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_literal_a5d8e56ce97dc52581c2da6828aea8607}\label{class_literal_a5d8e56ce97dc52581c2da6828aea8607}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_literal_a5d8e56ce97dc52581c2da6828aea8607}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_literal_a96f6dad6dbc5a764aea4fd9a7f036c89}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_literal_a0925bc054fc0a26c6bfe43f0625fccf4}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_literal_a2e0a0aaf9721d53c42b7f501916909e5}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_literal_ae6c33d78b314eabb05e38fb35f22df56}{get\+Node\+Type}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_literal_af3bdddea89485d2cc651dc8b317e9c9c}{get\+Node\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_literal_a91dab4ba33b71dd6b1b81a1f11c61d79}{get\+Node\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_literal_ae0075401cff6e805b449fe8ad1f47283}{get\+Node\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_literal_a9354ee79f597b252b097f9f620173385}{get\+Node\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_literal_a1eb928dad13c9024614556d759073161}{get\+Node\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_literal_ab3a5bd381d59f58944499593f3c0b978}{get\+Node\+Type}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Literal$<$ T $>$}
+
+Literals contain a scalar value (of type bool, char, int, float, double, string, etc) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_literal_a2bac2aaaafc6b5b33266de6b99caa457}\label{class_literal_a2bac2aaaafc6b5b33266de6b99caa457}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!Literal@{Literal}}
+\index{Literal@{Literal}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Literal()}{Literal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::\mbox{\hyperlink{class_literal}{Literal}} (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Default constructor Creates a scalar boolean of value FALSE Creates a \mbox{\hyperlink{class_literal}{Literal}} with value value 
+\begin{DoxyParams}{Parameters}
+{\em value} & value to store in this \mbox{\hyperlink{class_literal}{Literal}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_literal_ad3fb0b2f2693378aa9c47f6972966a72}\label{class_literal_ad3fb0b2f2693378aa9c47f6972966a72}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!Literal@{Literal}}
+\index{Literal@{Literal}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Literal()}{Literal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::\mbox{\hyperlink{class_literal}{Literal}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_literal}{Literal}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_literal_a0f63c4dbcabc85de83b3dadccead21f0}\label{class_literal_a0f63c4dbcabc85de83b3dadccead21f0}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!Literal@{Literal}}
+\index{Literal@{Literal}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Literal()}{Literal()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::\mbox{\hyperlink{class_literal}{Literal}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_literal}{Literal}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_literal_a8e1f949923ba48323b905377bc185b7a}\label{class_literal_a8e1f949923ba48323b905377bc185b7a}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!accept@{accept}}
+\index{accept@{accept}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a71a2ddacbf09effa928af18990aa419c}\label{class_literal_a71a2ddacbf09effa928af18990aa419c}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!clone@{clone}}
+\index{clone@{clone}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_literal}{Literal}}$>$ \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_literal_a96f6dad6dbc5a764aea4fd9a7f036c89}\label{class_literal_a96f6dad6dbc5a764aea4fd9a7f036c89}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_af3bdddea89485d2cc651dc8b317e9c9c}\label{class_literal_af3bdddea89485d2cc651dc8b317e9c9c}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ bool $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a91dab4ba33b71dd6b1b81a1f11c61d79}\label{class_literal_a91dab4ba33b71dd6b1b81a1f11c61d79}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ char $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_ae0075401cff6e805b449fe8ad1f47283}\label{class_literal_ae0075401cff6e805b449fe8ad1f47283}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ int $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a9354ee79f597b252b097f9f620173385}\label{class_literal_a9354ee79f597b252b097f9f620173385}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ float $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a1eb928dad13c9024614556d759073161}\label{class_literal_a1eb928dad13c9024614556d759073161}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ double $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_ab3a5bd381d59f58944499593f3c0b978}\label{class_literal_ab3a5bd381d59f58944499593f3c0b978}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ std\+::string $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_ae6c33d78b314eabb05e38fb35f22df56}\label{class_literal_ae6c33d78b314eabb05e38fb35f22df56}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. \mbox{\hyperlink{class_if}{If}} \char`\"{}pretty\char`\"{} names are desired, a specialization of this function for the type must be provided. \begin{DoxyReturn}{Returns}
+\char`\"{}\+Literal$<$\+T$>$\char`\"{} (possibly name-\/mangled) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a857f487f0e3ae39a26c0b98beb39952b}\label{class_literal_a857f487f0e3ae39a26c0b98beb39952b}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get value \begin{DoxyReturn}{Returns}
+The value stored in this \mbox{\hyperlink{class_literal}{Literal}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_literal_a160101b993f6fca82435e61042230388}\label{class_literal_a160101b993f6fca82435e61042230388}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_literal}{Literal}}\& \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_literal}{Literal}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_literal_a1f08f0a3da49a7c85899e6329f9b82e6}\label{class_literal_a1f08f0a3da49a7c85899e6329f9b82e6}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_literal}{Literal}}\& \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_literal}{Literal}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_literal_a986408db2ae05ab48c05be7e770845dc}\label{class_literal_a986408db2ae05ab48c05be7e770845dc}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!setMatrix@{setMatrix}}
+\index{setMatrix@{setMatrix}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setMatrix()}{setMatrix()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::set\+Matrix (\begin{DoxyParamCaption}\item[{T \&\&}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the value of this \mbox{\hyperlink{class_literal}{Literal}} to new\+Value 
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & will be moved to this \mbox{\hyperlink{class_literal}{Literal}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_literal_a107b44a8023d94569377f88543759856}\label{class_literal_a107b44a8023d94569377f88543759856}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{T}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the value of this \mbox{\hyperlink{class_literal}{Literal}} to new\+Value 
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_literal_a0925bc054fc0a26c6bfe43f0625fccf4}\label{class_literal_a0925bc054fc0a26c6bfe43f0625fccf4}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!toJson@{toJson}}
+\index{toJson@{toJson}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+nlohmann\+::json \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_literal_a2e0a0aaf9721d53c42b7f501916909e5}\label{class_literal_a2e0a0aaf9721d53c42b7f501916909e5}} 
+\index{Literal$<$ T $>$@{Literal$<$ T $>$}!toString@{toString}}
+\index{toString@{toString}!Literal$<$ T $>$@{Literal$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string \mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Literal.\+h\end{DoxyCompactItemize}

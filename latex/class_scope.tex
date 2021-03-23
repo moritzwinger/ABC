@@ -1,0 +1,272 @@
+\hypertarget{class_scope}{}\doxysection{Scope Class Reference}
+\label{class_scope}\index{Scope@{Scope}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scope_af915825e288da032b8cb0c950659b810}\label{class_scope_af915825e288da032b8cb0c950659b810}} 
+\mbox{\hyperlink{class_scope_af915825e288da032b8cb0c950659b810}{$\sim$\+Scope}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scope_a4b97ce1369f5afb0cab5c6a2aac0f0d1}{Scope}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&abstract\+Node)
+\item 
+\mbox{\Hypertarget{class_scope_ad35486794f8405db863e08b0808150ee}\label{class_scope_ad35486794f8405db863e08b0808150ee}} 
+\mbox{\hyperlink{class_scope_ad35486794f8405db863e08b0808150ee}{Scope}} (const \mbox{\hyperlink{class_scope}{Scope}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scope_a1dfb97b5aa1fdae9090073b872e689a8}{Scope}} (\mbox{\hyperlink{class_scope}{Scope}} \&\&other)=default
+\item 
+\mbox{\Hypertarget{class_scope_a5a9fc2cf3ec6a5564170a8c3f8584c12}\label{class_scope_a5a9fc2cf3ec6a5564170a8c3f8584c12}} 
+\mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a5a9fc2cf3ec6a5564170a8c3f8584c12}{operator=}} (const \mbox{\hyperlink{class_scope}{Scope}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy \mbox{\hyperlink{class_assignment}{Assignment}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scope_a5a26aa8d99b8e2896257726f441dd71f}\label{class_scope_a5a26aa8d99b8e2896257726f441dd71f}} 
+\mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a5a26aa8d99b8e2896257726f441dd71f}{operator=}} (\mbox{\hyperlink{class_scope}{Scope}} \&\&) noexcept=default
+\begin{DoxyCompactList}\small\item\em Move \mbox{\hyperlink{class_assignment}{Assignment}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scope_a619b3adeb7248d29660e1421799e240f}{add\+Identifier}} (const std\+::string \&id)
+\item 
+void \mbox{\hyperlink{class_scope_a467f4fbc993414c4364ca2e0696ea1d1}{add\+Identifier}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} $>$ \&\&scoped\+Identifier)
+\item 
+void \mbox{\hyperlink{class_scope_ab4aa39e76f6c880b9c6078e9f77fe1d8}{add\+Identifiers}} (std\+::initializer\+\_\+list$<$ std\+::string $>$ ids)
+\item 
+bool \mbox{\hyperlink{class_scope_aa520fb1b2855ef8eccb62ac40a01b582}{identifier\+Is\+Local}} (const std\+::string \&id) const
+\item 
+bool \mbox{\hyperlink{class_scope_abaa63ddc542e0bbae868e117085c1cfc}{identifier\+Exists}} (const std\+::string \&id) const
+\item 
+void \mbox{\hyperlink{class_scope_ad7a04068e6bc5f37c69515e6f126c73c}{set\+Parent}} (\mbox{\hyperlink{class_scope}{Scope}} $\ast$parent\+Scope)
+\item 
+void \mbox{\hyperlink{class_scope_a00b5624a6ace0186fd9bb4cf3bf1f2e2}{add\+Nested\+Scope}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scope}{Scope}} $>$ \&\&scope)
+\item 
+\mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a8d9738ba520623f0b9bcc533bff412ab}{get\+Parent\+Scope}} ()
+\item 
+const \mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a4662588b088af679667ad90717196efe}{get\+Parent\+Scope}} () const
+\item 
+const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \& \mbox{\hyperlink{class_scope_af6450830c68ad188f7abdcc7e119dee9}{resolve\+Identifier}} (const std\+::string \&id) const
+\item 
+\mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \& \mbox{\hyperlink{class_scope_a12a46e979fae6c8ef8818177e12e80ba}{resolve\+Identifier}} (const std\+::string \&id)
+\item 
+\mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a7757efca029977d8745c110debab4719}{get\+Nested\+Scope\+By\+Creator}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&node)
+\item 
+const \mbox{\hyperlink{class_scope}{Scope}} \& \mbox{\hyperlink{class_scope_a6f529d613d7c02f61e713762fb84d1bf}{get\+Nested\+Scope\+By\+Creator}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&node) const
+\item 
+std\+::string \mbox{\hyperlink{class_scope_adc916540f8f642006ea12dbbbfac0e38}{get\+Scope\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_scope}{Scope}} $\ast$ \mbox{\hyperlink{class_scope_ad95b5dc2bf9ad73c928e1384c6f41cc9}{create\+Nested\+Scope}} (\mbox{\hyperlink{class_scope}{Scope}} \&parent\+Scope, \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&scope\+Opener)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scope_a4b97ce1369f5afb0cab5c6a2aac0f0d1}\label{class_scope_a4b97ce1369f5afb0cab5c6a2aac0f0d1}} 
+\index{Scope@{Scope}!Scope@{Scope}}
+\index{Scope@{Scope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{Scope()}{Scope()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scope\+::\+Scope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{abstract\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new scope. 
+\begin{DoxyParams}{Parameters}
+{\em abstract\+Node} & The node that creates this scope. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scope_a1dfb97b5aa1fdae9090073b872e689a8}\label{class_scope_a1dfb97b5aa1fdae9090073b872e689a8}} 
+\index{Scope@{Scope}!Scope@{Scope}}
+\index{Scope@{Scope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{Scope()}{Scope()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scope\+::\+Scope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scope}{Scope}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Move Constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & the scope to move \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scope_a619b3adeb7248d29660e1421799e240f}\label{class_scope_a619b3adeb7248d29660e1421799e240f}} 
+\index{Scope@{Scope}!addIdentifier@{addIdentifier}}
+\index{addIdentifier@{addIdentifier}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{addIdentifier()}{addIdentifier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Scope\+::add\+Identifier (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+Adds an declared identifier (e.\+g., variable) to this scope. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier to be added to this scope. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scope_a467f4fbc993414c4364ca2e0696ea1d1}\label{class_scope_a467f4fbc993414c4364ca2e0696ea1d1}} 
+\index{Scope@{Scope}!addIdentifier@{addIdentifier}}
+\index{addIdentifier@{addIdentifier}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{addIdentifier()}{addIdentifier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Scope\+::add\+Identifier (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} $>$ \&\&}]{scoped\+Identifier }\end{DoxyParamCaption})}
+
+Adds the given \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} to this scope. Checks that the scoped\+Identifier is actually from this scope. 
+\begin{DoxyParams}{Parameters}
+{\em scoped\+Identifier} & The scoped identifier to be added to this scope. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scope_ab4aa39e76f6c880b9c6078e9f77fe1d8}\label{class_scope_ab4aa39e76f6c880b9c6078e9f77fe1d8}} 
+\index{Scope@{Scope}!addIdentifiers@{addIdentifiers}}
+\index{addIdentifiers@{addIdentifiers}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{addIdentifiers()}{addIdentifiers()}}
+{\footnotesize\ttfamily void Scope\+::add\+Identifiers (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::string $>$}]{ids }\end{DoxyParamCaption})}
+
+Adds multiple declared identifier (e.\+g., variable) to this scope. 
+\begin{DoxyParams}{Parameters}
+{\em ids} & (A list of) identifiers to be added to this scope. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scope_a00b5624a6ace0186fd9bb4cf3bf1f2e2}\label{class_scope_a00b5624a6ace0186fd9bb4cf3bf1f2e2}} 
+\index{Scope@{Scope}!addNestedScope@{addNestedScope}}
+\index{addNestedScope@{addNestedScope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{addNestedScope()}{addNestedScope()}}
+{\footnotesize\ttfamily void Scope\+::add\+Nested\+Scope (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scope}{Scope}} $>$ \&\&}]{scope }\end{DoxyParamCaption})}
+
+Adds a nested scope to this scope\textquotesingle{}s nested\+Scopes vector. 
+\begin{DoxyParams}{Parameters}
+{\em scope} & The scope to add as nested scope in this scope. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scope_ad95b5dc2bf9ad73c928e1384c6f41cc9}\label{class_scope_ad95b5dc2bf9ad73c928e1384c6f41cc9}} 
+\index{Scope@{Scope}!createNestedScope@{createNestedScope}}
+\index{createNestedScope@{createNestedScope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{createNestedScope()}{createNestedScope()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scope}{Scope}} $\ast$ Scope\+::create\+Nested\+Scope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scope}{Scope}} \&}]{parent\+Scope,  }\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{scope\+Opener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a nested scope with the given parent\+Scope as parent and the given \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} scope\+Opener as the AST node that creates this scope. 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Scope} & The parent scope of the scope to be created. \\
+\hline
+{\em scope\+Opener} & The AST node that creates the nested scope. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A weak pointer) to the nested scope that is created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_a7757efca029977d8745c110debab4719}\label{class_scope_a7757efca029977d8745c110debab4719}} 
+\index{Scope@{Scope}!getNestedScopeByCreator@{getNestedScopeByCreator}}
+\index{getNestedScopeByCreator@{getNestedScopeByCreator}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{getNestedScopeByCreator()}{getNestedScopeByCreator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scope}{Scope}} \& Scope\+::get\+Nested\+Scope\+By\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{node }\end{DoxyParamCaption})}
+
+Gets the nested scoped that is created by the given node. Note that this does NOT include deeper nested scopes. It only considers scopes that are directly (next level) nested into this scope. 
+\begin{DoxyParams}{Parameters}
+{\em node} & The node that created the scope that is searched for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A reference to) the scope created by the given node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_a6f529d613d7c02f61e713762fb84d1bf}\label{class_scope_a6f529d613d7c02f61e713762fb84d1bf}} 
+\index{Scope@{Scope}!getNestedScopeByCreator@{getNestedScopeByCreator}}
+\index{getNestedScopeByCreator@{getNestedScopeByCreator}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{getNestedScopeByCreator()}{getNestedScopeByCreator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_scope}{Scope}} \& Scope\+::get\+Nested\+Scope\+By\+Creator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{node }\end{DoxyParamCaption}) const}
+
+Gets the nested scoped that is created by the given node. Note that this does NOT include deeper nested scopes. It only considers scopes that are directly (next level) nested into this scope. 
+\begin{DoxyParams}{Parameters}
+{\em node} & The node that created the scope that is searched for. \\
+\hline
+{\em node} & The node that created the scope that is searched for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A const reference to) the scope created by the given node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_a8d9738ba520623f0b9bcc533bff412ab}\label{class_scope_a8d9738ba520623f0b9bcc533bff412ab}} 
+\index{Scope@{Scope}!getParentScope@{getParentScope}}
+\index{getParentScope@{getParentScope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{getParentScope()}{getParentScope()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scope}{Scope}} \& Scope\+::get\+Parent\+Scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the parent scope of this scope. \begin{DoxyReturn}{Returns}
+(A reference to) the parent scope of this scope. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_a4662588b088af679667ad90717196efe}\label{class_scope_a4662588b088af679667ad90717196efe}} 
+\index{Scope@{Scope}!getParentScope@{getParentScope}}
+\index{getParentScope@{getParentScope}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{getParentScope()}{getParentScope()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_scope}{Scope}} \& Scope\+::get\+Parent\+Scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the parent scope of this scope. \begin{DoxyReturn}{Returns}
+(A const reference to) the parent scope of this scope. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_adc916540f8f642006ea12dbbbfac0e38}\label{class_scope_adc916540f8f642006ea12dbbbfac0e38}} 
+\index{Scope@{Scope}!getScopeName@{getScopeName}}
+\index{getScopeName@{getScopeName}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{getScopeName()}{getScopeName()}}
+{\footnotesize\ttfamily std\+::string Scope\+::get\+Scope\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \mbox{\hyperlink{class_scope}{Scope}} name \begin{DoxyReturn}{Returns}
+the name of this scope (unique\+ID of the associated AST node) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_abaa63ddc542e0bbae868e117085c1cfc}\label{class_scope_abaa63ddc542e0bbae868e117085c1cfc}} 
+\index{Scope@{Scope}!identifierExists@{identifierExists}}
+\index{identifierExists@{identifierExists}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{identifierExists()}{identifierExists()}}
+{\footnotesize\ttfamily bool Scope\+::identifier\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption}) const}
+
+Checks whether the given identifier id exists in this or any parent scope. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True iff the given identifier is defined in this or any parent scope. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_aa520fb1b2855ef8eccb62ac40a01b582}\label{class_scope_aa520fb1b2855ef8eccb62ac40a01b582}} 
+\index{Scope@{Scope}!identifierIsLocal@{identifierIsLocal}}
+\index{identifierIsLocal@{identifierIsLocal}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{identifierIsLocal()}{identifierIsLocal()}}
+{\footnotesize\ttfamily bool Scope\+::identifier\+Is\+Local (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption}) const}
+
+Checks whether the given identifier is local, i.\+e., declared in this scope and not in any parent scope. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True iff the given identifier id is defined in this scope. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_a12a46e979fae6c8ef8818177e12e80ba}\label{class_scope_a12a46e979fae6c8ef8818177e12e80ba}} 
+\index{Scope@{Scope}!resolveIdentifier@{resolveIdentifier}}
+\index{resolveIdentifier@{resolveIdentifier}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{resolveIdentifier()}{resolveIdentifier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \& Scope\+::resolve\+Identifier (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+Determines the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} of the given identifier. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier for that the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} should be determined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A const reference) to the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} object associated with the given identifier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_af6450830c68ad188f7abdcc7e119dee9}\label{class_scope_af6450830c68ad188f7abdcc7e119dee9}} 
+\index{Scope@{Scope}!resolveIdentifier@{resolveIdentifier}}
+\index{resolveIdentifier@{resolveIdentifier}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{resolveIdentifier()}{resolveIdentifier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} \& Scope\+::resolve\+Identifier (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id }\end{DoxyParamCaption}) const}
+
+Determines the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} of the given identifier. 
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier for that the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} should be determined. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A const reference) to the \mbox{\hyperlink{class_scoped_identifier}{Scoped\+Identifier}} object associated with the given identifier. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scope_ad7a04068e6bc5f37c69515e6f126c73c}\label{class_scope_ad7a04068e6bc5f37c69515e6f126c73c}} 
+\index{Scope@{Scope}!setParent@{setParent}}
+\index{setParent@{setParent}!Scope@{Scope}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void Scope\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scope}{Scope}} $\ast$}]{parent\+Scope }\end{DoxyParamCaption})}
+
+Sets the parent scope of this scope. 
+\begin{DoxyParams}{Parameters}
+{\em parent\+Scope} & The scope to be set as parent of this scope. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/utilities/Scope.\+h\item 
+src/utilities/Scope.\+cpp\end{DoxyCompactItemize}

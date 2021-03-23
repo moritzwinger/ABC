@@ -1,0 +1,194 @@
+\hypertarget{class_special_runtime_visitor}{}\doxysection{Special\+Runtime\+Visitor Class Reference}
+\label{class_special_runtime_visitor}\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+Inheritance diagram for Special\+Runtime\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_special_runtime_visitor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_special_runtime_visitor_ad832382e3d960b290c7a62fd7b9a5658}{Special\+Runtime\+Visitor}} (\mbox{\hyperlink{class_abstract_ciphertext_factory}{Abstract\+Ciphertext\+Factory}} \&factory, \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&inputs, Secret\+Tainted\+Nodes\+Map \&secret\+Tainted\+Nodes\+Map)
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a140a42555d87d0cbac5ca62c75280c36}\label{class_special_runtime_visitor_a140a42555d87d0cbac5ca62c75280c36}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_binary_expression}{Binary\+Expression}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a8681d31a28213ddfaf8cc75ddb8d38b8}\label{class_special_runtime_visitor_a8681d31a28213ddfaf8cc75ddb8d38b8}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_call}{Call}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a6e048ca9a74adb2ae308b85ff52e4f80}\label{class_special_runtime_visitor_a6e048ca9a74adb2ae308b85ff52e4f80}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_expression_list}{Expression\+List}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a6ce12915df317b6b42d1e99e108af814}\label{class_special_runtime_visitor_a6ce12915df317b6b42d1e99e108af814}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_for}{For}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a1893227e5c853c8ab9f9e5ddb591e77b}\label{class_special_runtime_visitor_a1893227e5c853c8ab9f9e5ddb591e77b}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_function}{Function}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_af79bb08556588a30c0e84e3cf6d3b8a2}\label{class_special_runtime_visitor_af79bb08556588a30c0e84e3cf6d3b8a2}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_if}{If}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_ae9a6ad9d918dcec1384e30fa2a0081c6}\label{class_special_runtime_visitor_ae9a6ad9d918dcec1384e30fa2a0081c6}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_index_access}{Index\+Access}} \&elem) override
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_special_runtime_visitor_a11784f775e9327e21540370812fa8f94}{visit\+Helper}} (\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&elem)
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a36f28b0e33a02b5485e4dd610086e372}\label{class_special_runtime_visitor_a36f28b0e33a02b5485e4dd610086e372}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+Bool}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_ad6bbe682fdacfe688a15a210b977434f}\label{class_special_runtime_visitor_ad6bbe682fdacfe688a15a210b977434f}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+Char}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a56bf0d30f8723e65e92fbf1676616b23}\label{class_special_runtime_visitor_a56bf0d30f8723e65e92fbf1676616b23}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+Int}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a0d1652d51e95f8471a8d1fc3a86a6852}\label{class_special_runtime_visitor_a0d1652d51e95f8471a8d1fc3a86a6852}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+Float}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_aef7a1d81055d44bf55360d87c6c0e8cc}\label{class_special_runtime_visitor_aef7a1d81055d44bf55360d87c6c0e8cc}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+Double}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a2a52943641b1999d6143872a359e0eff}\label{class_special_runtime_visitor_a2a52943641b1999d6143872a359e0eff}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_literal}{Literal\+String}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a42456e7d6976b9bb0f150748dbb6fc39}\label{class_special_runtime_visitor_a42456e7d6976b9bb0f150748dbb6fc39}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_operator_expression}{Operator\+Expression}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a6754ea2a89f85a7b8b5bca1366493d3b}\label{class_special_runtime_visitor_a6754ea2a89f85a7b8b5bca1366493d3b}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_return}{Return}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a54fca8369f27dc7399af443536428af9}\label{class_special_runtime_visitor_a54fca8369f27dc7399af443536428af9}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_unary_expression}{Unary\+Expression}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a5c6a91cac281606bc393a392116d3e93}\label{class_special_runtime_visitor_a5c6a91cac281606bc393a392116d3e93}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_assignment}{Assignment}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a8a7da2acaf830866427598c50bbed5e5}\label{class_special_runtime_visitor_a8a7da2acaf830866427598c50bbed5e5}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_variable_declaration}{Variable\+Declaration}} \&elem) override
+\item 
+\mbox{\Hypertarget{class_special_runtime_visitor_a639c21027423651481cfb3cf5cad7045}\label{class_special_runtime_visitor_a639c21027423651481cfb3cf5cad7045}} 
+void {\bfseries visit} (\mbox{\hyperlink{class_variable}{Variable}} \&elem) override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_value}{Abstract\+Value}} $>$ \mbox{\hyperlink{class_special_runtime_visitor_af2e1f998d4231a5645b9f87b1db5ef54}{get\+Next\+Stack\+Element}} ()
+\item 
+void \mbox{\hyperlink{class_special_runtime_visitor_a654dabbf8d0ab7177a8b0a96e6164541}{print\+Output}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&output\+Ast, std\+::ostream \&target\+Stream=std\+::cout)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_special_runtime_visitor_ad305b090c34a8ae1e05bdecccafe37fe}{check\+Ast\+Structure}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&ast\+Root\+Node)
+\item 
+Output\+Identifier\+Value\+Pairs \mbox{\hyperlink{class_special_runtime_visitor_ac53006510adc49839b1ff18029bf8786}{get\+Output}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&output\+Ast)
+\item 
+void \mbox{\hyperlink{class_special_runtime_visitor_a4c24d9abc2aa897aeaaa942febbfe8b3}{execute\+Ast}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&root\+Node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_special_runtime_visitor_ad832382e3d960b290c7a62fd7b9a5658}\label{class_special_runtime_visitor_ad832382e3d960b290c7a62fd7b9a5658}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{SpecialRuntimeVisitor()}{SpecialRuntimeVisitor()}}
+{\footnotesize\ttfamily Special\+Runtime\+Visitor\+::\+Special\+Runtime\+Visitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_ciphertext_factory}{Abstract\+Ciphertext\+Factory}} \&}]{factory,  }\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{inputs,  }\item[{Secret\+Tainted\+Nodes\+Map \&}]{secret\+Tainted\+Nodes\+Map }\end{DoxyParamCaption})}
+
+Create a new \mbox{\hyperlink{class_special_runtime_visitor}{Special\+Runtime\+Visitor}}. 
+\begin{DoxyParams}{Parameters}
+{\em factory} & A reference to the factory that should be used to create the ciphertexts. \\
+\hline
+{\em inputs} & The inputs of the program that should be executed with this \mbox{\hyperlink{class_special_runtime_visitor}{Special\+Runtime\+Visitor}} (by calling execute\+Ast). \\
+\hline
+{\em secret\+Tainted\+Nodes\+Map} & A map that contains the secret tainted nodes. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_special_runtime_visitor_ad305b090c34a8ae1e05bdecccafe37fe}\label{class_special_runtime_visitor_ad305b090c34a8ae1e05bdecccafe37fe}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!checkAstStructure@{checkAstStructure}}
+\index{checkAstStructure@{checkAstStructure}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{checkAstStructure()}{checkAstStructure()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Special\+Runtime\+Visitor\+::check\+Ast\+Structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{ast\+Root\+Node }\end{DoxyParamCaption})}
+
+Verifies that the structure of the input and output AST meet the expected form. More precisely,
+\begin{DoxyItemize}
+\item the input AST must consists of a single block with declaration statements,
+\item and the output AST of a single block with assignment statements. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The expected type of the statements in the block. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ast\+Root\+Node} & The root node of the AST to check. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}The input and output ASTs are expected to consist of a single block with variable declaration statements and variable assignments, respectively.\mbox{\Hypertarget{class_special_runtime_visitor_a4c24d9abc2aa897aeaaa942febbfe8b3}\label{class_special_runtime_visitor_a4c24d9abc2aa897aeaaa942febbfe8b3}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!executeAst@{executeAst}}
+\index{executeAst@{executeAst}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{executeAst()}{executeAst()}}
+{\footnotesize\ttfamily void Special\+Runtime\+Visitor\+::execute\+Ast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{root\+Node }\end{DoxyParamCaption})}
+
+Executes an input program given as AST. {\itshape NOTE}\+: As our Runtime\+Visitor does not handle Functions yet, the visitor must be called on the function\textquotesingle{}s \mbox{\hyperlink{class_block}{Block}}. The missing function signature (input and outputs args) are derived from the input and output AST given in the constructor and the get\+Output method, respectively. 
+\begin{DoxyParams}{Parameters}
+{\em root\+Node} & The root node of the input program. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_special_runtime_visitor_af2e1f998d4231a5645b9f87b1db5ef54}\label{class_special_runtime_visitor_af2e1f998d4231a5645b9f87b1db5ef54}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!getNextStackElement@{getNextStackElement}}
+\index{getNextStackElement@{getNextStackElement}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{getNextStackElement()}{getNextStackElement()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_value}{Abstract\+Value}} $>$ Special\+Runtime\+Visitor\+::get\+Next\+Stack\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the top value of the stack containing intermediate results and removes it from the stack. \begin{DoxyReturn}{Returns}
+(A std\+::unique\+\_\+ptr of) the most recently pushed intermediate result. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_special_runtime_visitor_ac53006510adc49839b1ff18029bf8786}\label{class_special_runtime_visitor_ac53006510adc49839b1ff18029bf8786}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily Output\+Identifier\+Value\+Pairs Special\+Runtime\+Visitor\+::get\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{output\+Ast }\end{DoxyParamCaption})}
+
+Gets the output specified by the given output AST. 
+\begin{DoxyParams}{Parameters}
+{\em output\+Ast} & The root node of the output AST that describes the program\textquotesingle{}s return values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(A copy of) a vector of pairs consisting of identifier (std\+::string) and the corresponding value (std\+::unique\+\_\+ptr$<$\+Abstract\+Value$>$). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_special_runtime_visitor_a654dabbf8d0ab7177a8b0a96e6164541}\label{class_special_runtime_visitor_a654dabbf8d0ab7177a8b0a96e6164541}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!printOutput@{printOutput}}
+\index{printOutput@{printOutput}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{printOutput()}{printOutput()}}
+{\footnotesize\ttfamily void Special\+Runtime\+Visitor\+::print\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} \&}]{output\+Ast,  }\item[{std\+::ostream \&}]{target\+Stream = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption})}
+
+Prints the output of the given ast (output\+Ast) to the given stream (target\+Stream). 
+\begin{DoxyParams}{Parameters}
+{\em output\+Ast} & The root node of the output AST, i.\+e., a single block with one or multiple assignments. \\
+\hline
+{\em target\+Stream} & The stream to write the textual representation of the AST to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_special_runtime_visitor_a11784f775e9327e21540370812fa8f94}\label{class_special_runtime_visitor_a11784f775e9327e21540370812fa8f94}} 
+\index{SpecialRuntimeVisitor@{SpecialRuntimeVisitor}!visitHelper@{visitHelper}}
+\index{visitHelper@{visitHelper}!SpecialRuntimeVisitor@{SpecialRuntimeVisitor}}
+\doxysubsubsection{\texorpdfstring{visitHelper()}{visitHelper()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Special\+Runtime\+Visitor\+::visit\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_literal}{Literal}}$<$ T $>$ \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A template method that is used to avoid code duplication in the visit methods for Literal$<$\+T$>$. As they do not have a common base type, we cannot create a single visit method for them. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The \mbox{\hyperlink{class_literal}{Literal}} type that is visited. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & (A reference) to the currently visiting Literal$<$\+T$>$. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/visitor/runtime/Runtime\+Visitor.\+h\item 
+src/visitor/runtime/Runtime\+Visitor.\+cpp\end{DoxyCompactItemize}

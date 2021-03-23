@@ -1,0 +1,269 @@
+\hypertarget{class_return}{}\doxysection{Return Class Reference}
+\label{class_return}\index{Return@{Return}}
+
+
+A \mbox{\hyperlink{class_return}{Return}} statement has an (optional) value (\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}})  
+
+
+
+
+{\ttfamily \#include $<$Return.\+h$>$}
+
+Inheritance diagram for Return\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_return}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_return_aadca39ccd89c2a260ad2df1cbd2f5bf3}\label{class_return_aadca39ccd89c2a260ad2df1cbd2f5bf3}} 
+\mbox{\hyperlink{class_return_aadca39ccd89c2a260ad2df1cbd2f5bf3}{$\sim$\+Return}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_return_ad9462245d0d13b95ab0a85e16c80b835}{Return}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ value=nullptr)
+\item 
+\mbox{\hyperlink{class_return_aff6b3b7999bd8cb14096c5fafe601f42}{Return}} (const \mbox{\hyperlink{class_return}{Return}} \&other)
+\item 
+\mbox{\hyperlink{class_return_a754af1b64a46fe55834eeb73151cce14}{Return}} (\mbox{\hyperlink{class_return}{Return}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_return}{Return}} \& \mbox{\hyperlink{class_return_ac61f9a994b6b911f1857bc44ff32476e}{operator=}} (const \mbox{\hyperlink{class_return}{Return}} \&other)
+\item 
+\mbox{\hyperlink{class_return}{Return}} \& \mbox{\hyperlink{class_return_af9ba7ad016e9cde54e9458f2303f05f8}{operator=}} (\mbox{\hyperlink{class_return}{Return}} \&\&other) noexcept
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_return}{Return}} $>$ \mbox{\hyperlink{class_return_a8e0d1f8ed609879f8adf265abd7728be}{clone}} (\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$parent=nullptr) const
+\item 
+bool \mbox{\hyperlink{class_return_a66af4b5a49c370ea99460dd096ea1188}{has\+Value}} () const
+\item 
+\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_return_aaa7741e42ab40e66a516ff6f1b7772ed}{get\+Value}} ()
+\item 
+const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& \mbox{\hyperlink{class_return_a59b7a774a22694a99615b7e377f392f4}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_return_a1e5ad59a9cd11e294b302688fd330b02}{set\+Value}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$ new\+Value)
+\item 
+void \mbox{\hyperlink{class_return_ac6d2a94a5f491ccf86c2ee148b5b8649}{accept}} (\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&v) override
+\item 
+\mbox{\Hypertarget{class_return_a54377a8c84215175a9a6b05499ac8428}\label{class_return_a54377a8c84215175a9a6b05499ac8428}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_return_a54377a8c84215175a9a6b05499ac8428}{begin}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_return_a6367363249fbe4821194b097e184552e}\label{class_return_a6367363249fbe4821194b097e184552e}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_return_a6367363249fbe4821194b097e184552e}{begin}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking begin of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_return_a8dda243fd2743a4a7b15b49c4d242675}\label{class_return_a8dda243fd2743a4a7b15b49c4d242675}} 
+\mbox{\hyperlink{group___d_a_g_gaf7ec06d875e1e500fcce725260057ec8}{iterator}} \mbox{\hyperlink{class_return_a8dda243fd2743a4a7b15b49c4d242675}{end}} () override
+\begin{DoxyCompactList}\small\item\em Forward Iterator marking end of children. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_return_a9a0195a6342ba51a5aaeabf3c74ecbd1}\label{class_return_a9a0195a6342ba51a5aaeabf3c74ecbd1}} 
+\mbox{\hyperlink{group___d_a_g_ga4bc933321cb97fee4fb929e8f4d740a1}{const\+\_\+iterator}} \mbox{\hyperlink{class_return_a9a0195a6342ba51a5aaeabf3c74ecbd1}{end}} () const override
+\begin{DoxyCompactList}\small\item\em Forward Const Iterator marking end of children. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_return_a47fee52595c2b96a0fd8d97a25e4e311}{count\+Children}} () const override
+\item 
+nlohmann\+::json \mbox{\hyperlink{class_return_af1142d542617536becdf8724aa1b1d37}{to\+Json}} () const override
+\item 
+std\+::string \mbox{\hyperlink{class_return_a992860dd4e2e7ff4b4aa7f250ce663e7}{to\+String}} (bool print\+Children) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_return_a7b756560b61c5d7d53f4e18f3b3e7ce4}{get\+Node\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{class_return}{Return}} statement has an (optional) value (\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}}) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_return_ad9462245d0d13b95ab0a85e16c80b835}\label{class_return_ad9462245d0d13b95ab0a85e16c80b835}} 
+\index{Return@{Return}!Return@{Return}}
+\index{Return@{Return}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{Return()}{Return()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Return\+::\+Return (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{value = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{class_return}{Return}} statement 
+\begin{DoxyParams}{Parameters}
+{\em value} & (Optional) The value to return (the \mbox{\hyperlink{class_return}{Return}} will take ownership) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_return_aff6b3b7999bd8cb14096c5fafe601f42}\label{class_return_aff6b3b7999bd8cb14096c5fafe601f42}} 
+\index{Return@{Return}!Return@{Return}}
+\index{Return@{Return}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{Return()}{Return()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Return\+::\+Return (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_return}{Return}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_return}{Return}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_return_a754af1b64a46fe55834eeb73151cce14}\label{class_return_a754af1b64a46fe55834eeb73151cce14}} 
+\index{Return@{Return}!Return@{Return}}
+\index{Return@{Return}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{Return()}{Return()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Return\+::\+Return (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_return}{Return}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move constructor 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_return}{Return}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_return_ac6d2a94a5f491ccf86c2ee148b5b8649}\label{class_return_ac6d2a94a5f491ccf86c2ee148b5b8649}} 
+\index{Return@{Return}!accept@{accept}}
+\index{accept@{accept}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Return\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_visitor}{IVisitor}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Part of the visitor pattern. Must be overridden in derived classes and must call v.\+visit(node). This allows the correct overload for the derived class to be called in the visitor. 
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_visitor}{Visitor}} that offers a visit() method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_abstract_node_a15d03714b4b0e362da6d740f4c749205}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_return_a8e0d1f8ed609879f8adf265abd7728be}\label{class_return_a8e0d1f8ed609879f8adf265abd7728be}} 
+\index{Return@{Return}!clone@{clone}}
+\index{clone@{clone}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_return}{Return}} $>$ Return\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Deep copy of the current node \begin{DoxyReturn}{Returns}
+A deep copy of the current node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_return_a47fee52595c2b96a0fd8d97a25e4e311}\label{class_return_a47fee52595c2b96a0fd8d97a25e4e311}} 
+\index{Return@{Return}!countChildren@{countChildren}}
+\index{countChildren@{countChildren}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{countChildren()}{countChildren()}}
+{\footnotesize\ttfamily size\+\_\+t Return\+::count\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+An integer indicating the number of children nodes. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group___d_a_g_ga27b40a34874c45bce9a30b4c92cdd746}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_return_a7b756560b61c5d7d53f4e18f3b3e7ce4}\label{class_return_a7b756560b61c5d7d53f4e18f3b3e7ce4}} 
+\index{Return@{Return}!getNodeType@{getNodeType}}
+\index{getNodeType@{getNodeType}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{getNodeType()}{getNodeType()}}
+{\footnotesize\ttfamily std\+::string Return\+::get\+Node\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns the node\textquotesingle{}s type, which is the name of the object in the AST. This method must be overridden by all classes that inherit from \mbox{\hyperlink{class_abstract_node}{Abstract\+Node}} by their respective name (e.\+g., Arithmetic\+Exp, \mbox{\hyperlink{class_function}{Function}}, \mbox{\hyperlink{class_variable}{Variable}}). \begin{DoxyReturn}{Returns}
+The name of the node type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga8cc40127801e7777c8094f17a3b1efcb}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_return_aaa7741e42ab40e66a516ff6f1b7772ed}\label{class_return_aaa7741e42ab40e66a516ff6f1b7772ed}} 
+\index{Return@{Return}!getValue@{getValue}}
+\index{getValue@{getValue}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Return\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get (a reference to) the value (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the value variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no value exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_return_a59b7a774a22694a99615b7e377f392f4}\label{class_return_a59b7a774a22694a99615b7e377f392f4}} 
+\index{Return@{Return}!getValue@{getValue}}
+\index{getValue@{getValue}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \& Return\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get (a const reference to) the value (if it exists) \begin{DoxyReturn}{Returns}
+A reference to the value variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if no value exists \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_return_a66af4b5a49c370ea99460dd096ea1188}\label{class_return_a66af4b5a49c370ea99460dd096ea1188}} 
+\index{Return@{Return}!hasValue@{hasValue}}
+\index{hasValue@{hasValue}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{hasValue()}{hasValue()}}
+{\footnotesize\ttfamily bool Return\+::has\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Does this return statement have its value set? \begin{DoxyReturn}{Returns}
+true iff the assignment has the value set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_return_ac61f9a994b6b911f1857bc44ff32476e}\label{class_return_ac61f9a994b6b911f1857bc44ff32476e}} 
+\index{Return@{Return}!operator=@{operator=}}
+\index{operator=@{operator=}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_return}{Return}} \& Return\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_return}{Return}} \&}]{other }\end{DoxyParamCaption})}
+
+Copy assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_return}{Return}} to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_return_af9ba7ad016e9cde54e9458f2303f05f8}\label{class_return_af9ba7ad016e9cde54e9458f2303f05f8}} 
+\index{Return@{Return}!operator=@{operator=}}
+\index{operator=@{operator=}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_return}{Return}} \& Return\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_return}{Return}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Move assignment 
+\begin{DoxyParams}{Parameters}
+{\em other} & \mbox{\hyperlink{class_return}{Return}} to move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_return_a1e5ad59a9cd11e294b302688fd330b02}\label{class_return_a1e5ad59a9cd11e294b302688fd330b02}} 
+\index{Return@{Return}!setValue@{setValue}}
+\index{setValue@{setValue}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Return\+::set\+Value (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} $>$}]{new\+Value }\end{DoxyParamCaption})}
+
+Set the value to new\+Value, taking ownership of new\+Value This will delete the previous value! 
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & new value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_return_af1142d542617536becdf8724aa1b1d37}\label{class_return_af1142d542617536becdf8724aa1b1d37}} 
+\index{Return@{Return}!toJson@{toJson}}
+\index{toJson@{toJson}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{toJson()}{toJson()}}
+{\footnotesize\ttfamily nlohmann\+::json Return\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the nlohmann\+::json representation of the node including all of its children. \begin{DoxyReturn}{Returns}
+nlohmann\+::json representation of the node 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{group__output_ga46f4d6b6ae532260c283a6e5e6502fb8}{Abstract\+Node}}.
+
+\mbox{\Hypertarget{class_return_a992860dd4e2e7ff4b4aa7f250ce663e7}\label{class_return_a992860dd4e2e7ff4b4aa7f250ce663e7}} 
+\index{Return@{Return}!toString@{toString}}
+\index{toString@{toString}!Return@{Return}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Return\+::to\+String (\begin{DoxyParamCaption}\item[{bool}]{print\+Children }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns a string representation of the node, if print\+Children is True then calls to\+String for its children too. Hence, to\+String(false) is equivalent to printing a node\textquotesingle{}s attributes only. \begin{DoxyReturn}{Returns}
+A textual representation of the node, including a newline at the end 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{group__output_gaee58b60a470f2e494e0db1808c87b13d}{Abstract\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/ast/Return.\+h\item 
+src/ast/Return.\+cpp\end{DoxyCompactItemize}

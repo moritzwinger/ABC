@@ -1,0 +1,72 @@
+\hypertarget{class_complex_value}{}\doxysection{Complex\+Value Class Reference}
+\label{class_complex_value}\index{ComplexValue@{ComplexValue}}
+
+
+Represents a SIMD Ciphertext.  
+
+
+
+
+{\ttfamily \#include $<$Complex\+Value.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_complex_value_aed70fad827995b38f5973939d800ba04}\label{class_complex_value_aed70fad827995b38f5973939d800ba04}} 
+\mbox{\hyperlink{class_complex_value_aed70fad827995b38f5973939d800ba04}{Complex\+Value}} ()=default
+\begin{DoxyCompactList}\small\item\em Create an empty \mbox{\hyperlink{class_complex_value}{Complex\+Value}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_complex_value_a3288e06782bf0fcd62218bf2574c5457}\label{class_complex_value_a3288e06782bf0fcd62218bf2574c5457}} 
+{\bfseries Complex\+Value} (const \mbox{\hyperlink{class_complex_value}{Complex\+Value}} \&other)=default
+\item 
+\mbox{\Hypertarget{class_complex_value_a457d91beafb1a30c12abc1212dae2627}\label{class_complex_value_a457d91beafb1a30c12abc1212dae2627}} 
+{\bfseries Complex\+Value} (\mbox{\hyperlink{class_complex_value}{Complex\+Value}} \&\&other) noexcept=default
+\item 
+\mbox{\Hypertarget{class_complex_value_a8cb6a3ef908880c1e139a8e1c8aa9415}\label{class_complex_value_a8cb6a3ef908880c1e139a8e1c8aa9415}} 
+\mbox{\hyperlink{class_complex_value}{Complex\+Value}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_complex_value}{Complex\+Value}} \&other)=default
+\item 
+\mbox{\Hypertarget{class_complex_value_abea30dd5fc7605ae65626cd5a53c609a}\label{class_complex_value_abea30dd5fc7605ae65626cd5a53c609a}} 
+\mbox{\hyperlink{class_complex_value}{Complex\+Value}} \& {\bfseries operator=} (\mbox{\hyperlink{class_complex_value}{Complex\+Value}} \&\&other) noexcept=default
+\item 
+\mbox{\hyperlink{class_complex_value_aad0bc438996cac69681f52ca9e9715eb}{Complex\+Value}} (\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \&value)
+\item 
+\mbox{\hyperlink{class_complex_value_a50ef0e9c43da1cbb822043adcb923bf8}{Complex\+Value}} (\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \&value, int slot)
+\item 
+\mbox{\Hypertarget{class_complex_value_a50026e3a6e04fc916af1f5c43c9b8766}\label{class_complex_value_a50026e3a6e04fc916af1f5c43c9b8766}} 
+void {\bfseries merge} (\mbox{\hyperlink{class_complex_value}{Complex\+Value}} \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a SIMD Ciphertext. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_complex_value_aad0bc438996cac69681f52ca9e9715eb}\label{class_complex_value_aad0bc438996cac69681f52ca9e9715eb}} 
+\index{ComplexValue@{ComplexValue}!ComplexValue@{ComplexValue}}
+\index{ComplexValue@{ComplexValue}!ComplexValue@{ComplexValue}}
+\doxysubsubsection{\texorpdfstring{ComplexValue()}{ComplexValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Complex\+Value\+::\+Complex\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Create a \mbox{\hyperlink{class_complex_value}{Complex\+Value}} from a simple value (assign to all slots, i.\+e. slot -\/1) 
+\begin{DoxyParams}{Parameters}
+{\em value} & Simple Value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_complex_value_a50ef0e9c43da1cbb822043adcb923bf8}\label{class_complex_value_a50ef0e9c43da1cbb822043adcb923bf8}} 
+\index{ComplexValue@{ComplexValue}!ComplexValue@{ComplexValue}}
+\index{ComplexValue@{ComplexValue}!ComplexValue@{ComplexValue}}
+\doxysubsubsection{\texorpdfstring{ComplexValue()}{ComplexValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Complex\+Value\+::\+Complex\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_abstract_expression}{Abstract\+Expression}} \&}]{value,  }\item[{int}]{slot }\end{DoxyParamCaption})}
+
+Create a \mbox{\hyperlink{class_complex_value}{Complex\+Value}} from a simple value and a slot 
+\begin{DoxyParams}{Parameters}
+{\em value} & Simple Value \\
+\hline
+{\em slot} & indicates target slot \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/ast\+\_\+opt/utilities/Complex\+Value.\+h\item 
+src/utilities/Complex\+Value.\+cpp\end{DoxyCompactItemize}
