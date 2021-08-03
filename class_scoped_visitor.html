@@ -77,15 +77,19 @@ Inheritance diagram for ScopedVisitor:</div>
  <div class="center">
   <img src="class_scoped_visitor.png" usemap="#ScopedVisitor_map" alt=""/>
   <map id="ScopedVisitor_map" name="ScopedVisitor_map">
-<area href="class_i_visitor.html" alt="IVisitor" shape="rect" coords="0,0,193,24"/>
-<area href="class_special_control_flow_graph_visitor.html" alt="SpecialControlFlowGraphVisitor" shape="rect" coords="203,112,396,136"/>
-<area href="class_special_expression_batcher.html" alt="SpecialExpressionBatcher" shape="rect" coords="203,168,396,192"/>
-<area href="class_special_hash_visitor.html" alt="SpecialHashVisitor" shape="rect" coords="203,224,396,248"/>
-<area href="class_special_print_visitor.html" alt="SpecialPrintVisitor" shape="rect" coords="203,280,396,304"/>
-<area href="class_special_runtime_visitor.html" alt="SpecialRuntimeVisitor" shape="rect" coords="203,336,396,360"/>
-<area href="class_special_secret_branching_visitor.html" alt="SpecialSecretBranchingVisitor" shape="rect" coords="203,392,396,416"/>
-<area href="class_special_type_checking_visitor.html" alt="SpecialTypeCheckingVisitor" shape="rect" coords="203,448,396,472"/>
-<area href="class_special_vectorizer.html" alt="SpecialVectorizer" shape="rect" coords="203,504,396,528"/>
+<area href="class_i_visitor.html" alt="IVisitor" shape="rect" coords="0,0,254,24"/>
+<area href="class_special_binary_to_operator_expression_visitor.html" alt="SpecialBinaryToOperatorExpressionVisitor" shape="rect" coords="264,112,518,136"/>
+<area href="class_special_control_flow_graph_visitor.html" alt="SpecialControlFlowGraphVisitor" shape="rect" coords="264,168,518,192"/>
+<area href="class_special_count_ops_visitor.html" alt="SpecialCountOpsVisitor" shape="rect" coords="264,224,518,248"/>
+<area href="class_special_expression_batcher.html" alt="SpecialExpressionBatcher" shape="rect" coords="264,280,518,304"/>
+<area href="class_special_get_all_nodes_visitor.html" alt="SpecialGetAllNodesVisitor" shape="rect" coords="264,336,518,360"/>
+<area href="class_special_hash_visitor.html" alt="SpecialHashVisitor" shape="rect" coords="264,392,518,416"/>
+<area href="class_special_identify_noisy_subtree_visitor.html" alt="SpecialIdentifyNoisySubtreeVisitor" shape="rect" coords="264,448,518,472"/>
+<area href="class_special_noise_print_visitor.html" alt="SpecialNoisePrintVisitor" shape="rect" coords="264,504,518,528"/>
+<area href="class_special_runtime_visitor.html" alt="SpecialRuntimeVisitor" shape="rect" coords="264,560,518,584"/>
+<area href="class_special_secret_branching_visitor.html" alt="SpecialSecretBranchingVisitor" shape="rect" coords="264,616,518,640"/>
+<area href="class_special_type_checking_visitor.html" alt="SpecialTypeCheckingVisitor" shape="rect" coords="264,672,518,696"/>
+<area href="class_special_vectorizer.html" alt="SpecialVectorizer" shape="rect" coords="264,728,518,752"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -166,12 +170,18 @@ const <a class="el" href="class_scope.html">Scope</a> &amp;&#160;</td><td class=
 <tr class="memitem:a72ce699f3f2e340963565907eac3094d"><td class="memItemLeft" align="right" valign="top"><a id="a72ce699f3f2e340963565907eac3094d"></a>
 <a class="el" href="class_scope.html">Scope</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRootScope</b> ()</td></tr>
 <tr class="separator:a72ce699f3f2e340963565907eac3094d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad784670afb118287d7b7df106d1b6db9"><td class="memItemLeft" align="right" valign="top"><a id="ad784670afb118287d7b7df106d1b6db9"></a>
+std::unique_ptr&lt; <a class="el" href="class_scope.html">Scope</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>takeRootScope</b> ()</td></tr>
+<tr class="separator:ad784670afb118287d7b7df106d1b6db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d103871411f97f1c22298a5fcec7ab7"><td class="memItemLeft" align="right" valign="top"><a id="a4d103871411f97f1c22298a5fcec7ab7"></a>
 const <a class="el" href="class_scope.html">Scope</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRootScope</b> () const</td></tr>
 <tr class="separator:a4d103871411f97f1c22298a5fcec7ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add25ecfd10630f138cf8ad32428add1a"><td class="memItemLeft" align="right" valign="top"><a id="add25ecfd10630f138cf8ad32428add1a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setRootScope</b> (std::unique_ptr&lt; <a class="el" href="class_scope.html">Scope</a> &gt; &amp;&amp;scope)</td></tr>
 <tr class="separator:add25ecfd10630f138cf8ad32428add1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9c44209f499713d2638bb17fb3c5b5"><td class="memItemLeft" align="right" valign="top"><a id="a1f9c44209f499713d2638bb17fb3c5b5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>overrideCurrentScope</b> (<a class="el" href="class_scope.html">Scope</a> *scope)</td></tr>
+<tr class="separator:a1f9c44209f499713d2638bb17fb3c5b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ffcb22215d238174d3d49babddeda20"><td class="memItemLeft" align="right" valign="top"><a id="a9ffcb22215d238174d3d49babddeda20"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>visitChildren</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;elem)</td></tr>
 <tr class="separator:a9ffcb22215d238174d3d49babddeda20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,8 +195,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>exitScope</b> ()</td>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements the "default" behaviour of a visitor simply visiting a node's children and setting the scope as required </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/ast_opt/visitor/<a class="el" href="_scoped_visitor_8h_source.html">ScopedVisitor.h</a></li>
-<li>src/visitor/ScopedVisitor.cpp</li>
+<li>include/ast_opt/utilities/<a class="el" href="_scoped_visitor_8h_source.html">ScopedVisitor.h</a></li>
+<li>src/utilities/ScopedVisitor.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

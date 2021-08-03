@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nodeiterator_352',['NodeIterator',['../class_node_iterator.html',1,'']]],
-  ['noderelationship_353',['NodeRelationship',['../class_node_relationship.html',1,'']]]
+  ['multiplicativedepthcalculator_389',['MultiplicativeDepthCalculator',['../class_multiplicative_depth_calculator.html',1,'']]]
 ];
