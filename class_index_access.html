@@ -144,6 +144,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a35b530635d395588a0c9ae2446a3455c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf2c56c69a58da511cf768c22c431d20"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_access.html#adf2c56c69a58da511cf768c22c431d20">toString</a> (bool printChildren) const override</td></tr>
 <tr class="separator:adf2c56c69a58da511cf768c22c431d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5588a2911285468ef85fd1ba38bf9d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_index_access.html#a1c5588a2911285468ef85fd1ba38bf9d">replaceChild</a> (const <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;child, std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;new_child) override</td></tr>
+<tr class="separator:a1c5588a2911285468ef85fd1ba38bf9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_abstract_target"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_abstract_target')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_abstract_target.html">AbstractTarget</a></td></tr>
 <tr class="memitem:abf354564fa241609a84c7e626cf0ae84 inherit pub_methods_class_abstract_target"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_target.html">AbstractTarget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_target.html#abf354564fa241609a84c7e626cf0ae84">clone</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parent_) const</td></tr>
 <tr class="separator:abf354564fa241609a84c7e626cf0ae84 inherit pub_methods_class_abstract_target"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -589,6 +591,58 @@ typedef <a class="el" href="class_node_iterator.html">NodeIterator</a>&lt; const
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>This object </dd></dl>
+
+</div>
+</div>
+<a id="a1c5588a2911285468ef85fd1ba38bf9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5588a2911285468ef85fd1ba38bf9d">&#9670;&nbsp;</a></span>replaceChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; IndexAccess::replaceChild </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>child</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>new_child</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generically replaces a child node with a different node. This is computationally inefficient, iterating through all children and searching for a match It also requires a lot of dynamic casting, therefore: <a class="el" href="class_if.html">If</a> it's possible, it is preferred to replace children directly through the derived class interface (e.g. setX) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td>Reference to the child that needs to be replaced (compared by address!) </td></tr>
+    <tr><td class="paramname">new_child</td><td>New node to insert, must have suitable type! </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Ownership of the old child </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the node does not have this child or if the new child does not have the correct type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="group___d_a_g.html#ga27020912a6f80562ae285c9d690b3505">AbstractNode</a>.</p>
 
 </div>
 </div>
