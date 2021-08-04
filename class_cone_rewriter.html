@@ -75,45 +75,30 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a1b2e966781e5276d8fa76ef81cbec3d7">ConeRewriter</a> ()=default</td></tr>
 <tr class="separator:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f5c8badb41d945cb36a38ceb941312c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a5f5c8badb41d945cb36a38ceb941312c">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast)</td></tr>
-<tr class="separator:a5f5c8badb41d945cb36a38ceb941312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memItemLeft" align="right" valign="top"><a id="ab39df5fce6dbaa53bde51b248cd8aa93"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>computeMinDepth</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
+<tr class="memitem:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
+<tr class="memdesc:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">More...</a><br /></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top"><a id="a00ee0a5addbf4cee88fc88d065d142b2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCriticalNode</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
+<tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ebf57838f77b721277e013c669de99a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a4ebf57838f77b721277e013c669de99a">getMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a4ebf57838f77b721277e013c669de99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab53cfb876c88fde5ddbfc2c17362c939"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab53cfb876c88fde5ddbfc2c17362c939">getReverseMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
-<tr class="separator:ab53cfb876c88fde5ddbfc2c17362c939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa0064d4d94a6a3a690d655544eea51f"><td class="memItemLeft" align="right" valign="top"><a id="afa0064d4d94a6a3a690d655544eea51f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>precomputeMultDepths</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *ast)</td></tr>
-<tr class="separator:afa0064d4d94a6a3a690d655544eea51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd587c2b3cce16de52f7a435e63d03a2"><td class="memItemLeft" align="right" valign="top"><a id="afd587c2b3cce16de52f7a435e63d03a2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getMaximumMultiplicativeDepth</b> ()</td></tr>
-<tr class="separator:afd587c2b3cce16de52f7a435e63d03a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a843358eabb8705fa2df70e334eac6427"><td class="memItemLeft" align="right" valign="top"><a id="a843358eabb8705fa2df70e334eac6427"></a>
-<a class="el" href="struct_depth_map_entry.html">DepthMapEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInitialDepthOrNull</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *node)</td></tr>
-<tr class="separator:a843358eabb8705fa2df70e334eac6427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0bdb1de720a3dfc78d592112b83f1ed"><td class="memItemLeft" align="right" valign="top"><a id="af0bdb1de720a3dfc78d592112b83f1ed"></a>
-std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getPredecessorOnCriticalPath</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
-<tr class="separator:af0bdb1de720a3dfc78d592112b83f1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a611f9b5fcb86451e21fa0910ccd81326"><td class="memItemLeft" align="right" valign="top"><a id="a611f9b5fcb86451e21fa0910ccd81326"></a>
-std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getReducibleCones</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v, int minDepth)</td></tr>
-<tr class="separator:a611f9b5fcb86451e21fa0910ccd81326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb12b65a40192ca24372d07c491da921"><td class="memItemLeft" align="right" valign="top"><a id="aeb12b65a40192ca24372d07c491da921"></a>
-std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAndCriticalCircuit</b> (std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
-<tr class="separator:aeb12b65a40192ca24372d07c491da921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc3b68bee9723067565cca8fe5882531"><td class="memItemLeft" align="right" valign="top"><a id="afc3b68bee9723067565cca8fe5882531"></a>
-std::pair&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> *, <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getCriticalAndNonCriticalInput</b> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> *logicalExpr)</td></tr>
-<tr class="separator:afc3b68bee9723067565cca8fe5882531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771433d80182ca66c12cc771819149b9"><td class="memItemLeft" align="right" valign="top"><a id="a771433d80182ca66c12cc771819149b9"></a>
-std::pair&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> *, <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getCriticalAndNonCriticalInput</b> (LogicalOp *logicalExpr)</td></tr>
-<tr class="separator:a771433d80182ca66c12cc771819149b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad7ab936f000a919534582595a9133f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a9ad7ab936f000a919534582595a9133f">computeReverseMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
+<tr class="separator:a9ad7ab936f000a919534582595a9133f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5507da47361073cc9a269ca110f73b27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a5507da47361073cc9a269ca110f73b27">getReverseMultDepthR</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
+<tr class="separator:a5507da47361073cc9a269ca110f73b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5f5c8badb41d945cb36a38ceb941312c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a5f5c8badb41d945cb36a38ceb941312c">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast)</td></tr>
+<tr class="separator:a5f5c8badb41d945cb36a38ceb941312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6aa53536007914ab65bd367a3088b8"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a0a6aa53536007914ab65bd367a3088b8">getReducibleCones</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root)</td></tr>
+<tr class="separator:a0a6aa53536007914ab65bd367a3088b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ba70cb8e41f0dc370a1030bc608930"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a48ba70cb8e41f0dc370a1030bc608930">getAndCriticalCircuit</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
+<tr class="separator:a48ba70cb8e41f0dc370a1030bc608930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0aed62df102859cd8288e18c7382b73"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae0aed62df102859cd8288e18c7382b73">selectCones</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; cAndCkt)</td></tr>
+<tr class="separator:ae0aed62df102859cd8288e18c7382b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
+<tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a252d512b721b5b42ef5aa296b3cc1e9c">depthValue</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -140,11 +125,80 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create a cone rewriting object Can be used to rewrite multiple ASTs </p>
+<p>TODO: IMPLEMENT &amp; DOCUMENT </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Create a cone rewriting object Can be used to rewrite multiple ASTs </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab39df5fce6dbaa53bde51b248cd8aa93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab39df5fce6dbaa53bde51b248cd8aa93">&#9670;&nbsp;</a></span>computeMinDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConeRewriter::computeMinDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////. </p>
+<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9ad7ab936f000a919534582595a9133f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad7ab936f000a919534582595a9133f">&#9670;&nbsp;</a></span>computeReverseMultDepthR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeReverseMultDepthR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
+          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the (reverse) multiplicative depths for an AST starting at root </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+    <tr><td class="paramname">map</td><td>(Optional) map already containing precomputed values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a252d512b721b5b42ef5aa296b3cc1e9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a252d512b721b5b42ef5aa296b3cc1e9c">&#9670;&nbsp;</a></span>depthValue()</h2>
 
@@ -168,7 +222,57 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Determine the value of this node for computing the multiplicative depth and reverse multiplicative depth, <a class="el" href="class_cone_rewriter.html#a4ebf57838f77b721277e013c669de99a">getMultDepthL()</a> and <a class="el" href="class_cone_rewriter.html#ab53cfb876c88fde5ddbfc2c17362c939">getReverseMultDepthR()</a>, respectively. </p><dl class="section return"><dt>Returns</dt><dd>Returns 1 iff this node is a LogicalExpr containing an AND operator, otherwise 0. </dd></dl>
+<p>Determine the value of this node for computing the multiplicative depth and reverse multiplicative depth, <a class="el" href="class_cone_rewriter.html#a4ebf57838f77b721277e013c669de99a">getMultDepthL()</a> and <a class="el" href="class_cone_rewriter.html#a5507da47361073cc9a269ca110f73b27">getReverseMultDepthR()</a>, respectively. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Node to consider </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 1 iff this node is a LogicalExpr containing an AND operator, otherwise 0. </dd></dl>
+
+</div>
+</div>
+<a id="a48ba70cb8e41f0dc370a1030bc608930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ba70cb8e41f0dc370a1030bc608930">&#9670;&nbsp;</a></span>getAndCriticalCircuit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::getAndCriticalCircuit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td>
+          <td class="paramname"><em>delta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+    <tr><td class="paramname">delta</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -187,12 +291,51 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates the multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="section return"><dt>Returns</dt><dd>The multiplicative depth of the current node. </dd></dl>
+<p>Calculates the multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Node to consider </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The multiplicative depth of the current node. </dd></dl>
 
 </div>
 </div>
-<a id="ab53cfb876c88fde5ddbfc2c17362c939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab53cfb876c88fde5ddbfc2c17362c939">&#9670;&nbsp;</a></span>getReverseMultDepthR()</h2>
+<a id="a0a6aa53536007914ab65bd367a3088b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a6aa53536007914ab65bd367a3088b8">&#9670;&nbsp;</a></span>getReducibleCones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::getReducibleCones </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Identify reducible cones in the (sub)tree defined by root </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td>Root node of the AST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of nodes, each node defines a cone starting at root and ending at the node </dd></dl>
+
+</div>
+</div>
+<a id="a5507da47361073cc9a269ca110f73b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5507da47361073cc9a269ca110f73b27">&#9670;&nbsp;</a></span>getReverseMultDepthR()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,13 +343,55 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">int ConeRewriter::getReverseMultDepthR </td>
           <td>(</td>
+          <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
+          <td class="paramname"><em>multiplicativeDepthsReversed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the reverse multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiplicativeDepthsReversed</td><td>Mapping between nodes and their reversed depth </td></tr>
+    <tr><td class="paramname">n</td><td>Node to consider </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The reverse multiplicative depth of the current node. </dd></dl>
+
+</div>
+</div>
+<a id="a00ee0a5addbf4cee88fc88d065d142b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00ee0a5addbf4cee88fc88d065d142b2">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConeRewriter::isCriticalNode </td>
+          <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates the reverse multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="section return"><dt>Returns</dt><dd>The reverse multiplicative depth of the current node. </dd></dl>
+<p>TODO: Document -when is a node critical? </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -215,6 +400,9 @@ Static Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; ConeRewriter::rewriteAst </td>
@@ -224,6 +412,11 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Takes ownership of an AST, rewrites it and returns (potentially a different) rewritten AST </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -233,6 +426,97 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a new AST that has been rewritten </dd></dl>
 <p>set of all reducible cones</p>
+<p>C^{AND} circuit consisting of critical AND-nodes that are connected if there is a multiplicative depth-2 path in between two of those nodes in the initial circuit each cone δ &#x2410;∈ Δ has an unique terminal AND node in C^{AND}</p>
+<p>minimum set of reducible cones</p>
+<p>Perform actual rewriting</p>
+
+</div>
+</div>
+<a id="a6c1bfa4d386b84deafd1e1e1af71a3be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1bfa4d386b84deafd1e1e1af71a3be">&#9670;&nbsp;</a></span>rewriteCones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; ConeRewriter::rewriteCones </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coneEndNodes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ast</td><td></td></tr>
+    <tr><td class="paramname">coneEndNodes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae0aed62df102859cd8288e18c7382b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0aed62df102859cd8288e18c7382b73">&#9670;&nbsp;</a></span>selectCones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::selectCones </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td>
+          <td class="paramname"><em>cAndCkt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+    <tr><td class="paramname">cAndCkt</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
