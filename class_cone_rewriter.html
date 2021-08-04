@@ -80,14 +80,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3529c166e8e8c69514920373ce61417"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae3529c166e8e8c69514920373ce61417">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
-<tr class="separator:ae3529c166e8e8c69514920373ce61417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d7313456256f8a0fb1be40a8f5cfab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a51d7313456256f8a0fb1be40a8f5cfab">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, std::unordered_map&lt; std::string, int &gt; multiplicativeDepths={})</td></tr>
+<tr class="separator:a51d7313456256f8a0fb1be40a8f5cfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6768763f937882578d9aae0f99c85b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#aec6768763f937882578d9aae0f99c85b">preComputeMultDepthsL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root)</td></tr>
 <tr class="separator:aec6768763f937882578d9aae0f99c85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0bf2043a8f79e64527f91b79266c9e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af0bf2043a8f79e64527f91b79266c9e4">getMultDepthL</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
 <tr class="separator:af0bf2043a8f79e64527f91b79266c9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ad307d1fcd20c655ecad33a21d10bd56b">computeReverseMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
-<tr class="separator:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af742611297ccf28c03ba578c951d6e43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af742611297ccf28c03ba578c951d6e43">computeReverseMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed={})</td></tr>
+<tr class="separator:af742611297ccf28c03ba578c951d6e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52950ebae2901333f730d391c5b4b469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a52950ebae2901333f730d391c5b4b469">getReverseMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a52950ebae2901333f730d391c5b4b469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a461ca5e0cbbeb39e42614bce06ba50fe"><td class="memItemLeft" align="right" valign="top"><a id="a461ca5e0cbbeb39e42614bce06ba50fe"></a>
@@ -172,8 +172,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae3529c166e8e8c69514920373ce61417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3529c166e8e8c69514920373ce61417">&#9670;&nbsp;</a></span>computeMultDepthL()</h2>
+<a id="a51d7313456256f8a0fb1be40a8f5cfab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d7313456256f8a0fb1be40a8f5cfab">&#9670;&nbsp;</a></span>computeMultDepthL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +188,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
-          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>multiplicativeDepths</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -208,23 +208,23 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad307d1fcd20c655ecad33a21d10bd56b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad307d1fcd20c655ecad33a21d10bd56b">&#9670;&nbsp;</a></span>computeReverseMultDepth()</h2>
+<a id="af742611297ccf28c03ba578c951d6e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af742611297ccf28c03ba578c951d6e43">&#9670;&nbsp;</a></span>computeReverseMultDepthR()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeReverseMultDepth </td>
+          <td class="memname">int ConeRewriter::computeReverseMultDepthR </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
-          <td class="paramname"><em>root</em>, </td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
-          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>multiplicativeDepthsReversed</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -233,14 +233,14 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute the (reverse) multiplicative depths r(v) for all nodes v of an AST starting at root based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth The reverse multiplicative depth is the maximum number of AND gates on any path beginning by a parent of n and ending with a root node (output). </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Compute the (reverse) multiplicative depth r(n) for a node n of an AST based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth The reverse multiplicative depth is the maximum number of AND gates on any path beginning by a parent of n and ending with a root node (output). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">map</td><td>(Optional) map already containing precomputed values </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>map containing all reverse mult depths of the AST </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>revers multiplicative depth of the node n </dd></dl>
 
 </div>
 </div>
