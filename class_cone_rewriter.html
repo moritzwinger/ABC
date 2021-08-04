@@ -82,8 +82,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3529c166e8e8c69514920373ce61417"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae3529c166e8e8c69514920373ce61417">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
 <tr class="separator:ae3529c166e8e8c69514920373ce61417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb7326d943e9ef4dc6d90e0404d3365c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#afb7326d943e9ef4dc6d90e0404d3365c">getMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
-<tr class="separator:afb7326d943e9ef4dc6d90e0404d3365c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6768763f937882578d9aae0f99c85b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#aec6768763f937882578d9aae0f99c85b">preComputeMultDepthsL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root)</td></tr>
+<tr class="separator:aec6768763f937882578d9aae0f99c85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0bf2043a8f79e64527f91b79266c9e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af0bf2043a8f79e64527f91b79266c9e4">getMultDepthL</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
+<tr class="separator:af0bf2043a8f79e64527f91b79266c9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ad307d1fcd20c655ecad33a21d10bd56b">computeReverseMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
 <tr class="separator:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52950ebae2901333f730d391c5b4b469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a52950ebae2901333f730d391c5b4b469">getReverseMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
@@ -319,14 +321,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afb7326d943e9ef4dc6d90e0404d3365c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb7326d943e9ef4dc6d90e0404d3365c">&#9670;&nbsp;</a></span>getMultDepth()</h2>
+<a id="af0bf2043a8f79e64527f91b79266c9e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0bf2043a8f79e64527f91b79266c9e4">&#9670;&nbsp;</a></span>getMultDepthL()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ConeRewriter::getMultDepth </td>
+          <td class="memname">int ConeRewriter::getMultDepthL </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
           <td class="paramname"><em>multiplicativeDepths</em>, </td>
@@ -344,7 +346,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns multiplicative depth as precomputed in computeMultDepthR for a given node </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns multiplicative depth as precomputed in preComputeMultDepthsL for a given node </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">multiplicativeDepths</td><td>Mapping between nodes and their reversed depth </td></tr>
     <tr><td class="paramname">n</td><td>Node to consider </td></tr>
@@ -479,6 +481,31 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a id="aec6768763f937882578d9aae0f99c85b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6768763f937882578d9aae0f99c85b">&#9670;&nbsp;</a></span>preComputeMultDepthsL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::preComputeMultDepthsL </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns a map 'UniqueNodeId' to 'multiplicative depth' for all nodes n in an AST (defined by its root node). Uses the function computeMultDepthL to compute multiplicative depths. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>map UniqueNodeId to multDepth for all nodes in the ast </dd></dl>
 
 </div>
 </div>
