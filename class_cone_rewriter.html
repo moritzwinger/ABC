@@ -80,10 +80,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68b06408d731c430d24424b74e29be62"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a68b06408d731c430d24424b74e29be62">computeMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
-<tr class="separator:a68b06408d731c430d24424b74e29be62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ea46528091f33689360b35c29e857c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2ea46528091f33689360b35c29e857c1">getMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
-<tr class="separator:a2ea46528091f33689360b35c29e857c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f2bbf52958fe9f03bc0ec1e3d5d1c6"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab9f2bbf52958fe9f03bc0ec1e3d5d1c6">computeMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
+<tr class="separator:ab9f2bbf52958fe9f03bc0ec1e3d5d1c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7326d943e9ef4dc6d90e0404d3365c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#afb7326d943e9ef4dc6d90e0404d3365c">getMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
+<tr class="separator:afb7326d943e9ef4dc6d90e0404d3365c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ad307d1fcd20c655ecad33a21d10bd56b">computeReverseMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
 <tr class="separator:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52950ebae2901333f730d391c5b4b469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a52950ebae2901333f730d391c5b4b469">getReverseMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
@@ -160,24 +160,24 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////. </p>
-<p>Computes minDepth parameter required for cone selection algorithm TODO: what is this? </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Computes minDepth parameter required for cone selection algorithm We use a minDepth value equal to l(p) + 1, where p is the non-critical input of node v. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td></td></tr>
+    <tr><td class="paramname">v</td><td>node </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>minDepth value </dd></dl>
 
 </div>
 </div>
-<a id="a68b06408d731c430d24424b74e29be62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68b06408d731c430d24424b74e29be62">&#9670;&nbsp;</a></span>computeMultDepth()</h2>
+<a id="ab9f2bbf52958fe9f03bc0ec1e3d5d1c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f2bbf52958fe9f03bc0ec1e3d5d1c6">&#9670;&nbsp;</a></span>computeMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeMultDepth </td>
+          <td class="memname">std::unordered_map&lt; std::string, int &gt; ConeRewriter::computeMultDepth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
           <td class="paramname"><em>root</em>, </td>
@@ -319,8 +319,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2ea46528091f33689360b35c29e857c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ea46528091f33689360b35c29e857c1">&#9670;&nbsp;</a></span>getMultDepth()</h2>
+<a id="afb7326d943e9ef4dc6d90e0404d3365c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7326d943e9ef4dc6d90e0404d3365c">&#9670;&nbsp;</a></span>getMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,7 +334,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
           <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>

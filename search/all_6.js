@@ -25,7 +25,7 @@ var searchData=
   ['getindex_102',['getIndex',['../class_index_access.html#a6711c791418df2f2b86c226936f8147e',1,'IndexAccess::getIndex() const'],['../class_index_access.html#a3acec41a4d697287c8a0750a79f2fbb8',1,'IndexAccess::getIndex()']]],
   ['getinitializer_103',['getInitializer',['../class_for.html#a3a89ac4aca9c481bd0f8f4b8408f7990',1,'For::getInitializer()'],['../class_for.html#a07f055fdb74fc7f2237b839bbb3d9256',1,'For::getInitializer() const']]],
   ['getleft_104',['getLeft',['../class_binary_expression.html#ad650ca0926f7d87c553471af41d330cc',1,'BinaryExpression::getLeft()'],['../class_binary_expression.html#adab040b47ca21f7e3f7e0dead31973db',1,'BinaryExpression::getLeft() const']]],
-  ['getmultdepth_105',['getMultDepth',['../class_cone_rewriter.html#a2ea46528091f33689360b35c29e857c1',1,'ConeRewriter']]],
+  ['getmultdepth_105',['getMultDepth',['../class_cone_rewriter.html#afb7326d943e9ef4dc6d90e0404d3365c',1,'ConeRewriter']]],
   ['getmultdepthl_106',['getMultDepthL',['../class_multiplicative_depth_calculator.html#ac110ad03331be881766605b988c3c45d',1,'MultiplicativeDepthCalculator']]],
   ['getnestedscopebycreator_107',['getNestedScopeByCreator',['../class_scope.html#a7757efca029977d8745c110debab4719',1,'Scope::getNestedScopeByCreator(AbstractNode &amp;node)'],['../class_scope.html#a6f529d613d7c02f61e713762fb84d1bf',1,'Scope::getNestedScopeByCreator(AbstractNode &amp;node) const']]],
   ['getnextstackelement_108',['getNextStackElement',['../class_special_runtime_visitor.html#af2e1f998d4231a5645b9f87b1db5ef54',1,'SpecialRuntimeVisitor']]],
