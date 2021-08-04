@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['multiplicativedepthcalculator_397',['MultiplicativeDepthCalculator',['../class_multiplicative_depth_calculator.html',1,'']]]
+  ['multiplicativedepthcalculator_401',['MultiplicativeDepthCalculator',['../class_multiplicative_depth_calculator.html',1,'']]]
 ];

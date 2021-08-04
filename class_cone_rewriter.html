@@ -80,12 +80,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ebf57838f77b721277e013c669de99a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a4ebf57838f77b721277e013c669de99a">getMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
-<tr class="separator:a4ebf57838f77b721277e013c669de99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ad7ab936f000a919534582595a9133f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a9ad7ab936f000a919534582595a9133f">computeReverseMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
-<tr class="separator:a9ad7ab936f000a919534582595a9133f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5507da47361073cc9a269ca110f73b27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a5507da47361073cc9a269ca110f73b27">getReverseMultDepthR</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
-<tr class="separator:a5507da47361073cc9a269ca110f73b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b06408d731c430d24424b74e29be62"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a68b06408d731c430d24424b74e29be62">computeMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
+<tr class="separator:a68b06408d731c430d24424b74e29be62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea46528091f33689360b35c29e857c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2ea46528091f33689360b35c29e857c1">getMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
+<tr class="separator:a2ea46528091f33689360b35c29e857c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ad307d1fcd20c655ecad33a21d10bd56b">computeReverseMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::unordered_map&lt; std::string, int &gt; map={})</td></tr>
+<tr class="separator:ad307d1fcd20c655ecad33a21d10bd56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52950ebae2901333f730d391c5b4b469"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a52950ebae2901333f730d391c5b4b469">getReverseMultDepth</a> (std::unordered_map&lt; std::string, int &gt; multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
+<tr class="separator:a52950ebae2901333f730d391c5b4b469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461ca5e0cbbeb39e42614bce06ba50fe"><td class="memItemLeft" align="right" valign="top"><a id="a461ca5e0cbbeb39e42614bce06ba50fe"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getMultDepth</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
+<tr class="separator:a461ca5e0cbbeb39e42614bce06ba50fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -99,6 +104,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae0aed62df102859cd8288e18c7382b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
 <tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a107738156c103ed7a2a1f4f956fd3ed6">getOverallMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root)</td></tr>
+<tr class="separator:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a252d512b721b5b42ef5aa296b3cc1e9c">depthValue</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -153,7 +160,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////. </p>
-<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Computes minDepth parameter required for cone selection algorithm TODO: what is this? </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td></td></tr>
   </table>
@@ -163,14 +170,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ad7ab936f000a919534582595a9133f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ad7ab936f000a919534582595a9133f">&#9670;&nbsp;</a></span>computeReverseMultDepthR()</h2>
+<a id="a68b06408d731c430d24424b74e29be62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68b06408d731c430d24424b74e29be62">&#9670;&nbsp;</a></span>computeMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeReverseMultDepthR </td>
+          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeMultDepth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
           <td class="paramname"><em>root</em>, </td>
@@ -188,14 +195,50 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute the (reverse) multiplicative depths for an AST starting at root </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Calculates the multiplicative depths l(v) based for all nodes v of an AST starting at root on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. The multiplicative depth is the max number of AND gates on any path beginning by an input node (leaf of AST) and ending in the node n. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td>Root Node of an AST </td></tr>
+    <tr><td class="paramname">map</td><td>(Optional) map already containing precomputed values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>map containing all mult depths of the AST </dd></dl>
+
+</div>
+</div>
+<a id="ad307d1fcd20c655ecad33a21d10bd56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad307d1fcd20c655ecad33a21d10bd56b">&#9670;&nbsp;</a></span>computeReverseMultDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, int&gt; ConeRewriter::computeReverseMultDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
+          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the (reverse) multiplicative depths r(v) for all nodes v of an AST starting at root based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth The reverse multiplicative depth is the maximum number of AND gates on any path beginning by a parent of n and ending with a root node (output). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">map</td><td>(Optional) map already containing precomputed values </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>map containing all reverse mult depths of the AST </dd></dl>
 
 </div>
 </div>
@@ -222,7 +265,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Determine the value of this node for computing the multiplicative depth and reverse multiplicative depth, <a class="el" href="class_cone_rewriter.html#a4ebf57838f77b721277e013c669de99a">getMultDepthL()</a> and <a class="el" href="class_cone_rewriter.html#a5507da47361073cc9a269ca110f73b27">getReverseMultDepthR()</a>, respectively. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Determine the value of this node (used for computing the multiplicative depth and reverse multiplicative depth) Returns 1 if n AND node, 0 otherwise. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>Node to consider </td></tr>
   </table>
@@ -265,7 +308,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates the graph C^{AND} from Section 3.2 (p 10) from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. Idea: We want to find a minimal size set \Delta_{min} of cones such that each critical path contains the ending node of at least one cone from this set (to guarantee that the overall multiplicative depth will in fact decrease) <a class="el" href="class_for.html">For</a> this we need to constrcut a graph C^{AND} containing ALL the crtical end nodes. Two AND nodes are connected in C^{AND} if there is a depth-2 critical path between them in the initial circuit. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">delta</td><td></td></tr>
@@ -276,28 +319,72 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ebf57838f77b721277e013c669de99a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ebf57838f77b721277e013c669de99a">&#9670;&nbsp;</a></span>getMultDepthL()</h2>
+<a id="a2ea46528091f33689360b35c29e857c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea46528091f33689360b35c29e857c1">&#9670;&nbsp;</a></span>getMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ConeRewriter::getMultDepthL </td>
+          <td class="memname">int ConeRewriter::getMultDepth </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
+          <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
+          <td class="paramname"><em>multiplicativeDepths</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates the multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns multiplicative depth as precomputed in computeMultDepthR for a given node </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">multiplicativeDepths</td><td>Mapping between nodes and their reversed depth </td></tr>
     <tr><td class="paramname">n</td><td>Node to consider </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The multiplicative depth of the current node. </dd></dl>
+
+</div>
+</div>
+<a id="a107738156c103ed7a2a1f4f956fd3ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107738156c103ed7a2a1f4f956fd3ed6">&#9670;&nbsp;</a></span>getOverallMultDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int ConeRewriter::getOverallMultDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the 'overall multiplicative depth' l^{max}, i.e the maximal multiplicative depth of its nodes. l^{max} = max_{v \in V} l(v) = max_{v \in V} r(v) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -334,14 +421,14 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5507da47361073cc9a269ca110f73b27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5507da47361073cc9a269ca110f73b27">&#9670;&nbsp;</a></span>getReverseMultDepthR()</h2>
+<a id="a52950ebae2901333f730d391c5b4b469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52950ebae2901333f730d391c5b4b469">&#9670;&nbsp;</a></span>getReverseMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ConeRewriter::getReverseMultDepthR </td>
+          <td class="memname">int ConeRewriter::getReverseMultDepth </td>
           <td>(</td>
           <td class="paramtype">std::unordered_map&lt; std::string, int &gt;&#160;</td>
           <td class="paramname"><em>multiplicativeDepthsReversed</em>, </td>
@@ -359,7 +446,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Calculates the reverse multiplicative depth based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns multiplicative depth as precomputed in computeReverseMultDepth for a given node </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">multiplicativeDepthsReversed</td><td>Mapping between nodes and their reversed depth </td></tr>
     <tr><td class="paramname">n</td><td>Node to consider </td></tr>
@@ -385,13 +472,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>TODO: Document -when is a node critical? </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Returns true if a node n is critical, i.e. if l(n) + r(n) = l^{max}, false otherwies </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>node of the AST </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>
@@ -509,7 +596,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>TODO: Document </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Implements the cone selection algorithm [see Algorithm 3, page 11]. //TODO: understand </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">cAndCkt</td><td></td></tr>
