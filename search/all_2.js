@@ -11,7 +11,7 @@ var searchData=
   ['computationnode_42',['ComputationNode',['../class_computation_node.html',1,'']]],
   ['computationoperator_43',['ComputationOperator',['../class_computation_operator.html',1,'']]],
   ['computationtreetoast_44',['computationTreeToAst',['../class_special_expression_batcher.html#aa55c7e9c519e46462cc80c5a3cd02ea8',1,'SpecialExpressionBatcher']]],
-  ['computemindepth_45',['computeMinDepth',['../class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93',1,'ConeRewriter']]],
+  ['computemindepth_45',['computeMinDepth',['../class_cone_rewriter.html#a3a7d9ec5767568ba0a376a957f73d171',1,'ConeRewriter']]],
   ['computemultdepthl_46',['computeMultDepthL',['../class_cone_rewriter.html#a2cb693196bf2d2f8f24e4f2f4e963313',1,'ConeRewriter']]],
   ['computereversedmultdepthr_47',['computeReversedMultDepthR',['../class_cone_rewriter.html#ae455306d52453754f4229e99bbfaf8a1',1,'ConeRewriter']]],
   ['conerewriter_48',['ConeRewriter',['../class_cone_rewriter.html#a1b2e966781e5276d8fa76ef81cbec3d7',1,'ConeRewriter::ConeRewriter()'],['../class_cone_rewriter.html',1,'ConeRewriter']]],

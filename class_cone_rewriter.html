@@ -75,9 +75,9 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a1b2e966781e5276d8fa76ef81cbec3d7">ConeRewriter</a> ()=default</td></tr>
 <tr class="separator:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
-<tr class="memdesc:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">More...</a><br /></td></tr>
-<tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7d9ec5767568ba0a376a957f73d171"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a3a7d9ec5767568ba0a376a957f73d171">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap map)</td></tr>
+<tr class="memdesc:a3a7d9ec5767568ba0a376a957f73d171"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#a3a7d9ec5767568ba0a376a957f73d171">More...</a><br /></td></tr>
+<tr class="separator:a3a7d9ec5767568ba0a376a957f73d171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab9bd6cfed1ec411d541038c2f3b5f7b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap map={})</td></tr>
 <tr class="separator:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af4a2db3dfa3b5219b09d327b5eb43396">getMultDepthL</a> (MultDepthMap multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
@@ -143,8 +143,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab39df5fce6dbaa53bde51b248cd8aa93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab39df5fce6dbaa53bde51b248cd8aa93">&#9670;&nbsp;</a></span>computeMinDepth()</h2>
+<a id="a3a7d9ec5767568ba0a376a957f73d171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7d9ec5767568ba0a376a957f73d171">&#9670;&nbsp;</a></span>computeMinDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,8 +153,24 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">int ConeRewriter::computeMinDepth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
