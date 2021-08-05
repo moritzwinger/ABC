@@ -78,8 +78,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
 <tr class="memdesc:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">More...</a><br /></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83cc31ab9213c273578010668c79143f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a83cc31ab9213c273578010668c79143f">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap map={})</td></tr>
-<tr class="separator:a83cc31ab9213c273578010668c79143f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab9bd6cfed1ec411d541038c2f3b5f7b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap map={})</td></tr>
+<tr class="separator:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af4a2db3dfa3b5219b09d327b5eb43396">getMultDepthL</a> (MultDepthMap multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
 <tr class="separator:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae455306d52453754f4229e99bbfaf8a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae455306d52453754f4229e99bbfaf8a1">computeReversedMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *root=nullptr)</td></tr>
@@ -483,8 +483,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a83cc31ab9213c273578010668c79143f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83cc31ab9213c273578010668c79143f">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
+<a id="ab9bd6cfed1ec411d541038c2f3b5f7b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bd6cfed1ec411d541038c2f3b5f7b2">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,6 +494,12 @@ Static Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
           <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -511,6 +517,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns true if a node n is critical, i.e. if l(n) + r(n) = l^{max}, false otherwies </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>node of the AST </td></tr>
+    <tr><td class="paramname">ast</td><td>root node defining the AST </td></tr>
   </table>
   </dd>
 </dl>
