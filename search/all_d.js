@@ -14,11 +14,12 @@ var searchData=
   ['positioniteratorimpl_3c_20t_2c_20ternaryoperator_20_3e_224',['PositionIteratorImpl&lt; T, TernaryOperator &gt;',['../class_position_iterator_impl.html',1,'']]],
   ['positioniteratorimpl_3c_20t_2c_20unaryexpression_20_3e_225',['PositionIteratorImpl&lt; T, UnaryExpression &gt;',['../class_position_iterator_impl.html',1,'']]],
   ['positioniteratorimpl_3c_20t_2c_20variabledeclaration_20_3e_226',['PositionIteratorImpl&lt; T, VariableDeclaration &gt;',['../class_position_iterator_impl.html',1,'']]],
-  ['precomputemultdepthsl_227',['preComputeMultDepthsL',['../class_cone_rewriter.html#aec6768763f937882578d9aae0f99c85b',1,'ConeRewriter']]],
-  ['prependexpression_228',['prependExpression',['../class_expression_list.html#a8f4c8a9b07df7282e2bc0f0b74f23518',1,'ExpressionList']]],
-  ['prependoperand_229',['prependOperand',['../class_operator_expression.html#a9a7b4ed856c7123135cb131eda4d9928',1,'OperatorExpression']]],
-  ['prependstatement_230',['prependStatement',['../class_block.html#ab5c71faf3e34800678e266577f2b2080',1,'Block']]],
-  ['printnodes_231',['printNodes',['../class_node_relationship.html#a0e42cc97672db1afc265d7883eb94633',1,'NodeRelationship']]],
-  ['printoutput_232',['printOutput',['../class_special_runtime_visitor.html#a654dabbf8d0ab7177a8b0a96e6164541',1,'SpecialRuntimeVisitor']]],
-  ['pushbackstream_233',['PushBackStream',['../classstork_1_1_push_back_stream.html',1,'stork']]]
+  ['precomputemultdepthsl_227',['preComputeMultDepthsL',['../class_cone_rewriter.html#a1335afd6d445731497eeef99c79631d9',1,'ConeRewriter']]],
+  ['precomputereversemultdepthsr_228',['preComputeReverseMultDepthsR',['../class_cone_rewriter.html#a51137ab1330ad6e7b0d2efb729fbb3e4',1,'ConeRewriter']]],
+  ['prependexpression_229',['prependExpression',['../class_expression_list.html#a8f4c8a9b07df7282e2bc0f0b74f23518',1,'ExpressionList']]],
+  ['prependoperand_230',['prependOperand',['../class_operator_expression.html#a9a7b4ed856c7123135cb131eda4d9928',1,'OperatorExpression']]],
+  ['prependstatement_231',['prependStatement',['../class_block.html#ab5c71faf3e34800678e266577f2b2080',1,'Block']]],
+  ['printnodes_232',['printNodes',['../class_node_relationship.html#a0e42cc97672db1afc265d7883eb94633',1,'NodeRelationship']]],
+  ['printoutput_233',['printOutput',['../class_special_runtime_visitor.html#a654dabbf8d0ab7177a8b0a96e6164541',1,'SpecialRuntimeVisitor']]],
+  ['pushbackstream_234',['PushBackStream',['../classstork_1_1_push_back_stream.html',1,'stork']]]
 ];
