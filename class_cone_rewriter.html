@@ -78,8 +78,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v)</td></tr>
 <tr class="memdesc:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#ab39df5fce6dbaa53bde51b248cd8aa93">More...</a><br /></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
-<tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83cc31ab9213c273578010668c79143f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a83cc31ab9213c273578010668c79143f">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap map={})</td></tr>
+<tr class="separator:a83cc31ab9213c273578010668c79143f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af4a2db3dfa3b5219b09d327b5eb43396">getMultDepthL</a> (MultDepthMap multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
 <tr class="separator:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae455306d52453754f4229e99bbfaf8a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae455306d52453754f4229e99bbfaf8a1">computeReversedMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *root=nullptr)</td></tr>
@@ -102,8 +102,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae0aed62df102859cd8288e18c7382b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
 <tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a107738156c103ed7a2a1f4f956fd3ed6">getOverallMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root)</td></tr>
-<tr class="separator:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a8bfcef823bb820fb2041f8b1a8faef63">getMaximumMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, MultDepthMap map={})</td></tr>
+<tr class="separator:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2cb693196bf2d2f8f24e4f2f4e963313">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;map)</td></tr>
 <tr class="separator:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a252d512b721b5b42ef5aa296b3cc1e9c">depthValue</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
@@ -334,6 +334,50 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8bfcef823bb820fb2041f8b1a8faef63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bfcef823bb820fb2041f8b1a8faef63">&#9670;&nbsp;</a></span>getMaximumMultDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConeRewriter::getMaximumMultDepth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the 'maximum (overall) multiplicative depth' l^{max}, i.e the maximal multiplicative depth of its nodes. l^{max} = max_{v \in V} l(v) = max_{v \in V} r(v) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">root</td><td></td></tr>
+    <tr><td class="paramname">map</td><td>map of mult depths </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>overall mult depth </dd></dl>
+
+</div>
+</div>
 <a id="af4a2db3dfa3b5219b09d327b5eb43396"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4a2db3dfa3b5219b09d327b5eb43396">&#9670;&nbsp;</a></span>getMultDepthL()</h2>
 
@@ -367,39 +411,6 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The multiplicative depth of the current node. </dd></dl>
-
-</div>
-</div>
-<a id="a107738156c103ed7a2a1f4f956fd3ed6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a107738156c103ed7a2a1f4f956fd3ed6">&#9670;&nbsp;</a></span>getOverallMultDepth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int ConeRewriter::getOverallMultDepth </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>root</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Returns the 'overall multiplicative depth' l^{max}, i.e the maximal multiplicative depth of its nodes. l^{max} = max_{v \in V} l(v) = max_{v \in V} r(v) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">root</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>overall mult depth </dd></dl>
 
 </div>
 </div>
@@ -472,8 +483,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a00ee0a5addbf4cee88fc88d065d142b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00ee0a5addbf4cee88fc88d065d142b2">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
+<a id="a83cc31ab9213c273578010668c79143f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83cc31ab9213c273578010668c79143f">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,8 +493,18 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">bool ConeRewriter::isCriticalNode </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
