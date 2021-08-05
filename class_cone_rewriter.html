@@ -80,8 +80,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab39df5fce6dbaa53bde51b248cd8aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a00ee0a5addbf4cee88fc88d065d142b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a00ee0a5addbf4cee88fc88d065d142b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2cb693196bf2d2f8f24e4f2f4e963313">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;map)</td></tr>
-<tr class="separator:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af4a2db3dfa3b5219b09d327b5eb43396">getMultDepthL</a> (MultDepthMap multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
 <tr class="separator:af4a2db3dfa3b5219b09d327b5eb43396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae455306d52453754f4229e99bbfaf8a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae455306d52453754f4229e99bbfaf8a1">computeReversedMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *root=nullptr)</td></tr>
@@ -106,6 +104,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a107738156c103ed7a2a1f4f956fd3ed6">getOverallMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root)</td></tr>
 <tr class="separator:a107738156c103ed7a2a1f4f956fd3ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2cb693196bf2d2f8f24e4f2f4e963313">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;map)</td></tr>
+<tr class="separator:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a252d512b721b5b42ef5aa296b3cc1e9c">depthValue</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -160,7 +160,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////. </p>
-<p>Computes minDepth parameter required for cone selection algorithm We use a minDepth value equal to l(p) + 1, where p is the non-critical input of node v. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Computes minDepth parameter required for cone selection algorithm We use a minDepth value equal to l(p) + 1, where p is the NON-critical input of node v. A node p is critical if l(p) + r(p) = l^{max} </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>node </td></tr>
   </table>
@@ -175,6 +175,9 @@ Static Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int ConeRewriter::computeMultDepthL </td>
@@ -194,6 +197,11 @@ Static Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Calculates the multiplicative depths l(n) for a node n of an AST starting at root (output) based on the definition given in [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. The multiplicative depth is the max number of AND gates on any path beginning by an input node (leaf of AST) and ending in the node n. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
