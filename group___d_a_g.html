@@ -111,6 +111,8 @@ virtual <a class="el" href="group___d_a_g.html#ga4bc933321cb97fee4fb929e8f4d740a
 <tr class="separator:gaf7c1b9376d52444e772b9764e5baaf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7d07d5bf1e0a7f1e87a42be354e12026"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga7d07d5bf1e0a7f1e87a42be354e12026">AbstractNode::setParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;newParent)</td></tr>
 <tr class="separator:ga7d07d5bf1e0a7f1e87a42be354e12026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga193c61a07a5a0786fc871112eca3da34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga193c61a07a5a0786fc871112eca3da34">AbstractNode::setParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *newParent)</td></tr>
+<tr class="separator:ga193c61a07a5a0786fc871112eca3da34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga27020912a6f80562ae285c9d690b3505"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga27020912a6f80562ae285c9d690b3505">AbstractNode::replaceChild</a> (const <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;child, std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;new_child)=0</td></tr>
 <tr class="separator:ga27020912a6f80562ae285c9d690b3505"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -281,7 +283,7 @@ virtual <a class="el" href="group___d_a_g.html#ga4bc933321cb97fee4fb929e8f4d740a
 </div>
 </div>
 <a id="ga7d07d5bf1e0a7f1e87a42be354e12026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7d07d5bf1e0a7f1e87a42be354e12026">&#9670;&nbsp;</a></span>setParent()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d07d5bf1e0a7f1e87a42be354e12026">&#9670;&nbsp;</a></span>setParent() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,9 +303,27 @@ virtual <a class="el" href="group___d_a_g.html#ga4bc933321cb97fee4fb929e8f4d740a
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>if this node already has a parent </td></tr>
+
+</div>
+</div>
+<a id="ga193c61a07a5a0786fc871112eca3da34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga193c61a07a5a0786fc871112eca3da34">&#9670;&nbsp;</a></span>setParent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractNode::setParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>newParent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the parent of this node. Derived classes must ensure that a node's parent has the node as its child! </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newParent</td><td>The new parent </td></tr>
   </table>
   </dd>
 </dl>

@@ -16,7 +16,7 @@ var searchData=
   ['setmatrix_261',['setMatrix',['../class_literal.html#a986408db2ae05ab48c05be7e770845dc',1,'Literal']]],
   ['setoperand_262',['setOperand',['../class_unary_expression.html#ad91e40484bf2a7957333c3925b0b2859',1,'UnaryExpression']]],
   ['setoperator_263',['setOperator',['../class_unary_expression.html#a73480a8adf171eb2031e79a45ae9406f',1,'UnaryExpression::setOperator()'],['../class_operator_expression.html#aceaadc691336de704ec3a1165576a819',1,'OperatorExpression::setOperator()'],['../class_binary_expression.html#a18ed50f62cc0cbd16a3fe9686ca0a9bf',1,'BinaryExpression::setOperator()']]],
-  ['setparent_264',['setParent',['../class_scope.html#ad7a04068e6bc5f37c69515e6f126c73c',1,'Scope::setParent()'],['../group___d_a_g.html#ga7d07d5bf1e0a7f1e87a42be354e12026',1,'AbstractNode::setParent()']]],
+  ['setparent_264',['setParent',['../class_scope.html#ad7a04068e6bc5f37c69515e6f126c73c',1,'Scope::setParent()'],['../group___d_a_g.html#ga193c61a07a5a0786fc871112eca3da34',1,'AbstractNode::setParent(AbstractNode *newParent)'],['../group___d_a_g.html#ga7d07d5bf1e0a7f1e87a42be354e12026',1,'AbstractNode::setParent(AbstractNode &amp;newParent)']]],
   ['setright_265',['setRight',['../class_binary_expression.html#ade33643de9cea3b6d5a8d9798011f97b',1,'BinaryExpression']]],
   ['settarget_266',['setTarget',['../class_variable_declaration.html#a99e474231f4b3b9f9d0f7c3522995bbd',1,'VariableDeclaration::setTarget()'],['../class_index_access.html#a7877cd12babf841b4104040837a40d92',1,'IndexAccess::setTarget()'],['../class_assignment.html#a6ed4b11275a3d182be36b22752720481',1,'Assignment::setTarget()']]],
   ['setthenbranch_267',['setThenBranch',['../class_if.html#abb461a35eedd1c92b6ff0749382b1d78',1,'If']]],
