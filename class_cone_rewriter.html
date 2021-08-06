@@ -93,10 +93,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a3a7d9ec5767568ba0a376a957f73d171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a8bfcef823bb820fb2041f8b1a8faef63">getMaximumMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, MultDepthMap map={})</td></tr>
 <tr class="separator:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab9bd6cfed1ec411d541038c2f3b5f7b2">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap map={})</td></tr>
-<tr class="separator:ab9bd6cfed1ec411d541038c2f3b5f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a2cb693196bf2d2f8f24e4f2f4e963313">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;map)</td></tr>
-<tr class="separator:a2cb693196bf2d2f8f24e4f2f4e963313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c771f170e2c42074bd80815814fe0e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab2c771f170e2c42074bd80815814fe0e">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap multDepthmap={}, MultDepthMap reversedMultDepthsMap={})</td></tr>
+<tr class="separator:ab2c771f170e2c42074bd80815814fe0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3ec6757b5eef92e2e380fcff200812"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6f3ec6757b5eef92e2e380fcff200812">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multDepthMap)</td></tr>
+<tr class="separator:a6f3ec6757b5eef92e2e380fcff200812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e9fde29d756738d9609378d00585b06"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a1e9fde29d756738d9609378d00585b06">getMultDepthL</a> (MultDepthMap multiplicativeDepths, <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;n)</td></tr>
 <tr class="separator:a1e9fde29d756738d9609378d00585b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae455306d52453754f4229e99bbfaf8a1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae455306d52453754f4229e99bbfaf8a1">computeReversedMultDepthR</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multiplicativeDepthsReversed, <a class="el" href="class_abstract_node.html">AbstractNode</a> *root=nullptr)</td></tr>
@@ -200,8 +200,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 </div>
 </div>
-<a id="a2cb693196bf2d2f8f24e4f2f4e963313"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cb693196bf2d2f8f24e4f2f4e963313">&#9670;&nbsp;</a></span>computeMultDepthL()</h2>
+<a id="a6f3ec6757b5eef92e2e380fcff200812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3ec6757b5eef92e2e380fcff200812">&#9670;&nbsp;</a></span>computeMultDepthL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +219,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MultDepthMap &amp;&#160;</td>
-          <td class="paramname"><em>map</em>&#160;</td>
+          <td class="paramname"><em>multDepthMap</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -569,8 +569,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 </div>
 </div>
-<a id="ab9bd6cfed1ec411d541038c2f3b5f7b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9bd6cfed1ec411d541038c2f3b5f7b2">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
+<a id="ab2c771f170e2c42074bd80815814fe0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c771f170e2c42074bd80815814fe0e">&#9670;&nbsp;</a></span>isCriticalNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -594,7 +594,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MultDepthMap&#160;</td>
-          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>multDepthmap</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>reversedMultDepthsMap</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
