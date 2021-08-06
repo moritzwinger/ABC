@@ -345,7 +345,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates the graph C^{AND} from Section 3.2 (p 10) from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. Idea: We want to find a minimal size set \Delta_{min} of cones such that each critical path contains the ending node of at least one cone from this set (to guarantee that the overall multiplicative depth will in fact decrease) <a class="el" href="class_for.html">For</a> this we need to constrcut a graph C^{AND} containing ALL the crtical end nodes. Two AND nodes are connected in C^{AND} if there is a depth-2 critical path between them in the initial circuit. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Creates the graph C^{AND} from Section 3.2 (p 10) from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. Idea: We want to find a minimal size set \Delta_{min} of cones such that each critical path contains the ending node of at least one cone from this set (to guarantee that the overall multiplicative depth will in fact decrease) <a class="el" href="class_for.html">For</a> this we need to constrcut a graph C^{AND} containing ALL the critical AND nodes. Two AND nodes are connected in C^{AND} if there is a depth-2 critical path between them in the initial circuit. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">delta</td><td></td></tr>
