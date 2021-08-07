@@ -83,9 +83,9 @@ Inheritance diagram for SpecialInsertModSwitchVisitor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abbc2a5a41563133d8e810b7b55f62864"><td class="memItemLeft" align="right" valign="top"><a id="abbc2a5a41563133d8e810b7b55f62864"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SpecialInsertModSwitchVisitor</b> (std::ostream &amp;os, std::unordered_map&lt; std::string, int &gt; noise_map, std::unordered_map&lt; std::string, double &gt; rel_noise_map, int encNoiseBudget)</td></tr>
-<tr class="separator:abbc2a5a41563133d8e810b7b55f62864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a628c68c9235964126a9d45753d254540"><td class="memItemLeft" align="right" valign="top"><a id="a628c68c9235964126a9d45753d254540"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SpecialInsertModSwitchVisitor</b> (std::ostream &amp;os, std::unordered_map&lt; std::string, int &gt; noise_map, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap, int encNoiseBudget)</td></tr>
+<tr class="separator:a628c68c9235964126a9d45753d254540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f31e684bcc413f1ae1aec18e1e8dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ae8f31e684bcc413f1ae1aec18e1e8dd7">visit</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> &amp;node)</td></tr>
 <tr class="separator:ae8f31e684bcc413f1ae1aec18e1e8dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scoped_visitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scoped_visitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scoped_visitor.html">ScopedVisitor</a></td></tr>
@@ -245,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Visits an AST and based on noise heuristics and the bitlengths of the primes in the coeff modulus identifies regions where modswitch ops are appropriate </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Visits an AST and based on noise heuristics and identifies a binary expression where a modswitch op is appropriate based on the bitlengths of the primes in the coeff modulus and the remaining noise budget. pointer to resultiong binary expression will be stored in modwitchNode </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td></td></tr>
   </table>
