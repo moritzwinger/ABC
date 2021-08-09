@@ -189,8 +189,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>exitScope</b> ()</td>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a05e99ef12d8c77c654eaf4fe9342b0f2"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a05e99ef12d8c77c654eaf4fe9342b0f2">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast)</td></tr>
-<tr class="separator:a05e99ef12d8c77c654eaf4fe9342b0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c36a99a02fcc99ba68c813eec8fc1a"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a28c36a99a02fcc99ba68c813eec8fc1a">insertModSwitchInAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
+<tr class="separator:a28c36a99a02fcc99ba68c813eec8fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab1d5e7ad89f51d2f215c666fe0826253"></a>
@@ -211,8 +211,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a05e99ef12d8c77c654eaf4fe9342b0f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05e99ef12d8c77c654eaf4fe9342b0f2">&#9670;&nbsp;</a></span>rewriteAst()</h2>
+<a id="a28c36a99a02fcc99ba68c813eec8fc1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c36a99a02fcc99ba68c813eec8fc1a">&#9670;&nbsp;</a></span>insertModSwitchInAst()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,11 +221,27 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; SpecialInsertModSwitchVisitor::rewriteAst </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; SpecialInsertModSwitchVisitor::insertModSwitchInAst </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>ast</em></td><td>)</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_binary_expression.html">BinaryExpression</a> *&#160;</td>
+          <td class="paramname"><em>binaryExpression</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt;&#160;</td>
+          <td class="paramname"><em>coeffmodulusmap</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -237,6 +253,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Takes ownership of an AST,insert modSwitch Ops at appropriate places and returns (potentially a different) rewritten AST </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ast</td><td>AST to be rewritten (function takes ownership) </td></tr>
+    <tr><td class="paramname">binary</td><td>expresseion before which modswitches are to be inserted </td></tr>
   </table>
   </dd>
 </dl>
