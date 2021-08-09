@@ -90,8 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae8f31e684bcc413f1ae1aec18e1e8dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1d5e7ad89f51d2f215c666fe0826253"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ab1d5e7ad89f51d2f215c666fe0826253">getModSwitchNodes</a> () const</td></tr>
 <tr class="separator:ab1d5e7ad89f51d2f215c666fe0826253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af046f1322968cd65ad2ca550320bdb8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#af046f1322968cd65ad2ca550320bdb8f">updateNoiseMap</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;ast)</td></tr>
-<tr class="separator:af046f1322968cd65ad2ca550320bdb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a07cd10ba8956907cee6af6e4cfead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ad5a07cd10ba8956907cee6af6e4cfead">updateNoiseMap</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;astProgram, <a class="el" href="class_visitor.html">RuntimeVisitor</a> *srv)</td></tr>
+<tr class="separator:ad5a07cd10ba8956907cee6af6e4cfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scoped_visitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scoped_visitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scoped_visitor.html">ScopedVisitor</a></td></tr>
 <tr class="memitem:ae78d02edf0fa963223962a5c627bd904 inherit pub_methods_class_scoped_visitor"><td class="memItemLeft" align="right" valign="top"><a id="ae78d02edf0fa963223962a5c627bd904"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_block.html">Block</a> &amp;elem) override</td></tr>
@@ -191,6 +191,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>exitScope</b> ()</td>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a28c36a99a02fcc99ba68c813eec8fc1a"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a28c36a99a02fcc99ba68c813eec8fc1a">insertModSwitchInAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
 <tr class="separator:a28c36a99a02fcc99ba68c813eec8fc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c0d889726534d3e81c0cf9cec0af50"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a96c0d889726534d3e81c0cf9cec0af50">removeModSwitchFromAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
+<tr class="separator:a96c0d889726534d3e81c0cf9cec0af50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab1d5e7ad89f51d2f215c666fe0826253"></a>
@@ -250,10 +252,11 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Takes ownership of an AST,insert modSwitch Ops at appropriate places and returns (potentially a different) rewritten AST </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Insert modSwitch Ops between a given binary expression and its children. returns (potentially different) rewritten AST </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ast</td><td>AST to be rewritten (function takes ownership) </td></tr>
-    <tr><td class="paramname">binary</td><td>expresseion before which modswitches are to be inserted </td></tr>
+    <tr><td class="paramname">binary</td><td>expression before which modswitches are to be inserted </td></tr>
+    <tr><td class="paramname">coeffmodulusmap</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -261,8 +264,59 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af046f1322968cd65ad2ca550320bdb8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af046f1322968cd65ad2ca550320bdb8f">&#9670;&nbsp;</a></span>updateNoiseMap()</h2>
+<a id="a96c0d889726534d3e81c0cf9cec0af50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96c0d889726534d3e81c0cf9cec0af50">&#9670;&nbsp;</a></span>removeModSwitchFromAst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::unique_ptr&lt;<a class="el" href="class_abstract_node.html">AbstractNode</a>&gt; SpecialInsertModSwitchVisitor::removeModSwitchFromAst </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_binary_expression.html">BinaryExpression</a> *&#160;</td>
+          <td class="paramname"><em>binaryExpression</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt;&#160;</td>
+          <td class="paramname"><em>coeffmodulusmap</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Remove modSwitches from AST from children of a given binary expression </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ast</td><td>the AST </td></tr>
+    <tr><td class="paramname">binaryExpression</td><td></td></tr>
+    <tr><td class="paramname">coeffmodulusmap</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>AST withoiut the modswitches </dd></dl>
+
+</div>
+</div>
+<a id="ad5a07cd10ba8956907cee6af6e4cfead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a07cd10ba8956907cee6af6e4cfead">&#9670;&nbsp;</a></span>updateNoiseMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,8 +325,18 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void SpecialInsertModSwitchVisitor::updateNoiseMap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;&#160;</td>
-          <td class="paramname"><em>ast</em></td><td>)</td>
+          <td class="paramname"><em>astProgram</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_visitor.html">RuntimeVisitor</a> *&#160;</td>
+          <td class="paramname"><em>srv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
