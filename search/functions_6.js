@@ -26,7 +26,7 @@ var searchData=
   ['getinitializer_535',['getInitializer',['../class_for.html#a3a89ac4aca9c481bd0f8f4b8408f7990',1,'For::getInitializer()'],['../class_for.html#a07f055fdb74fc7f2237b839bbb3d9256',1,'For::getInitializer() const']]],
   ['getleft_536',['getLeft',['../class_binary_expression.html#ad650ca0926f7d87c553471af41d330cc',1,'BinaryExpression::getLeft()'],['../class_binary_expression.html#adab040b47ca21f7e3f7e0dead31973db',1,'BinaryExpression::getLeft() const']]],
   ['getmaximummultdepth_537',['getMaximumMultDepth',['../class_cone_rewriter.html#a8bfcef823bb820fb2041f8b1a8faef63',1,'ConeRewriter']]],
-  ['getmodswitchnode_538',['getModSwitchNode',['../class_special_insert_mod_switch_visitor.html#a696e97c1e5bbe34865cc324d2a8801af',1,'SpecialInsertModSwitchVisitor']]],
+  ['getmodswitchnode_538',['getModSwitchNode',['../class_special_insert_mod_switch_visitor.html#a6ea4b93fb956ec778b0abfeaba7a18d7',1,'SpecialInsertModSwitchVisitor']]],
   ['getmultdepthl_539',['getMultDepthL',['../class_multiplicative_depth_calculator.html#ac110ad03331be881766605b988c3c45d',1,'MultiplicativeDepthCalculator::getMultDepthL()'],['../class_cone_rewriter.html#a1e9fde29d756738d9609378d00585b06',1,'ConeRewriter::getMultDepthL()']]],
   ['getnestedscopebycreator_540',['getNestedScopeByCreator',['../class_scope.html#a7757efca029977d8745c110debab4719',1,'Scope::getNestedScopeByCreator(AbstractNode &amp;node)'],['../class_scope.html#a6f529d613d7c02f61e713762fb84d1bf',1,'Scope::getNestedScopeByCreator(AbstractNode &amp;node) const']]],
   ['getnextstackelement_541',['getNextStackElement',['../class_special_runtime_visitor.html#af2e1f998d4231a5645b9f87b1db5ef54',1,'SpecialRuntimeVisitor']]],

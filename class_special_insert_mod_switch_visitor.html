@@ -88,8 +88,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a628c68c9235964126a9d45753d254540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f31e684bcc413f1ae1aec18e1e8dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ae8f31e684bcc413f1ae1aec18e1e8dd7">visit</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> &amp;node)</td></tr>
 <tr class="separator:ae8f31e684bcc413f1ae1aec18e1e8dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a696e97c1e5bbe34865cc324d2a8801af"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a696e97c1e5bbe34865cc324d2a8801af">getModSwitchNode</a> () const</td></tr>
-<tr class="separator:a696e97c1e5bbe34865cc324d2a8801af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea4b93fb956ec778b0abfeaba7a18d7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a6ea4b93fb956ec778b0abfeaba7a18d7">getModSwitchNode</a> () const</td></tr>
+<tr class="separator:a6ea4b93fb956ec778b0abfeaba7a18d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scoped_visitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scoped_visitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scoped_visitor.html">ScopedVisitor</a></td></tr>
 <tr class="memitem:ae78d02edf0fa963223962a5c627bd904 inherit pub_methods_class_scoped_visitor"><td class="memItemLeft" align="right" valign="top"><a id="ae78d02edf0fa963223962a5c627bd904"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_block.html">Block</a> &amp;elem) override</td></tr>
@@ -191,14 +191,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a05e99ef12d8c77c654eaf4fe9342b0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a696e97c1e5bbe34865cc324d2a8801af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a696e97c1e5bbe34865cc324d2a8801af">&#9670;&nbsp;</a></span>getModSwitchNode()</h2>
+<a id="a6ea4b93fb956ec778b0abfeaba7a18d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea4b93fb956ec778b0abfeaba7a18d7">&#9670;&nbsp;</a></span>getModSwitchNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> &gt; SpecialInsertModSwitchVisitor::getModSwitchNode </td>
+          <td class="memname">std::vector&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> * &gt; SpecialInsertModSwitchVisitor::getModSwitchNode </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -265,7 +265,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Visits an AST and based on noise heuristics and identifies a binary expression where a modswitch op is appropriate based on the bitlengths of the primes in the coeff modulus and the remaining noise budget. pointer to resultiong binary expression will be stored in modwitchNode </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Visits an AST and based on noise heuristics and identifies binary expressions where a modswitch op is appropriate based on the bitlengths of the primes in the coeff modulus and the remaining noise budget. pointer to resulting binary expressions will be stored in the vector modSwitchNodes </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node</td><td></td></tr>
   </table>
