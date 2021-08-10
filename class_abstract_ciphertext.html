@@ -115,6 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab99b2afa46a7f8e8fb2122008df8d49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10939e806fad43fc8d7771cd9b42f0b7"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="class_abstract_ciphertext.html">AbstractCiphertext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ciphertext.html#a10939e806fad43fc8d7771cd9b42f0b7">rotateRows</a> (int steps) const =0</td></tr>
 <tr class="separator:a10939e806fad43fc8d7771cd9b42f0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0744c215da7aa1dd30d632674a977ba"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="class_abstract_ciphertext.html">AbstractCiphertext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ciphertext.html#ad0744c215da7aa1dd30d632674a977ba">modSwitch</a> (int num)=0</td></tr>
+<tr class="separator:ad0744c215da7aa1dd30d632674a977ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8eff555a247b14531f2509a787e4491"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ciphertext.html#af8eff555a247b14531f2509a787e4491">rotateRowsInplace</a> (int steps)=0</td></tr>
 <tr class="separator:af8eff555a247b14531f2509a787e4491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab95ce00e4613e8b7be79cc49861adb00"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="class_abstract_ciphertext.html">AbstractCiphertext</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_ciphertext.html#ab95ce00e4613e8b7be79cc49861adb00">clone</a> () const =0</td></tr>
@@ -387,6 +389,41 @@ const std::reference_wrapper&lt; const <a class="el" href="class_abstract_cipher
 <p>Gets the factory that is associated with this <a class="el" href="class_abstract_ciphertext.html">AbstractCiphertext</a>, i.e., that created this ciphertext. </p><dl class="section return"><dt>Returns</dt><dd>(A const reference to) the <a class="el" href="class_abstract_ciphertext_factory.html">AbstractCiphertextFactory</a> associated with this ciphertext. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_dummy_ciphertext.html#af6ab877a6d9fa841f68ab2602995bd92">DummyCiphertext</a>.</p>
+
+</div>
+</div>
+<a id="ad0744c215da7aa1dd30d632674a977ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0744c215da7aa1dd30d632674a977ba">&#9670;&nbsp;</a></span>modSwitch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="class_abstract_ciphertext.html">AbstractCiphertext</a>&gt; AbstractCiphertext::modSwitch </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs num modswitches on a ciphertext and returns the resulting ciphertext </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>Number of modswitches to perform </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::unique_ptr&lt;AbstractCiphertext&gt; containing the modswitched ciphertext. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_dummy_ciphertext.html#a2512627a7f334fe5e91d1bb8c3764a0c">DummyCiphertext</a>.</p>
 
 </div>
 </div>
