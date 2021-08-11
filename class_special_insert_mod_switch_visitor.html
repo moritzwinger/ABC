@@ -94,8 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad5a07cd10ba8956907cee6af6e4cfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ce577d1a8bf46ed486abf0eec8dc2f8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a1ce577d1a8bf46ed486abf0eec8dc2f8">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
 <tr class="separator:a1ce577d1a8bf46ed486abf0eec8dc2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51c75537c37f0ea3081e2dea2a15085a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a51c75537c37f0ea3081e2dea2a15085a">updateCoeffModulusMap</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression)</td></tr>
-<tr class="separator:a51c75537c37f0ea3081e2dea2a15085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa9f4c2cd13cf4580b35fe55aa97f54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a2fa9f4c2cd13cf4580b35fe55aa97f54">updateCoeffModulusMap</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression, int numSwitches)</td></tr>
+<tr class="separator:a2fa9f4c2cd13cf4580b35fe55aa97f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac153481bfd0d4e438edde7c410a720eb"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ac153481bfd0d4e438edde7c410a720eb">getCoeffModulusMap</a> ()</td></tr>
+<tr class="separator:ac153481bfd0d4e438edde7c410a720eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scoped_visitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scoped_visitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scoped_visitor.html">ScopedVisitor</a></td></tr>
 <tr class="memitem:ae78d02edf0fa963223962a5c627bd904 inherit pub_methods_class_scoped_visitor"><td class="memItemLeft" align="right" valign="top"><a id="ae78d02edf0fa963223962a5c627bd904"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_block.html">Block</a> &amp;elem) override</td></tr>
@@ -199,6 +201,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a96c0d889726534d3e81c0cf9cec0af50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac153481bfd0d4e438edde7c410a720eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac153481bfd0d4e438edde7c410a720eb">&#9670;&nbsp;</a></span>getCoeffModulusMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt; &gt; SpecialInsertModSwitchVisitor::getCoeffModulusMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="class_return.html" title="A Return statement has an (optional) value (AbstractExpression)">Return</a> coeffModulus map </p><dl class="section return"><dt>Returns</dt><dd>coeffmodulusmap </dd></dl>
+
+</div>
+</div>
 <a id="ab1d5e7ad89f51d2f215c666fe0826253"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1d5e7ad89f51d2f215c666fe0826253">&#9670;&nbsp;</a></span>getModSwitchNodes()</h2>
 
@@ -362,8 +382,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a51c75537c37f0ea3081e2dea2a15085a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51c75537c37f0ea3081e2dea2a15085a">&#9670;&nbsp;</a></span>updateCoeffModulusMap()</h2>
+<a id="a2fa9f4c2cd13cf4580b35fe55aa97f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa9f4c2cd13cf4580b35fe55aa97f54">&#9670;&nbsp;</a></span>updateCoeffModulusMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,14 +392,25 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void SpecialInsertModSwitchVisitor::updateCoeffModulusMap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_binary_expression.html">BinaryExpression</a> *&#160;</td>
-          <td class="paramname"><em>binaryExpression</em></td><td>)</td>
+          <td class="paramname"><em>binaryExpression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numSwitches</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p><a class="el" href="class_function.html" title="A function has a return type, name, a list of parameters and a body.">Function</a> to update the coefficient modulus map: After modswitching, the coefficient modulus for all ancestors of the modSwitched nodes will change. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">binaryExpression</td><td></td></tr>
+    <tr><td class="paramname">number</td><td>of performed modswitches </td></tr>
   </table>
   </dd>
 </dl>
