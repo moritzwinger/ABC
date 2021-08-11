@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0e4f9c9cf17d25489cf5ac7b137bf8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d408320a0fbcdfa30151e59f9ca2796"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::reference_wrapper&lt; <a class="el" href="class_abstract_expression.html">AbstractExpression</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_call.html#a1d408320a0fbcdfa30151e59f9ca2796">getArguments</a> ()</td></tr>
 <tr class="separator:a1d408320a0fbcdfa30151e59f9ca2796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef08f177e6e951de4571253f1a5d42da"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_expression.html">AbstractExpression</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_call.html#aef08f177e6e951de4571253f1a5d42da">takeArgument</a> (size_t i)</td></tr>
+<tr class="separator:aef08f177e6e951de4571253f1a5d42da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d80828b01c8c0883113fb5479c737b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_call.html#a91d80828b01c8c0883113fb5479c737b">accept</a> (<a class="el" href="class_i_visitor.html">IVisitor</a> &amp;v) override</td></tr>
 <tr class="separator:a91d80828b01c8c0883113fb5479c737b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6261a1e48fae353b829a865a86f0a48"><td class="memItemLeft" align="right" valign="top"><a id="ad6261a1e48fae353b829a865a86f0a48"></a>
@@ -547,6 +549,25 @@ typedef <a class="el" href="class_node_iterator.html">NodeIterator</a>&lt; const
 </dl>
 
 <p>Implements <a class="el" href="group___d_a_g.html#ga27020912a6f80562ae285c9d690b3505">AbstractNode</a>.</p>
+
+</div>
+</div>
+<a id="aef08f177e6e951de4571253f1a5d42da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef08f177e6e951de4571253f1a5d42da">&#9670;&nbsp;</a></span>takeArgument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_expression.html">AbstractExpression</a> &gt; Call::takeArgument </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take ownership of argument at position i. </p><dl class="section return"><dt>Returns</dt><dd>argument at positition i </dd></dl>
 
 </div>
 </div>
