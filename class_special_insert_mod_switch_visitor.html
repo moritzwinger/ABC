@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab1d5e7ad89f51d2f215c666fe0826253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5a07cd10ba8956907cee6af6e4cfead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ad5a07cd10ba8956907cee6af6e4cfead">updateNoiseMap</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;astProgram, <a class="el" href="class_visitor.html">RuntimeVisitor</a> *srv)</td></tr>
 <tr class="separator:ad5a07cd10ba8956907cee6af6e4cfead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ce577d1a8bf46ed486abf0eec8dc2f8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a1ce577d1a8bf46ed486abf0eec8dc2f8">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
-<tr class="separator:a1ce577d1a8bf46ed486abf0eec8dc2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56fd31a8eefdccb511a8378b9000c5cc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a56fd31a8eefdccb511a8378b9000c5cc">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_visitor.html">RuntimeVisitor</a> srv, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap={})</td></tr>
+<tr class="separator:a56fd31a8eefdccb511a8378b9000c5cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fa9f4c2cd13cf4580b35fe55aa97f54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#a2fa9f4c2cd13cf4580b35fe55aa97f54">updateCoeffModulusMap</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression, int numSwitches)</td></tr>
 <tr class="separator:a2fa9f4c2cd13cf4580b35fe55aa97f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac153481bfd0d4e438edde7c410a720eb"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ac153481bfd0d4e438edde7c410a720eb">getCoeffModulusMap</a> ()</td></tr>
@@ -359,17 +359,23 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ce577d1a8bf46ed486abf0eec8dc2f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ce577d1a8bf46ed486abf0eec8dc2f8">&#9670;&nbsp;</a></span>rewriteAst()</h2>
+<a id="a56fd31a8eefdccb511a8378b9000c5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56fd31a8eefdccb511a8378b9000c5cc">&#9670;&nbsp;</a></span>rewriteAst()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_abstract_node.html">AbstractNode</a>&gt; SpecialInsertModSwitchVisitor::rewriteAst </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; SpecialInsertModSwitchVisitor::rewriteAst </td>
           <td>(</td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *&#160;</td>
           <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_visitor.html">RuntimeVisitor</a>&#160;</td>
+          <td class="paramname"><em>srv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
