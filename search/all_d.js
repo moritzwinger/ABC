@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['parse_219',['parse',['../class_parser.html#a7af88b9dc1bface693711ee1a667a4b3',1,'Parser::parse(std::string s, std::vector&lt; std::reference_wrapper&lt; AbstractNode &gt;&gt; &amp;createdNodesList)'],['../class_parser.html#ab4dbae5f79be850aa0f1388a5d5bd720',1,'Parser::parse(std::string s)']]],
-  ['parsefile_220',['parseFile',['../class_veri_log_to_dsl.html#a97bbb0ac593fd906b228839e7894859e',1,'VeriLogToDsl']]],
+  ['parse_220',['parse',['../class_parser.html#a7af88b9dc1bface693711ee1a667a4b3',1,'Parser::parse(std::string s, std::vector&lt; std::reference_wrapper&lt; AbstractNode &gt;&gt; &amp;createdNodesList)'],['../class_parser.html#ab4dbae5f79be850aa0f1388a5d5bd720',1,'Parser::parse(std::string s)']]],
   ['parseinput_221',['parseInput',['../class_veri_log_to_dsl.html#ab3f44fdb562038aef658ddf5b11424c5',1,'VeriLogToDsl']]],
   ['parseoutput_222',['parseOutput',['../class_veri_log_to_dsl.html#ab1726de6c98bfe56b3748c2bfa8752d5',1,'VeriLogToDsl']]],
   ['parseprogram_223',['parseProgram',['../class_veri_log_to_dsl.html#a670785de4600cff9107e1697f06bd5b9',1,'VeriLogToDsl']]],

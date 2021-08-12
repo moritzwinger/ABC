@@ -75,13 +75,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a65ba1cf15800d7ba1cbb2f9d14965e52"><td class="memItemLeft" align="right" valign="top"><a id="a65ba1cf15800d7ba1cbb2f9d14965e52"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>VeriLogToDsl</b> (std::string fileName)</td></tr>
 <tr class="separator:a65ba1cf15800d7ba1cbb2f9d14965e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97bbb0ac593fd906b228839e7894859e"><td class="memItemLeft" align="right" valign="top"><a id="a97bbb0ac593fd906b228839e7894859e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a97bbb0ac593fd906b228839e7894859e">parseFile</a> ()</td></tr>
-<tr class="memdesc:a97bbb0ac593fd906b228839e7894859e"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse file <br /></td></tr>
-<tr class="separator:a97bbb0ac593fd906b228839e7894859e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180f0858ad66777b50df0ceccbb01614"><td class="memItemLeft" align="right" valign="top"><a id="a180f0858ad66777b50df0ceccbb01614"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a180f0858ad66777b50df0ceccbb01614">tokenizeFile</a> ()</td></tr>
+<tr class="memdesc:a180f0858ad66777b50df0ceccbb01614"><td class="mdescLeft">&#160;</td><td class="mdescRight">parses entire file into an array of tokens (tokens) <br /></td></tr>
+<tr class="separator:a180f0858ad66777b50df0ceccbb01614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3f44fdb562038aef658ddf5b11424c5"><td class="memItemLeft" align="right" valign="top"><a id="ab3f44fdb562038aef658ddf5b11424c5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#ab3f44fdb562038aef658ddf5b11424c5">parseInput</a> ()</td></tr>
-<tr class="memdesc:ab3f44fdb562038aef658ddf5b11424c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse input <br /></td></tr>
+<tr class="memdesc:ab3f44fdb562038aef658ddf5b11424c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse input from tokenised file <br /></td></tr>
 <tr class="separator:ab3f44fdb562038aef658ddf5b11424c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1726de6c98bfe56b3748c2bfa8752d5"><td class="memItemLeft" align="right" valign="top"><a id="ab1726de6c98bfe56b3748c2bfa8752d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#ab1726de6c98bfe56b3748c2bfa8752d5">parseOutput</a> ()</td></tr>
@@ -91,6 +91,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a670785de4600cff9107e1697f06bd5b9">parseProgram</a> ()</td></tr>
 <tr class="memdesc:a670785de4600cff9107e1697f06bd5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse program <br /></td></tr>
 <tr class="separator:a670785de4600cff9107e1697f06bd5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memItemLeft" align="right" valign="top"><a id="a66de5e73c57f3e98782aa245bda6ebb7"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a> ()</td></tr>
+<tr class="memdesc:a66de5e73c57f3e98782aa245bda6ebb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get tokens array (entire file) <br /></td></tr>
+<tr class="separator:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0515b54f2731d394c861a25cf4b22915"><td class="memItemLeft" align="right" valign="top"><a id="a0515b54f2731d394c861a25cf4b22915"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputs</b> ()</td></tr>
+<tr class="separator:a0515b54f2731d394c861a25cf4b22915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19fac1aad013058f5c19d9cfce5b35af"><td class="memItemLeft" align="right" valign="top"><a id="a19fac1aad013058f5c19d9cfce5b35af"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getOutputs</b> ()</td></tr>
+<tr class="separator:a19fac1aad013058f5c19d9cfce5b35af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/ast_opt/utilities/<a class="el" href="_veri_log_to_dsl_8h_source.html">VeriLogToDsl.h</a></li>
