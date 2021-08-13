@@ -99,43 +99,51 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// constructor</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="class_veri_log_to_dsl.html">VeriLogToDsl</a>(std::string fileName);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#a180f0858ad66777b50df0ceccbb01614">tokenizeFile</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ab3f44fdb562038aef658ddf5b11424c5">parseInput</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#a180f0858ad66777b50df0ceccbb01614">tokenizeFile</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ab3f44fdb562038aef658ddf5b11424c5">parseInput</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ab1726de6c98bfe56b3748c2bfa8752d5">parseOutput</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_veri_log_to_dsl.html#a6b759a193dca5b3c94d5ae95b8bdafe0">findNextAssignmentBlock</a>(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#aad27ca9330f516d3f7bab96b89e87893">parseSingleAssignment</a>(<span class="keywordtype">size_t</span> startIndex, <span class="keywordtype">size_t</span> endIndex);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#a5b8fa1ed51b96029de45c5b105d627bd">parseAllAssignments</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">getInputs</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">getOutputs</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="class_veri_log_to_dsl.html#a97f96d11daa727a27544c1fff0d36063">getAssignments</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ab1726de6c98bfe56b3748c2bfa8752d5">parseOutput</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_veri_log_to_dsl.html#a6b759a193dca5b3c94d5ae95b8bdafe0">findNextAssignmentBlock</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#aad27ca9330f516d3f7bab96b89e87893">parseSingleAssignment</a>(<span class="keywordtype">size_t</span> startIndex, <span class="keywordtype">size_t</span> endIndex);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#a5b8fa1ed51b96029de45c5b105d627bd">parseAllAssignments</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#a595e09e422bd1a578adf352f11efd445">writeInputToDsl</a>(std::string filename);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ae9d1393153d76aa5c6d9c6006ebe0710">writeOutputToDsl</a>(std::string filename);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_veri_log_to_dsl.html#ab382d7a4d105aa51c163629f744626f4">writeAssignmentsToDsl</a>(std::string filename);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">getInputs</a>();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AST_OPTIMIZER_INCLUDE_AST_OPT_UTILITIES_VERILOGTODSL_H_</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">getOutputs</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="class_veri_log_to_dsl.html#a97f96d11daa727a27544c1fff0d36063">getAssignments</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AST_OPTIMIZER_INCLUDE_AST_OPT_UTILITIES_VERILOGTODSL_H_</span></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html"><div class="ttname"><a href="class_veri_log_to_dsl.html">VeriLogToDsl</a></div><div class="ttdef"><b>Definition:</b> VeriLogToDsl.h:14</div></div>
-<div class="ttc" id="aclass_veri_log_to_dsl_html_a0515b54f2731d394c861a25cf4b22915"><div class="ttname"><a href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">VeriLogToDsl::getInputs</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getInputs()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:174</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_a0515b54f2731d394c861a25cf4b22915"><div class="ttname"><a href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">VeriLogToDsl::getInputs</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getInputs()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:226</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_a180f0858ad66777b50df0ceccbb01614"><div class="ttname"><a href="class_veri_log_to_dsl.html#a180f0858ad66777b50df0ceccbb01614">VeriLogToDsl::tokenizeFile</a></div><div class="ttdeci">void tokenizeFile()</div><div class="ttdoc">parses entire file into an array of tokens (tokens)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:6</div></div>
-<div class="ttc" id="aclass_veri_log_to_dsl_html_a19fac1aad013058f5c19d9cfce5b35af"><div class="ttname"><a href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">VeriLogToDsl::getOutputs</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getOutputs()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:178</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_a19fac1aad013058f5c19d9cfce5b35af"><div class="ttname"><a href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">VeriLogToDsl::getOutputs</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getOutputs()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:230</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_a595e09e422bd1a578adf352f11efd445"><div class="ttname"><a href="class_veri_log_to_dsl.html#a595e09e422bd1a578adf352f11efd445">VeriLogToDsl::writeInputToDsl</a></div><div class="ttdeci">void writeInputToDsl(std::string filename)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:170</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_a5b8fa1ed51b96029de45c5b105d627bd"><div class="ttname"><a href="class_veri_log_to_dsl.html#a5b8fa1ed51b96029de45c5b105d627bd">VeriLogToDsl::parseAllAssignments</a></div><div class="ttdeci">void parseAllAssignments()</div><div class="ttdoc">assignment parser. populates the vector of vectors with all assignments.</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:150</div></div>
-<div class="ttc" id="aclass_veri_log_to_dsl_html_a66de5e73c57f3e98782aa245bda6ebb7"><div class="ttname"><a href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">VeriLogToDsl::getTokens</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getTokens()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:170</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_a66de5e73c57f3e98782aa245bda6ebb7"><div class="ttname"><a href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">VeriLogToDsl::getTokens</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getTokens()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:222</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_a6b759a193dca5b3c94d5ae95b8bdafe0"><div class="ttname"><a href="class_veri_log_to_dsl.html#a6b759a193dca5b3c94d5ae95b8bdafe0">VeriLogToDsl::findNextAssignmentBlock</a></div><div class="ttdeci">int findNextAssignmentBlock(int index)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:82</div></div>
-<div class="ttc" id="aclass_veri_log_to_dsl_html_a97f96d11daa727a27544c1fff0d36063"><div class="ttname"><a href="class_veri_log_to_dsl.html#a97f96d11daa727a27544c1fff0d36063">VeriLogToDsl::getAssignments</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; getAssignments()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:182</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_a97f96d11daa727a27544c1fff0d36063"><div class="ttname"><a href="class_veri_log_to_dsl.html#a97f96d11daa727a27544c1fff0d36063">VeriLogToDsl::getAssignments</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; getAssignments()</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:234</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_aad27ca9330f516d3f7bab96b89e87893"><div class="ttname"><a href="class_veri_log_to_dsl.html#aad27ca9330f516d3f7bab96b89e87893">VeriLogToDsl::parseSingleAssignment</a></div><div class="ttdeci">std::vector&lt; std::string &gt; parseSingleAssignment(size_t startIndex, size_t endIndex)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:97</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_ab1726de6c98bfe56b3748c2bfa8752d5"><div class="ttname"><a href="class_veri_log_to_dsl.html#ab1726de6c98bfe56b3748c2bfa8752d5">VeriLogToDsl::parseOutput</a></div><div class="ttdeci">void parseOutput()</div><div class="ttdoc">parse output</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:55</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_ab382d7a4d105aa51c163629f744626f4"><div class="ttname"><a href="class_veri_log_to_dsl.html#ab382d7a4d105aa51c163629f744626f4">VeriLogToDsl::writeAssignmentsToDsl</a></div><div class="ttdeci">void writeAssignmentsToDsl(std::string filename)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:184</div></div>
 <div class="ttc" id="aclass_veri_log_to_dsl_html_ab3f44fdb562038aef658ddf5b11424c5"><div class="ttname"><a href="class_veri_log_to_dsl.html#ab3f44fdb562038aef658ddf5b11424c5">VeriLogToDsl::parseInput</a></div><div class="ttdeci">void parseInput()</div><div class="ttdoc">parse input from tokenised file</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:27</div></div>
+<div class="ttc" id="aclass_veri_log_to_dsl_html_ae9d1393153d76aa5c6d9c6006ebe0710"><div class="ttname"><a href="class_veri_log_to_dsl.html#ae9d1393153d76aa5c6d9c6006ebe0710">VeriLogToDsl::writeOutputToDsl</a></div><div class="ttdeci">void writeOutputToDsl(std::string filename)</div><div class="ttdef"><b>Definition:</b> VerilogToDsl.cpp:180</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

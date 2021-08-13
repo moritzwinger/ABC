@@ -95,6 +95,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a5b8fa1ed51b96029de45c5b105d627bd">parseAllAssignments</a> ()</td></tr>
 <tr class="memdesc:a5b8fa1ed51b96029de45c5b105d627bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment parser. populates the vector of vectors with all assignments. <br /></td></tr>
 <tr class="separator:a5b8fa1ed51b96029de45c5b105d627bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a595e09e422bd1a578adf352f11efd445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a595e09e422bd1a578adf352f11efd445">writeInputToDsl</a> (std::string filename)</td></tr>
+<tr class="separator:a595e09e422bd1a578adf352f11efd445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d1393153d76aa5c6d9c6006ebe0710"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#ae9d1393153d76aa5c6d9c6006ebe0710">writeOutputToDsl</a> (std::string filename)</td></tr>
+<tr class="separator:ae9d1393153d76aa5c6d9c6006ebe0710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab382d7a4d105aa51c163629f744626f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#ab382d7a4d105aa51c163629f744626f4">writeAssignmentsToDsl</a> (std::string filename)</td></tr>
+<tr class="separator:ab382d7a4d105aa51c163629f744626f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a> ()</td></tr>
 <tr class="separator:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0515b54f2731d394c861a25cf4b22915"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">getInputs</a> ()</td></tr>
@@ -229,6 +235,78 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>vector containing assignment specified by its indices </dd></dl>
+
+</div>
+</div>
+<a id="ab382d7a4d105aa51c163629f744626f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab382d7a4d105aa51c163629f744626f4">&#9670;&nbsp;</a></span>writeAssignmentsToDsl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VeriLogToDsl::writeAssignmentsToDsl </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>write assignments to file in DSL format </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a595e09e422bd1a578adf352f11efd445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595e09e422bd1a578adf352f11efd445">&#9670;&nbsp;</a></span>writeInputToDsl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VeriLogToDsl::writeInputToDsl </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>write inputs to file in DSL format </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9d1393153d76aa5c6d9c6006ebe0710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d1393153d76aa5c6d9c6006ebe0710">&#9670;&nbsp;</a></span>writeOutputToDsl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VeriLogToDsl::writeOutputToDsl </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>write outputs to file in DSL format </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
