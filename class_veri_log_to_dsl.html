@@ -89,19 +89,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:ab1726de6c98bfe56b3748c2bfa8752d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b759a193dca5b3c94d5ae95b8bdafe0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a6b759a193dca5b3c94d5ae95b8bdafe0">findNextAssignmentBlock</a> (int index)</td></tr>
 <tr class="separator:a6b759a193dca5b3c94d5ae95b8bdafe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f966833fd8e8039df192bca4b2a86a3"><td class="memItemLeft" align="right" valign="top"><a id="a5f966833fd8e8039df192bca4b2a86a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a5f966833fd8e8039df192bca4b2a86a3">parseAssignment</a> (size_t startIndex, size_t endIndex)</td></tr>
-<tr class="memdesc:a5f966833fd8e8039df192bca4b2a86a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse program <br /></td></tr>
-<tr class="separator:a5f966833fd8e8039df192bca4b2a86a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memItemLeft" align="right" valign="top"><a id="a66de5e73c57f3e98782aa245bda6ebb7"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a> ()</td></tr>
-<tr class="memdesc:a66de5e73c57f3e98782aa245bda6ebb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get tokens array (entire file) <br /></td></tr>
+<tr class="memitem:aad27ca9330f516d3f7bab96b89e87893"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#aad27ca9330f516d3f7bab96b89e87893">parseSingleAssignment</a> (size_t startIndex, size_t endIndex)</td></tr>
+<tr class="separator:aad27ca9330f516d3f7bab96b89e87893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a> ()</td></tr>
 <tr class="separator:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0515b54f2731d394c861a25cf4b22915"><td class="memItemLeft" align="right" valign="top"><a id="a0515b54f2731d394c861a25cf4b22915"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getInputs</b> ()</td></tr>
+<tr class="memitem:a0515b54f2731d394c861a25cf4b22915"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">getInputs</a> ()</td></tr>
 <tr class="separator:a0515b54f2731d394c861a25cf4b22915"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19fac1aad013058f5c19d9cfce5b35af"><td class="memItemLeft" align="right" valign="top"><a id="a19fac1aad013058f5c19d9cfce5b35af"></a>
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getOutputs</b> ()</td></tr>
+<tr class="memitem:a19fac1aad013058f5c19d9cfce5b35af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">getOutputs</a> ()</td></tr>
 <tr class="separator:a19fac1aad013058f5c19d9cfce5b35af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -121,6 +115,96 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 <p>find index of next 'assign' </p><dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
+
+</div>
+</div>
+<a id="a0515b54f2731d394c861a25cf4b22915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0515b54f2731d394c861a25cf4b22915">&#9670;&nbsp;</a></span>getInputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; VeriLogToDsl::getInputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get inputs vector </p><dl class="section return"><dt>Returns</dt><dd>inputs </dd></dl>
+
+</div>
+</div>
+<a id="a19fac1aad013058f5c19d9cfce5b35af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19fac1aad013058f5c19d9cfce5b35af">&#9670;&nbsp;</a></span>getOutputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; VeriLogToDsl::getOutputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get outputs vector </p><dl class="section return"><dt>Returns</dt><dd>outputs </dd></dl>
+
+</div>
+</div>
+<a id="a66de5e73c57f3e98782aa245bda6ebb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66de5e73c57f3e98782aa245bda6ebb7">&#9670;&nbsp;</a></span>getTokens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; VeriLogToDsl::getTokens </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get tokens array (entire file) </p><dl class="section return"><dt>Returns</dt><dd>tokens </dd></dl>
+
+</div>
+</div>
+<a id="aad27ca9330f516d3f7bab96b89e87893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad27ca9330f516d3f7bab96b89e87893">&#9670;&nbsp;</a></span>parseSingleAssignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; VeriLogToDsl::parseSingleAssignment </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>endIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>parse single assignment </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startIndex</td><td>index of first element after 'assign' </td></tr>
+    <tr><td class="paramname">endIndex</td><td>index of next 'assign' </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector containing assignment specified by its indices </dd></dl>
 
 </div>
 </div>
