@@ -91,12 +91,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a6b759a193dca5b3c94d5ae95b8bdafe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad27ca9330f516d3f7bab96b89e87893"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#aad27ca9330f516d3f7bab96b89e87893">parseSingleAssignment</a> (size_t startIndex, size_t endIndex)</td></tr>
 <tr class="separator:aad27ca9330f516d3f7bab96b89e87893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8fa1ed51b96029de45c5b105d627bd"><td class="memItemLeft" align="right" valign="top"><a id="a5b8fa1ed51b96029de45c5b105d627bd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a5b8fa1ed51b96029de45c5b105d627bd">parseAllAssignments</a> ()</td></tr>
+<tr class="memdesc:a5b8fa1ed51b96029de45c5b105d627bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignment parser. populates the vector of vectors with all assignments. <br /></td></tr>
+<tr class="separator:a5b8fa1ed51b96029de45c5b105d627bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a66de5e73c57f3e98782aa245bda6ebb7">getTokens</a> ()</td></tr>
 <tr class="separator:a66de5e73c57f3e98782aa245bda6ebb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0515b54f2731d394c861a25cf4b22915"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a0515b54f2731d394c861a25cf4b22915">getInputs</a> ()</td></tr>
 <tr class="separator:a0515b54f2731d394c861a25cf4b22915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19fac1aad013058f5c19d9cfce5b35af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a19fac1aad013058f5c19d9cfce5b35af">getOutputs</a> ()</td></tr>
 <tr class="separator:a19fac1aad013058f5c19d9cfce5b35af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97f96d11daa727a27544c1fff0d36063"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_veri_log_to_dsl.html#a97f96d11daa727a27544c1fff0d36063">getAssignments</a> ()</td></tr>
+<tr class="separator:a97f96d11daa727a27544c1fff0d36063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6b759a193dca5b3c94d5ae95b8bdafe0"></a>
@@ -115,6 +121,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 <p>find index of next 'assign' </p><dl class="section return"><dt>Returns</dt><dd>index </dd></dl>
+
+</div>
+</div>
+<a id="a97f96d11daa727a27544c1fff0d36063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97f96d11daa727a27544c1fff0d36063">&#9670;&nbsp;</a></span>getAssignments()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; std::string &gt; &gt; VeriLogToDsl::getAssignments </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>get assignments vector </p><dl class="section return"><dt>Returns</dt><dd>assignments (vector holding vectors with all assignments) </dd></dl>
 
 </div>
 </div>
