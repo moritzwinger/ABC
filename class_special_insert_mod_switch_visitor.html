@@ -393,6 +393,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Rewrite Algorithm: Finds potential sites to insert modswitches, then inserts a modswitch, recalculates the coefficient moduli and noise maps <a class="el" href="class_if.html">If</a> the remaining noise budget after insertion is greater zero, the change is kept, otherwise the modswitch is removed again. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ast</td><td>the AST </td></tr>
+    <tr><td class="paramname">srv</td><td>RuntimeVisitor (to recalculate noise map for a rewritten ast) </td></tr>
     <tr><td class="paramname">binaryExpression</td><td></td></tr>
     <tr><td class="paramname">coeffmodulusmap</td><td></td></tr>
   </table>
