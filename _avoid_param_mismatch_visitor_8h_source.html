@@ -99,17 +99,18 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="class_special_avoid_param_mismatch_visitor.html">SpecialAvoidParamMismatchVisitor</a>( std::unordered_map&lt;std::string, std::vector&lt;seal::Modulus&gt;&gt; coeffmodulusmap);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// TODO Implement</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_special_avoid_param_mismatch_visitor.html#aa320a6ebafea649276caf5a67805c1b9">visit</a>(<a class="code" href="class_binary_expression.html">BinaryExpression</a> &amp;node);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AST_OPTIMIZER_INCLUDE_AST_OPT_VISITOR_AVOIDPARAMMISMATCHVISITOR_H_</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_special_avoid_param_mismatch_visitor.html#a35e13a5e97f40d5348d1f1d2883e17d5">visit</a>(<a class="code" href="class_binary_expression.html">BinaryExpression</a> &amp;elem);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  std::vector&lt;BinaryExpression *&gt; <a class="code" href="class_special_avoid_param_mismatch_visitor.html#ac7910a7fe09a0927f0334e171cf24815">getModSwitchNodes</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//AST_OPTIMIZER_INCLUDE_AST_OPT_VISITOR_AVOIDPARAMMISMATCHVISITOR_H_</span></div>
 <div class="ttc" id="aclass_binary_expression_html"><div class="ttname"><a href="class_binary_expression.html">BinaryExpression</a></div><div class="ttdoc">A BinaryExpression has two Operands (left and right) and an Operator.</div><div class="ttdef"><b>Definition:</b> BinaryExpression.h:11</div></div>
 <div class="ttc" id="aclass_scoped_visitor_html"><div class="ttname"><a href="class_scoped_visitor.html">ScopedVisitor</a></div><div class="ttdef"><b>Definition:</b> ScopedVisitor.h:10</div></div>
 <div class="ttc" id="aclass_special_avoid_param_mismatch_visitor_html"><div class="ttname"><a href="class_special_avoid_param_mismatch_visitor.html">SpecialAvoidParamMismatchVisitor</a></div><div class="ttdef"><b>Definition:</b> AvoidParamMismatchVisitor.h:23</div></div>
-<div class="ttc" id="aclass_special_avoid_param_mismatch_visitor_html_aa320a6ebafea649276caf5a67805c1b9"><div class="ttname"><a href="class_special_avoid_param_mismatch_visitor.html#aa320a6ebafea649276caf5a67805c1b9">SpecialAvoidParamMismatchVisitor::visit</a></div><div class="ttdeci">void visit(BinaryExpression &amp;node)</div><div class="ttdef"><b>Definition:</b> AvoidParamMismatchVisitor.cpp:11</div></div>
+<div class="ttc" id="aclass_special_avoid_param_mismatch_visitor_html_a35e13a5e97f40d5348d1f1d2883e17d5"><div class="ttname"><a href="class_special_avoid_param_mismatch_visitor.html#a35e13a5e97f40d5348d1f1d2883e17d5">SpecialAvoidParamMismatchVisitor::visit</a></div><div class="ttdeci">void visit(BinaryExpression &amp;elem)</div><div class="ttdef"><b>Definition:</b> AvoidParamMismatchVisitor.cpp:12</div></div>
+<div class="ttc" id="aclass_special_avoid_param_mismatch_visitor_html_ac7910a7fe09a0927f0334e171cf24815"><div class="ttname"><a href="class_special_avoid_param_mismatch_visitor.html#ac7910a7fe09a0927f0334e171cf24815">SpecialAvoidParamMismatchVisitor::getModSwitchNodes</a></div><div class="ttdeci">std::vector&lt; BinaryExpression * &gt; getModSwitchNodes()</div><div class="ttdef"><b>Definition:</b> AvoidParamMismatchVisitor.cpp:43</div></div>
 <div class="ttc" id="aclass_visitor_html"><div class="ttname"><a href="class_visitor.html">Visitor</a></div><div class="ttdef"><b>Definition:</b> Visitor.h:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
