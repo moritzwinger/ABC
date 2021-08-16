@@ -11,7 +11,7 @@ var searchData=
   ['variablemap_3c_20std_3a_3aunique_5fptr_3c_20abstractciphertext_20_3e_20_3e_336',['VariableMap&lt; std::unique_ptr&lt; AbstractCiphertext &gt; &gt;',['../class_variable_map.html',1,'']]],
   ['variablemap_3c_20std_3a_3aunique_5fptr_3c_20icleartext_20_3e_20_3e_337',['VariableMap&lt; std::unique_ptr&lt; ICleartext &gt; &gt;',['../class_variable_map.html',1,'']]],
   ['verilogtodsl_338',['VeriLogToDsl',['../class_veri_log_to_dsl.html',1,'']]],
-  ['visit_339',['visit',['../class_special_insert_mod_switch_visitor.html#ae8f31e684bcc413f1ae1aec18e1e8dd7',1,'SpecialInsertModSwitchVisitor::visit()'],['../class_special_vectorizer.html#aa742296176d9c084bca9d9a73a8956cb',1,'SpecialVectorizer::visit()']]],
+  ['visit_339',['visit',['../class_special_avoid_param_mismatch_visitor.html#aa320a6ebafea649276caf5a67805c1b9',1,'SpecialAvoidParamMismatchVisitor::visit()'],['../class_special_insert_mod_switch_visitor.html#ae8f31e684bcc413f1ae1aec18e1e8dd7',1,'SpecialInsertModSwitchVisitor::visit()'],['../class_special_vectorizer.html#aa742296176d9c084bca9d9a73a8956cb',1,'SpecialVectorizer::visit()']]],
   ['visithelper_340',['visitHelper',['../class_special_runtime_visitor.html#a11784f775e9327e21540370812fa8f94',1,'SpecialRuntimeVisitor']]],
   ['visitor_341',['Visitor',['../class_visitor.html',1,'']]]
 ];
