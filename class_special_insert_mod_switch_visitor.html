@@ -77,12 +77,16 @@ Inheritance diagram for SpecialInsertModSwitchVisitor:</div>
   <img src="class_special_insert_mod_switch_visitor.png" usemap="#SpecialInsertModSwitchVisitor_map" alt=""/>
   <map id="SpecialInsertModSwitchVisitor_map" name="SpecialInsertModSwitchVisitor_map">
 <area href="class_scoped_visitor.html" alt="ScopedVisitor" shape="rect" coords="0,56,183,80"/>
+<area href="class_scoped_visitor.html" alt="ScopedVisitor" shape="rect" coords="193,56,376,80"/>
 <area href="class_i_visitor.html" alt="IVisitor" shape="rect" coords="0,0,183,24"/>
+<area href="class_i_visitor.html" alt="IVisitor" shape="rect" coords="193,0,376,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad614b309ad5e20273d4cd91384efd7ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_insert_mod_switch_visitor.html#ad614b309ad5e20273d4cd91384efd7ad">SpecialAvoidParamMismatchVisitor</a> (std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap) void <a class="el" href="class_special_insert_mod_switch_visitor.html#ae8f31e684bcc413f1ae1aec18e1e8dd7">visit</a>(<a class="el" href="class_binary_expression.html">BinaryExpression</a> &amp;node)</td></tr>
+<tr class="separator:ad614b309ad5e20273d4cd91384efd7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a628c68c9235964126a9d45753d254540"><td class="memItemLeft" align="right" valign="top"><a id="a628c68c9235964126a9d45753d254540"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>SpecialInsertModSwitchVisitor</b> (std::ostream &amp;os, std::unordered_map&lt; std::string, int &gt; noise_map, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap, int encNoiseBudget)</td></tr>
 <tr class="separator:a628c68c9235964126a9d45753d254540"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -403,6 +407,38 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad614b309ad5e20273d4cd91384efd7ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad614b309ad5e20273d4cd91384efd7ad">&#9670;&nbsp;</a></span>SpecialAvoidParamMismatchVisitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SpecialInsertModSwitchVisitor::SpecialAvoidParamMismatchVisitor </td>
+          <td>(</td>
+          <td class="paramtype">std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt;&#160;</td>
+          <td class="paramname"><em>coeffmodulusmap</em></td><td>)</td>
+          <td> &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Visits an AST and based on the coefficient modulus map identifies binary expressions where a modswitch op needs to be inserted to avoid parameter mismatch pointer to resulting binary expressions will be stored in the vector modSwitchNodes </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2fa9f4c2cd13cf4580b35fe55aa97f54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fa9f4c2cd13cf4580b35fe55aa97f54">&#9670;&nbsp;</a></span>updateCoeffModulusMap()</h2>
 
@@ -508,6 +544,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/ast_opt/visitor/<a class="el" href="_avoid_param_mismatch_visitor_8h_source.html">AvoidParamMismatchVisitor.h</a></li>
 <li>include/ast_opt/visitor/<a class="el" href="_insert_mod_switch_visitor_8h_source.html">InsertModSwitchVisitor.h</a></li>
 <li>src/visitor/InsertModSwitchVisitor.cpp</li>
 </ul>
