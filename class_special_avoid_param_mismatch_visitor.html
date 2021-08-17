@@ -82,11 +82,13 @@ Inheritance diagram for SpecialAvoidParamMismatchVisitor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a000fef780d00234f0e90a2f330151407"><td class="memItemLeft" align="right" valign="top"><a id="a000fef780d00234f0e90a2f330151407"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>SpecialAvoidParamMismatchVisitor</b> (std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap)</td></tr>
-<tr class="separator:a000fef780d00234f0e90a2f330151407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6195cc59371b4c8f5f596e488c21008"><td class="memItemLeft" align="right" valign="top"><a id="aa6195cc59371b4c8f5f596e488c21008"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SpecialAvoidParamMismatchVisitor</b> (std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap, std::unordered_map&lt; std::string, std::vector&lt; seal::Modulus &gt;&gt; coeffmodulusmap_vars)</td></tr>
+<tr class="separator:aa6195cc59371b4c8f5f596e488c21008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e13a5e97f40d5348d1f1d2883e17d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_avoid_param_mismatch_visitor.html#a35e13a5e97f40d5348d1f1d2883e17d5">visit</a> (<a class="el" href="class_binary_expression.html">BinaryExpression</a> &amp;elem)</td></tr>
 <tr class="separator:a35e13a5e97f40d5348d1f1d2883e17d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5e8f3929da0cb06e5ed9c7bb01a86c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_avoid_param_mismatch_visitor.html#aeb5e8f3929da0cb06e5ed9c7bb01a86c">insertModSwitchInAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *ast, <a class="el" href="class_binary_expression.html">BinaryExpression</a> *binaryExpression=nullptr)</td></tr>
+<tr class="separator:aeb5e8f3929da0cb06e5ed9c7bb01a86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7910a7fe09a0927f0334e171cf24815"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_binary_expression.html">BinaryExpression</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_special_avoid_param_mismatch_visitor.html#ac7910a7fe09a0927f0334e171cf24815">getModSwitchNodes</a> ()</td></tr>
 <tr class="separator:ac7910a7fe09a0927f0334e171cf24815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scoped_visitor"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scoped_visitor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scoped_visitor.html">ScopedVisitor</a></td></tr>
@@ -200,6 +202,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>exitScope</b> ()</td>
       </table>
 </div><div class="memdoc">
 <p>getter function </p><dl class="section return"><dt>Returns</dt><dd>modSwitch nodes: Binary expressions whose children need to be modswitched to ensure correctness of the circuit. </dd></dl>
+
+</div>
+</div>
+<a id="aeb5e8f3929da0cb06e5ed9c7bb01a86c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5e8f3929da0cb06e5ed9c7bb01a86c">&#9670;&nbsp;</a></span>insertModSwitchInAst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; SpecialAvoidParamMismatchVisitor::insertModSwitchInAst </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; *&#160;</td>
+          <td class="paramname"><em>ast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_binary_expression.html">BinaryExpression</a> *&#160;</td>
+          <td class="paramname"><em>binaryExpression</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>insert modswittch as needed to fix the potential parameter mismatch caused by the InsertModSwitchVisitor </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ast</td><td>to rewrite </td></tr>
+    <tr><td class="paramname">binary</td><td>expression as ientified from the AvoidParamMismatch visitor (<a class="el" href="class_special_avoid_param_mismatch_visitor.html#a35e13a5e97f40d5348d1f1d2883e17d5">visit(BinaryExpression &amp;elem)</a>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a rewritten ast </dd></dl>
 
 </div>
 </div>
