@@ -16,7 +16,7 @@
 class BenchMarkEPFLModSwitch_bar : public ::testing::Test {
 
  protected:
-  const int numCiphertextSlots = 16384;
+  const int numCiphertextSlots = 32768;
 
   std::unique_ptr<SealCiphertextFactory> scf;
   std::unique_ptr<TypeCheckingVisitor> tcv;

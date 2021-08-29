@@ -18,19 +18,19 @@ class BenchmarkingSeal : public ::testing::Test {
 
 TEST_F(BenchmarkingSeal, benchmark) {
 
- // for (int i = 0; i < 1; i++) {
-    seal::EncryptionParameters parms(seal::scheme_type::bfv);
-    parms.set_poly_modulus_degree(poly_modulus_degree);
-    //parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(poly_modulus_degree));
-    //parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
-      //  poly_modulus_degree, seal::sec_level_type::tc128));
-    std::vector<int> bitsizes =  {60, 60, 60};
-    parms.set_coeff_modulus(seal::CoeffModulus::Create(
-       poly_modulus_degree,  bitsizes));
-    parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
-    seal::SEALContext context(parms);
-    bfv_performance_test(context);
- // }
+  // for (int i = 0; i < 1; i++) {
+  seal::EncryptionParameters parms(seal::scheme_type::bfv);
+  parms.set_poly_modulus_degree(poly_modulus_degree);
+  //parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(poly_modulus_degree));
+  //parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
+  //  poly_modulus_degree, seal::sec_level_type::tc128));
+  std::vector<int> bitsizes = {60, 60, 60};
+  parms.set_coeff_modulus(seal::CoeffModulus::Create(
+      poly_modulus_degree, bitsizes));
+  parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
+  seal::SEALContext context(parms);
+  bfv_performance_test(context);
+  // }
 }
 
 TEST_F(BenchmarkingSeal, noModSwitchTest) {
@@ -42,7 +42,7 @@ TEST_F(BenchmarkingSeal, noModSwitchTest) {
   parms.set_poly_modulus_degree(poly_modulus_degree);
   parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(parms.poly_modulus_degree()));
   //parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
-    //  poly_modulus_degree, seal::sec_level_type::tc128));
+  //  poly_modulus_degree, seal::sec_level_type::tc128));
   parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
   seal::SEALContext context(parms);
 
@@ -106,7 +106,7 @@ TEST_F(BenchmarkingSeal, noModSwitchTest) {
 
   //compute (x^4 + y) * z^4 WITHOUT modswitch before last mult
 
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -135,27 +135,27 @@ TEST_F(BenchmarkingSeal, noModSwitchTest) {
       time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
 
       //std::cout << "Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count()
-        //<< std::endl;
+      //<< std::endl;
 
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of (x^4 + y) * z^4 WITHOUT modswitch [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   // write to file
 
   std::cout << poly_modulus_degree << " , " << "(x^4 + y) * z^4 : NO MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
 
@@ -233,7 +233,7 @@ TEST_F(BenchmarkingSeal, modSwitchTest) {
 
   //compute (x^4 + y) * z^4 WITH modswitch before last mult
 
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -265,28 +265,28 @@ TEST_F(BenchmarkingSeal, modSwitchTest) {
       time_vec.push_back(std::chrono::duration_cast<std::chrono::microseconds>(time_diff));
       time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_diff);
 
-    //  std::cout << "Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count()
+      //  std::cout << "Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count()
       //  << std::endl;
 
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of (x^4 + y) * z^4 WITH modswitch [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   // write to file
 
   std::cout << poly_modulus_degree << " , " << "(x^4 + y) * z^4 : MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
 
@@ -359,8 +359,7 @@ TEST_F(BenchmarkingSeal, sum_x_i_Times_yPow8_WITH_MODSWITCH) {
   std::chrono::high_resolution_clock::time_point time_start, time_end;
   std::chrono::microseconds time_diff;
 
-
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -420,25 +419,24 @@ TEST_F(BenchmarkingSeal, sum_x_i_Times_yPow8_WITH_MODSWITCH) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   // write to file
   std::cout << poly_modulus_degree << " , " << "sum_x_i_Times_yPow8: MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
-
 
 }
 
@@ -508,8 +506,7 @@ TEST_F(BenchmarkingSeal, sum_x_i_Times_yPow8_WITHOUT_MODSWITCH) {
   std::chrono::high_resolution_clock::time_point time_start, time_end;
   std::chrono::microseconds time_diff;
 
-
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -537,7 +534,6 @@ TEST_F(BenchmarkingSeal, sum_x_i_Times_yPow8_WITHOUT_MODSWITCH) {
       evaluator.multiply(yEncrypted, y6, y7);
       evaluator.multiply(yEncrypted, y7, y8);
 
-
       evaluator.multiply(y8, sum, result);
 
       time_end = std::chrono::high_resolution_clock::now();
@@ -551,21 +547,21 @@ TEST_F(BenchmarkingSeal, sum_x_i_Times_yPow8_WITHOUT_MODSWITCH) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   // write to file
   std::cout << poly_modulus_degree << " , " << "sum_x_i_Times_yPow8: NO MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
 
@@ -631,7 +627,6 @@ TEST_F(BenchmarkingSeal, many_adds_WITHMODSWITCH) {
   seal::Plaintext a11("3x^3 + 2x^2 + 3x^1 + 4");
   seal::Plaintext a12("3x^3 + 2x^2 + 3x^1 + 4");
 
-
   seal::Ciphertext xEncrypted;
   encryptor.encrypt(xPlain, xEncrypted);
   seal::Ciphertext yEncrypted;
@@ -694,7 +689,7 @@ TEST_F(BenchmarkingSeal, many_adds_WITHMODSWITCH) {
 
   //compute (x^4 + y) * z^4 WITH modswitch before last mult
 
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -737,21 +732,18 @@ TEST_F(BenchmarkingSeal, many_adds_WITHMODSWITCH) {
 
 
       // add them to result one-by-one
-      evaluator.add_inplace(result1,a1s);
-      evaluator.add_inplace(result1,a2s);
-      evaluator.add_inplace(result1,a3s);
-      evaluator.add_inplace(result1,a4s);
-      evaluator.add_inplace(result1,a5s);
-      evaluator.add_inplace(result1,a6s);
-      evaluator.add_inplace(result1,a7s);
-      evaluator.add_inplace(result1,a8s);
-      evaluator.add_inplace(result1,a9s);
-      evaluator.add_inplace(result1,a10s);
-      evaluator.add_inplace(result1,a11s);
-      evaluator.add_inplace(result1,a12s);
-
-
-
+      evaluator.add_inplace(result1, a1s);
+      evaluator.add_inplace(result1, a2s);
+      evaluator.add_inplace(result1, a3s);
+      evaluator.add_inplace(result1, a4s);
+      evaluator.add_inplace(result1, a5s);
+      evaluator.add_inplace(result1, a6s);
+      evaluator.add_inplace(result1, a7s);
+      evaluator.add_inplace(result1, a8s);
+      evaluator.add_inplace(result1, a9s);
+      evaluator.add_inplace(result1, a10s);
+      evaluator.add_inplace(result1, a11s);
+      evaluator.add_inplace(result1, a12s);
 
       time_end = std::chrono::high_resolution_clock::now();
       time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
@@ -764,21 +756,22 @@ TEST_F(BenchmarkingSeal, many_adds_WITHMODSWITCH) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
-  std::cout << "Average evaluation time of (x^4 + y) * z^4 + a1 + ... + a12 WITH modswitch [" << avg_time << " microseconds]"
+  std::cout << "Average evaluation time of (x^4 + y) * z^4 + a1 + ... + a12 WITH modswitch [" << avg_time
+            << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   // write to file
   std::cout << poly_modulus_degree << " , " << "many additions: MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
 }
@@ -843,7 +836,6 @@ TEST_F(BenchmarkingSeal, many_adds_WITHOUTMODSWITCH) {
   seal::Plaintext a11("3x^3 + 2x^2 + 3x^1 + 4");
   seal::Plaintext a12("3x^3 + 2x^2 + 3x^1 + 4");
 
-
   seal::Ciphertext xEncrypted;
   encryptor.encrypt(xPlain, xEncrypted);
   seal::Ciphertext yEncrypted;
@@ -906,7 +898,7 @@ TEST_F(BenchmarkingSeal, many_adds_WITHOUTMODSWITCH) {
 
   //compute (x^4 + y) * z^4 WITH modswitch before last mult
 
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -930,19 +922,18 @@ TEST_F(BenchmarkingSeal, many_adds_WITHOUTMODSWITCH) {
       evaluator.multiply(xPow4Plusy, zPow4, result1);
 
       // add them to result one-by-one
-      evaluator.add_inplace(result1,a1Encrypted);
-      evaluator.add_inplace(result1,a2Encrypted);
-      evaluator.add_inplace(result1,a3Encrypted);
-      evaluator.add_inplace(result1,a4Encrypted);
-      evaluator.add_inplace(result1,a5Encrypted);
-      evaluator.add_inplace(result1,a6Encrypted);
-      evaluator.add_inplace(result1,a7Encrypted);
-      evaluator.add_inplace(result1,a8Encrypted);
-      evaluator.add_inplace(result1,a9Encrypted);
-      evaluator.add_inplace(result1,a10Encrypted);
-      evaluator.add_inplace(result1,a11Encrypted);
-      evaluator.add_inplace(result1,a12Encrypted);
-
+      evaluator.add_inplace(result1, a1Encrypted);
+      evaluator.add_inplace(result1, a2Encrypted);
+      evaluator.add_inplace(result1, a3Encrypted);
+      evaluator.add_inplace(result1, a4Encrypted);
+      evaluator.add_inplace(result1, a5Encrypted);
+      evaluator.add_inplace(result1, a6Encrypted);
+      evaluator.add_inplace(result1, a7Encrypted);
+      evaluator.add_inplace(result1, a8Encrypted);
+      evaluator.add_inplace(result1, a9Encrypted);
+      evaluator.add_inplace(result1, a10Encrypted);
+      evaluator.add_inplace(result1, a11Encrypted);
+      evaluator.add_inplace(result1, a12Encrypted);
 
       time_end = std::chrono::high_resolution_clock::now();
       time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
@@ -955,22 +946,23 @@ TEST_F(BenchmarkingSeal, many_adds_WITHOUTMODSWITCH) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
-  std::cout << "Average evaluation time of (x^4 + y) * z^4 + a1 + ... + a12 WITHOUT modswitch [" << avg_time << " microseconds]"
+  std::cout << "Average evaluation time of (x^4 + y) * z^4 + a1 + ... + a12 WITHOUT modswitch [" << avg_time
+            << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   // write to file
   std::cout << poly_modulus_degree << " , " << "many additions: no MODSWITCH" << std::endl;
-  for (int i=0; i < time_vec.size(); i++) {
+  for (int i = 0; i < time_vec.size(); i++) {
     std::cout << " , " << time_vec[i].count() << "\n";
   }
 }
@@ -1034,9 +1026,7 @@ TEST_F(BenchmarkingSeal, xPow4noConeRewr) {
   std::chrono::high_resolution_clock::time_point time_start, time_end;
   std::chrono::microseconds time_diff;
 
-
-
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -1065,17 +1055,17 @@ TEST_F(BenchmarkingSeal, xPow4noConeRewr) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of (x*x*x*x) * (x^2 *x^2) [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 }
 
 TEST_F(BenchmarkingSeal, xPow4afterConeRewr) {
@@ -1138,7 +1128,7 @@ TEST_F(BenchmarkingSeal, xPow4afterConeRewr) {
 
   //compute (x^4 + y) * z^4 WITH modswitch before last mult
 
-  for(size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
 
     for (size_t i = 0; i < static_cast<size_t>(count); i++) {
 
@@ -1166,17 +1156,17 @@ TEST_F(BenchmarkingSeal, xPow4afterConeRewr) {
     }
   }
 
-  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count * iterations);
+  long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
 
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of (x^2 * x^2) * (x^2 * x^2) [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 }
 
 TEST_F(BenchmarkingSeal, MultDifferentLevels) {
@@ -1240,7 +1230,7 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   // benchmark mult Level 1
   std::cout << "Benchmarking multiplication Level 1" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1257,13 +1247,13 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count);
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Mult Level 1 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   ///-------------------
@@ -1279,7 +1269,7 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   // benchmark mult Level 2
   std::cout << "Benchmarking multiplication Level 2" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1296,13 +1286,13 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level2).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Mult Level 2 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   //-----------------------
 
@@ -1317,7 +1307,7 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   // benchmark mult Level 3
   std::cout << "Benchmarking multiplication Level 3" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1334,13 +1324,13 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level3).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Mult Level 3 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   //-----------------------
@@ -1356,7 +1346,7 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   // benchmark mult Level 4
   std::cout << "Benchmarking multiplication Level 4" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1373,14 +1363,13 @@ TEST_F(BenchmarkingSeal, MultDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level4).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Mult Level 4 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
-
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 }
 
@@ -1445,7 +1434,7 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   // benchmark add Level 1
   std::cout << "Benchmarking addition Level 1" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1462,13 +1451,13 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count);
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Add Level 1 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   ///-------------------
@@ -1484,7 +1473,7 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   // benchmark add Level 2
   std::cout << "Benchmarking addition Level 2" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1501,13 +1490,13 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level2).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Add Level 2 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   //-----------------------
 
@@ -1522,7 +1511,7 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   // benchmark add Level 3
   std::cout << "Benchmarking addition Level 3" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1539,13 +1528,13 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level3).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Add Level 3 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
 
   //-----------------------
@@ -1561,7 +1550,7 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   // benchmark add Level 4
   std::cout << "Benchmarking addition Level 4" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1578,13 +1567,13 @@ TEST_F(BenchmarkingSeal, AddDifferentLevels) {
   avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level4).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of Add Level 4 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 }
 
 TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
@@ -1651,7 +1640,7 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   // benchmark Modswitch Level 1
   std::cout << "Benchmarking Modswitch Level 1" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1670,13 +1659,13 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count);
   //calc std deviation
   long long standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time) * (time_vec[i].count() - avg_time);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
   }
 
   std::cout << "Average evaluation time of ModSwitching to Level2 [" << avg_time << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   // -----
 
@@ -1688,7 +1677,7 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   // benchmark Modswitch Level 1
   std::cout << "Benchmarking Modswitch Level 2" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1707,15 +1696,15 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   long long avg_time2 = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level2).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time2) * (time_vec[i].count() - avg_time2);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time2)*(time_vec[i].count() - avg_time2);
   }
 
   std::cout << "Average evaluation time of ModSwitching to Level3 [" << avg_time2 << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
- //---
+  //---
 
 
   // clear time_vec and time_sum
@@ -1726,7 +1715,7 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   // benchmark Modswitch Level 1
   std::cout << "Benchmarking Modswitch Level 3" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1745,13 +1734,13 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   long long avg_time3 = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level3).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time3) * (time_vec[i].count() - avg_time3);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time3)*(time_vec[i].count() - avg_time3);
   }
 
   std::cout << "Average evaluation time of ModSwitching to Level3 [" << avg_time3 << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   //---
 
@@ -1764,7 +1753,7 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   // benchmark Modswitch Level 1
   std::cout << "Benchmarking Modswitch Level 4" << std::endl;
 
-  for(size_t j = 0; j < static_cast<size_t>(count); j++) {
+  for (size_t j = 0; j < static_cast<size_t>(count); j++) {
 
     //start timer
     time_start = std::chrono::high_resolution_clock::now();
@@ -1783,17 +1772,350 @@ TEST_F(BenchmarkingSeal, ModSwitchToDifferentLevels) {
   long long avg_time4 = std::chrono::duration_cast<std::chrono::microseconds>(time_sum_level4).count()/(count);
   //calc std deviation
   standardDeviation = 0;
-  for( int i = 0; i < time_vec.size(); ++i) {
-    standardDeviation += (time_vec[i].count() - avg_time4) * (time_vec[i].count() - avg_time4);
+  for (int i = 0; i < time_vec.size(); ++i) {
+    standardDeviation += (time_vec[i].count() - avg_time4)*(time_vec[i].count() - avg_time4);
   }
 
   std::cout << "Average evaluation time of ModSwitching to Level4 [" << avg_time4 << " microseconds]"
             << std::endl;
-  std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+  std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size()) << std::endl;
 
   //---
 
 
+}
+
+TEST_F(BenchmarkingSeal, sum_x_iPow2_Times_yPow8_WITH_MODSWITCH_i) {
+
+  /// Benchmarking the circuit evaluating \sum_i (x_i)^2 * y^8 for varying number of x_i'1: we expect significant speedup when modswitching before taking squares
+  /// We modswitch all the way down to the last prime. This is possible because we do a^6 i.e enough noise will be spent
+  ///
+
+  // set up seal context
+  seal::EncryptionParameters parms(seal::scheme_type::bfv);
+  parms.set_poly_modulus_degree(poly_modulus_degree);
+  parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
+      poly_modulus_degree, seal::sec_level_type::tc128));
+  parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
+  seal::SEALContext context(parms);
+
+  // print params
+  print_parameters(context);
+  std::cout << std::endl;
+
+  // public and secret keys
+  seal::KeyGenerator keygen(context);
+  auto secret_key = keygen.secret_key();
+  seal::PublicKey public_key;
+  keygen.create_public_key(public_key);
+
+  // relin and galois keys
+  seal::RelinKeys relin_keys;
+  seal::GaloisKeys gal_keys;
+  keygen.create_relin_keys(relin_keys);
+  keygen.create_galois_keys(gal_keys);
+
+  // encryptor etc
+  seal::Encryptor encryptor(context, public_key);
+  seal::Decryptor decryptor(context, secret_key);
+  seal::Evaluator evaluator(context);
+  seal::BatchEncoder batch_encoder(context);
+
+
+
+  // How many times to run the test?
+  long long iterations = 1;
+  long long count = 10;
+  // number of x_i's
+  long long n = 512;
+
+  // i/o stuff
+  std::string filename = "x_i2_ModSwitch" + std::to_string(poly_modulus_degree) + ".csv";
+  std::ofstream myFile(filename); // this will be in cmake-build-debug/test
+  myFile << "n" << "," << "time" << "\n";
+
+  for (int numXi = 1; numXi <= n; numXi = numXi * 2) {
+
+    // time var holding sum set to zero
+    std::chrono::microseconds time_sum(0);
+    // Vectors holding results of each round
+    std::vector<std::chrono::microseconds> time_vec;
+
+
+
+    // coeff modulus size (needed, so we can modswitch to the last prime in the chain)
+    auto &context_data = *context.key_context_data();
+    auto coeff_modulus = context_data.parms().coeff_modulus();
+    std::size_t coeff_modulus_size = coeff_modulus.size();
+
+    //timing vars
+    std::chrono::high_resolution_clock::time_point time_start, time_end;
+    std::chrono::microseconds time_diff;
+
+    for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+      for (size_t i = 0; i < static_cast<size_t>(count); i++) {
+
+        // encrypt vars
+        seal::Plaintext x1Plain("1x^3 + 2x^2 + 3x^1 + 4");
+        seal::Plaintext yPlain("3x^3 + 2x^2 + 3x^1 + 4");
+        seal::Ciphertext x1Encrypted;
+        encryptor.encrypt(x1Plain, x1Encrypted);
+
+        seal::Ciphertext yEncrypted;
+        encryptor.encrypt(yPlain, yEncrypted);
+
+        //ctxt variables
+        seal::Ciphertext sum;
+        seal::Ciphertext y2, y3, y4, y5, y6, y7, y8;
+        seal::Ciphertext x1Pow2, x2Pow2;
+        seal::Ciphertext result;
+        // Ciphertext vector holding x_i's
+        std::vector<seal::Ciphertext> xis;
+
+        // populate x_i vector
+        for (int i = 0; i < numXi; i++) {
+          xis.push_back(x1Encrypted);
+        }
+
+        // start timer
+        time_start = std::chrono::high_resolution_clock::now();
+
+        // modswitch all x_is' in the vector until last prime in the chain
+        for (int i = 0; i < xis.size(); i++) {
+          for (int k = 0; k < coeff_modulus_size - 2; k++) {
+            // modswitch
+            evaluator.mod_switch_to_next_inplace(xis[i]);
+          }
+        }
+
+        // square
+        for (int i = 0; i < xis.size(); i++) {
+          evaluator.multiply_inplace(xis[i], xis[i]);
+          evaluator.relinearize_inplace(xis[i], relin_keys);
+        }
+
+        // add  xi^2's
+        evaluator.add_many(xis, sum);
+
+        // y^8
+        evaluator.multiply(yEncrypted, yEncrypted, y2);
+        evaluator.multiply(yEncrypted, y2, y3);
+        evaluator.multiply(yEncrypted, y3, y4);
+        evaluator.multiply(yEncrypted, y4, y5);
+        evaluator.multiply(yEncrypted, y5, y6);
+        evaluator.multiply(yEncrypted, y6, y7);
+        evaluator.multiply(yEncrypted, y7, y8);
+        // relin
+        //evaluator.relinearize_inplace(y8, relin_keys);
+
+        for (int k = 0; k < coeff_modulus_size - 2; k++) {
+          evaluator.mod_switch_to_next_inplace(y8);
+        }
+
+        evaluator.multiply(y8, sum, result);
+
+        time_end = std::chrono::high_resolution_clock::now();
+        time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
+        time_vec.push_back(std::chrono::duration_cast<std::chrono::microseconds>(time_diff));
+        time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_diff);
+
+        //  std::cout << "Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count()
+        //  << std::endl;
+
+      }
+    }
+
+    long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
+
+    //calc std deviation
+    long long standardDeviation = 0;
+    for (int i = 0; i < time_vec.size(); ++i) {
+      standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
+    }
+
+    std::cout << "Average evaluation time [" << avg_time << " microseconds]"
+              << std::endl;
+    std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size())
+              << std::endl;
+
+//
+//    // write to file
+//    std::cout << poly_modulus_degree << " , " << "sum_x_i^2_Times_yPow8: MODSWITCH" << std::endl;
+//    for (int i = 0; i < time_vec.size(); i++) {
+//      std::cout << " , " << time_vec[i].count() << "\n";
+//    }
+
+    std::cout << std::endl;
+    std::cout << "Writing to file " << filename << ":";
+    for (int i = 0; i < time_vec.size(); i++) {
+      myFile << numXi << " , " << time_vec[i].count() << "\n";
+    }
+
+  }
+  myFile.close();
+  std::cout << " Done" << std::endl;
+  std::cout << std::endl;
+}
+
+TEST_F(BenchmarkingSeal, sum_x_iPow2_Times_yPow8_WITHOUT_MODSWITCH_i) {
+
+  /// Benchmarking the circuit evaluating \sum_i (x_i)^2 * y^8 for varying number of x_i'1: no modswitch
+  /// We modswitch all the way down to the last prime. This is possible because we do a^6 i.e enough noise will be spent
+  ///
+
+  // set up seal context
+  seal::EncryptionParameters parms(seal::scheme_type::bfv);
+  parms.set_poly_modulus_degree(poly_modulus_degree);
+  parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
+      poly_modulus_degree, seal::sec_level_type::tc128));
+  parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
+  seal::SEALContext context(parms);
+
+  // print params
+  print_parameters(context);
+  std::cout << std::endl;
+
+  // public and secret keys
+  seal::KeyGenerator keygen(context);
+  auto secret_key = keygen.secret_key();
+  seal::PublicKey public_key;
+  keygen.create_public_key(public_key);
+
+  // relin and galois keys
+  seal::RelinKeys relin_keys;
+  seal::GaloisKeys gal_keys;
+  keygen.create_relin_keys(relin_keys);
+  keygen.create_galois_keys(gal_keys);
+
+  // encryptor etc
+  seal::Encryptor encryptor(context, public_key);
+  seal::Decryptor decryptor(context, secret_key);
+  seal::Evaluator evaluator(context);
+  seal::BatchEncoder batch_encoder(context);
+
+
+
+  // How many times to run the test?
+  long long iterations = 1;
+  long long count = 10;
+  // number of x_i's
+  long long n = 512;
+
+  // i/o stuff
+  std::string filename = "x_i2_noModSwitch" + std::to_string(poly_modulus_degree) + ".csv";
+  std::ofstream myFile(filename); // this will be in cmake-build-debug/test
+  myFile << "n" << "," << "time" << "\n";
+
+  for (int numXi = 1; numXi <= n; numXi = numXi * 2) {
+
+    // time var holding sum
+    std::chrono::microseconds time_sum(0);
+    // Vectors holding results of each round
+    std::vector<std::chrono::microseconds> time_vec;
+
+
+
+    // coeff modulus size (needed, so we can modswitch to the last prime in the chain)
+    auto &context_data = *context.key_context_data();
+    auto coeff_modulus = context_data.parms().coeff_modulus();
+    std::size_t coeff_modulus_size = coeff_modulus.size();
+
+    //timing vars
+    std::chrono::high_resolution_clock::time_point time_start, time_end;
+    std::chrono::microseconds time_diff;
+
+    for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+      for (size_t i = 0; i < static_cast<size_t>(count); i++) {
+
+        // encrypt vars
+        seal::Plaintext x1Plain("1x^3 + 2x^2 + 3x^1 + 4");
+        seal::Plaintext yPlain("3x^3 + 2x^2 + 3x^1 + 4");
+        seal::Ciphertext x1Encrypted;
+        encryptor.encrypt(x1Plain, x1Encrypted);
+
+        seal::Ciphertext yEncrypted;
+        encryptor.encrypt(yPlain, yEncrypted);
+
+        //ctxt variables
+        seal::Ciphertext sum;
+        seal::Ciphertext y2, y3, y4, y5, y6, y7, y8;
+        seal::Ciphertext x1Pow2, x2Pow2;
+        seal::Ciphertext result;
+        // Ciphertext vector holding x_i's
+        std::vector<seal::Ciphertext> xis;
+
+        // populate x_i vector
+        for (int i = 0; i < numXi; i++) {
+          xis.push_back(x1Encrypted);
+        }
+
+        // start timer
+        time_start = std::chrono::high_resolution_clock::now();
+
+        // square
+        for (int i = 0; i < xis.size(); i++) {
+            evaluator.multiply_inplace(xis[i], xis[i]);
+            // relin
+            evaluator.relinearize_inplace(xis[i], relin_keys);
+        }
+
+        // add  xi^2's
+        evaluator.add_many(xis, sum);
+
+        // y^8
+        evaluator.multiply(yEncrypted, yEncrypted, y2);
+        evaluator.multiply(yEncrypted, y2, y3);
+        evaluator.multiply(yEncrypted, y3, y4);
+        evaluator.multiply(yEncrypted, y4, y5);
+        evaluator.multiply(yEncrypted, y5, y6);
+        evaluator.multiply(yEncrypted, y6, y7);
+        evaluator.multiply(yEncrypted, y7, y8);
+        //relin
+        //evaluator.relinearize_inplace(y8, relin_keys);
+
+        evaluator.multiply(y8, sum, result);
+
+        time_end = std::chrono::high_resolution_clock::now();
+        time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
+        time_vec.push_back(std::chrono::duration_cast<std::chrono::microseconds>(time_diff));
+        time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_diff);
+
+        //  std::cout << "Time: " << std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start).count()
+        //  << std::endl;
+
+      }
+    }
+
+    long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
+
+    //calc std deviation
+    long long standardDeviation = 0;
+    for (int i = 0; i < time_vec.size(); ++i) {
+      standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
+    }
+
+    std::cout << "Average evaluation time [" << avg_time << " microseconds]"
+              << std::endl;
+    std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size())
+              << std::endl;
+
+//
+//    // write to file
+//    std::cout << poly_modulus_degree << " , " << "sum_x_i^2_Times_yPow8: no MODSWITCH" << std::endl;
+//    for (int i = 0; i < time_vec.size(); i++) {
+//      std::cout << " , " << time_vec[i].count() << "\n";
+//    }
+//
+    std::cout << std::endl;
+    std::cout << "Writing to file " << filename << ":";
+    for (int i = 0; i < time_vec.size(); i++) {
+      myFile << numXi << " , " << time_vec[i].count() << "\n";
+    }
+
+  }
+  myFile.close();
+  std::cout << " Done" << std::endl;
+  std::cout << std::endl;
 }
 
 #endif

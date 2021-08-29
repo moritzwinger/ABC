@@ -1290,7 +1290,7 @@ secret int n845 = (one --- n843) *** (one --- n844);
   std::chrono::microseconds time_diff;
   std::chrono::microseconds time_sum(0);
   std::vector<std::chrono::microseconds> time_vec;
-  int count = 10;
+  int count = 100;
 
   for (int i = 0; i < count; i++) {
     time_start = std::chrono::high_resolution_clock::now();
@@ -1319,11 +1319,18 @@ secret int n845 = (one --- n843) *** (one --- n844);
             << std::endl;
   std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
 
+
+  // write to file
+  std::cout << numCiphertextSlots << " , " << "max : NO MODSWITCH" << std::endl;
+  for (int i=0; i < time_vec.size(); i++) {
+    std::cout << " , " << time_vec[i].count() << "\n";
+  }
+
+
 }
 
 
 TEST_F(BenchMarkEPFLModSwitch_max, MaxWithModSwitch) {
-  // program's input
   const char *inputs = R""""(
 secret int in00 = {43,  1,   1,   1,  22, 11, 425,  0, 1, 7};
 secret int in01 = {43,  1,   1,   1,  22, 11, 425,  0, 1, 7};
@@ -2579,7 +2586,7 @@ secret int one = {1,  1,   1,   1,  1, 1, 1,  1, 1, 1};
   std::chrono::microseconds time_diff;
   std::chrono::microseconds time_sum(0);
   std::vector<std::chrono::microseconds> time_vec;
-  int count = 10;
+  int count = 100;
 
   for (int i = 0; i < count; i++) {
     time_start = std::chrono::high_resolution_clock::now();
@@ -2607,6 +2614,13 @@ secret int one = {1,  1,   1,   1,  1, 1, 1,  1, 1, 1};
   std::cout << "Average evaluation time [" << avg_time << " microseconds]"
             << std::endl;
   std::cout << "Standard error: " << sqrt(double(standardDeviation) / time_vec.size())  / sqrt(time_vec.size())<< std::endl;
+
+
+  // write to file
+  std::cout << numCiphertextSlots << " , " << "max : MODSWITCH" << std::endl;
+  for (int i=0; i < time_vec.size(); i++) {
+    std::cout << " , " << time_vec[i].count() << "\n";
+  }
 
 }
 
