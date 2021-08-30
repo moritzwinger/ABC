@@ -2118,4 +2118,333 @@ TEST_F(BenchmarkingSeal, sum_x_iPow2_Times_yPow8_WITHOUT_MODSWITCH_i) {
   std::cout << std::endl;
 }
 
+
+TEST_F(BenchmarkingSeal, many_adds_WITHMODSWITCH_i) {
+
+  // set up seal context
+  seal::EncryptionParameters parms(seal::scheme_type::bfv);
+  parms.set_poly_modulus_degree(poly_modulus_degree);
+  parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
+      poly_modulus_degree, seal::sec_level_type::tc128));
+  parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
+  seal::SEALContext context(parms);
+
+  // print params
+  print_parameters(context);
+  std::cout << std::endl;
+
+  // public and secret keys
+  seal::KeyGenerator keygen(context);
+  auto secret_key = keygen.secret_key();
+  seal::PublicKey public_key;
+  keygen.create_public_key(public_key);
+
+  // relin and galois keys
+  seal::RelinKeys relin_keys;
+  seal::GaloisKeys gal_keys;
+  keygen.create_relin_keys(relin_keys);
+  keygen.create_galois_keys(gal_keys);
+
+  // encryptor etc
+  seal::Encryptor encryptor(context, public_key);
+  seal::Decryptor decryptor(context, secret_key);
+  seal::Evaluator evaluator(context);
+  seal::BatchEncoder batch_encoder(context);
+
+  // How many times to run the test?
+  long long iterations = 1;
+  long long count = 10;
+  // number of x_i's
+  long long n = 512;
+
+  // i/o stuff
+  std::string filename = "manyadds_ModSwitch" + std::to_string(poly_modulus_degree) + ".csv";
+  std::ofstream myFile(filename); // this will be in cmake-build-debug/test
+  myFile << "n" << "," << "time" << "\n";
+
+  for (int numXi = 1; numXi <= n; numXi = numXi * 2) {
+
+    // time var holding sum set to zero
+    std::chrono::microseconds time_sum(0);
+    // Vectors holding results of each round
+    std::vector<std::chrono::microseconds> time_vec;
+
+    //timing vars
+    std::chrono::high_resolution_clock::time_point time_start, time_end;
+    std::chrono::microseconds time_diff;
+
+    //compute WITH modswitch
+    for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+      for (size_t i = 0; i < static_cast<size_t>(count); i++) {
+
+        // encrypt vars
+        seal::Plaintext xPlain("1x^3 + 2x^2 + 3x^1 + 4");
+        seal::Plaintext yPlain("2x^3 + 3x^2 + 3x^1 + 4");
+        seal::Plaintext zPlain("3x^3 + 2x^2 + 3x^1 + 4");
+
+        seal::Plaintext a1("3x^3 + 2x^2 + 3x^1 + 4");
+
+        seal::Ciphertext xEncrypted;
+        encryptor.encrypt(xPlain, xEncrypted);
+        seal::Ciphertext yEncrypted;
+        encryptor.encrypt(yPlain, yEncrypted);
+        seal::Ciphertext zEncrypted;
+        encryptor.encrypt(zPlain, zEncrypted);
+
+        seal::Ciphertext a1Encrypted;
+        encryptor.encrypt(a1, a1Encrypted);
+
+        //ctxt variables
+        seal::Ciphertext xPow2;
+        seal::Ciphertext xPow3;
+        seal::Ciphertext xPow4;
+        seal::Ciphertext zPow2;
+        seal::Ciphertext zPow3;
+        seal::Ciphertext zPow4;
+        seal::Ciphertext xPow4Plusy;
+        seal::Ciphertext a1s;
+        seal::Ciphertext result1;
+
+        // Ciphertext vector holding x_i's
+        std::vector<seal::Ciphertext> ais;
+
+        // populate a_i vector
+        for (int i = 0; i < numXi; i++) {
+          ais.push_back(a1Encrypted);
+        }
+
+        // start timer
+        time_start = std::chrono::high_resolution_clock::now();
+
+        // x^4
+        evaluator.multiply(xEncrypted, xEncrypted, xPow2);
+        evaluator.multiply(xPow2, xEncrypted, xPow3);
+        evaluator.multiply(xPow3, xEncrypted, xPow4);
+
+        //z^4
+        evaluator.multiply(zEncrypted, zEncrypted, zPow2);
+        evaluator.multiply(zPow2, zEncrypted, zPow3);
+        evaluator.multiply(zPow3, zEncrypted, zPow4);
+
+        //x^4 + y
+        evaluator.add(xPow4, yEncrypted, xPow4Plusy);
+
+        //mod switch z^4 and (x^4 + y)
+        evaluator.mod_switch_to_next_inplace(zPow4);
+        evaluator.mod_switch_to_next_inplace(xPow4Plusy);
+
+        // result1 = (x^4 + y) * z^4
+        evaluator.multiply(xPow4Plusy, zPow4, result1);
+
+
+        // need to modswitch all a_i's to avoid param mismatch: this should cause longer runtimes
+        for (int i = 0; i < ais.size(); i++) {
+          // modswitch and add
+          evaluator.mod_switch_to_next_inplace(ais[i]);
+          evaluator.add_inplace(result1, ais[i]);
+        }
+
+        time_end = std::chrono::high_resolution_clock::now();
+        time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
+        time_vec.push_back(std::chrono::duration_cast<std::chrono::microseconds>(time_diff));
+        time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_diff);
+
+
+      }
+    }
+
+    long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
+
+    //calc std deviation
+    long long standardDeviation = 0;
+    for (int i = 0; i < time_vec.size(); ++i) {
+      standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
+    }
+
+    std::cout << "Average evaluation time of many adds: WITHOUT modswitch [" << avg_time
+              << " microseconds]"
+              << std::endl;
+    std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size())
+              << std::endl;
+
+    std::cout << poly_modulus_degree << " , " << "many additions : no MODSWITCH" << std::endl;
+    for (int i = 0; i < time_vec.size(); i++) {
+      std::cout << " , " << time_vec[i].count() << "\n";
+    }
+
+    std::cout << std::endl;
+    std::cout << "Writing to file " << filename << ":";
+    for (int i = 0; i < time_vec.size(); i++) {
+      myFile << numXi << " , " << time_vec[i].count() << "\n";
+    }
+  }
+  myFile.close();
+  std::cout << " Done" << std::endl;
+  std::cout << std::endl;
+}
+
+TEST_F(BenchmarkingSeal, many_adds_WITHOUT_MODSWITCH_i) {
+
+  // set up seal context
+  seal::EncryptionParameters parms(seal::scheme_type::bfv);
+  parms.set_poly_modulus_degree(poly_modulus_degree);
+  parms.set_coeff_modulus(seal::CoeffModulus::BFVDefault(
+      poly_modulus_degree, seal::sec_level_type::tc128));
+  parms.set_plain_modulus(seal::PlainModulus::Batching(parms.poly_modulus_degree(), 20));
+  seal::SEALContext context(parms);
+
+  // print params
+  print_parameters(context);
+  std::cout << std::endl;
+
+  // public and secret keys
+  seal::KeyGenerator keygen(context);
+  auto secret_key = keygen.secret_key();
+  seal::PublicKey public_key;
+  keygen.create_public_key(public_key);
+
+  // relin and galois keys
+  seal::RelinKeys relin_keys;
+  seal::GaloisKeys gal_keys;
+  keygen.create_relin_keys(relin_keys);
+  keygen.create_galois_keys(gal_keys);
+
+  // encryptor etc
+  seal::Encryptor encryptor(context, public_key);
+  seal::Decryptor decryptor(context, secret_key);
+  seal::Evaluator evaluator(context);
+  seal::BatchEncoder batch_encoder(context);
+
+  // How many times to run the test?
+  long long iterations = 1;
+  long long count = 10;
+  // number of x_i's
+  long long n = 512;
+
+  // i/o stuff
+  std::string filename = "manyadds_noModSwitch" + std::to_string(poly_modulus_degree) + ".csv";
+  std::ofstream myFile(filename); // this will be in cmake-build-debug/test
+  myFile << "n" << "," << "time" << "\n";
+
+  for (int numXi = 1; numXi <= n; numXi = numXi * 2) {
+
+    // time var holding sum set to zero
+    std::chrono::microseconds time_sum(0);
+    // Vectors holding results of each round
+    std::vector<std::chrono::microseconds> time_vec;
+
+    //timing vars
+    std::chrono::high_resolution_clock::time_point time_start, time_end;
+    std::chrono::microseconds time_diff;
+
+    //compute WITHOUT modswitch
+    for (size_t j = 0; j < static_cast<size_t>(iterations); j++) {
+      for (size_t i = 0; i < static_cast<size_t>(count); i++) {
+
+        // encrypt vars
+        seal::Plaintext xPlain("1x^3 + 2x^2 + 3x^1 + 4");
+        seal::Plaintext yPlain("2x^3 + 3x^2 + 3x^1 + 4");
+        seal::Plaintext zPlain("3x^3 + 2x^2 + 3x^1 + 4");
+
+        seal::Plaintext a1("3x^3 + 2x^2 + 3x^1 + 4");
+
+        seal::Ciphertext xEncrypted;
+        encryptor.encrypt(xPlain, xEncrypted);
+        seal::Ciphertext yEncrypted;
+        encryptor.encrypt(yPlain, yEncrypted);
+        seal::Ciphertext zEncrypted;
+        encryptor.encrypt(zPlain, zEncrypted);
+
+        seal::Ciphertext a1Encrypted;
+        encryptor.encrypt(a1, a1Encrypted);
+
+        //ctxt variables
+        seal::Ciphertext xPow2;
+        seal::Ciphertext xPow3;
+        seal::Ciphertext xPow4;
+        seal::Ciphertext zPow2;
+        seal::Ciphertext zPow3;
+        seal::Ciphertext zPow4;
+        seal::Ciphertext xPow4Plusy;
+        seal::Ciphertext a1s;
+        seal::Ciphertext result1;
+
+        // Ciphertext vector holding x_i's
+        std::vector<seal::Ciphertext> ais;
+
+        // populate a_i vector
+        for (int i = 0; i < numXi; i++) {
+          ais.push_back(a1Encrypted);
+        }
+
+        // start timer
+        time_start = std::chrono::high_resolution_clock::now();
+
+        // x^4
+        evaluator.multiply(xEncrypted, xEncrypted, xPow2);
+        evaluator.multiply(xPow2, xEncrypted, xPow3);
+        evaluator.multiply(xPow3, xEncrypted, xPow4);
+
+        //z^4
+        evaluator.multiply(zEncrypted, zEncrypted, zPow2);
+        evaluator.multiply(zPow2, zEncrypted, zPow3);
+        evaluator.multiply(zPow3, zEncrypted, zPow4);
+
+        //x^4 + y
+        evaluator.add(xPow4, yEncrypted, xPow4Plusy);
+
+        //mod switch z^4 and (x^4 + y)
+//        evaluator.mod_switch_to_next_inplace(zPow4);
+//        evaluator.mod_switch_to_next_inplace(xPow4Plusy);
+
+        // result1 = (x^4 + y) * z^4
+        evaluator.multiply(xPow4Plusy, zPow4, result1);
+
+
+        // need to modswitch all a_i's to avoid param mismatch: this should cause longer runtimes
+        for (int i = 0; i < ais.size(); i++) {
+          // modswitch and add
+//          evaluator.mod_switch_to_next_inplace(ais[i]);
+          evaluator.add_inplace(result1, ais[i]);
+        }
+
+        time_end = std::chrono::high_resolution_clock::now();
+        time_diff = std::chrono::duration_cast<std::chrono::microseconds>(time_end - time_start);
+        time_vec.push_back(std::chrono::duration_cast<std::chrono::microseconds>(time_diff));
+        time_sum += std::chrono::duration_cast<std::chrono::microseconds>(time_diff);
+
+
+      }
+    }
+
+    long long avg_time = std::chrono::duration_cast<std::chrono::microseconds>(time_sum).count()/(count*iterations);
+
+    //calc std deviation
+    long long standardDeviation = 0;
+    for (int i = 0; i < time_vec.size(); ++i) {
+      standardDeviation += (time_vec[i].count() - avg_time)*(time_vec[i].count() - avg_time);
+    }
+
+    std::cout << "Average evaluation time of many_adds WITHOUT modswitch [" << avg_time
+              << " microseconds]"
+              << std::endl;
+    std::cout << "Standard error: " << sqrt(double(standardDeviation)/time_vec.size())/sqrt(time_vec.size())
+              << std::endl;
+
+    std::cout << poly_modulus_degree << " , " << "many additions: no MODSWITCH" << std::endl;
+    for (int i = 0; i < time_vec.size(); i++) {
+      std::cout << " , " << time_vec[i].count() << "\n";
+    }
+
+    std::cout << std::endl;
+    std::cout << "Writing to file " << filename << ":";
+    for (int i = 0; i < time_vec.size(); i++) {
+      myFile << numXi << " , " << time_vec[i].count() << "\n";
+    }
+  }
+  myFile.close();
+  std::cout << " Done" << std::endl;
+  std::cout << std::endl;
+}
+
 #endif
