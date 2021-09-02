@@ -102,7 +102,7 @@ TEST(ConeRewriterTest, getReducibleConePaperCircuit) {
 
   std::cout << "Starting at: "  << astProgram->begin()->begin()->toString(false) << std::endl;
 
-  auto cones = coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), 1, multDepths, revMultDepths); //TODO: check if this is actually the node v from the paper (last AND)
+  auto cones = coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), 1, multDepths, revMultDepths);
 
   std::cout << "Found " << cones.size() << " reducible cones:" << std::endl;
   for (auto &n: cones) {
@@ -112,36 +112,36 @@ TEST(ConeRewriterTest, getReducibleConePaperCircuit) {
 
   EXPECT_EQ(cones[0]->getUniqueNodeId(), astProgram->begin()->begin()->getUniqueNodeId());
 }
-//
-//TEST(ConeRewriterTest, getReducibleConeMoreInterestingCircuit) {
-//  /// Expected output of test (node marked by (*))
-//  ///    a1 a2                 a8 a9
-//  ///    \ /                    \ /
-//  ///    AND    a3      a6  a7  AND   a10      a13  a14
-//  ///      \   /         \ /     \   /         \   /
-//  ///       AND  a4  a5  AND     AND  a11  a12  AND
-//  ///        \  /    \  /         \  /     \   /
-//  ///        AND    AND           AND       AND
-//  ///         \     /              \       /
-//  ///          \   /                \     /
-//  ///          AND                    AND
-//  ///           \                    /
-//  ///            \    y1  y2        /
-//  ///             \  /      \     /
-//  ///             OR (~)    OR (~)
-//  ///              \      /
-//  ///               AND (*)
-//  ///                |
-//  ///                r
-//  ///
-//  /// expected output nodes (*)  and one of the nodes (~) (randomly selected by the algo)
-//
-//
-//  const char *program = R""""(
-//  return  ((((a1 && a2 ) && a3 ) && a4) && (a5 && (a6 && a7)) || y1) && ((((a8 && a9 ) && a10 ) && a11) && (a12 && (a13 && a14)) || y2);
-//  )"""";
-//  auto astProgram = Parser::parse(std::string(program));
-//
+
+TEST(ConeRewriterTest, getReducibleConeMoreInterestingCircuit) {
+  /// Expected output of test (node marked by (*))
+  ///    a1 a2                 a8 a9
+  ///    \ /                    \ /
+  ///    AND    a3      a6  a7  AND   a10      a13  a14
+  ///      \   /         \ /     \   /         \   /
+  ///       AND  a4  a5  AND     AND  a11  a12  AND
+  ///        \  /    \  /         \  /     \   /
+  ///        AND    AND           AND       AND
+  ///         \     /              \       /
+  ///          \   /                \     /
+  ///          AND                    AND
+  ///           \                    /
+  ///            \    y1  y2        /
+  ///             \  /      \     /
+  ///             OR (~)    OR (~)
+  ///              \      /
+  ///               AND (*)
+  ///                |
+  ///                r
+  ///
+  /// expected output nodes (*)  and one of the nodes (~) (randomly selected by the algo)
+
+
+  const char *program = R""""(
+  return  ((((a1 && a2 ) && a3 ) && a4) && (a5 && (a6 && a7)) || y1) && ((((a8 && a9 ) && a10 ) && a11) && (a12 && (a13 && a14)) || y2);
+  )"""";
+  auto astProgram = Parser::parse(std::string(program));
+
 //  // Rewrite BinaryExpressions to trivial OperatorExpressions
 //  BinaryToOperatorExpressionVisitor v;
 //  astProgram->accept(v);
@@ -150,24 +150,35 @@ TEST(ConeRewriterTest, getReducibleConePaperCircuit) {
 //  PrintVisitor p(ss);
 //  astProgram->accept(p);
 //  std::cout << ss.str() << std::endl;
-//
-//
-//  std::cout << "NOdee: " << astProgram->begin()->begin()->begin()->toString(false) << " " << astProgram->begin()->begin()->begin()->getUniqueNodeId() << std::endl;
-//
-//
-//
-//  auto cones = ConeRewriter::getReducibleCone(astProgram.get(), astProgram.get(), 1, {});
-//
-//  std::cout << "Found " << cones.size() << " reducible cones:" << std::endl;
-//  for (auto &n: cones) {
-//    std::cout << n->toString(false) << std::endl;
-//  }
-//  ASSERT_EQ(cones.size(), 2);
+
+// compute multdepths
+  // Get nodes, but only expression nodes, not the block or return
+  GetAllNodesVisitor vis;
+  astProgram->begin()->begin()->accept(vis);
+
+  ConeRewriter coneRewriter;
+  MultDepthMap multDepths;
+  MultDepthMap revMultDepths;
+
+  for (auto n : vis.v) {
+    coneRewriter.computeMultDepthL(n, multDepths);
+    coneRewriter.computeReversedMultDepthR(n, revMultDepths);
+  }
+
+  std::cout << "Starting at: "  << astProgram->begin()->begin()->toString(false) << std::endl;
+
+  auto cones =  coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), -1, multDepths, revMultDepths);
+
+  std::cout << "Found " << cones.size() << " reducible cones:" << std::endl;
+  for (auto &n: cones) {
+    std::cout << n->toString(false) << std::endl;
+  }
+//  ASSERT_EQ(cones.size(), 3);
 //
 //  EXPECT_TRUE(((cones[0]->getUniqueNodeId() == astProgram->begin()->begin()->getUniqueNodeId()) && (cones[1]->getUniqueNodeId() ==  astProgram->begin()->begin()->begin()->getUniqueNodeId()))
 //                    || ((cones[0]->getUniqueNodeId() == astProgram->begin()->begin()->getUniqueNodeId()) &&  (cones[1]->getUniqueNodeId() ==  astProgram->begin()->begin()->end()->getUniqueNodeId())) );
-//
-//}
+
+}
 
 TEST(ConeRewriterTest, testConeRewrPaperTree) {
   /// program specification

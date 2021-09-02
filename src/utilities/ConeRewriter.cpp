@@ -50,9 +50,14 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
     }
   }
 
+  // print pvec
+  for (int jj = 0 ; jj < pvec.size(); jj++ ) {
+    std:: cout << pvec[jj]->toString(false) << " ";
+  }
+  std::cout << std::endl;
+
   // return v if at least one predecessor of v is non-critical (i.e |pvec| < 2) and v is an AND-gate
   if (pvec.size() < 2 && dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&") {
-    std::cout << "HERE" << std::endl;
     // return set consisting of start node v only
     return std::vector<AbstractNode *>{v};
   }
