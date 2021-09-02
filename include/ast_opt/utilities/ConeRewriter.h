@@ -20,7 +20,7 @@ class ConeRewriter {
   //  // - std::string: The variable's identifier for which this initial depth is associated to.
   //  // - DepthMapEntry: A struct containing the multiplicative and reverseMultiplicativeDepth.
   //  std::unordered_map<std::string, DepthMapEntry> initialMultiplicativeDepths{};
-  //  std::unordered_map<std::string, AbstractNode *> underlying_nodes;
+  std::unordered_map<std::string, AbstractNode *> underlying_nodes;
 
 
   /// TODO: IMPLEMENT & DOCUMENT

@@ -38,7 +38,7 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
                                                            MultDepthMap revMultDepths) {
 
   // return empty set if minDepth is reached
-  if (computeMultDepthL(v, multiplicativeDepths) == minDepth) {
+  if (computeMultDepthL(v, multiplicativeDepths)==minDepth) {
     return std::vector<AbstractNode *>();
   }
 
@@ -51,8 +51,8 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   }
 
   // print pvec
-  for (int jj = 0 ; jj < pvec.size(); jj++ ) {
-    std:: cout << pvec[jj]->toString(false) << " ";
+  for (int jj = 0; jj < pvec.size(); jj++) {
+    std::cout << pvec[jj]->toString(false) << " ";
   }
   std::cout << std::endl;
 
@@ -67,7 +67,11 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   std::vector<AbstractNode *> delta;
   for (auto &p : pvec) {
     std::vector<AbstractNode *> intermedResult =
-        getReducibleCone(root, p, computeMinDepth(p, root, multiplicativeDepths, revMultDepths), multiplicativeDepths, revMultDepths);
+        getReducibleCone(root,
+                         p,
+                         computeMinDepth(p, root, multiplicativeDepths, revMultDepths),
+                         multiplicativeDepths,
+                         revMultDepths);
     if (!intermedResult.empty()) deltaR.push_back(intermedResult);
   }
 
@@ -102,24 +106,26 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
 
 std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &root, std::vector<AbstractNode *> delta) {
 //  // remove non-AND nodes from delta (note: delta is passed as copy-by-value) as delta may also include XOR nodes
-//    delta.erase(remove_if(delta.begin(), delta.end(), [](AbstractNode *d) {
-//    auto lexp = dynamic_cast<LogicalExpression *>(d);
-//    return (lexp==nullptr || !lexp->getOperator()->equals(LogCompOp::LOGICAL_AND));
-//  }), delta.end());
-//
-//  // duplicate critical nodes to create new circuit C_{AND} as we do not want to modify the original circuit
-//  std::unordered_map<std::string, AbstractNode *> cAndMap;
-//  std::vector<AbstractNode *> cAndResultCkt;
-//  for (auto &v : delta) {
-//    // note that cloneFlat() does not copy the links to parents and children
-//    auto clonedNode = v->cloneFlat();
-//    // a back-link to the node in the original circuit
-//    underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
+  delta.erase(remove_if(delta.begin(), delta.end(), [](AbstractNode *d) {
+    auto lexp = dynamic_cast<BinaryExpression *>(d);
+    return (lexp==nullptr || lexp->getOperator().toString()!="&&");
+  }), delta.end());
+
+  std::cout << "size" << delta.size() << std::endl;
+  // duplicate critical nodes to create new circuit C_{AND} as we do not want to modify the original circuit
+  std::unordered_map<std::string, AbstractNode *> cAndMap;
+  std::vector<AbstractNode *> cAndResultCkt;
+  for (auto &v : delta) {
+    // clone node and remove parents (argument of clone: nullptr)
+    auto clonedNode = v->clone(nullptr);
+
+    // a back-link to the node in the original circuit
+ //   underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
 //    cAndMap.emplace(v->getUniqueNodeId(), clonedNode);
-//    cAndResultCkt.push_back(clonedNode);
-//  }
-//
-//  // in case that there are less than two nodes, we can not connect any two nodes
+    //cAndResultCkt.emplace_back(std::move(clonedNode));
+  }
+
+  // in case that there are less than two nodes, we can not connect any two nodes
 //  if (delta.size() < 2) return cAndResultCkt;
 //
 //  // check if there are depth-2 critical paths in between critical nodes in the original ckt
@@ -340,7 +346,10 @@ std::unique_ptr<AbstractNode> ConeRewriter::rewriteCones(std::unique_ptr<Abstrac
   return std::move(ast);
 }
 
-int ConeRewriter::computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap) {
+int ConeRewriter::computeMinDepth(AbstractNode *v,
+                                  AbstractNode *ast,
+                                  MultDepthMap multDepthMap,
+                                  MultDepthMap reversedMultDepthsMap) {
   // find a non-critical input (child) node p of v
   auto isNoOperatorNode = [](AbstractNode *n) { return (dynamic_cast<Operator *>(n)==nullptr); };
   for (auto &p : *v) {
@@ -359,7 +368,7 @@ bool ConeRewriter::isCriticalNode(AbstractNode *n,
                                   MultDepthMap reversedMultDepthsMap) {
   int l = computeMultDepthL(n, multDepthmap);
   int r = computeReversedMultDepthR(n, reversedMultDepthsMap);
-  return (getMaximumMultDepth(ast, multDepthmap) == l + r);
+  return (getMaximumMultDepth(ast, multDepthmap)==l + r);
 }
 
 int ConeRewriter::getMultDepth(AbstractNode *n) {
