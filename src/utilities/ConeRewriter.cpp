@@ -10,13 +10,14 @@
 
 std::unique_ptr<AbstractNode> ConeRewriter::rewriteAst(std::unique_ptr<AbstractNode> &&ast_in) {
   /// map of all mult depths, will be filled as we go along during computation
-  MultDepthMap map;
+  MultDepthMap multDepths;
+  MultDepthMap revMultDepths;
 
   /// MinDepth for finding cones
-  auto minDepth = computeMinDepth(ast_in.get(), ast_in.get(), map);
+  auto minDepth = computeMinDepth(ast_in.get(), ast_in.get(), multDepths, revMultDepths);
 
   /// set of all reducible cones
-  auto delta = getReducibleCone(ast_in.get(), ast_in.get(), minDepth, map);
+  auto delta = getReducibleCone(ast_in.get(), ast_in.get(), minDepth, multDepths, revMultDepths);
 
   /// C^{AND} circuit consisting of critical AND-nodes that are connected if there is a multiplicative depth-2
   /// path in between two of those nodes in the initial circuit
@@ -33,12 +34,11 @@ std::unique_ptr<AbstractNode> ConeRewriter::rewriteAst(std::unique_ptr<AbstractN
 std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
                                                            AbstractNode *v,
                                                            int minDepth,
-                                                           MultDepthMap multiplicativeDepths) {
-
-  //TODO: check if we need to check if OperatorExpression (algo considers only logical expressions!)
+                                                           MultDepthMap multiplicativeDepths,
+                                                           MultDepthMap revMultDepths) {
 
   // return empty set if minDepth is reached
-  if (computeMultDepthL(v, multiplicativeDepths)==minDepth) {
+  if (computeMultDepthL(v, multiplicativeDepths) == minDepth) {
     return std::vector<AbstractNode *>();
   }
 
@@ -61,7 +61,7 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   std::vector<AbstractNode *> delta;
   for (auto &p : pvec) {
     std::vector<AbstractNode *> intermedResult =
-        getReducibleCone(root, p, computeMinDepth(p, root, multiplicativeDepths), multiplicativeDepths);
+        getReducibleCone(root, p, computeMinDepth(p, root, multiplicativeDepths, revMultDepths), multiplicativeDepths, revMultDepths);
     if (!intermedResult.empty()) deltaR.push_back(intermedResult);
   }
 
@@ -334,23 +334,26 @@ std::unique_ptr<AbstractNode> ConeRewriter::rewriteCones(std::unique_ptr<Abstrac
   return std::move(ast);
 }
 
-int ConeRewriter::computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap map) {
+int ConeRewriter::computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap) {
   // find a non-critical input (child) node p of v
   auto isNoOperatorNode = [](AbstractNode *n) { return (dynamic_cast<Operator *>(n)==nullptr); };
   for (auto &p : *v) {
-    if (!isCriticalNode(&p, ast) && isNoOperatorNode(&p)) {
-      //std::cout << "Noncrit input " << p.toString(false) << std::endl;
-      return computeMultDepthL(&p, map) + 1;
+    if (!isCriticalNode(&p, ast, multDepthMap, reversedMultDepthsMap) && isNoOperatorNode(&p)) {
+      // std::cout << "Noncrit input " << p.toString(false) << std::endl;
+      return computeMultDepthL(&p, multDepthMap) + 1;
     }
   }
   // error (-1) if no non-critical child node
   return -1;
 }
 
-bool ConeRewriter::isCriticalNode(AbstractNode *n, AbstractNode *ast, MultDepthMap multDepthmap, MultDepthMap reversedMultDepthsMap) {
+bool ConeRewriter::isCriticalNode(AbstractNode *n,
+                                  AbstractNode *ast,
+                                  MultDepthMap multDepthmap,
+                                  MultDepthMap reversedMultDepthsMap) {
   int l = computeMultDepthL(n, multDepthmap);
   int r = computeReversedMultDepthR(n, reversedMultDepthsMap);
-  return (getMaximumMultDepth(ast) == l + r);
+  return (getMaximumMultDepth(ast, multDepthmap) == l + r);
 }
 
 int ConeRewriter::getMultDepth(AbstractNode *n) {
@@ -360,7 +363,6 @@ int ConeRewriter::getMultDepth(AbstractNode *n) {
 
 int ConeRewriter::getReverseMultDepth(MultDepthMap multiplicativeDepthsReversed,
                                       AbstractNode *n) {
-
   // check if we have calculated the reverse multiplicative depth previously
   if (!multiplicativeDepthsReversed.empty()) {
     auto it = multiplicativeDepthsReversed.find(n->getUniqueNodeId());
@@ -372,8 +374,7 @@ int ConeRewriter::getReverseMultDepth(MultDepthMap multiplicativeDepthsReversed,
 }
 
 int ConeRewriter::depthValue(AbstractNode *n) {
-  //TODO: Consider refactoring the name to "isLogicalAnd"
-  if (auto lexp = dynamic_cast<OperatorExpression *>(n)) {
+  if (auto lexp = dynamic_cast<BinaryExpression *>(n)) {
     // the multiplicative depth considers logical AND nodes only
     return (lexp->getOperator().toString()=="&&");
   }
@@ -444,22 +445,25 @@ int ConeRewriter::computeReversedMultDepthR(AbstractNode *n,
   int uDepthR;
   uDepthR = computeReversedMultDepthR(nextNodeToConsider, multiplicativeDepthsReversedMap, nullptr);
   if (uDepthR > max) { max = uDepthR; }
+  multiplicativeDepthsReversedMap.insert_or_assign(n->getUniqueNodeId(), max + depthValue(nextNodeToConsider));
   return max + depthValue(nextNodeToConsider);
 }
+
 int ConeRewriter::getMaximumMultDepth(AbstractNode *root, MultDepthMap map) {
-//  if (!map.empty()) {
-//    // do nothing
+  if (map.empty()) {
+    // if map is not empty we dont need to compute it
+    throw std::runtime_error("Map is empty");
+  }
 //  } else {
-//    // compute map
-//    int tmp = computeMultDepthL(root, map);
-//  }
-//  // find and return max value
-//  return std::max_element(
-//      map.begin(), map.end(),
-//      [](const std::pair<const std::basic_string<char>, MultDepth> &a,
-//         const std::pair<const std::basic_string<char>, MultDepth> &b) {
-//        return a.second.forward < b.second.forward;
-//      })->second.forward;
+//      computeMultDepthL(root, map);
+//    }
+  unsigned currentMax = 0;
+  for (auto it = map.cbegin(); it!=map.cend(); ++it) {
+    if (it->second > currentMax) {
+      currentMax = it->second;
+    }
+  }
+  return currentMax;
 }
 
 int getMultDepthL(MultDepthMap multiplicativeDepths, AbstractNode &n) {

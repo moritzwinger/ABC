@@ -47,7 +47,7 @@ class ConeRewriter {
   ///
   /// The procedure recursively explores the set of critical predecessor nodes starting from node and incrementally constructs a reducible cone.
   /// (reducible = can reduce multiplicative depth)
-  /// If the mini- mal multiplicative depth to explore is reached or at least one predecessor of an AND node v is not critical
+  /// If the minimal multiplicative depth to explore is reached or at least one predecessor of an AND node v is not critical
   /// then the exploration stops. Otherwise there are two possibilities as a function of node v type:
   ///
   /// 1. AND node: If at least one predecessor is reducible then the cone corresponding to this predecessor (or a random one if both are reducible)
@@ -67,8 +67,11 @@ class ConeRewriter {
   /// \param root node defining the ast
   /// \param v Starting node for the cone construction procedure.
   /// \param minDepth The minimal multiplicative depth to which cone search will be performed.
+  /// \param mult depth map
+  /// \param rev mult depths
   /// \return a vector of nodes making up the cone (a connected subset of the AST)
-  static std::vector<AbstractNode *> getReducibleCone(AbstractNode *root, AbstractNode *v, int minDepth, MultDepthMap multiplicativeDepths);
+  static std::vector<AbstractNode *> getReducibleCone(AbstractNode *root, AbstractNode *v, int minDepth,
+                                                      MultDepthMap multiplicativeDepths, MultDepthMap reversedMultDepths);
 
   /// Creates the graph C^{AND} from Section 3.2 (p 10) from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth
   ///  Minimization of Boolean Circuits. (2019)].
@@ -107,22 +110,20 @@ class ConeRewriter {
   /// A node p is critical if l(p) + r(p) = l^{max}
   /// \param v node
   /// \return minDepth value
-  static int computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap map);
+  static int computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap);
 
   /// Returns the 'maximum (overall) multiplicative depth' l^{max}, i.e the maximal multiplicative depth of its nodes.
   /// l^{max} = max_{v \in V} l(v) = max_{v \in V} r(v)
   /// \param root
   /// \param map map of mult depths
   /// \return overall mult depth
-  //TODO: implement
-  static int getMaximumMultDepth(AbstractNode *root, MultDepthMap map = {});
+  static int getMaximumMultDepth(AbstractNode *root, MultDepthMap map);
 
   /// Returns true if a node n is critical, i.e. if l(n) + r(n) = l^{max}, false otherwies
   /// \param n node of the AST
   /// \param ast root node defining the AST
   /// \return bool
   static bool isCriticalNode(AbstractNode *n, AbstractNode *ast, MultDepthMap multDepthmap = {}, MultDepthMap reversedMultDepthsMap = {});
-
 
   /// Calculates the multiplicative depths l(n) for a node n of an AST starting at root (output) based on the definition given in
   /// [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth
