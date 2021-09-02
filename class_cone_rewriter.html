@@ -80,19 +80,19 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f5c8badb41d945cb36a38ceb941312c"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a5f5c8badb41d945cb36a38ceb941312c">rewriteAst</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast)</td></tr>
 <tr class="separator:a5f5c8badb41d945cb36a38ceb941312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af618d8f91a867dd25b835717c96ab2f0"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af618d8f91a867dd25b835717c96ab2f0">getReducibleCone</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, <a class="el" href="class_abstract_node.html">AbstractNode</a> *v, int minDepth, MultDepthMap multiplicativeDepths)</td></tr>
-<tr class="separator:af618d8f91a867dd25b835717c96ab2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af839643628754f1da78d68027f9d8d01"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af839643628754f1da78d68027f9d8d01">getReducibleCone</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, <a class="el" href="class_abstract_node.html">AbstractNode</a> *v, int minDepth, MultDepthMap multiplicativeDepths, MultDepthMap reversedMultDepths)</td></tr>
+<tr class="separator:af839643628754f1da78d68027f9d8d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ba70cb8e41f0dc370a1030bc608930"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a48ba70cb8e41f0dc370a1030bc608930">getAndCriticalCircuit</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
 <tr class="separator:a48ba70cb8e41f0dc370a1030bc608930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0aed62df102859cd8288e18c7382b73"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae0aed62df102859cd8288e18c7382b73">selectCones</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; cAndCkt)</td></tr>
 <tr class="separator:ae0aed62df102859cd8288e18c7382b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
 <tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a7d9ec5767568ba0a376a957f73d171"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a3a7d9ec5767568ba0a376a957f73d171">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap map)</td></tr>
-<tr class="memdesc:a3a7d9ec5767568ba0a376a957f73d171"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#a3a7d9ec5767568ba0a376a957f73d171">More...</a><br /></td></tr>
-<tr class="separator:a3a7d9ec5767568ba0a376a957f73d171"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a8bfcef823bb820fb2041f8b1a8faef63">getMaximumMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, MultDepthMap map={})</td></tr>
-<tr class="separator:a8bfcef823bb820fb2041f8b1a8faef63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37690c4b649e9bfb50c7124b33fcece2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a37690c4b649e9bfb50c7124b33fcece2">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap)</td></tr>
+<tr class="memdesc:a37690c4b649e9bfb50c7124b33fcece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#a37690c4b649e9bfb50c7124b33fcece2">More...</a><br /></td></tr>
+<tr class="separator:a37690c4b649e9bfb50c7124b33fcece2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addfbfa1a8923879f144a4bc854622fa6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#addfbfa1a8923879f144a4bc854622fa6">getMaximumMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, MultDepthMap map)</td></tr>
+<tr class="separator:addfbfa1a8923879f144a4bc854622fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2c771f170e2c42074bd80815814fe0e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ab2c771f170e2c42074bd80815814fe0e">isCriticalNode</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap multDepthmap={}, MultDepthMap reversedMultDepthsMap={})</td></tr>
 <tr class="separator:ab2c771f170e2c42074bd80815814fe0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3ec6757b5eef92e2e380fcff200812"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6f3ec6757b5eef92e2e380fcff200812">computeMultDepthL</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n, MultDepthMap &amp;multDepthMap)</td></tr>
@@ -149,8 +149,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3a7d9ec5767568ba0a376a957f73d171"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a7d9ec5767568ba0a376a957f73d171">&#9670;&nbsp;</a></span>computeMinDepth()</h2>
+<a id="a37690c4b649e9bfb50c7124b33fcece2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37690c4b649e9bfb50c7124b33fcece2">&#9670;&nbsp;</a></span>computeMinDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +174,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MultDepthMap&#160;</td>
-          <td class="paramname"><em>map</em>&#160;</td>
+          <td class="paramname"><em>multDepthMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>reversedMultDepthsMap</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -372,8 +378,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 </div>
 </div>
-<a id="a8bfcef823bb820fb2041f8b1a8faef63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bfcef823bb820fb2041f8b1a8faef63">&#9670;&nbsp;</a></span>getMaximumMultDepth()</h2>
+<a id="addfbfa1a8923879f144a4bc854622fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addfbfa1a8923879f144a4bc854622fa6">&#9670;&nbsp;</a></span>getMaximumMultDepth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,7 +397,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MultDepthMap&#160;</td>
-          <td class="paramname"><em>map</em> = <code>{}</code>&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -460,8 +466,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 </div>
 </div>
-<a id="af618d8f91a867dd25b835717c96ab2f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af618d8f91a867dd25b835717c96ab2f0">&#9670;&nbsp;</a></span>getReducibleCone()</h2>
+<a id="af839643628754f1da78d68027f9d8d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af839643628754f1da78d68027f9d8d01">&#9670;&nbsp;</a></span>getReducibleCone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -491,7 +497,13 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">MultDepthMap&#160;</td>
-          <td class="paramname"><em>multiplicativeDepths</em>&#160;</td>
+          <td class="paramname"><em>multiplicativeDepths</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MultDepthMap&#160;</td>
+          <td class="paramname"><em>reversedMultDepths</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -506,7 +518,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 </table>
 </div><div class="memdoc">
 <p>Identify a reducible cone in the (sub)tree defined by root Internal function, used recursively Implements the recursive cone construction algorithm [see Algorithm 1, page 8]: Multiplicative depth-2 cone rewrite operators require that at least one input of then v_i-nodes (see Fig 2: paper) is non-critical. In the case when both inputs are critical we can explore the input nodes of v_1 and build a multiplicative depth-3 cone (and so on).</p>
-<p>The procedure recursively explores the set of critical predecessor nodes starting from node and incrementally constructs a reducible cone. (reducible = can reduce multiplicative depth) <a class="el" href="class_if.html">If</a> the mini- mal multiplicative depth to explore is reached or at least one predecessor of an AND node v is not critical then the exploration stops. Otherwise there are two possibilities as a function of node v type:</p>
+<p>The procedure recursively explores the set of critical predecessor nodes starting from node and incrementally constructs a reducible cone. (reducible = can reduce multiplicative depth) <a class="el" href="class_if.html">If</a> the minimal multiplicative depth to explore is reached or at least one predecessor of an AND node v is not critical then the exploration stops. Otherwise there are two possibilities as a function of node v type:</p>
 <ol type="1">
 <li>AND node: <a class="el" href="class_if.html">If</a> at least one predecessor is reducible then the cone corresponding to this predecessor (or a random one if both are reducible) is added to the result, otherwise the exploration is complete.</li>
 <li>XOR node <a class="el" href="class_if.html">If</a> both predecessors are reducible then the respective cones are added to the result, otherwise exploration is also complete.</li>
@@ -518,6 +530,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
     <tr><td class="paramname">root</td><td>node defining the ast </td></tr>
     <tr><td class="paramname">v</td><td>Starting node for the cone construction procedure. </td></tr>
     <tr><td class="paramname">minDepth</td><td>The minimal multiplicative depth to which cone search will be performed. </td></tr>
+    <tr><td class="paramname">mult</td><td>depth map </td></tr>
+    <tr><td class="paramname">rev</td><td>mult depths </td></tr>
   </table>
   </dd>
 </dl>
