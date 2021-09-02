@@ -51,7 +51,8 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   }
 
   // return v if at least one predecessor of v is non-critical (i.e |pvec| < 2) and v is an AND-gate
-  if (pvec.size() < 2 && v->toString(false)=="&&") {
+  if (pvec.size() < 2 && dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&") {
+    std::cout << "HERE" << std::endl;
     // return set consisting of start node v only
     return std::vector<AbstractNode *>{v};
   }
@@ -71,17 +72,17 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   // b. v is an AND-gate and deltaR is empty
   // c. v is a XOR-gate and size of deltaR does not equal size of pvec
   if (v==nullptr ||
-      !(v->toString(false)=="&&"
-          || v->toString(false)=="||") ||
-      (v->toString(false)=="&&" && deltaR.empty()) ||
-      (v->toString(false)=="||" && deltaR.size()!=pvec.size())) {
+      !(dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&"
+          || dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="||") ||
+      (dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&" && deltaR.empty()) ||
+      (dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="||" && deltaR.size()!=pvec.size())) {
     return std::vector<AbstractNode *>();
   }
 
-  if (v->toString(false)=="&&") {
+  if (dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&") {
     // both cones must be reducible because deltaR is non-empty -> pick a random one, and assign to delta
     delta = deltaR[rand()%deltaR.size()];
-  } else if (v->toString(false)=="||") {
+  } else if (dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="||") {
     // critical cones must be reducible because size of deltaR equals size of P
     // flatten vector deltaR consisting of sets generated each by getReducibleCones
     std::vector<AbstractNode *> flattenedDeltaR;

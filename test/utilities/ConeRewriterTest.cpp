@@ -94,14 +94,15 @@ TEST(ConeRewriterTest, getReducibleConePaperCircuit) {
   ConeRewriter coneRewriter;
   MultDepthMap multDepths;
   MultDepthMap revMultDepths;
+
   for (auto n : vis.v) {
     coneRewriter.computeMultDepthL(n, multDepths);
     coneRewriter.computeReversedMultDepthR(n, revMultDepths);
   }
 
-  std::cout << "Size: " << multDepths.size() << std::endl;
+  std::cout << "Starting at: "  << astProgram->begin()->begin()->toString(false) << std::endl;
 
-  auto cones = coneRewriter.getReducibleCone( astProgram.get(),&*astProgram->begin()->begin(), 1, multDepths, revMultDepths); //TODO: check if this is actually the node v from the paper (last AND)
+  auto cones = coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), 1, multDepths, revMultDepths); //TODO: check if this is actually the node v from the paper (last AND)
 
   std::cout << "Found " << cones.size() << " reducible cones:" << std::endl;
   for (auto &n: cones) {
@@ -329,9 +330,12 @@ TEST(ConeRewriterTest, testComputeAllDepths) {
     coneRewriter.computeMultDepthL(n, multDepths);
   }
 
-  for (auto n : vis.v) {
-    std::cout << "Node: " << n->toString(false) << "Id: " << n->getUniqueNodeId() << " MultDepth: " << multDepths[n->getUniqueNodeId()] << std::endl;
-  }
+  std::cout << "Size " << multDepths.size() << std::endl;
+
+//
+//  for (auto n : vis.v) {
+//    std::cout << "Node: " << n->toString(false) << "Id: " << n->getUniqueNodeId() << " MultDepth: " << multDepths[n->getUniqueNodeId()] << std::endl;
+//  }
 
   EXPECT_EQ(multDepths["BinaryExpression_14"], 2);
   EXPECT_EQ(multDepths["BinaryExpression_11"], 1);
@@ -375,6 +379,8 @@ TEST(ConeRewriterTest, testComputeAllReversedMultDepthsR) {
 //    std::cout << "Computing rev mult depth of " << n->getUniqueNodeId() << ": " <<  coneRewriter.computeReversedMultDepthR(n, revMultDepths) << std::endl;
   }
 
+  std::cout << "Size " << revMultDepths.size() << std::endl;
+
 //
 //  for (auto n : vis.v) {
 //    std::cout << "Node: " << n->toString(false) << "Id: " << n->getUniqueNodeId() << " Rev: " << coneRewriter.computeReversedMultDepthR(n, revMultDepths) << std::endl;
@@ -409,10 +415,10 @@ TEST(ConeRewriterTest, computeMinDepthTest) {
   return ((a && b) || (x || y)) && c;
   )"""";
   auto astProgram = Parser::parse(std::string(program));
-
-  // Rewrite BinaryExpressions to trivial OperatorExpressions
-  BinaryToOperatorExpressionVisitor v;
-  astProgram->accept(v);
+//
+//  // Rewrite BinaryExpressions to trivial OperatorExpressions
+//  BinaryToOperatorExpressionVisitor v;
+//  astProgram->accept(v);
 
   std::stringstream ss;
   ProgramPrintVisitor p(ss);
@@ -423,7 +429,18 @@ TEST(ConeRewriterTest, computeMinDepthTest) {
   MultDepthMap map;
   MultDepthMap revMap;
 
-  int minDepth = coneRewriter.computeMinDepth(&*astProgram, astProgram.get(), map, revMap);
+
+  GetAllNodesVisitor vis;
+  astProgram->accept(vis);
+
+
+  for (auto n : vis.v) {
+    coneRewriter.computeReversedMultDepthR(n, revMap);
+    coneRewriter.computeMultDepthL(n, map);
+//    std::cout << "Computing rev mult depth of " << n->getUniqueNodeId() << ": " <<  coneRewriter.computeReversedMultDepthR(n, revMultDepths) << std::endl;
+  }
+
+  int minDepth = coneRewriter.computeMinDepth(&*astProgram->begin()->begin(), astProgram.get(), map, revMap);
 
   ASSERT_EQ(minDepth, 1);
 }

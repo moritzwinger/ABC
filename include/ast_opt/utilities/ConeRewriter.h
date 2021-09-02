@@ -109,6 +109,9 @@ class ConeRewriter {
   /// We use a minDepth value equal to l(p) + 1, where p is the NON-critical input of node v.
   /// A node p is critical if l(p) + r(p) = l^{max}
   /// \param v node
+  /// \param ast
+  /// \param multDepthMap
+  /// \param reversedMultDepthMap
   /// \return minDepth value
   static int computeMinDepth(AbstractNode *v, AbstractNode *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap);
 
