@@ -129,7 +129,7 @@ TEST(ConeRewriterTest, getReducibleConeMoreInterestingCircuit) {
   ///            \    y1  y2        /
   ///             \  /      \     /
   ///             OR (~)    OR (~)
-  ///              \      /
+  ///              \        /
   ///               AND (*)
   ///                |
   ///                r
@@ -171,9 +171,10 @@ TEST(ConeRewriterTest, getReducibleConeMoreInterestingCircuit) {
 
   std::cout << "Found " << cones.size() << " reducible cones:" << std::endl;
   for (auto &n: cones) {
-    std::cout << n->toString(false) << std::endl;
+    std::cout << n->getUniqueNodeId() << " " << n->toString(false) << std::endl;
   }
 //  ASSERT_EQ(cones.size(), 3);
+
 //
 //  EXPECT_TRUE(((cones[0]->getUniqueNodeId() == astProgram->begin()->begin()->getUniqueNodeId()) && (cones[1]->getUniqueNodeId() ==  astProgram->begin()->begin()->begin()->getUniqueNodeId()))
 //                    || ((cones[0]->getUniqueNodeId() == astProgram->begin()->begin()->getUniqueNodeId()) &&  (cones[1]->getUniqueNodeId() ==  astProgram->begin()->begin()->end()->getUniqueNodeId())) );
@@ -558,11 +559,14 @@ TEST(ConeRewriterTest, getAndCriticalCircuitTest) {
 //  // Rewrite BinaryExpressions to trivial OperatorExpressions
 //  BinaryToOperatorExpressionVisitor v;
 //  astProgram->accept(v);
+//
+//  std::stringstream ss;
+//  PrintVisitor p(ss);
+//  astProgram->accept(p);
+//  std::cout << ss.str() << std::endl;
 
-  std::stringstream ss;
-  PrintVisitor p(ss);
-  astProgram->accept(p);
-  std::cout << ss.str() << std::endl;
+
+
 
   ConeRewriter coneRewriter;
 
