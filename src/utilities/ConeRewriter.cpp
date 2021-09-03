@@ -22,10 +22,10 @@ std::unique_ptr<AbstractNode> ConeRewriter::rewriteAst(std::unique_ptr<AbstractN
   /// C^{AND} circuit consisting of critical AND-nodes that are connected if there is a multiplicative depth-2
   /// path in between two of those nodes in the initial circuit
   /// each cone δ ∈ Δ has an unique terminal AND node in C^{AND}
-  std::vector<AbstractNode *> cAndCkt = getAndCriticalCircuit(*ast_in, delta);
+  //std::vector<AbstractNode *> cAndCkt = getAndCriticalCircuit(*ast_in, delta);
 
   /// minimum set of reducible cones
-  std::vector<AbstractNode *> deltaMin = selectCones(*ast_in, cAndCkt);
+ // std::vector<AbstractNode *> deltaMin = selectCones(*ast_in, cAndCkt);
 
   /// Perform actual rewriting
   return rewriteCones(std::move(ast_in), delta);
@@ -111,7 +111,7 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
     return (lexp==nullptr || lexp->getOperator().toString()!="&&");
   }), delta.end());
 
-  std::cout << "size" << delta.size() << std::endl;
+  //std::cout << "size" << delta.size() << std::endl;
   // duplicate critical nodes to create new circuit C_{AND} as we do not want to modify the original circuit
   std::unordered_map<std::string, AbstractNode *> cAndMap;
   std::vector<AbstractNode *> cAndResultCkt;
@@ -120,39 +120,42 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
     auto clonedNode = v->clone(nullptr);
 
     // a back-link to the node in the original circuit
- //   underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
-//    cAndMap.emplace(v->getUniqueNodeId(), clonedNode);
-    //cAndResultCkt.emplace_back(std::move(clonedNode));
+
+    underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
+    cAndMap.emplace(v->getUniqueNodeId(), &*clonedNode);
+    cAndResultCkt.emplace_back(&*clonedNode);
   }
 
   // in case that there are less than two nodes, we can not connect any two nodes
-//  if (delta.size() < 2) return cAndResultCkt;
+  if (delta.size() < 2) {
+    return cAndResultCkt;
+  }
 //
 //  // check if there are depth-2 critical paths in between critical nodes in the original ckt
-//  for (auto &v : delta) {
-//    std::queue<AbstractNode *> q{{v}};
-//    while (!q.empty()) {
-//      auto curNode = q.front();
-//      q.pop();
-//      for (auto &child : curNode->getChildren()) {
-//        auto childLexp = dynamic_cast<LogicalExpr *>(child);
-//        // if the child is a LogicalExpr of type AND-gate
-//        if (childLexp!=nullptr && childLexp->getOperator()->equals(LogCompOp::LOGICAL_AND)) {
-//          // check if this child is a critical node, if yes: connect both nodes
-//          if (std::find(delta.begin(), delta.end(), childLexp)!=delta.end()) {
-//            AbstractNode *copiedV = cAndMap[v->getUniqueNodeId()];
-//            AbstractNode *copiedChild = cAndMap[child->getUniqueNodeId()];
-//            copiedV->addChild(copiedChild, false);
-//            copiedChild->addParent(copiedV, false);
-//          }
-//        } else {  // continue if child is not a LogicalExpr --> node does not influence the mult. depth
-//          q.push(child);
-//        }
-//      }
-//    }
-//  }
-//  return cAndResultCkt;
-  return {};
+  for (auto &v : delta) {
+    std::queue<AbstractNode *> q{{v}};
+    while (!q.empty()) {
+      auto curNode = q.front();
+      q.pop();
+      // for children
+      for (auto &child : *curNode) {
+        auto childLexp = dynamic_cast<BinaryExpression *>(&child);
+        // if the child is a LogicalExpr of type AND-gate
+        if (childLexp!=nullptr && childLexp->getOperator().toString() == "&&") {
+          // check if this child is a critical node, if yes: connect both nodes
+          if (std::find(delta.begin(), delta.end(), childLexp)!=delta.end()) {
+            AbstractNode *copiedV = cAndMap[v->getUniqueNodeId()];
+            AbstractNode *copiedChild = cAndMap[child.getUniqueNodeId()];
+            //copiedV->addChild(copiedChild, false);
+            copiedChild->setParent(copiedV);
+          }
+        } else {  // continue if child is not a LogicalExpr --> node does not influence the mult. depth
+          q.push(&child);
+        }
+      }
+    }
+  }
+  return cAndResultCkt;
 }
 
 std::vector<AbstractNode *> ConeRewriter::selectCones(AbstractNode &root, std::vector<AbstractNode *> cAndCkt) {
@@ -485,6 +488,31 @@ int getMultDepthL(MultDepthMap multiplicativeDepths, AbstractNode &n) {
   if (multiplicativeDepths.empty()) { return -1; }
   return multiplicativeDepths[n.getUniqueNodeId()];
 }
+
+std::vector<AbstractNode *>ConeRewriter:: sortTopologically(AbstractNode* ast) {
+  // This will contain the circuit nodes in topological order
+  std::vector<AbstractNode *> L;
+  std::map<AbstractNode *, int> numEdgesDeleted;
+
+  // S <- nodes without an incoming edge
+  std::vector<AbstractNode *> S;
+  // first this will be the root node only
+  S.push_back(ast);
+
+  // do Kahn
+  while (!S.empty()) {
+    auto n = S.back();
+    S.pop_back();
+    L.push_back(n);
+    // for children
+    for (auto &m : *n) {
+      numEdgesDeleted[&m] += 1; // emulate removal of edge
+      S.push_back(&m);
+    }
+  }
+  return L;
+}
+
 
 void ConeRewriter::addElements(std::vector<AbstractNode *> &result, std::vector<AbstractNode *> newElements) {
   result.reserve(result.size() + newElements.size());

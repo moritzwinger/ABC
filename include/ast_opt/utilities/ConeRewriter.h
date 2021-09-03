@@ -82,14 +82,13 @@ class ConeRewriter {
   /// \param root
   /// \param delta
   /// \return
-  //TODO: implement
-  static std::vector<AbstractNode *> getAndCriticalCircuit(AbstractNode &root, std::vector<AbstractNode *> delta);
+  std::vector<AbstractNode *> getAndCriticalCircuit(AbstractNode &root, std::vector<AbstractNode *> delta);
 
   ///  Implements the cone selection algorithm [see Algorithm 3, page 11].
-  /// //TODO: understand
   /// \param root
   /// \param cAndCkt
   /// \return
+  // TODO Implement
   static std::vector<AbstractNode *> selectCones(AbstractNode &root, std::vector<AbstractNode *> cAndCkt);
 
   /// Applies the cone rewriting operator from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved
@@ -168,6 +167,14 @@ class ConeRewriter {
   /// \param n  Node to consider
   /// \return Returns 1 iff this node is a LogicalExpr containing an AND operator, otherwise 0.
   static int depthValue(AbstractNode *n);
+
+
+  /// This method implements Kahn's algorithm as described at wikipedia,
+  /// see https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962
+  /// \param AbstractNode pointer to root of AST
+  /// \return vector of AbstractNode pointers
+  // TODO: Implement
+  std::vector<AbstractNode *> sortTopologically(AbstractNode* ast);
 
 
 

@@ -566,11 +566,29 @@ TEST(ConeRewriterTest, getAndCriticalCircuitTest) {
 //  std::cout << ss.str() << std::endl;
 
 
-
-
   ConeRewriter coneRewriter;
 
-  //TODO we want a vector describing the grapth. only AND nodes
+  // first, we construct the set delta
+  // compute multdepths
+  // Get nodes, but only expression nodes, not the block or return
+  GetAllNodesVisitor vis;
+  astProgram->begin()->begin()->accept(vis);
+
+  MultDepthMap multDepths;
+  MultDepthMap revMultDepths;
+
+  for (auto n : vis.v) {
+    coneRewriter.computeMultDepthL(n, multDepths);
+    coneRewriter.computeReversedMultDepthR(n, revMultDepths);
+  }
+
+  std::cout << "Starting at: "  << astProgram->begin()->begin()->toString(false) << std::endl;
+
+  auto delta = coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), 1, multDepths, revMultDepths);
+
+  // now we construct cAND
+  auto cAND = coneRewriter.getAndCriticalCircuit(*astProgram, delta);
+
 }
 
 #endif
