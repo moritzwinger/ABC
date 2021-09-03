@@ -75,6 +75,10 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a1b2e966781e5276d8fa76ef81cbec3d7">ConeRewriter</a> ()=default</td></tr>
 <tr class="separator:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ba70cb8e41f0dc370a1030bc608930"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a48ba70cb8e41f0dc370a1030bc608930">getAndCriticalCircuit</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
+<tr class="separator:a48ba70cb8e41f0dc370a1030bc608930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b27cbe136b6c1369487b082b7da832"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a54b27cbe136b6c1369487b082b7da832">sortTopologically</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *ast)</td></tr>
+<tr class="separator:a54b27cbe136b6c1369487b082b7da832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -82,8 +86,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a5f5c8badb41d945cb36a38ceb941312c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af839643628754f1da78d68027f9d8d01"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#af839643628754f1da78d68027f9d8d01">getReducibleCone</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, <a class="el" href="class_abstract_node.html">AbstractNode</a> *v, int minDepth, MultDepthMap multiplicativeDepths, MultDepthMap reversedMultDepths)</td></tr>
 <tr class="separator:af839643628754f1da78d68027f9d8d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ba70cb8e41f0dc370a1030bc608930"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a48ba70cb8e41f0dc370a1030bc608930">getAndCriticalCircuit</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
-<tr class="separator:a48ba70cb8e41f0dc370a1030bc608930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0aed62df102859cd8288e18c7382b73"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#ae0aed62df102859cd8288e18c7382b73">selectCones</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; cAndCkt)</td></tr>
 <tr class="separator:ae0aed62df102859cd8288e18c7382b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
@@ -342,9 +344,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::getAndCriticalCircuit </td>
@@ -364,11 +363,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Creates the graph C^{AND} from Section 3.2 (p 10) from [Aubry, P. et al.: Faster Homomorphic Encryption Is Not Enough: Improved Heuristic for Multiplicative Depth Minimization of Boolean Circuits. (2019)]. Idea: We want to find a minimal size set \Delta_{min} of cones such that each critical path contains the ending node of at least one cone from this set (to guarantee that the overall multiplicative depth will in fact decrease) <a class="el" href="class_for.html">For</a> this we need to constrcut a graph C^{AND} containing ALL the critical AND nodes. Two AND nodes are connected in C^{AND} if there is a depth-2 critical path between them in the initial circuit. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -758,7 +752,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Implements the cone selection algorithm [see Algorithm 3, page 11]. //TODO: understand </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Implements the cone selection algorithm [see Algorithm 3, page 11]. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">root</td><td></td></tr>
     <tr><td class="paramname">cAndCkt</td><td></td></tr>
@@ -766,6 +760,31 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a54b27cbe136b6c1369487b082b7da832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b27cbe136b6c1369487b082b7da832">&#9670;&nbsp;</a></span>sortTopologically()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::sortTopologically </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
+          <td class="paramname"><em>ast</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method implements Kahn's algorithm as described at wikipedia, see <a href="https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962">https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_abstract_node.html">AbstractNode</a></td><td>pointer to root of AST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector of <a class="el" href="class_abstract_node.html">AbstractNode</a> pointers </dd></dl>
 
 </div>
 </div>
