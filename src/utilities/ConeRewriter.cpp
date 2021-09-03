@@ -150,8 +150,8 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
           if (std::find(delta.begin(), delta.end(), childLexp)!=delta.end()) {
             AbstractNode *copiedV = cAndMap[v->getUniqueNodeId()];
             AbstractNode *copiedChild = cAndMap[child.getUniqueNodeId()];
-            //copiedV->addChild(copiedChild, false);
-            copiedChild->setParent(copiedV);
+            copiedV->addChild(copiedChild);
+            copiedChild->addParent(copiedV);
           }
         } else {  // continue if child is not a LogicalExpr --> node does not influence the mult. depth
           q.push(&child);
@@ -164,6 +164,42 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
 
 std::vector<AbstractNode *> ConeRewriter::selectCones(AbstractNode &root, std::vector<AbstractNode *> cAndCkt) {
 
+  std::vector<AbstractNode *> deltaMin;
+  while (!cAndCkt.empty()) {
+    // compute all node flows f^{+}(v) in cAndCkt
+    std::map<AbstractNode *, float> nodeFlows = compFlow(cAndCkt);
+
+    // reverse circuit edges and compute all ascending node flows f^{-}(v)
+    reverseEdges(cAndCkt);
+    std::map<AbstractNode *, float> nodeFlowsAscending = compFlow(cAndCkt);
+
+    // compute f(v) for all nodes
+    std::map<AbstractNode *, float> flows;
+    for (auto &n : cAndCkt) flows[n] = nodeFlowsAscending[n]*nodeFlows[n];
+
+    // find the node with the largest flow u
+    AbstractNode *u = std::max_element(
+        flows.begin(),
+        flows.end(),
+        [](const std::pair<AbstractNode *, float> &p1, const std::pair<AbstractNode *, float> &p2) {
+          return p1.second < p2.second;
+        })->first;
+
+    // remove node u
+    // - remove any edges pointing to node u as child
+    for (auto &p : u->getParentList()) p->removeChild(u);
+
+    // - remove any edges pointing to node u as parent
+    for (auto &p : u->getChildrenList()) p->removeParent(u);
+
+    // - remove node u from cAndCkt
+    cAndCkt.erase(std::remove(cAndCkt.begin(), cAndCkt.end(), u), cAndCkt.end());
+
+    // add critical cone ending at node u to deltaMin
+    deltaMin.push_back(u);
+  }
+
+  return deltaMin;
 }
 
 std::unique_ptr<AbstractNode> ConeRewriter::rewriteCones(std::unique_ptr<AbstractNode> &&ast,
@@ -500,19 +536,48 @@ std::vector<AbstractNode *>ConeRewriter:: sortTopologically( std::vector<Abstrac
   // S <- nodes without an incoming edge
   std::vector<AbstractNode *> S;
   std::for_each(nodes.begin(), nodes.end(), [&](AbstractNode *n) {
-    if (!n->hasParent()) S.push_back(n);
+    if (n->getParentList().empty()) S.push_back(n);
   });
 
   while (!S.empty()) {
     auto n = S.back();
     S.pop_back();
     L.push_back(n);
-    for (auto &m : *n) {
-      numEdgesDeleted[&m] += 1; // emulates removing edge from the graph
-     // if (m->getParent().size()==numEdgesDeleted[m]) S.push_back(m);
+    for (auto &m : n->getChildrenList()) {
+      numEdgesDeleted[m] += 1; // emulates removing edge from the graph
+      if (m->getParentList().size()==numEdgesDeleted[m]) S.push_back(m);
     }
   }
   return L;
+}
+
+std::map<AbstractNode *, float> ConeRewriter::compFlow(std::vector<AbstractNode *> ckt) {
+  std::map<AbstractNode *, float> computedFlow;
+  std::map<std::pair<AbstractNode *, AbstractNode *>, float> edgeFlows;
+  auto topologicalOrder = ConeRewriter::sortTopologically(ckt);
+  for (AbstractNode *v : topologicalOrder) {
+    // if v is input return trivial
+    if (!v->hasParent()) {
+      computedFlow[v] = 1;
+    } else { // if v is intermediate node
+      // compute flow by accumulating flows of incoming edges (u,v) where u ∈ pred(v)
+      auto predecessorsOfV = v->getParentList();
+      float flow = 0.0f;
+      std::for_each(predecessorsOfV.begin(), predecessorsOfV.end(), [&](AbstractNode *u) {
+        flow += edgeFlows[std::pair(u, v)];
+      });
+      computedFlow[v] = flow;
+    }
+    // for all successors u: define edge flow
+    for (auto &u : v->getChildrenList()) {
+      edgeFlows[std::make_pair(v, u)] = computedFlow[v]/v->getParentList().size();
+    }
+  }
+  return computedFlow;
+}
+
+void ConeRewriter::reverseEdges(const std::vector<AbstractNode *> &nodes) {
+  for (AbstractNode *n : nodes) n->swapChildrenParents();
 }
 
 void ConeRewriter::addElements(std::vector<AbstractNode *> &result, std::vector<AbstractNode *> newElements) {

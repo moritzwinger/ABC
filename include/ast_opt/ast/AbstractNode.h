@@ -44,6 +44,8 @@ class AbstractNode {
  private:
   /// Stores the parent nodes of the current node.
   AbstractNode *parent = nullptr;
+  std::vector<AbstractNode*> children;
+  std::vector<AbstractNode*> parents;
 
   /// Clones a node recursively, i.e., by including all of its children.
   /// Because return-type covariance does not work with smart pointers,
@@ -59,6 +61,35 @@ class AbstractNode {
  public:
   /// Virtual Destructor, force class to be abstract
   virtual ~AbstractNode() = 0;
+
+  /// Add child method (used for C^AND construction in ConeRweriting)
+  /// adds a node to the list of children (children)
+  /// \param AbstractNode*
+  void addChild(AbstractNode *child);
+
+  /// getter method for the vector children
+  /// \return children (vector)
+  std::vector<AbstractNode*> getChildrenList();
+
+  /// Add child method (used for C^AND construction in ConeRweriting)
+  /// adds a node to the list of children (children)
+  /// \param AbstractNode*
+  void addParent(AbstractNode *parent);
+
+  /// getter method for the vector children (used in ConeRewriter)
+  /// \return children (vector)
+  std::vector<AbstractNode*> getParentList();
+
+  /// swap children and parent lists (used in ConeRewriter)
+  void swapChildrenParents();
+
+  /// remove a child from children vector (used in ConeRewriter)
+  /// \param AbstractNode* (child to remove from list)
+  void removeChild(AbstractNode *child);
+
+  /// remove a parent from parents vector (used in ConeRewriter)
+  /// \param AbstractNode* (parent to remove from list)
+  void removeParent(AbstractNode *parentToBeRemoved);
 
   /// Clones a node recursively, i.e., by including all of its children.
   /// Because return-type covariance does not work with smart pointers,
@@ -230,6 +261,7 @@ class AbstractNode {
   std::string getUniqueNodeId() const;
 
   /** @} */ // End of nodeID group
+
 
 };
 

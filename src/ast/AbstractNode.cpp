@@ -7,6 +7,42 @@
 // C++ requires a body for the destructor even if it is declared pure virtual
 AbstractNode::~AbstractNode() = default;
 
+void AbstractNode::addChild(AbstractNode *child) {
+  children.push_back(child);
+}
+
+std::vector<AbstractNode*> AbstractNode::getChildrenList() {
+  return children;
+}
+
+void AbstractNode::addParent(AbstractNode *parent) {
+  parents.push_back(parent);
+}
+
+std::vector<AbstractNode*> AbstractNode::getParentList() {
+  return parents;
+}
+
+void AbstractNode::swapChildrenParents() {
+  std::vector<AbstractNode *> oldParents = this->parents;
+  this->parents = this->children;
+  this->children = oldParents;
+}
+
+void AbstractNode::removeChild(AbstractNode *child) {
+  auto it = std::find(children.begin(), children.end(), child);
+  if (it!=children.end()) {
+      children.erase(it);
+  }
+}
+
+void AbstractNode::removeParent(AbstractNode *parentToBeRemoved) {
+  auto it = std::find(parents.begin(), parents.end(), parentToBeRemoved);
+  if (it!=parents.end()) {
+    parents.erase(it);
+  }
+}
+
 std::unique_ptr<AbstractNode> AbstractNode::clone(AbstractNode *parent_) const {
   return std::unique_ptr<AbstractNode>(clone_impl(parent_));
 }

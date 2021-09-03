@@ -100,9 +100,9 @@ class ConeRewriter {
   static std::unique_ptr<AbstractNode> rewriteCones(std::unique_ptr<AbstractNode> &&ast,
                                                     std::vector<AbstractNode *> &coneEndNodes);
 
-  /////////////////////////////////////////////////////
-  /// UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////
-  /////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////
+  /// UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION  and other things/////
+  //////////////////////////////////////////////////////////////////////
 
   /// Computes minDepth parameter required for cone selection algorithm
   /// We use a minDepth value equal to l(p) + 1, where p is the NON-critical input of node v.
@@ -177,6 +177,7 @@ class ConeRewriter {
   static std::vector<AbstractNode *> sortTopologically( std::vector<AbstractNode *> &nodes);
 
 
+  static std::map<AbstractNode *, float> compFlow(std::vector<AbstractNode *> ckt);
 
 
 //  void precomputeMultDepths(AbstractNode *ast);
@@ -191,6 +192,7 @@ class ConeRewriter {
   static void flattenVectors(std::vector<AbstractNode *> &resultVector,
                       std::vector<std::vector<AbstractNode *>> vectorOfVectors);
   static void addElements(std::vector<AbstractNode *> &result, std::vector<AbstractNode *> newElements);
+  static void reverseEdges(const std::vector<AbstractNode *> &nodes);
 };
 
 #endif //AST_OPTIMIZER_INCLUDE_AST_OPT_UTILITIES_CONEREWRITER_H_
