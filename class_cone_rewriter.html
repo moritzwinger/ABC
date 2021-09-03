@@ -77,8 +77,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b2e966781e5276d8fa76ef81cbec3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48ba70cb8e41f0dc370a1030bc608930"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a48ba70cb8e41f0dc370a1030bc608930">getAndCriticalCircuit</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;root, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; delta)</td></tr>
 <tr class="separator:a48ba70cb8e41f0dc370a1030bc608930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b27cbe136b6c1369487b082b7da832"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a54b27cbe136b6c1369487b082b7da832">sortTopologically</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *ast)</td></tr>
-<tr class="separator:a54b27cbe136b6c1369487b082b7da832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -91,7 +89,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a6c1bfa4d386b84deafd1e1e1af71a3be">rewriteCones</a> (std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt; &amp;&amp;ast, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;coneEndNodes)</td></tr>
 <tr class="separator:a6c1bfa4d386b84deafd1e1e1af71a3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37690c4b649e9bfb50c7124b33fcece2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a37690c4b649e9bfb50c7124b33fcece2">computeMinDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *v, <a class="el" href="class_abstract_node.html">AbstractNode</a> *ast, MultDepthMap multDepthMap, MultDepthMap reversedMultDepthsMap)</td></tr>
-<tr class="memdesc:a37690c4b649e9bfb50c7124b33fcece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////.  <a href="class_cone_rewriter.html#a37690c4b649e9bfb50c7124b33fcece2">More...</a><br /></td></tr>
+<tr class="memdesc:a37690c4b649e9bfb50c7124b33fcece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION and other things/////.  <a href="class_cone_rewriter.html#a37690c4b649e9bfb50c7124b33fcece2">More...</a><br /></td></tr>
 <tr class="separator:a37690c4b649e9bfb50c7124b33fcece2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addfbfa1a8923879f144a4bc854622fa6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#addfbfa1a8923879f144a4bc854622fa6">getMaximumMultDepth</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *root, MultDepthMap map)</td></tr>
 <tr class="separator:addfbfa1a8923879f144a4bc854622fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,6 +105,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:aeef8f2ec4455f3d38be3aea4724314e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a252d512b721b5b42ef5aa296b3cc1e9c">depthValue</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a252d512b721b5b42ef5aa296b3cc1e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aa9546e413fdeeb45c784bd41433d70"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cone_rewriter.html#a9aa9546e413fdeeb45c784bd41433d70">sortTopologically</a> (std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;nodes)</td></tr>
+<tr class="separator:a9aa9546e413fdeeb45c784bd41433d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e75dfda0ff71f6a06dfd69f763af708"><td class="memItemLeft" align="right" valign="top"><a id="a3e75dfda0ff71f6a06dfd69f763af708"></a>
+static std::map&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> *, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>compFlow</b> (std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ckt)</td></tr>
+<tr class="separator:a3e75dfda0ff71f6a06dfd69f763af708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a461ca5e0cbbeb39e42614bce06ba50fe"><td class="memItemLeft" align="right" valign="top"><a id="a461ca5e0cbbeb39e42614bce06ba50fe"></a>
 static int&#160;</td><td class="memItemRight" valign="bottom"><b>getMultDepth</b> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *n)</td></tr>
 <tr class="separator:a461ca5e0cbbeb39e42614bce06ba50fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +119,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>flattenVectors
 <tr class="memitem:a1d02fa796d22d52b717eebd7c765bf7c"><td class="memItemLeft" align="right" valign="top"><a id="a1d02fa796d22d52b717eebd7c765bf7c"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b> (std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;result, std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; newElements)</td></tr>
 <tr class="separator:a1d02fa796d22d52b717eebd7c765bf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b63fe9162b65ce9a079f049601c8c36"><td class="memItemLeft" align="right" valign="top"><a id="a4b63fe9162b65ce9a079f049601c8c36"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>reverseEdges</b> (const std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;nodes)</td></tr>
+<tr class="separator:a4b63fe9162b65ce9a079f049601c8c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1b2e966781e5276d8fa76ef81cbec3d7"></a>
@@ -197,7 +203,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 </table>
 </div><div class="memdoc">
 
-<p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION /////. </p>
+<p>UTILITY FUNCTIONS FOR MULTDEPTH CALCULATION and other things/////. </p>
 <p>Computes minDepth parameter required for cone selection algorithm We use a minDepth value equal to l(p) + 1, where p is the NON-critical input of node v. A node p is critical if l(p) + r(p) = l^{max} </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>node </td></tr>
@@ -763,20 +769,28 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>addElements</b
 
 </div>
 </div>
-<a id="a54b27cbe136b6c1369487b082b7da832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54b27cbe136b6c1369487b082b7da832">&#9670;&nbsp;</a></span>sortTopologically()</h2>
+<a id="a9aa9546e413fdeeb45c784bd41433d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aa9546e413fdeeb45c784bd41433d70">&#9670;&nbsp;</a></span>sortTopologically()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; ConeRewriter::sortTopologically </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>ast</em></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>nodes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>This method implements Kahn's algorithm as described at wikipedia, see <a href="https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962">https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
