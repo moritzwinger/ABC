@@ -173,8 +173,8 @@ class ConeRewriter {
   /// see https://en.wikipedia.org/wiki/Topological_sorting#CITEREFKahn1962
   /// \param AbstractNode pointer to root of AST
   /// \return vector of AbstractNode pointers
-  // TODO: Implement
-  std::vector<AbstractNode *> sortTopologically(AbstractNode* ast);
+
+  static std::vector<AbstractNode *> sortTopologically( std::vector<AbstractNode *> &nodes);
 
 
 

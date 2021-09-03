@@ -545,8 +545,7 @@ TEST(ConeRewriterTest, isCriticalNodeTest) {
 TEST(ConeRewriterTest, getAndCriticalCircuitTest) {
   /// expected graph:
   /// AND
-  ///   \
-  ///   AND
+  ///
   /// program specification
   /// v1 = a && b;
   /// u = v1 || (x || y);
@@ -589,6 +588,10 @@ TEST(ConeRewriterTest, getAndCriticalCircuitTest) {
   // now we construct cAND
   auto cAND = coneRewriter.getAndCriticalCircuit(*astProgram, delta);
 
+  EXPECT_EQ(cAND.size(), 1);
+
 }
+
+
 
 #endif

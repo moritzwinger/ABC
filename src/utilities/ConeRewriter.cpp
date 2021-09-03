@@ -49,12 +49,12 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
       pvec.push_back(&p);
     }
   }
-
-  // print pvec
-  for (int jj = 0; jj < pvec.size(); jj++) {
-    std::cout << pvec[jj]->toString(false) << " ";
-  }
-  std::cout << std::endl;
+//
+//  // print pvec
+//  for (int jj = 0; jj < pvec.size(); jj++) {
+//    //std::cout << pvec[jj]->toString(false) << " ";
+//  }
+// // std::cout << std::endl;
 
   // return v if at least one predecessor of v is non-critical (i.e |pvec| < 2) and v is an AND-gate
   if (pvec.size() < 2 && dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&") {
@@ -111,23 +111,27 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
     return (lexp==nullptr || lexp->getOperator().toString()!="&&");
   }), delta.end());
 
-  //std::cout << "size" << delta.size() << std::endl;
+  //std::cout << "size" << delta[0]->toString(false) << std::endl;
   // duplicate critical nodes to create new circuit C_{AND} as we do not want to modify the original circuit
   std::unordered_map<std::string, AbstractNode *> cAndMap;
   std::vector<AbstractNode *> cAndResultCkt;
   for (auto &v : delta) {
     // clone node and remove parents (argument of clone: nullptr)
+    std::cout << "Cloning node: " << v->toString(false)<< std::endl;
     auto clonedNode = v->clone(nullptr);
 
     // a back-link to the node in the original circuit
 
+    std::cout << "Inserting: " << v->getUniqueNodeId() << " into underlying_nodes" << std::endl;
     underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
     cAndMap.emplace(v->getUniqueNodeId(), &*clonedNode);
     cAndResultCkt.emplace_back(&*clonedNode);
+    std::cout << "result1 size: " <<  cAndResultCkt.size() << std::endl;
   }
 
   // in case that there are less than two nodes, we can not connect any two nodes
   if (delta.size() < 2) {
+    std::cout << "Ret" << std::endl;
     return cAndResultCkt;
   }
 //
@@ -159,7 +163,7 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
 }
 
 std::vector<AbstractNode *> ConeRewriter::selectCones(AbstractNode &root, std::vector<AbstractNode *> cAndCkt) {
-  return {};
+
 }
 
 std::unique_ptr<AbstractNode> ConeRewriter::rewriteCones(std::unique_ptr<AbstractNode> &&ast,
@@ -489,30 +493,27 @@ int getMultDepthL(MultDepthMap multiplicativeDepths, AbstractNode &n) {
   return multiplicativeDepths[n.getUniqueNodeId()];
 }
 
-std::vector<AbstractNode *>ConeRewriter:: sortTopologically(AbstractNode* ast) {
-  // This will contain the circuit nodes in topological order
+std::vector<AbstractNode *>ConeRewriter:: sortTopologically( std::vector<AbstractNode *> &nodes) {
   std::vector<AbstractNode *> L;
   std::map<AbstractNode *, int> numEdgesDeleted;
 
   // S <- nodes without an incoming edge
   std::vector<AbstractNode *> S;
-  // first this will be the root node only
-  S.push_back(ast);
+  std::for_each(nodes.begin(), nodes.end(), [&](AbstractNode *n) {
+    if (!n->hasParent()) S.push_back(n);
+  });
 
-  // do Kahn
   while (!S.empty()) {
     auto n = S.back();
     S.pop_back();
     L.push_back(n);
-    // for children
     for (auto &m : *n) {
-      numEdgesDeleted[&m] += 1; // emulate removal of edge
-      S.push_back(&m);
+      numEdgesDeleted[&m] += 1; // emulates removing edge from the graph
+     // if (m->getParent().size()==numEdgesDeleted[m]) S.push_back(m);
     }
   }
   return L;
 }
-
 
 void ConeRewriter::addElements(std::vector<AbstractNode *> &result, std::vector<AbstractNode *> newElements) {
   result.reserve(result.size() + newElements.size());
