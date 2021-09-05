@@ -25,7 +25,7 @@ std::unique_ptr<AbstractNode> ConeRewriter::rewriteAst(std::unique_ptr<AbstractN
   //std::vector<AbstractNode *> cAndCkt = getAndCriticalCircuit(*ast_in, delta);
 
   /// minimum set of reducible cones
- // std::vector<AbstractNode *> deltaMin = selectCones(*ast_in, cAndCkt);
+  // std::vector<AbstractNode *> deltaMin = selectCones(*ast_in, cAndCkt);
 
   /// Perform actual rewriting
   return rewriteCones(std::move(ast_in), delta);
@@ -49,13 +49,6 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
       pvec.push_back(&p);
     }
   }
-//
-//  // print pvec
-//  for (int jj = 0; jj < pvec.size(); jj++) {
-//    //std::cout << pvec[jj]->toString(false) << " ";
-//  }
-// // std::cout << std::endl;
-
   // return v if at least one predecessor of v is non-critical (i.e |pvec| < 2) and v is an AND-gate
   if (pvec.size() < 2 && dynamic_cast<BinaryExpression *>(v)->getOperator().toString()=="&&") {
     // return set consisting of start node v only
@@ -104,8 +97,9 @@ std::vector<AbstractNode *> ConeRewriter::getReducibleCone(AbstractNode *root,
   return delta;
 }
 
+// TODO: reverse?
 std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &root, std::vector<AbstractNode *> delta) {
-//  // remove non-AND nodes from delta (note: delta is passed as copy-by-value) as delta may also include XOR nodes
+  // remove non-AND nodes from delta (note: delta is passed as copy-by-value) as delta may also include XOR nodes
   delta.erase(remove_if(delta.begin(), delta.end(), [](AbstractNode *d) {
     auto lexp = dynamic_cast<BinaryExpression *>(d);
     return (lexp==nullptr || lexp->getOperator().toString()!="&&");
@@ -117,7 +111,7 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
   std::vector<AbstractNode *> cAndResultCkt;
   for (auto &v : delta) {
     // clone node and remove parents (argument of clone: nullptr)
-    std::cout << "Cloning node: " << v->toString(false)<< std::endl;
+    std::cout << "Cloning node: " << v->toString(false) << std::endl;
     auto clonedNode = v->clone(nullptr);
 
     // a back-link to the node in the original circuit
@@ -126,7 +120,7 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
     underlying_nodes.insert(std::make_pair<std::string, AbstractNode *>(v->getUniqueNodeId(), &*v));
     cAndMap.emplace(v->getUniqueNodeId(), &*clonedNode);
     cAndResultCkt.emplace_back(&*clonedNode);
-    std::cout << "result1 size: " <<  cAndResultCkt.size() << std::endl;
+    std::cout << "result1 size: " << cAndResultCkt.size() << std::endl;
   }
 
   // in case that there are less than two nodes, we can not connect any two nodes
@@ -134,27 +128,27 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
     std::cout << "Ret" << std::endl;
     return cAndResultCkt;
   }
-//
-//  // check if there are depth-2 critical paths in between critical nodes in the original ckt
+  // TODO: understand
+  // check if there are depth-2 critical paths in between critical nodes in the original ckt
   for (auto &v : delta) {
     std::queue<AbstractNode *> q{{v}};
     while (!q.empty()) {
       auto curNode = q.front();
       q.pop();
       // for children
-      for (auto &child : *curNode) {
-        auto childLexp = dynamic_cast<BinaryExpression *>(&child);
-        // if the child is a LogicalExpr of type AND-gate
-        if (childLexp!=nullptr && childLexp->getOperator().toString() == "&&") {
-          // check if this child is a critical node, if yes: connect both nodes
-          if (std::find(delta.begin(), delta.end(), childLexp)!=delta.end()) {
+      for (auto &parent : curNode->getParent()) {
+        auto parentLexp = dynamic_cast<BinaryExpression *>(&parent);
+        // if the parent is a LogicalExpr of type AND-gate
+        if (parentLexp!=nullptr && parentLexp->getOperator().toString()=="&&") {
+          // check if this parent is a critical node, if yes: connect both nodes
+          if (std::find(delta.begin(), delta.end(), parentLexp)!=delta.end()) {
             AbstractNode *copiedV = cAndMap[v->getUniqueNodeId()];
-            AbstractNode *copiedChild = cAndMap[child.getUniqueNodeId()];
-            copiedV->addChild(copiedChild);
-            copiedChild->addParent(copiedV);
+            AbstractNode *copiedParent = cAndMap[parent.getUniqueNodeId()];
+            copiedV->addParent(copiedParent);
+            copiedParent->addChild(copiedV);
           }
         } else {  // continue if child is not a LogicalExpr --> node does not influence the mult. depth
-          q.push(&child);
+          q.push(&parent);
         }
       }
     }
@@ -164,10 +158,17 @@ std::vector<AbstractNode *> ConeRewriter::getAndCriticalCircuit(AbstractNode &ro
 
 std::vector<AbstractNode *> ConeRewriter::selectCones(AbstractNode &root, std::vector<AbstractNode *> cAndCkt) {
 
+  std::cout << "Selecting cones" << std::endl;
+
   std::vector<AbstractNode *> deltaMin;
+
+  std::cout << cAndCkt.size() << std::endl;
+
   while (!cAndCkt.empty()) {
+    std::cout << "Computing node flows" << std::endl;
     // compute all node flows f^{+}(v) in cAndCkt
     std::map<AbstractNode *, float> nodeFlows = compFlow(cAndCkt);
+
 
     // reverse circuit edges and compute all ascending node flows f^{-}(v)
     reverseEdges(cAndCkt);
@@ -529,7 +530,10 @@ int getMultDepthL(MultDepthMap multiplicativeDepths, AbstractNode &n) {
   return multiplicativeDepths[n.getUniqueNodeId()];
 }
 
-std::vector<AbstractNode *>ConeRewriter:: sortTopologically( std::vector<AbstractNode *> &nodes) {
+std::vector<AbstractNode *> ConeRewriter::sortTopologically(std::vector<AbstractNode *> &nodes) {
+
+  reverseEdges(nodes);
+
   std::vector<AbstractNode *> L;
   std::map<AbstractNode *, int> numEdgesDeleted;
 
@@ -543,7 +547,7 @@ std::vector<AbstractNode *>ConeRewriter:: sortTopologically( std::vector<Abstrac
     auto n = S.back();
     S.pop_back();
     L.push_back(n);
-    for (auto &m : n->getChildrenList()) {
+    for (auto &m : n->getChildrenNonNull()) {
       numEdgesDeleted[m] += 1; // emulates removing edge from the graph
       if (m->getParentList().size()==numEdgesDeleted[m]) S.push_back(m);
     }
@@ -554,22 +558,24 @@ std::vector<AbstractNode *>ConeRewriter:: sortTopologically( std::vector<Abstrac
 std::map<AbstractNode *, float> ConeRewriter::compFlow(std::vector<AbstractNode *> ckt) {
   std::map<AbstractNode *, float> computedFlow;
   std::map<std::pair<AbstractNode *, AbstractNode *>, float> edgeFlows;
+  std::cout << "Sorting..." << std::endl;
   auto topologicalOrder = ConeRewriter::sortTopologically(ckt);
+  std::cout << "Done Sorting" << std::endl;
   for (AbstractNode *v : topologicalOrder) {
     // if v is input return trivial
-    if (!v->hasParent()) {
+    if (v->getChildrenList().empty()) {
       computedFlow[v] = 1;
     } else { // if v is intermediate node
       // compute flow by accumulating flows of incoming edges (u,v) where u ∈ pred(v)
-      auto predecessorsOfV = v->getParentList();
+      auto predecessorsOfV = v->getChildrenList();
       float flow = 0.0f;
       std::for_each(predecessorsOfV.begin(), predecessorsOfV.end(), [&](AbstractNode *u) {
         flow += edgeFlows[std::pair(u, v)];
       });
       computedFlow[v] = flow;
     }
-    // for all successors u: define edge flow
-    for (auto &u : v->getChildrenList()) {
+    // for all 'successors' (paper) u: define edge flow
+    for (auto &u : v->getParentList()) {
       edgeFlows[std::make_pair(v, u)] = computedFlow[v]/v->getParentList().size();
     }
   }

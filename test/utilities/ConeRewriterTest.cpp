@@ -592,6 +592,52 @@ TEST(ConeRewriterTest, getAndCriticalCircuitTest) {
 
 }
 
+TEST(ConeRewriterTest, selectCones) {
+  ///
+  /// program specification
+  /// v1 = a && b;
+  /// u = v1 || (x || y);
+  /// vt = u && c;
+  const char *program = R""""(
+  return ((a && b) || (x || y)) && c;
+  )"""";
+  auto astProgram = Parser::parse(std::string(program));
 
+//  // Rewrite BinaryExpressions to trivial OperatorExpressions
+//  BinaryToOperatorExpressionVisitor v;
+//  astProgram->accept(v);
+//
+//  std::stringstream ss;
+//  PrintVisitor p(ss);
+//  astProgram->accept(p);
+//  std::cout << ss.str() << std::endl;
+
+
+  ConeRewriter coneRewriter;
+
+  // first, we construct the set delta
+  // compute multdepths
+  // Get nodes, but only expression nodes, not the block or return
+  GetAllNodesVisitor vis;
+  astProgram->begin()->begin()->accept(vis);
+
+  MultDepthMap multDepths;
+  MultDepthMap revMultDepths;
+
+  for (auto n : vis.v) {
+    coneRewriter.computeMultDepthL(n, multDepths);
+    coneRewriter.computeReversedMultDepthR(n, revMultDepths);
+  }
+
+  std::cout << "Starting at: "  << astProgram->begin()->begin()->toString(false) << std::endl;
+
+  auto delta = coneRewriter.getReducibleCone(astProgram.get(), &*astProgram->begin()->begin(), 1, multDepths, revMultDepths);
+
+  // now we construct cAND
+  auto cAND = coneRewriter.getAndCriticalCircuit(*astProgram, delta);
+
+  // select cones
+  auto selectedCones = coneRewriter.selectCones(*astProgram->begin()->begin(), cAND);
+}
 
 #endif

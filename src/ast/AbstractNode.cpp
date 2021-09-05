@@ -15,6 +15,14 @@ std::vector<AbstractNode*> AbstractNode::getChildrenList() {
   return children;
 }
 
+std::vector<AbstractNode *> AbstractNode::getChildrenNonNull() const {
+  std::vector<AbstractNode *> childrenFiltered;
+  if (children.empty()) return childrenFiltered;
+  std::copy_if(children.begin(), children.end(), std::back_inserter(childrenFiltered),
+               [](AbstractNode *n) { return n!=nullptr; });
+  return childrenFiltered;
+}
+
 void AbstractNode::addParent(AbstractNode *parent) {
   parents.push_back(parent);
 }
