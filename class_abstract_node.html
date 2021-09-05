@@ -117,22 +117,6 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a3e4c9b9841c8b860e450b8eb089f9b85">~AbstractNode</a> ()=0</td></tr>
 <tr class="memdesc:a3e4c9b9841c8b860e450b8eb089f9b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual Destructor, force class to be abstract. <br /></td></tr>
 <tr class="separator:a3e4c9b9841c8b860e450b8eb089f9b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb9943c64b5b6a25ef43da93bb1cc04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a6cb9943c64b5b6a25ef43da93bb1cc04">addChild</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *child)</td></tr>
-<tr class="separator:a6cb9943c64b5b6a25ef43da93bb1cc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e0d3dea255bab70a20f108631c52dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#ae1e0d3dea255bab70a20f108631c52dd">getChildrenList</a> ()</td></tr>
-<tr class="separator:ae1e0d3dea255bab70a20f108631c52dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa9a28c7ce5864b58abfcae077a07f4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#aaa9a28c7ce5864b58abfcae077a07f4d">addParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parent)</td></tr>
-<tr class="separator:aaa9a28c7ce5864b58abfcae077a07f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09d48091c263bf555d7dc7c3e8f0ca69"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a09d48091c263bf555d7dc7c3e8f0ca69">getParentList</a> ()</td></tr>
-<tr class="separator:a09d48091c263bf555d7dc7c3e8f0ca69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2479945fea5f323f14ac1a5f8615aad6"><td class="memItemLeft" align="right" valign="top"><a id="a2479945fea5f323f14ac1a5f8615aad6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a2479945fea5f323f14ac1a5f8615aad6">swapChildrenParents</a> ()</td></tr>
-<tr class="memdesc:a2479945fea5f323f14ac1a5f8615aad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">swap children and parent lists (used in <a class="el" href="class_cone_rewriter.html">ConeRewriter</a>) <br /></td></tr>
-<tr class="separator:a2479945fea5f323f14ac1a5f8615aad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbe97d417238af06c0412de60ac797b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#afbe97d417238af06c0412de60ac797b9">removeChild</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *child)</td></tr>
-<tr class="separator:afbe97d417238af06c0412de60ac797b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af487bc792b1492cc561c417948bab90b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#af487bc792b1492cc561c417948bab90b">removeParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parentToBeRemoved)</td></tr>
-<tr class="separator:af487bc792b1492cc561c417948bab90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac447b0cc9a1df5ec09c7893e64e3af2f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#ac447b0cc9a1df5ec09c7893e64e3af2f">clone</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parent=nullptr) const</td></tr>
 <tr class="separator:ac447b0cc9a1df5ec09c7893e64e3af2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a756012d0c319f4ac9271f095efaba276"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a756012d0c319f4ac9271f095efaba276">operator==</a> (const <a class="el" href="class_abstract_node.html">AbstractNode</a> &amp;other) const noexcept</td></tr>
@@ -141,6 +125,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:aa407fbdc74d3d019d75da5e8ae02b701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15d03714b4b0e362da6d740f4c749205"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_node.html#a15d03714b4b0e362da6d740f4c749205">accept</a> (<a class="el" href="class_i_visitor.html">IVisitor</a> &amp;v)=0</td></tr>
 <tr class="separator:a15d03714b4b0e362da6d740f4c749205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cb9943c64b5b6a25ef43da93bb1cc04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga6cb9943c64b5b6a25ef43da93bb1cc04">addChild</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *child)</td></tr>
+<tr class="separator:ga6cb9943c64b5b6a25ef43da93bb1cc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1e0d3dea255bab70a20f108631c52dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#gae1e0d3dea255bab70a20f108631c52dd">getChildrenList</a> ()</td></tr>
+<tr class="separator:gae1e0d3dea255bab70a20f108631c52dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga067cfe2f95324c36cfe3c8ad49d910c3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga067cfe2f95324c36cfe3c8ad49d910c3">getChildrenNonNull</a> () const</td></tr>
+<tr class="separator:ga067cfe2f95324c36cfe3c8ad49d910c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa9a28c7ce5864b58abfcae077a07f4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#gaaa9a28c7ce5864b58abfcae077a07f4d">addParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parent)</td></tr>
+<tr class="separator:gaaa9a28c7ce5864b58abfcae077a07f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09d48091c263bf555d7dc7c3e8f0ca69"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga09d48091c263bf555d7dc7c3e8f0ca69">getParentList</a> ()</td></tr>
+<tr class="separator:ga09d48091c263bf555d7dc7c3e8f0ca69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2479945fea5f323f14ac1a5f8615aad6"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga2479945fea5f323f14ac1a5f8615aad6">swapChildrenParents</a> ()</td></tr>
+<tr class="memdesc:ga2479945fea5f323f14ac1a5f8615aad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">swap children and parent lists (used in <a class="el" href="class_cone_rewriter.html">ConeRewriter</a>) <br /></td></tr>
+<tr class="separator:ga2479945fea5f323f14ac1a5f8615aad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbe97d417238af06c0412de60ac797b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#gafbe97d417238af06c0412de60ac797b9">removeChild</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *child)</td></tr>
+<tr class="separator:gafbe97d417238af06c0412de60ac797b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf487bc792b1492cc561c417948bab90b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#gaf487bc792b1492cc561c417948bab90b">removeParent</a> (<a class="el" href="class_abstract_node.html">AbstractNode</a> *parentToBeRemoved)</td></tr>
+<tr class="separator:gaf487bc792b1492cc561c417948bab90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga78701a0642b6bf9b58c615e83bd0d10a"><td class="memItemLeft" align="right" valign="top">
 virtual <a class="el" href="group___d_a_g.html#gaf7ec06d875e1e500fcce725260057ec8">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_a_g.html#ga78701a0642b6bf9b58c615e83bd0d10a">begin</a> ()=0</td></tr>
 <tr class="memdesc:ga78701a0642b6bf9b58c615e83bd0d10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward Iterator marking begin of children. <br /></td></tr>
@@ -236,54 +238,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a6cb9943c64b5b6a25ef43da93bb1cc04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb9943c64b5b6a25ef43da93bb1cc04">&#9670;&nbsp;</a></span>addChild()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractNode::addChild </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>child</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Add child method (used for C^AND construction in ConeRweriting) adds a node to the list of children (children) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">AbstractNode*</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aaa9a28c7ce5864b58abfcae077a07f4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa9a28c7ce5864b58abfcae077a07f4d">&#9670;&nbsp;</a></span>addParent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractNode::addParent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Add child method (used for C^AND construction in ConeRweriting) adds a node to the list of children (children) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">AbstractNode*</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ac447b0cc9a1df5ec09c7893e64e3af2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac447b0cc9a1df5ec09c7893e64e3af2f">&#9670;&nbsp;</a></span>clone()</h2>
 
@@ -300,42 +254,6 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Clones a node recursively, i.e., by including all of its children. Because return-type covariance does not work with smart pointers, derived classes are expected to introduce a std::unique_ptr&lt;DerivedNode&gt; <a class="el" href="class_abstract_node.html#ac447b0cc9a1df5ec09c7893e64e3af2f">clone()</a> method that hides this (for use with derived class ptrs/refs) </p><dl class="section return"><dt>Returns</dt><dd>A clone of the node including clones of all of its children. </dd></dl>
-
-</div>
-</div>
-<a id="ae1e0d3dea255bab70a20f108631c52dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1e0d3dea255bab70a20f108631c52dd">&#9670;&nbsp;</a></span>getChildrenList()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; AbstractNode::getChildrenList </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>getter method for the vector children </p><dl class="section return"><dt>Returns</dt><dd>children (vector) </dd></dl>
-
-</div>
-</div>
-<a id="a09d48091c263bf555d7dc7c3e8f0ca69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09d48091c263bf555d7dc7c3e8f0ca69">&#9670;&nbsp;</a></span>getParentList()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="class_abstract_node.html">AbstractNode</a> * &gt; AbstractNode::getParentList </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>getter method for the vector children (used in <a class="el" href="class_cone_rewriter.html">ConeRewriter</a>) </p><dl class="section return"><dt>Returns</dt><dd>children (vector) </dd></dl>
 
 </div>
 </div>
@@ -402,54 +320,6 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true iff this and other are the exact same object </dd></dl>
-
-</div>
-</div>
-<a id="afbe97d417238af06c0412de60ac797b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbe97d417238af06c0412de60ac797b9">&#9670;&nbsp;</a></span>removeChild()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractNode::removeChild </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>child</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>remove a child from children vector (used in <a class="el" href="class_cone_rewriter.html">ConeRewriter</a>) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">AbstractNode*</td><td>(child to remove from list) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="af487bc792b1492cc561c417948bab90b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af487bc792b1492cc561c417948bab90b">&#9670;&nbsp;</a></span>removeParent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AbstractNode::removeParent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_abstract_node.html">AbstractNode</a> *&#160;</td>
-          <td class="paramname"><em>parentToBeRemoved</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>remove a parent from parents vector (used in <a class="el" href="class_cone_rewriter.html">ConeRewriter</a>) </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">AbstractNode*</td><td>(parent to remove from list) </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
