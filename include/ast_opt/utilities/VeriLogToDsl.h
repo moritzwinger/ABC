@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
-//
+#include <algorithm>
 
 
 class VeriLogToDsl {
